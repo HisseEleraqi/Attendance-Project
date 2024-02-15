@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:complexType name="AttendanceRecordType">
+        <xs:sequence>
+            <xs:element name="Date" type="xs:date"/>
+            <xs:element name="Status" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="StudentType">
+        <xs:sequence>
+            <xs:element name="StudentID" type="xs:string"/>
+            <xs:element name="StudentName" type="xs:string"/>
+            <xs:element name="AttendanceRecords" minOccurs="0">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="Record" type="AttendanceRecordType" maxOccurs="unbounded"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="ClassType">
+        <xs:sequence>
+            <xs:element name="ClassID" type="xs:string"/>
+            <xs:element name="ClassName" type="xs:integer"/>
+            <xs:element name="TeacherID" type="xs:string"/>
+            <xs:element name="TeacherName" type="xs:string"/>
+            <xs:element name="Students" minOccurs="0">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="Student" type="StudentType" maxOccurs="unbounded"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:element name="AttendanceData">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="Class" type="ClassType" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

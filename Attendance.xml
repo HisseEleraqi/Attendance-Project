@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<AttendanceData>
+  <Class>
+    <ClassID>CS101</ClassID>
+    <ClassName>Computer Science 101</ClassName>
+    <TeacherID>T001</TeacherID>
+    <TeacherName>Qamary</TeacherName>
+    <Students>
+      <Student>
+        <StudentID>S001</StudentID>
+        <StudentName>Ebrahim</StudentName>
+        <AttendanceRecords>
+          <Record>
+            <Date>2024-02-15</Date>
+            <Status>Present</Status>
+          </Record>
+          <Record>
+            <Date>2024-02-14</Date>
+            <Status>Absent</Status>
+          </Record>
+        </AttendanceRecords>
+      </Student>
+      <Student>
+        <StudentID>S002</StudentID>
+        <StudentName>Hissen</StudentName>
+        <AttendanceRecords>
+          <Record>
+            <Date>2024-02-15</Date>
+            <Status>Present</Status>
+          </Record>
+          <Record>
+            <Date>2024-02-14</Date>
+            <Status>Absent</Status>
+          </Record>
+        </AttendanceRecords>
+      </Student>
+      <Student>
+        <StudentID>S003</StudentID>
+        <AttendanceRecords>
+        </AttendanceRecords>
+      </Student>
+    </Students>
+  </Class>
+</AttendanceData>
