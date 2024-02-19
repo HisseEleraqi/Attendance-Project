@@ -5,13 +5,13 @@ namespace Attendence_Management_System
         public string userName;
         public string Role;
 
-        public Main(string userName)
+        public Main(string userName, string role)
         {
 
             InitializeComponent();
             this.userName = userName;
             UserName.Text = userName;
-
+            Role = role;
         }
 
 
@@ -78,7 +78,7 @@ namespace Attendence_Management_System
         {
             panelExpand.Hide();
             UserName.Text = userName;
-            if (Role == "Usre")
+            if (Role.ToLower() == "admin")
             {
                 buttonDashBorde.Hide();
                 buttonAddStudent.Hide();

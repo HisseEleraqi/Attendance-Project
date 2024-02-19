@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using Attendence_Management_System;
 using System.Xml;
 using Attendence_System.Forms;
+using Attendence_System.Controller;
 namespace Attendence_Management_System.Forms
 {
     public partial class Login : Form
@@ -37,21 +38,22 @@ namespace Attendence_Management_System.Forms
                 XmlNode? userNode = xmlController.GetNode(XmlDoc, "/school/users/user", "email", UserName);
                 if (userNode != null)
                 {
+                    string? role = userNode.SelectSingleNode("role").InnerText;
+                    string userName = userNode.SelectSingleNode("username").InnerText;
                     if (userNode.SelectSingleNode("password").InnerText == Password)
                     {
-                        MessageBox.Show("Login Success");
-                        //Console.WriteLine(userNode.SelectSingleNode("role").InnerText);
-                         if (userNode.SelectSingleNode("role").InnerText.ToLower() == "teacher")
-                        {
-                            Teacher teacher = new Teacher();
-                            teacher.Show();
-                        }
+
+                        Main main = new Main(userName, role);
+                        main.Show();
+
                         ErrorMessage.Visible = false;
                         this.Hide();
+                        AddUser newUser = new AddUser("test", "student", "123","hema@example.com");
+                        newUser.AddUserToXML();
                     }
                     else
                     {
-                       
+
                         ErrorMessage.Text = "Invalid Password";
                         ErrorMessage.Visible = true;
 
@@ -59,7 +61,7 @@ namespace Attendence_Management_System.Forms
                 }
                 else
                 {
-                   
+
                     ErrorMessage.Text = "Invalid UserName";
                     ErrorMessage.Visible = true;
 
@@ -70,12 +72,7 @@ namespace Attendence_Management_System.Forms
 
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-            // sho
-        }
 
-      
 
         private void pictureBox1_Click_1(object sender, EventArgs e)
         {
@@ -97,5 +94,13 @@ namespace Attendence_Management_System.Forms
             }
         }
 
+        // when press enter key on password field it will fire the login button
+        private void password_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                closeButton_Click(sender, e);
+            }
+        }
     }
 }
