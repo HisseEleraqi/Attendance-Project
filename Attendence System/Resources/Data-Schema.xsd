@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+
+<!--idType-->
+	<xs:simpleType name="idtype">
+		<xs:restriction base="xs:string">
+			<xs:pattern value="[A-Z]{2}-\d"/>
+		</xs:restriction>
+	</xs:simpleType>
+<!--End idType-->
+<!-- Enum for role-->
+		<xs:simpleType name="roleEnum">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Student"/>
+			<xs:enumeration value="Teacher"/>
+			<xs:enumeration value="Admin"/>
+		</xs:restriction>
+	</xs:simpleType>
+<!--End Enum for role-->
+		
+<!--datePattern-->
+	<xs:simpleType name="datePattern">
+		<xs:restriction base="xs:date">
+		    <xs:pattern value="(\d{4}-\d{2}-\d{2})|(\d{2}-\d{2}-\d{4}))"/>
+         
+		</xs:restriction>
+	</xs:simpleType>
+<!--End datePattern -->
+<!-- Enum for language-->
+	<xs:simpleType name="languageEnum">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="EN"/>
+			<xs:enumeration value="AR"/>
+		</xs:restriction>
+	</xs:simpleType>
+<!--End Enum for language-->
+		
+<!-- email pattern-->	
+	       <xs:simpleType name="email">
+		<xs:restriction base="xs:string">
+		 <xs:pattern value="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}"/>
+		</xs:restriction>
+	</xs:simpleType>
+<!--End email pattern-->
+			
+	<!--statusenum-->
+		<xs:simpleType name="statusenum">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Present"/>
+			<xs:enumeration value="Absent"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<!--End statusenum-->
+	
+	<!--public element-->
+	  <xs:element name="id" type="idtype"/>
+	  <xs:element name="date" type="xs:date"/>
+	  <xs:element name="status" type="statusenum"/>
+	  <xs:element name="name" type="xs:string"/>
+	  <xs:element name="email" type="email"/>
+	  <xs:element name="password" type="xs:string"/>
+	  <xs:element name="role" type="roleEnum"/>
+	  <xs:element name="warning" type="xs:boolean"/>
+	  <xs:element name="fired" type="xs:boolean"/>
+	  <xs:element name="language" type="languageEnum"/>
+	  <xs:element name="dateFormats" type="datePattern"/>
+	  <xs:element name="coolDown" type="xs:boolean"/>
+	  <xs:element name="coolDownStartDate" type="datePattern"/>
+	<xs:attribute name="id" type="idtype"/>
+	<!--End public element-->
+	
+
+		 <xs:group name="studentGroup">
+					<xs:sequence>
+							<xs:element ref="status" />
+					</xs:sequence>
+		</xs:group>
+			
+		<xs:complexType name="complexforstudent">
+	         <xs:group ref="studentGroup"/>
+				<xs:attribute ref="id"/>
+		</xs:complexType>
+				
+		<xs:complexType name="complexforclass">
+				<xs:sequence>
+				<xs:element ref="id"/>
+				</xs:sequence>
+		</xs:complexType>	
+		
+		<xs:complexType name="complexforattendance-record">
+				<xs:sequence>					
+				<xs:element ref="date"/>	
+				<xs:element name="class" type="complexforclass" />										
+				<xs:element name="student" maxOccurs="unbounded" type="complexforstudent"/>	 								
+				</xs:sequence>
+       </xs:complexType>	
+       
+       	<xs:complexType name="complexforattendance-records">
+			<xs:sequence>
+				<xs:element name="attendance-record" maxOccurs="unbounded" type="complexforattendance-record"/>
+			</xs:sequence>
+		</xs:complexType>
+		
+		<xs:complexType name="complexforclasses">
+			<xs:sequence>
+				<xs:element name="class" maxOccurs="unbounded">
+					<xs:complexType>
+						<xs:attribute name="id" type="idtype" use="required"/>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+
+		<xs:complexType name="complexforstudent2">
+			<xs:sequence>
+				<xs:element name="name" type="xs:string"/>
+				<xs:element name="classes" type="complexforclasses"/>
+			</xs:sequence>
+			<xs:attribute name="id" type="idtype" use="required"/>
+		</xs:complexType>
+
+		<xs:complexType name="complexforstudents">
+			<xs:sequence>
+				<xs:element name="student" type="complexforstudent2" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+
+		<xs:complexType name="complexforcourse">
+			<xs:sequence>
+				<xs:element name="course" maxOccurs="unbounded">
+					<xs:complexType>
+						<xs:attribute name="id" type="idtype" use="required"/>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+
+	  <xs:complexType name="complexforteacher">
+		<xs:sequence>
+			<xs:element name="name" type="xs:string"/>
+			<xs:element name="courses" type="complexforcourse"/>
+		</xs:sequence>
+		<xs:attribute name="id" type="xs:string" use="required"/>
+	</xs:complexType>
+
+	<xs:complexType name="complexforteachers">
+		<xs:sequence>
+			<xs:element name="teacher" type="complexforteacher" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+
+
+	  <xs:complexType name="complexforadmin">
+		<xs:sequence>
+			<xs:element name="name" type="xs:string"/>
+		</xs:sequence>
+		<xs:attribute name="id" type="xs:string" use="required"/>
+	</xs:complexType>
+
+	<xs:complexType name="complexforadmins">
+		<xs:sequence>
+			<xs:element name="admin" type="complexforadmin" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:group name="usergroup">
+			 <xs:sequence>
+					 <xs:element ref="id"/>
+					 <xs:element ref="email"/>
+					 <xs:element ref="password"/>
+					 <xs:element ref="role"/>
+					 <xs:element ref="warning" minOccurs="0"/>
+					 <xs:element ref="fired" minOccurs="0"/>
+			 </xs:sequence>
+	</xs:group>
+
+	 <xs:complexType name="complexforuser">
+			 <xs:group ref="usergroup"/>
+	</xs:complexType>
+
+	<xs:complexType name="complexforusers">
+		<xs:sequence>
+			<xs:element name="user" type="complexforuser" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+
+
+	  <xs:complexType name="complexforclass2">
+		<xs:sequence>
+			<xs:element ref="id"/>
+			<xs:element ref="name"/>
+				<xs:element name="teacher">
+						  <xs:complexType>
+						  <xs:attribute name="id" type="idtype"/>
+						  </xs:complexType> 
+				</xs:element>
+				<xs:element name="student"  minOccurs="0" maxOccurs="unbounded">
+						  <xs:complexType>
+						  <xs:attribute name="id" type="idtype"/>
+						  </xs:complexType> 
+				</xs:element>      
+		</xs:sequence>
+	</xs:complexType>
+
+
+	<xs:complexType name="complexforclasses2">
+		<xs:sequence>
+			<xs:element name="class" type="complexforclass2" />
+		</xs:sequence>
+	</xs:complexType>
+	
+
+	<xs:complexType name="complexforsession">
+		<xs:sequence>
+			<xs:element name="user" >
+				<xs:complexType>
+					  <xs:attribute name="id" type="idtype"/>
+				</xs:complexType> 
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>	
+		
+		
+	<xs:group name="configsgroup">
+			 <xs:sequence>
+				  <xs:element ref="language"/>
+				  <xs:element ref="dateFormats"/>
+				  <xs:element ref="coolDown"/>
+				  <xs:element ref="coolDownStartDate"/>
+			 </xs:sequence>
+	</xs:group>
+			
+		<xs:complexType name="complexforconfigs">
+			  <xs:group ref="configsgroup"/>
+	</xs:complexType>
+					
+	<xs:complexType name="finalcomplex">
+			<xs:sequence>
+				<xs:element name="attendance-records"  type="complexforattendance-records"/>
+				<xs:element name="students" type="complexforstudents"/>
+				<xs:element name="teachers" type="complexforteachers"/>
+				<xs:element name="admins" type="complexforadmins"/>
+				<xs:element name="users" type="complexforusers"/>
+				<xs:element name="classes" type="complexforclasses2"/>
+				<xs:element name="session" type="complexforsession"/>
+				<xs:element name="configs" type="complexforconfigs"/>
+			 </xs:sequence>
+	</xs:complexType>
+	
+	<xs:element name="school" type="finalcomplex" />
+   
+</xs:schema>

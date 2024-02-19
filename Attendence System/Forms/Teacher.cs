@@ -8,17 +8,10 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Attendance_Management_System
+namespace Attendence_System.Forms
 {
     public partial class Teacher : Form
     {
-        public string userName, userRole;
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show("Username: " + userName + "\nRole: " + userRole);
-        }
-
         public Teacher()
         {
             InitializeComponent();

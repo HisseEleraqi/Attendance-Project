@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<school>
+
+	<attendance-records>
+		<attendance-record>
+			<date>2024-02-16</date>
+			<class>
+				<id>CL-1</id>
+			</class>
+			<student id="ST-1">
+				<status>Present</status>
+			</student>
+			<student id="ST-2">
+				<status>Absent</status>
+			</student>
+		</attendance-record>
+	</attendance-records>
+	
+	<students>
+		<student id="ST-1">
+			<name>Selmy1</name>
+			<classes>
+				<class id="CL-1"/>
+				<class id="CL-2"/>
+			</classes>
+		</student>
+		<student id="ST-2">
+			<name>Selmy2</name>
+			<classes>
+				<class id="CL-1"/>
+				<class id="CL-2"/>
+			</classes>
+		</student>
+		<student id="ST-3">
+			<name>Selmy3</name>
+			<classes>
+				<class id="CL-1"/>
+				<class id="CL-2"/>
+			</classes>
+		</student>
+	</students>	
+	
+	<teachers>
+		<teacher id="TE-1">
+			<name>Nada</name>
+			<courses>
+				<course id="CL-1"/>
+				<course id="CL-2"/>
+			</courses>
+		</teacher>
+	</teachers>
+	
+	<admins>
+		<admin id="AD-1">
+			<name>Nayira</name>
+		</admin>
+	</admins>
+	
+	<users>
+		<user>
+			<id>ST-1</id>
+			<email>selmy@gmail.com</email>
+			<password>selmy</password>
+			<role>Student</role>
+			<warning>false</warning>
+			<fired>false</fired>
+		</user>
+		
+		<user>
+			<id>TE-1</id>
+			<email>nada@gmail.com</email>
+			<password>nada</password>
+			<role>Teacher</role>
+		</user>
+		
+		<user>
+			<id>AD-1</id>
+			<email>nayira@gmail.com</email>
+			<password>nayira</password>
+			<role>Admin</role>
+		</user>
+	</users>
+	
+	<classes>
+		<class>
+			<id>CL-1</id>
+			<name>Math</name>
+			<teacher id="TE-1"/>
+			<student id="ST-1"/>
+			<student id="ST-2"/>
+			<student id="ST-3"/>
+		</class>
+	</classes>
+	
+	<session>
+		<user id="ST-1"/>
+	</session>
+	
+	<configs>
+		<language>EN</language>
+		<dateFormats>DD-MM-YYYY</dateFormats>
+		<coolDown>false</coolDown>
+		<coolDownStartDate>0</coolDownStartDate>
+	</configs>
+</school>
