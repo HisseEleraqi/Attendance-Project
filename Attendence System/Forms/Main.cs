@@ -38,7 +38,13 @@ namespace Attendence_Management_System
         }
         private void buttonDashBorde_Click(object sender, EventArgs e)
         {
+
             MoveSidePanel(buttonDashBorde);
+            userControDashBoard1.Visible = true;
+            userControlAddClass1.Visible = false;
+
+
+
         }
 
         private void label2_Click(object sender, EventArgs e)
@@ -50,21 +56,37 @@ namespace Attendence_Management_System
         private void buttonAddStudent_Click(object sender, EventArgs e)
         {
             MoveSidePanel(buttonAddStudent);
+            userControDashBoard1.Visible = false;
+            userControlAddClass1.Visible = false;
+
+
         }
 
         private void addClass_Click(object sender, EventArgs e)
         {
             MoveSidePanel(buttonAddClass);
+            userControDashBoard1.Visible = false;
+            userControlAddClass1.Visible = true;
+
+
         }
 
         private void Teacher_Click(object sender, EventArgs e)
         {
             MoveSidePanel(Teacher);
+            userControDashBoard1.Visible = false;
+            userControlAddClass1.Visible = false;
+
+
         }
 
         private void Report_Click(object sender, EventArgs e)
         {
             MoveSidePanel(Report);
+            userControDashBoard1.Visible = false;
+            userControlAddClass1.Visible = false;
+
+
         }
 
         private void pictureBoxExpand_Click(object sender, EventArgs e)
@@ -72,6 +94,9 @@ namespace Attendence_Management_System
             if (panelExpand.Visible)
             { panelExpand.Visible = false; }
             else { panelExpand.Visible = true; }
+            userControDashBoard1.Visible = false;
+            userControlAddClass1.Visible = false;
+
         }
 
         private void Main_Load(object sender, EventArgs e)
@@ -83,8 +108,22 @@ namespace Attendence_Management_System
                 buttonDashBorde.Hide();
                 buttonAddStudent.Hide();
                 buttonAddClass.Hide();
-                
+
             }
+            userControDashBoard1.Visible = false;
+            userControlAddClass1.Visible = false;
+
+
+        }
+
+        private void userControDashBoard1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
