@@ -43,9 +43,22 @@ namespace Attendence_Management_System.Forms
                     if (userNode.SelectSingleNode("password").InnerText == Password)
                     {
 
-                        Main main = new Main(userName, role);
-                        main.Show();
+                        if (role == "Teacher" || role=="teacher ")
+                        {
+                            Attendance teacher = new Attendance("..\\..\\..\\Resources\\Attendance.xml");
+                            teacher.Show();
+                        }
+                        else if(role == "Student" || role=="student" )
+                        {
+                            Main main = new Main(userName, role);
+                            main.Show();
 
+                        }
+                        else if(role == "Admin" || role =="admin")
+                        {
+                            Main main = new Main(userName, role);
+                            main.Show();
+                        }
                         ErrorMessage.Visible = false;
                         this.Hide();
                         AddUser newUser = new AddUser("test", "student", "123","hema@example.com");
