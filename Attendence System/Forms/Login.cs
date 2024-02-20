@@ -40,12 +40,14 @@ namespace Attendence_Management_System.Forms
                 {
                     string? role = userNode.SelectSingleNode("role").InnerText;
                     string userName = userNode.SelectSingleNode("username").InnerText;
+                    string userID = userNode.SelectSingleNode("id").InnerText;
                     if (userNode.SelectSingleNode("password").InnerText == Password)
                     {
 
                         if (role == "Teacher" || role=="teacher ")
                         {
-                            Attendance teacher = new Attendance("..\\..\\..\\Resources\\Attendance.xml");
+                            Teacher teacher = new Teacher("..\\..\\..\\Resources\\Attendance.xml");
+                            teacher.teacherID = userID;
                             teacher.Show();
                         }
                         else if(role == "Student" || role=="student" )
