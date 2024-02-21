@@ -209,16 +209,134 @@ namespace Attendence_Management_System
                 }
             }
         }
+        public List<AttendanceData> GetAttendanceDataByStudentIDAndClassName(string studentID, string className)
+        {
+            List<AttendanceData> attendanceList = new List<AttendanceData>();
+
+            try
+            {
+                XmlDocument xmlDoc = new XmlDocument();
+                xmlDoc.Load(XmlFilePath);
+
+                XmlNode classNode = FindClassNode(xmlDoc, className);
+                Console.WriteLine(classNode);
+                if (classNode != null)
+                {
+                    XmlNode studentNode = classNode.SelectSingleNode($"Students/Student[StudentID='{studentID}']"); 
+                    Console.WriteLine(studentNode);
+                    if (studentNode != null)
+                    {
+                        XmlNodeList attendanceRecords = studentNode.SelectNodes("AttendanceRecords/Record");
+
+                        if (attendanceRecords != null)
+                        {
+                            foreach (XmlNode recordNode in attendanceRecords)
+                            {
+                                XmlNode dateNode = recordNode.SelectSingleNode("Date");
+                                XmlNode statusNode = recordNode.SelectSingleNode("Status");
+
+                                if (dateNode != null && statusNode != null)
+                                {
+                                    string date = dateNode.InnerText;
+                                    string status = statusNode.InnerText;
+
+                                    attendanceList.Add(new AttendanceData
+                                    {
+                                        StudentID = studentID,
+                                        ClassName = className,
+                                        Date = date,
+                                        AbsentStatus = status
+                                    });
+                                }
+                                else
+                                {
+                                    Console.WriteLine("Invalid attendance record node structure");
+                                }
+                            }
+                        }
+                        else
+                        {
+                            Console.WriteLine("No attendance records found for the specified student");
+                        }
+                    }
+                    else
+                    {
+                        Console.WriteLine($"Student {studentID} not found in class {className}");
+                    }
+                }
+                else
+                {
+                    Console.WriteLine($"Class {className} not found");
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Exception during XML processing: {ex.Message}");
+            }
+
+            return attendanceList;
+        }
+        public List<Course> GetCoursesByStudentID(string studentID)
+        {
+            List<Course> enrolledCourses = new List<Course>();
+
+            try
+            {
+                XmlDocument xmlDoc = new XmlDocument();
+                xmlDoc.Load(XmlFilePath);
+
+                XmlNodeList studentNodes = xmlDoc.SelectNodes($"/AttendanceData/Class/Students/Student[StudentID='{studentID}']");
+
+                if (studentNodes != null && studentNodes.Count > 0)
+                {
+                    foreach (XmlNode studentNode in studentNodes)
+                    {
+                        XmlNode classNode = studentNode.ParentNode.ParentNode; // Get the parent class node
+
+                        if (classNode != null)
+                        {
+                            string courseID = classNode.SelectSingleNode("ClassID")?.InnerText;
+                            string courseName = classNode.SelectSingleNode("ClassName")?.InnerText;
+
+                            if (!string.IsNullOrEmpty(courseID) && !string.IsNullOrEmpty(courseName))
+                            {
+                                enrolledCourses.Add(new Course
+                                {
+                                    CourseID = courseID,
+                                    CourseName = courseName
+                                });
+                            }
+                        }
+                    }
+                }
+                else
+                {
+                    Console.WriteLine($"Student {studentID} not found in any class");
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Exception during XML processing: {ex.Message}");
+            }
+
+            return enrolledCourses;
+        }
+
 
         private XmlNode FindClassNode(XmlDocument xmlDoc, string className)
         {
             return xmlDoc.SelectSingleNode($"/AttendanceData/Class[ClassName='{className}']");
         }
-
+/*
         private XmlNode FindStudentNode(XmlDocument xmlDoc, string studentID, string studentName)
         {
             return xmlDoc.SelectSingleNode($"/AttendanceData/Class/Students/Student[StudentID='{studentID}' and StudentName='{studentName}']");
+        }*/
+        private XmlNode FindStudentNode(XmlDocument xmlDoc, string className, string studentID)
+        {
+            return xmlDoc.SelectSingleNode($"/AttendanceData/Class[ClassID='{className}']/Students/Student[StudentID='{studentID}']");
         }
+
 
         private XmlNode FindAttendanceRecord(XmlNode studentNode, string date)
         {
@@ -229,4 +347,11 @@ namespace Attendence_Management_System
             return null;
         }
     }
+}
+public class AttendanceData
+{
+    public string StudentID { get; set; }
+    public string ClassName { get; set; }
+    public string Date { get; set; }
+    public string AbsentStatus { get; set; }
 }

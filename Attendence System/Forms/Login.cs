@@ -52,7 +52,9 @@ namespace Attendence_Management_System.Forms
                         }
                         else if(role == "Student" || role=="student" )
                         {
-                            Main main = new Main(userName, role);
+                            Student main = new Student("..\\..\\..\\Resources\\Attendance.xml");
+                            main.studentID = userID;
+
                             main.Show();
 
                         }

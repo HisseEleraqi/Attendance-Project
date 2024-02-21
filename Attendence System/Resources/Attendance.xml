@@ -38,6 +38,10 @@
             <Date>2024-02-20</Date>
             <Status>Absent</Status>
           </Record>
+          <Record>
+            <Date>2024-02-08</Date>
+            <Status>Absent</Status>
+          </Record>
         </AttendanceRecords>
       </Student>
       <Student>
@@ -70,6 +74,10 @@
           </Record>
           <Record>
             <Date>2024-02-20</Date>
+            <Status>Absent</Status>
+          </Record>
+          <Record>
+            <Date>2024-02-08</Date>
             <Status>Absent</Status>
           </Record>
         </AttendanceRecords>
@@ -106,6 +114,10 @@
             <Date>2024-02-20</Date>
             <Status>Absent</Status>
           </Record>
+          <Record>
+            <Date>2024-02-08</Date>
+            <Status>Absent</Status>
+          </Record>
         </AttendanceRecords>
       </Student>
       <Student>
@@ -138,6 +150,10 @@
           </Record>
           <Record>
             <Date>2024-02-20</Date>
+            <Status>Absent</Status>
+          </Record>
+          <Record>
+            <Date>2024-02-08</Date>
             <Status>Absent</Status>
           </Record>
         </AttendanceRecords>
@@ -174,6 +190,10 @@
             <Date>2024-02-20</Date>
             <Status>Absent</Status>
           </Record>
+          <Record>
+            <Date>2024-02-08</Date>
+            <Status>Absent</Status>
+          </Record>
         </AttendanceRecords>
       </Student>
       <Student>
@@ -206,6 +226,10 @@
           </Record>
           <Record>
             <Date>2024-02-20</Date>
+            <Status>Absent</Status>
+          </Record>
+          <Record>
+            <Date>2024-02-08</Date>
             <Status>Absent</Status>
           </Record>
         </AttendanceRecords>
@@ -250,6 +274,10 @@
             <Date>2024-02-20</Date>
             <Status>Absent</Status>
           </Record>
+          <Record>
+            <Date>2024-02-08</Date>
+            <Status>Absent</Status>
+          </Record>
         </AttendanceRecords>
       </Student>
       <Student>
@@ -282,6 +310,10 @@
           </Record>
           <Record>
             <Date>2024-02-20</Date>
+            <Status>Absent</Status>
+          </Record>
+          <Record>
+            <Date>2024-02-08</Date>
             <Status>Absent</Status>
           </Record>
         </AttendanceRecords>
@@ -318,6 +350,10 @@
             <Date>2024-02-20</Date>
             <Status>Absent</Status>
           </Record>
+          <Record>
+            <Date>2024-02-08</Date>
+            <Status>Absent</Status>
+          </Record>
         </AttendanceRecords>
       </Student>
       <Student>
@@ -350,6 +386,10 @@
           </Record>
           <Record>
             <Date>2024-02-20</Date>
+            <Status>Absent</Status>
+          </Record>
+          <Record>
+            <Date>2024-02-08</Date>
             <Status>Absent</Status>
           </Record>
         </AttendanceRecords>
@@ -386,6 +426,10 @@
             <Date>2024-02-20</Date>
             <Status>Absent</Status>
           </Record>
+          <Record>
+            <Date>2024-02-08</Date>
+            <Status>Absent</Status>
+          </Record>
         </AttendanceRecords>
       </Student>
       <Student>
@@ -418,6 +462,10 @@
           </Record>
           <Record>
             <Date>2024-02-20</Date>
+            <Status>Absent</Status>
+          </Record>
+          <Record>
+            <Date>2024-02-08</Date>
             <Status>Absent</Status>
           </Record>
         </AttendanceRecords>
@@ -462,6 +510,10 @@
             <Date>2024-02-20</Date>
             <Status>Absent</Status>
           </Record>
+          <Record>
+            <Date>2024-02-08</Date>
+            <Status>Absent</Status>
+          </Record>
         </AttendanceRecords>
       </Student>
       <Student>
@@ -494,6 +546,10 @@
           </Record>
           <Record>
             <Date>2024-02-20</Date>
+            <Status>Absent</Status>
+          </Record>
+          <Record>
+            <Date>2024-02-08</Date>
             <Status>Absent</Status>
           </Record>
         </AttendanceRecords>
@@ -530,6 +586,10 @@
             <Date>2024-02-20</Date>
             <Status>Absent</Status>
           </Record>
+          <Record>
+            <Date>2024-02-08</Date>
+            <Status>Absent</Status>
+          </Record>
         </AttendanceRecords>
       </Student>
       <Student>
@@ -562,6 +622,10 @@
           </Record>
           <Record>
             <Date>2024-02-20</Date>
+            <Status>Absent</Status>
+          </Record>
+          <Record>
+            <Date>2024-02-08</Date>
             <Status>Absent</Status>
           </Record>
         </AttendanceRecords>
@@ -598,10 +662,14 @@
             <Date>2024-02-20</Date>
             <Status>Absent</Status>
           </Record>
+          <Record>
+            <Date>2024-02-08</Date>
+            <Status>Absent</Status>
+          </Record>
         </AttendanceRecords>
       </Student>
       <Student>
-        <StudentID>S115</StudentID>
+        <StudentID>S105</StudentID>
         <StudentName>Hana</StudentName>
         <AttendanceRecords>
           <Record>
@@ -630,6 +698,10 @@
           </Record>
           <Record>
             <Date>2024-02-20</Date>
+            <Status>Absent</Status>
+          </Record>
+          <Record>
+            <Date>2024-02-08</Date>
             <Status>Absent</Status>
           </Record>
         </AttendanceRecords>
