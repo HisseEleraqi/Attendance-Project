@@ -30,21 +30,25 @@ namespace Attendence_Management_System
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
             panel1 = new Panel();
             panel3 = new Panel();
             panel4 = new Panel();
-            button2 = new Button();
-            buttonReport = new Button();
+            Report = new Button();
+            panelSlide = new Panel();
+            buttonAttdance = new Button();
             buttonAddStudent = new Button();
             buttonAddClass = new Button();
-            panelSlide = new Panel();
+            Teacher = new Button();
             buttonDashBorde = new Button();
             panel2 = new Panel();
+            panel7 = new Panel();
+            panel6 = new Panel();
             label1 = new Label();
             pictureBox1 = new PictureBox();
             panelBack = new Panel();
-            panelExpamd = new Panel();
+            panelExpand = new Panel();
             buttonLogOut = new Button();
             panel5 = new Panel();
             button1 = new Button();
@@ -52,17 +56,22 @@ namespace Attendence_Management_System
             pictureBox2 = new PictureBox();
             panelTop = new Panel();
             UserName = new Label();
+            userControDashBoard1 = new Attendence_System.Forms.UserControls.UserControDashBoard();
+            toolTip1 = new ToolTip(components);
+            userControlAddClass1 = new Attendence_System.Forms.UserControls.UserControlAddClass();
+            panel8 = new Panel();
             panel1.SuspendLayout();
             panel3.SuspendLayout();
             panel4.SuspendLayout();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panelBack.SuspendLayout();
-            panelExpamd.SuspendLayout();
+            panelExpand.SuspendLayout();
             panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBoxExpand).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             panelTop.SuspendLayout();
+            panel8.SuspendLayout();
             SuspendLayout();
             // 
             // panel1
@@ -73,7 +82,7 @@ namespace Attendence_Management_System
             panel1.Dock = DockStyle.Left;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(258, 720);
+            panel1.Size = new Size(258, 923);
             panel1.TabIndex = 0;
             // 
             // panel3
@@ -82,78 +91,39 @@ namespace Attendence_Management_System
             panel3.Dock = DockStyle.Left;
             panel3.Location = new Point(0, 180);
             panel3.Name = "panel3";
-            panel3.Size = new Size(258, 540);
+            panel3.Size = new Size(258, 743);
             panel3.TabIndex = 1;
             // 
             // panel4
             // 
-            panel4.Controls.Add(button2);
-            panel4.Controls.Add(buttonReport);
+            panel4.BackColor = Color.FromArgb(255, 224, 192);
+            panel4.Controls.Add(Report);
+            panel4.Controls.Add(panelSlide);
+            panel4.Controls.Add(buttonAttdance);
             panel4.Controls.Add(buttonAddStudent);
             panel4.Controls.Add(buttonAddClass);
-            panel4.Controls.Add(panelSlide);
+            panel4.Controls.Add(Teacher);
             panel4.Controls.Add(buttonDashBorde);
             panel4.Dock = DockStyle.Left;
             panel4.Location = new Point(0, 0);
             panel4.Name = "panel4";
-            panel4.Size = new Size(258, 540);
+            panel4.Size = new Size(258, 743);
             panel4.TabIndex = 2;
             // 
-            // button2
+            // Report
             // 
-            button2.Dock = DockStyle.Top;
-            button2.FlatAppearance.BorderSize = 0;
-            button2.FlatStyle = FlatStyle.Flat;
-            button2.ForeColor = Color.White;
-            button2.Location = new Point(0, 188);
-            button2.Name = "button2";
-            button2.Size = new Size(258, 47);
-            button2.TabIndex = 2;
-            button2.Text = "Report";
-            button2.TextImageRelation = TextImageRelation.ImageAboveText;
-            button2.UseVisualStyleBackColor = true;
-            // 
-            // buttonReport
-            // 
-            buttonReport.Dock = DockStyle.Top;
-            buttonReport.FlatAppearance.BorderSize = 0;
-            buttonReport.FlatStyle = FlatStyle.Flat;
-            buttonReport.ForeColor = Color.White;
-            buttonReport.Location = new Point(0, 141);
-            buttonReport.Name = "buttonReport";
-            buttonReport.Size = new Size(258, 47);
-            buttonReport.TabIndex = 1;
-            buttonReport.Text = "Teacher ";
-            buttonReport.TextImageRelation = TextImageRelation.ImageAboveText;
-            buttonReport.UseVisualStyleBackColor = true;
-            // 
-            // buttonAddStudent
-            // 
-            buttonAddStudent.Dock = DockStyle.Top;
-            buttonAddStudent.FlatAppearance.BorderSize = 0;
-            buttonAddStudent.FlatStyle = FlatStyle.Flat;
-            buttonAddStudent.ForeColor = Color.White;
-            buttonAddStudent.Location = new Point(0, 94);
-            buttonAddStudent.Name = "buttonAddStudent";
-            buttonAddStudent.Size = new Size(258, 47);
-            buttonAddStudent.TabIndex = 0;
-            buttonAddStudent.Text = "Add student";
-            buttonAddStudent.TextImageRelation = TextImageRelation.ImageAboveText;
-            buttonAddStudent.UseVisualStyleBackColor = true;
-            // 
-            // buttonAddClass
-            // 
-            buttonAddClass.Dock = DockStyle.Top;
-            buttonAddClass.FlatAppearance.BorderSize = 0;
-            buttonAddClass.FlatStyle = FlatStyle.Flat;
-            buttonAddClass.ForeColor = Color.White;
-            buttonAddClass.Location = new Point(0, 47);
-            buttonAddClass.Name = "buttonAddClass";
-            buttonAddClass.Size = new Size(258, 47);
-            buttonAddClass.TabIndex = 0;
-            buttonAddClass.Text = "Add Class";
-            buttonAddClass.TextImageRelation = TextImageRelation.ImageAboveText;
-            buttonAddClass.UseVisualStyleBackColor = true;
+            Report.Dock = DockStyle.Top;
+            Report.FlatAppearance.BorderSize = 0;
+            Report.FlatStyle = FlatStyle.Flat;
+            Report.ForeColor = Color.White;
+            Report.Location = new Point(0, 235);
+            Report.Name = "Report";
+            Report.Size = new Size(258, 47);
+            Report.TabIndex = 3;
+            Report.Text = "Report";
+            Report.TextImageRelation = TextImageRelation.ImageAboveText;
+            Report.UseVisualStyleBackColor = true;
+            Report.Click += Report_Click;
             // 
             // panelSlide
             // 
@@ -162,6 +132,65 @@ namespace Attendence_Management_System
             panelSlide.Name = "panelSlide";
             panelSlide.Size = new Size(8, 47);
             panelSlide.TabIndex = 0;
+            // 
+            // buttonAttdance
+            // 
+            buttonAttdance.Dock = DockStyle.Top;
+            buttonAttdance.FlatAppearance.BorderSize = 0;
+            buttonAttdance.FlatStyle = FlatStyle.Flat;
+            buttonAttdance.ForeColor = Color.White;
+            buttonAttdance.Location = new Point(0, 188);
+            buttonAttdance.Name = "buttonAttdance";
+            buttonAttdance.Size = new Size(258, 47);
+            buttonAttdance.TabIndex = 0;
+            buttonAttdance.Text = "Attdance";
+            buttonAttdance.TextImageRelation = TextImageRelation.ImageAboveText;
+            buttonAttdance.UseVisualStyleBackColor = true;
+            // 
+            // buttonAddStudent
+            // 
+            buttonAddStudent.Dock = DockStyle.Top;
+            buttonAddStudent.FlatAppearance.BorderSize = 0;
+            buttonAddStudent.FlatStyle = FlatStyle.Flat;
+            buttonAddStudent.ForeColor = Color.White;
+            buttonAddStudent.Location = new Point(0, 141);
+            buttonAddStudent.Name = "buttonAddStudent";
+            buttonAddStudent.Size = new Size(258, 47);
+            buttonAddStudent.TabIndex = 0;
+            buttonAddStudent.Text = "Add student";
+            buttonAddStudent.TextImageRelation = TextImageRelation.ImageAboveText;
+            buttonAddStudent.UseVisualStyleBackColor = true;
+            buttonAddStudent.Click += buttonAddStudent_Click;
+            // 
+            // buttonAddClass
+            // 
+            buttonAddClass.Dock = DockStyle.Top;
+            buttonAddClass.FlatAppearance.BorderSize = 0;
+            buttonAddClass.FlatStyle = FlatStyle.Flat;
+            buttonAddClass.ForeColor = Color.White;
+            buttonAddClass.Location = new Point(0, 94);
+            buttonAddClass.Name = "buttonAddClass";
+            buttonAddClass.Size = new Size(258, 47);
+            buttonAddClass.TabIndex = 1;
+            buttonAddClass.Text = "Add class";
+            buttonAddClass.TextImageRelation = TextImageRelation.ImageAboveText;
+            buttonAddClass.UseVisualStyleBackColor = true;
+            buttonAddClass.Click += addClass_Click;
+            // 
+            // Teacher
+            // 
+            Teacher.Dock = DockStyle.Top;
+            Teacher.FlatAppearance.BorderSize = 0;
+            Teacher.FlatStyle = FlatStyle.Flat;
+            Teacher.ForeColor = Color.White;
+            Teacher.Location = new Point(0, 47);
+            Teacher.Name = "Teacher";
+            Teacher.Size = new Size(258, 47);
+            Teacher.TabIndex = 2;
+            Teacher.Text = "Teacher";
+            Teacher.TextImageRelation = TextImageRelation.ImageAboveText;
+            Teacher.UseVisualStyleBackColor = true;
+            Teacher.Click += Teacher_Click;
             // 
             // buttonDashBorde
             // 
@@ -180,6 +209,9 @@ namespace Attendence_Management_System
             // 
             // panel2
             // 
+            panel2.BackColor = Color.FromArgb(255, 224, 192);
+            panel2.Controls.Add(panel7);
+            panel2.Controls.Add(panel6);
             panel2.Controls.Add(label1);
             panel2.Controls.Add(pictureBox1);
             panel2.Dock = DockStyle.Top;
@@ -187,6 +219,20 @@ namespace Attendence_Management_System
             panel2.Name = "panel2";
             panel2.Size = new Size(258, 180);
             panel2.TabIndex = 0;
+            // 
+            // panel7
+            // 
+            panel7.Location = new Point(258, 161);
+            panel7.Name = "panel7";
+            panel7.Size = new Size(1186, 514);
+            panel7.TabIndex = 7;
+            // 
+            // panel6
+            // 
+            panel6.Location = new Point(258, 158);
+            panel6.Name = "panel6";
+            panel6.Size = new Size(1130, 765);
+            panel6.TabIndex = 5;
             // 
             // label1
             // 
@@ -200,6 +246,7 @@ namespace Attendence_Management_System
             // 
             // pictureBox1
             // 
+            pictureBox1.Image = Attendence_System.Properties.Resources.logo;
             pictureBox1.Location = new Point(55, 3);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(119, 67);
@@ -210,7 +257,7 @@ namespace Attendence_Management_System
             // 
             // panelBack
             // 
-            panelBack.Controls.Add(panelExpamd);
+            panelBack.Controls.Add(panelExpand);
             panelBack.Controls.Add(pictureBoxExpand);
             panelBack.Controls.Add(pictureBox2);
             panelBack.Controls.Add(panelTop);
@@ -219,23 +266,23 @@ namespace Attendence_Management_System
             panelBack.Size = new Size(942, 165);
             panelBack.TabIndex = 1;
             // 
-            // panelExpamd
+            // panelExpand
             // 
-            panelExpamd.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            panelExpamd.BackColor = Color.FromArgb(67, 3, 125);
-            panelExpamd.Controls.Add(buttonLogOut);
-            panelExpamd.Controls.Add(panel5);
-            panelExpamd.Location = new Point(733, 74);
-            panelExpamd.Name = "panelExpamd";
-            panelExpamd.Size = new Size(200, 88);
-            panelExpamd.TabIndex = 4;
+            panelExpand.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            panelExpand.BackColor = Color.Firebrick;
+            panelExpand.Controls.Add(buttonLogOut);
+            panelExpand.Controls.Add(panel5);
+            panelExpand.Location = new Point(733, 74);
+            panelExpand.Name = "panelExpand";
+            panelExpand.Size = new Size(200, 88);
+            panelExpand.TabIndex = 4;
             // 
             // buttonLogOut
             // 
-            buttonLogOut.BackColor = Color.White;
+            buttonLogOut.BackColor = Color.IndianRed;
             buttonLogOut.Cursor = Cursors.Hand;
             buttonLogOut.Dock = DockStyle.Bottom;
-            buttonLogOut.ForeColor = Color.FromArgb(67, 3, 125);
+            buttonLogOut.ForeColor = Color.White;
             buttonLogOut.Location = new Point(0, 45);
             buttonLogOut.Name = "buttonLogOut";
             buttonLogOut.Size = new Size(200, 43);
@@ -255,8 +302,9 @@ namespace Attendence_Management_System
             // 
             // button1
             // 
-            button1.BackColor = Color.White;
+            button1.BackColor = Color.IndianRed;
             button1.Dock = DockStyle.Top;
+            button1.ForeColor = Color.White;
             button1.Location = new Point(0, 0);
             button1.Name = "button1";
             button1.Size = new Size(200, 49);
@@ -269,26 +317,28 @@ namespace Attendence_Management_System
             // 
             pictureBoxExpand.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             pictureBoxExpand.Image = (Image)resources.GetObject("pictureBoxExpand.Image");
-            pictureBoxExpand.Location = new Point(836, 46);
+            pictureBoxExpand.Location = new Point(846, 44);
             pictureBoxExpand.Name = "pictureBoxExpand";
             pictureBoxExpand.Size = new Size(27, 24);
             pictureBoxExpand.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBoxExpand.TabIndex = 2;
             pictureBoxExpand.TabStop = false;
+            pictureBoxExpand.Click += pictureBoxExpand_Click;
             // 
             // pictureBox2
             // 
             pictureBox2.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            pictureBox2.Image = Attendence_System.Properties.Resources.logo;
             pictureBox2.Location = new Point(733, 3);
             pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(140, 67);
+            pictureBox2.Size = new Size(153, 67);
             pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox2.TabIndex = 1;
             pictureBox2.TabStop = false;
             // 
             // panelTop
             // 
-            panelTop.BackColor = Color.FromArgb(67, 3, 125);
+            panelTop.BackColor = Color.DarkSalmon;
             panelTop.Controls.Add(UserName);
             panelTop.Dock = DockStyle.Bottom;
             panelTop.Location = new Point(0, 77);
@@ -306,12 +356,45 @@ namespace Attendence_Management_System
             UserName.TabIndex = 3;
             UserName.Text = "Welcome:?";
             // 
+            // userControDashBoard1
+            // 
+            userControDashBoard1.BackColor = Color.Tan;
+            userControDashBoard1.Dock = DockStyle.Fill;
+            userControDashBoard1.Font = new Font("Century Gothic", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            userControDashBoard1.Location = new Point(0, 0);
+            userControDashBoard1.Margin = new Padding(4, 3, 4, 3);
+            userControDashBoard1.Name = "userControDashBoard1";
+            userControDashBoard1.Size = new Size(1183, 777);
+            userControDashBoard1.TabIndex = 0;
+            userControDashBoard1.Load += userControDashBoard1_Load;
+            // 
+            // userControlAddClass1
+            // 
+            userControlAddClass1.Dock = DockStyle.Fill;
+            userControlAddClass1.Font = new Font("Century Gothic", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            userControlAddClass1.Location = new Point(0, 0);
+            userControlAddClass1.Margin = new Padding(4, 3, 4, 3);
+            userControlAddClass1.Name = "userControlAddClass1";
+            userControlAddClass1.RightToLeft = RightToLeft.No;
+            userControlAddClass1.Size = new Size(1183, 777);
+            userControlAddClass1.TabIndex = 6;
+            // 
+            // panel8
+            // 
+            panel8.Controls.Add(userControDashBoard1);
+            panel8.Controls.Add(userControlAddClass1);
+            panel8.Location = new Point(261, 169);
+            panel8.Name = "panel8";
+            panel8.Size = new Size(1183, 777);
+            panel8.TabIndex = 2;
+            // 
             // Main
             // 
             AutoScaleDimensions = new SizeF(12F, 23F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.White;
-            ClientSize = new Size(1200, 720);
+            BackColor = Color.Tan;
+            ClientSize = new Size(1444, 923);
+            Controls.Add(panel8);
             Controls.Add(panelBack);
             Controls.Add(panel1);
             Font = new Font("Century Gothic", 12F, FontStyle.Bold);
@@ -322,6 +405,7 @@ namespace Attendence_Management_System
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Attdance Mangment System";
             WindowState = FormWindowState.Maximized;
+            Load += Main_Load;
             panel1.ResumeLayout(false);
             panel3.ResumeLayout(false);
             panel4.ResumeLayout(false);
@@ -329,12 +413,13 @@ namespace Attendence_Management_System
             panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             panelBack.ResumeLayout(false);
-            panelExpamd.ResumeLayout(false);
+            panelExpand.ResumeLayout(false);
             panel5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBoxExpand).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             panelTop.ResumeLayout(false);
             panelTop.PerformLayout();
+            panel8.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -358,18 +443,25 @@ namespace Attendence_Management_System
         private Panel panel3;
         private Panel panel4;
         private Panel panelSlide;
-        private Panel panelTop;
         private Button buttonDashBorde;
+        private Button buttonAttdance;
         private Button buttonAddClass;
-        private Button buttonReport;
         private Button buttonAddStudent;
         private PictureBox pictureBox2;
         private PictureBox pictureBoxExpand;
-        private Panel panelExpamd;
+        private Panel panelExpand;
         private Label UserName;
         private Panel panel5;
         private Button button1;
         private Button buttonLogOut;
-        private Button button2;
+        private Button Teacher;
+        private Button Report;
+        private Attendence_System.Forms.UserControls.UserControDashBoard userControDashBoard1;
+        private ToolTip toolTip1;
+        private Panel panel6;
+        private Attendence_System.Forms.UserControls.UserControlAddClass userControlAddClass1;
+        private Panel panelTop;
+        private Panel panel7;
+        private Panel panel8;
     }
 }

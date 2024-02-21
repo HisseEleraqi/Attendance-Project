@@ -106,7 +106,6 @@ namespace Attendence_Management_System.Forms
             label1.Size = new Size(296, 31);
             label1.TabIndex = 0;
             label1.Text = "Login To Your Account";
-            label1.Click += label1_Click;
             // 
             // panel2
             // 
@@ -230,7 +229,6 @@ namespace Attendence_Management_System.Forms
             ErrorMessage.Size = new Size(238, 20);
             ErrorMessage.TabIndex = 0;
             ErrorMessage.Text = "Login To Your Account";
-            ErrorMessage.Click += label1_Click;
             // 
             // closeButton
             // 

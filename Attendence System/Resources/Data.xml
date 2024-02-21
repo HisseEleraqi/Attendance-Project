@@ -1,105 +1,627 @@
-<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <school>
-
-	<attendance-records>
-		<attendance-record>
-			<date>2024-02-16</date>
-			<class>
-				<id>CL-1</id>
-			</class>
-			<student id="ST-1">
-				<status>Present</status>
-			</student>
-			<student id="ST-2">
-				<status>Absent</status>
-			</student>
-		</attendance-record>
-	</attendance-records>
-	
-	<students>
-		<student id="ST-1">
-			<name>Selmy1</name>
-			<classes>
-				<class id="CL-1"/>
-				<class id="CL-2"/>
-			</classes>
-		</student>
-		<student id="ST-2">
-			<name>Selmy2</name>
-			<classes>
-				<class id="CL-1"/>
-				<class id="CL-2"/>
-			</classes>
-		</student>
-		<student id="ST-3">
-			<name>Selmy3</name>
-			<classes>
-				<class id="CL-1"/>
-				<class id="CL-2"/>
-			</classes>
-		</student>
-	</students>	
-	
-	<teachers>
-		<teacher id="TE-1">
-			<name>Nada</name>
-			<courses>
-				<course id="CL-1"/>
-				<course id="CL-2"/>
-			</courses>
-		</teacher>
-	</teachers>
-	
-	<admins>
-		<admin id="AD-1">
-			<name>Nayira</name>
-		</admin>
-	</admins>
-	
-	<users>
-		<user>
-			<id>ST-1</id>
-			<email>selmy@gmail.com</email>
-			<password>selmy</password>
-			<role>Student</role>
-			<warning>false</warning>
-			<fired>false</fired>
-		</user>
-		
-		<user>
-			<id>TE-1</id>
-			<email>nada@gmail.com</email>
-			<password>nada</password>
-			<role>Teacher</role>
-		</user>
-		
-		<user>
-			<id>AD-1</id>
-			<email>nayira@gmail.com</email>
-			<password>nayira</password>
-			<role>Admin</role>
-		</user>
-	</users>
-	
-	<classes>
-		<class>
-			<id>CL-1</id>
-			<name>Math</name>
-			<teacher id="TE-1"/>
-			<student id="ST-1"/>
-			<student id="ST-2"/>
-			<student id="ST-3"/>
-		</class>
-	</classes>
-	
-	<session>
-		<user id="ST-1"/>
-	</session>
-	
-	<configs>
-		<language>EN</language>
-		<dateFormats>DD-MM-YYYY</dateFormats>
-		<coolDown>false</coolDown>
-		<coolDownStartDate>0</coolDownStartDate>
-	</configs>
+  <attendance-records>
+    <attendance-record>
+      <date>2024-02-16</date>
+      <class>
+        <id>CL-1</id>
+      </class>
+      <student id="ST-1">
+        <status>Present</status>
+      </student>
+      <student id="ST-2">
+        <status>Absent</status>
+      </student>
+    </attendance-record>
+  </attendance-records>
+  <students>
+    <student id="ST-1">
+      <name>Ebrahim</name>
+      <classes>
+        <class id="CL-1" />
+        <class id="CL-2" />
+      </classes>
+    </student>
+    <student id="ST-2">
+      <name>Hissen</name>
+      <classes>
+        <class id="CL-1" />
+        <class id="CL-2" />
+      </classes>
+    </student>
+    <student id="ST-3">
+      <name>3sawy</name>
+      <classes>
+        <class id="CL-1" />
+        <class id="CL-2" />
+      </classes>
+    </student>
+    <student id="ad716a08-c6f6-46f2-a8b1-5bb04f35821d">test</student>
+    <student id="c4cbbebe-9614-4651-adfd-7ce4cc235960">
+      <name>test</name>
+    </student>
+    <student id="44358112-9e5d-417c-997e-b668afd69442">
+      <name>test</name>
+    </student>
+    <student id="7c57210a-661e-4579-83dd-631cee472e1c">
+      <name>test</name>
+    </student>
+    <student id="b29178c8-69d7-4095-903f-a8ab8d1edeba">
+      <name>test</name>
+    </student>
+    <student id="71ef0ef7-f5dd-467e-a6ee-eeb0fd257ee9">
+      <name>test</name>
+    </student>
+    <student id="d6f08b28-1a7c-406d-9aca-8ba4bdf04e5b">
+      <name>test</name>
+    </student>
+    <student id="b1c49369-d5f0-466e-98d7-a1a22336f066">
+      <name>test</name>
+    </student>
+    <student id="31e94a68-e66a-4314-8be6-bcc6ed7a88b0">
+      <name>test</name>
+    </student>
+    <student id="e20418c2-f668-4fb2-a677-8d0b3a78f6ec">
+      <name>test</name>
+    </student>
+    <student id="fce5c7f9-726c-45e3-978e-49a349070fac">
+      <name>test</name>
+    </student>
+    <student id="9c84e6c2-d428-4c9b-8829-64d04159e0c7">
+      <name>test</name>
+    </student>
+    <student id="4618b23a-356c-4ccd-912c-7ad931445826">
+      <name>test</name>
+    </student>
+    <student id="6d48f317-c345-4f03-926d-b868058b03ea">
+      <name>test</name>
+    </student>
+    <student id="cc6a2667-4fde-456e-b928-815cda4c6d35">
+      <name>test</name>
+    </student>
+    <student id="6cc09856-b211-47dd-97bc-fb35d25171bf">
+      <name>test</name>
+    </student>
+    <student id="d2d82317-c5a1-409c-8606-fbb4ac3aa9af">
+      <name>test</name>
+    </student>
+    <student id="40875183-4926-4424-a3c1-51f1f9d88a9c">
+      <name>test</name>
+    </student>
+    <student id="12ebc56e-81f2-4442-ae2d-74a60943f653">
+      <name>test</name>
+    </student>
+    <student id="e78246b3-ba37-4b0f-9daf-704f4a6c15d2">
+      <name>test</name>
+    </student>
+    <student id="c0febd21-e842-46f7-a8dc-018089f1ac0b">
+      <name>test</name>
+    </student>
+    <student id="4c5f75fa-40de-4c8a-924f-173e20a90453">
+      <name>test</name>
+    </student>
+    <student id="0546d64e-d690-4f05-8f5e-499e1ecdd4d8">
+      <name>test</name>
+    </student>
+    <student id="aea8e7f6-eeed-4444-9c6e-b4b21ed9b6af">
+      <name>test</name>
+    </student>
+    <student id="294082fd-0635-4793-bf0c-92d1856d4ceb">
+      <name>test</name>
+    </student>
+    <student id="bdd47ca7-d1e5-45e8-868e-d49449e39965">
+      <name>test</name>
+    </student>
+    <student id="8796c06d-7d1d-4cff-bca8-16757e91001c">
+      <name>test</name>
+    </student>
+    <student id="6705f061-4c04-4254-ba40-c1221f3efb8e">
+      <name>test</name>
+    </student>
+    <student id="2cb4c3b9-0051-4481-bbcb-6a99c350e4a0">
+      <name>test</name>
+    </student>
+    <student id="3296d3ea-87aa-4820-855d-40d52541dbf5">
+      <name>test</name>
+    </student>
+    <student id="d5caa096-b8c1-4840-b0e8-4797d5d3b45d">
+      <name>test</name>
+    </student>
+    <student id="77261917-ab9e-425c-bb43-5b81dfa85b11">
+      <name>test</name>
+    </student>
+    <student id="6ce99613-be6f-442b-97d0-c024f7936045">
+      <name>test</name>
+    </student>
+    <student id="87c230a5-f995-46cf-ba7e-d12797681c80">
+      <name>test</name>
+    </student>
+    <student id="469a69ee-6ff7-48f4-85ee-9ee6ee1dd502">
+      <name>test</name>
+    </student>
+    <student id="32a781be-0488-4099-ab49-e0aa80c230d0">
+      <name>test</name>
+    </student>
+    <student id="9705c586-2224-4e0b-bb9c-2b936747ca5a">
+      <name>test</name>
+    </student>
+    <student id="99876fb3-7915-4494-9dd0-778a43be3132">
+      <name>test</name>
+    </student>
+    <student id="eb903a76-2153-4957-a39e-e6c732e446b9">
+      <name>test</name>
+    </student>
+    <student id="c8e84f87-a43a-4e97-92b2-118dbc2912b5">
+      <name>test</name>
+    </student>
+    <student id="b24d1caf-743c-4422-9965-7139b584a421">
+      <name>test</name>
+    </student>
+    <student id="2aec51a0-a6ba-42e7-8aa9-1d8be9b4e05f">
+      <name>test</name>
+    </student>
+    <student id="ca1a875f-656d-4287-bc67-153ccad16023">
+      <name>test</name>
+    </student>
+    <student id="51cc22d4-90da-443b-a885-ff4d0d7f15a5">
+      <name>test</name>
+    </student>
+    <student id="49278b22-adb6-4966-b1ba-c6312f2ff356">
+      <name>test</name>
+    </student>
+    <student id="c97449b4-1c7a-4618-aeac-9bbffedca817">
+      <name>test</name>
+    </student>
+    <student id="f153f852-3d43-441b-a8d3-4b9d06ad68aa">
+      <name>test</name>
+    </student>
+    <student id="5fdc9091-5c6c-4c52-ab7b-90506281e68d">
+      <name>test</name>
+    </student>
+    <student id="2c2d5664-883a-4675-abc1-60d530154060">
+      <name>test</name>
+    </student>
+    <student id="6eb46df3-fb47-45a8-9db1-87c18605b1e6">
+      <name>test</name>
+    </student>
+    <student id="df2ab356-c39f-49b5-893a-af9521568a56">
+      <name>test</name>
+    </student>
+  </students>
+  <teachers>
+    <teacher id="TE-1">
+      <name>Hema</name>
+      <courses>
+        <course id="CL-1" />
+        <course id="CL-2" />
+      </courses>
+    </teacher>
+  </teachers>
+  <admins>
+    <admin id="AD-1">
+      <name>Hissen</name>
+    </admin>
+  </admins>
+  <users>
+    <user>
+      <id>ST-1</id>
+      <username>Ebrahim Dawoud</username>
+      <email>hema</email>
+      <password>123</password>
+      <role>student</role>
+      <warning>false</warning>
+      <fired>false</fired>
+    </user>
+    <user>
+      <id>T001</id>
+      <username>Ahmed El3sawy</username>
+      <email>esawy</email>
+      <password>123</password>
+      <role>Teacher</role>
+    </user>
+    <user>
+      <id>T002</id>
+      <username>Ahmed El3sawy</username>
+      <email>esawy2</email>
+      <password>123</password>
+      <role>Teacher</role>
+    </user>
+    <user>
+      <id>S101</id>
+      <username>Ahmed El3sawy</username>
+      <email>esawy3</email>
+      <password>123</password>
+      <role>Student</role>
+    </user>
+    <user>
+      <id>AD-1</id>
+      <username>Hissen Eleraqi</username>
+      <email>hissen</email>
+      <password>123</password>
+      <role>Admin</role>
+    </user>
+    <user>
+      <id>60e3ec02-02d3-4c30-b618-edd728094c28</id>
+      <username>test</username>
+      <role>student</role>
+      <password>123</password>
+      <email>hema@example.com</email>
+    </user>
+    <user>
+      <id>ad716a08-c6f6-46f2-a8b1-5bb04f35821d</id>
+      <username>test</username>
+      <role>student</role>
+      <password>123</password>
+      <email>hema@example.com</email>
+    </user>
+    <user>
+      <id>c4cbbebe-9614-4651-adfd-7ce4cc235960</id>
+      <username>test</username>
+      <role>student</role>
+      <password>123</password>
+      <email>hema@example.com</email>
+    </user>
+    <user>
+      <id>44358112-9e5d-417c-997e-b668afd69442</id>
+      <username>test</username>
+      <role>student</role>
+      <password>123</password>
+      <email>hema@example.com</email>
+    </user>
+    <user>
+      <id>7c57210a-661e-4579-83dd-631cee472e1c</id>
+      <username>test</username>
+      <role>student</role>
+      <password>123</password>
+      <email>hema@example.com</email>
+    </user>
+    <user>
+      <id>b29178c8-69d7-4095-903f-a8ab8d1edeba</id>
+      <username>test</username>
+      <role>student</role>
+      <password>123</password>
+      <email>hema@example.com</email>
+    </user>
+    <user>
+      <id>71ef0ef7-f5dd-467e-a6ee-eeb0fd257ee9</id>
+      <username>test</username>
+      <role>student</role>
+      <password>123</password>
+      <email>hema@example.com</email>
+    </user>
+    <user>
+      <id>d6f08b28-1a7c-406d-9aca-8ba4bdf04e5b</id>
+      <username>test</username>
+      <role>student</role>
+      <password>123</password>
+      <email>hema@example.com</email>
+    </user>
+    <user>
+      <id>b1c49369-d5f0-466e-98d7-a1a22336f066</id>
+      <username>test_t</username>
+      <role>teacher</role>
+      <password>123</password>
+      <email>hema@example.com</email>
+    </user>
+    <user>
+      <id>31e94a68-e66a-4314-8be6-bcc6ed7a88b0</id>
+      <username>test</username>
+      <role>student</role>
+      <password>123</password>
+      <email>hema@example.com</email>
+    </user>
+    <user>
+      <id>e20418c2-f668-4fb2-a677-8d0b3a78f6ec</id>
+      <username>test</username>
+      <role>student</role>
+      <password>123</password>
+      <email>hema@example.com</email>
+    </user>
+    <user>
+      <id>fce5c7f9-726c-45e3-978e-49a349070fac</id>
+      <username>test</username>
+      <role>student</role>
+      <password>123</password>
+      <email>hema@example.com</email>
+    </user>
+    <user>
+      <id>9c84e6c2-d428-4c9b-8829-64d04159e0c7</id>
+      <username>test</username>
+      <role>student</role>
+      <password>123</password>
+      <email>hema@example.com</email>
+    </user>
+    <user>
+      <id>4618b23a-356c-4ccd-912c-7ad931445826</id>
+      <username>test</username>
+      <role>student</role>
+      <password>123</password>
+      <email>hema@example.com</email>
+    </user>
+    <user>
+      <id>6d48f317-c345-4f03-926d-b868058b03ea</id>
+      <username>test</username>
+      <role>student</role>
+      <password>123</password>
+      <email>hema@example.com</email>
+    </user>
+    <user>
+      <id>cc6a2667-4fde-456e-b928-815cda4c6d35</id>
+      <username>test</username>
+      <role>student</role>
+      <password>123</password>
+      <email>hema@example.com</email>
+    </user>
+    <user>
+      <id>6cc09856-b211-47dd-97bc-fb35d25171bf</id>
+      <username>test</username>
+      <role>student</role>
+      <password>123</password>
+      <email>hema@example.com</email>
+    </user>
+    <user>
+      <id>d2d82317-c5a1-409c-8606-fbb4ac3aa9af</id>
+      <username>test</username>
+      <role>student</role>
+      <password>123</password>
+      <email>hema@example.com</email>
+    </user>
+    <user>
+      <id>40875183-4926-4424-a3c1-51f1f9d88a9c</id>
+      <username>test</username>
+      <role>student</role>
+      <password>123</password>
+      <email>hema@example.com</email>
+    </user>
+    <user>
+      <id>12ebc56e-81f2-4442-ae2d-74a60943f653</id>
+      <username>test</username>
+      <role>student</role>
+      <password>123</password>
+      <email>hema@example.com</email>
+    </user>
+    <user>
+      <id>e78246b3-ba37-4b0f-9daf-704f4a6c15d2</id>
+      <username>test</username>
+      <role>student</role>
+      <password>123</password>
+      <email>hema@example.com</email>
+    </user>
+    <user>
+      <id>c0febd21-e842-46f7-a8dc-018089f1ac0b</id>
+      <username>test</username>
+      <role>student</role>
+      <password>123</password>
+      <email>hema@example.com</email>
+    </user>
+    <user>
+      <id>4c5f75fa-40de-4c8a-924f-173e20a90453</id>
+      <username>test</username>
+      <role>student</role>
+      <password>123</password>
+      <email>hema@example.com</email>
+    </user>
+    <user>
+      <id>0546d64e-d690-4f05-8f5e-499e1ecdd4d8</id>
+      <username>test</username>
+      <role>student</role>
+      <password>123</password>
+      <email>hema@example.com</email>
+    </user>
+    <user>
+      <id>aea8e7f6-eeed-4444-9c6e-b4b21ed9b6af</id>
+      <username>test</username>
+      <role>student</role>
+      <password>123</password>
+      <email>hema@example.com</email>
+    </user>
+    <user>
+      <id>294082fd-0635-4793-bf0c-92d1856d4ceb</id>
+      <username>test</username>
+      <role>student</role>
+      <password>123</password>
+      <email>hema@example.com</email>
+    </user>
+    <user>
+      <id>bdd47ca7-d1e5-45e8-868e-d49449e39965</id>
+      <username>test</username>
+      <role>student</role>
+      <password>123</password>
+      <email>hema@example.com</email>
+    </user>
+    <user>
+      <id>8796c06d-7d1d-4cff-bca8-16757e91001c</id>
+      <username>test</username>
+      <role>student</role>
+      <password>123</password>
+      <email>hema@example.com</email>
+    </user>
+    <user>
+      <id>6705f061-4c04-4254-ba40-c1221f3efb8e</id>
+      <username>test</username>
+      <role>student</role>
+      <password>123</password>
+      <email>hema@example.com</email>
+    </user>
+    <user>
+      <id>2cb4c3b9-0051-4481-bbcb-6a99c350e4a0</id>
+      <username>test</username>
+      <role>student</role>
+      <password>123</password>
+      <email>hema@example.com</email>
+    </user>
+    <user>
+      <id>3296d3ea-87aa-4820-855d-40d52541dbf5</id>
+      <username>test</username>
+      <role>student</role>
+      <password>123</password>
+      <email>hema@example.com</email>
+    </user>
+    <user>
+      <id>d5caa096-b8c1-4840-b0e8-4797d5d3b45d</id>
+      <username>test</username>
+      <role>student</role>
+      <password>123</password>
+      <email>hema@example.com</email>
+    </user>
+    <user>
+      <id>77261917-ab9e-425c-bb43-5b81dfa85b11</id>
+      <username>test</username>
+      <role>student</role>
+      <password>123</password>
+      <email>hema@example.com</email>
+    </user>
+    <user>
+      <id>6ce99613-be6f-442b-97d0-c024f7936045</id>
+      <username>test</username>
+      <role>student</role>
+      <password>123</password>
+      <email>hema@example.com</email>
+    </user>
+    <user>
+      <id>87c230a5-f995-46cf-ba7e-d12797681c80</id>
+      <username>test</username>
+      <role>student</role>
+      <password>123</password>
+      <email>hema@example.com</email>
+    </user>
+    <user>
+      <id>469a69ee-6ff7-48f4-85ee-9ee6ee1dd502</id>
+      <username>test</username>
+      <role>student</role>
+      <password>123</password>
+      <email>hema@example.com</email>
+    </user>
+    <user>
+      <id>32a781be-0488-4099-ab49-e0aa80c230d0</id>
+      <username>test</username>
+      <role>student</role>
+      <password>123</password>
+      <email>hema@example.com</email>
+    </user>
+    <user>
+      <id>9705c586-2224-4e0b-bb9c-2b936747ca5a</id>
+      <username>test</username>
+      <role>student</role>
+      <password>123</password>
+      <email>hema@example.com</email>
+    </user>
+    <user>
+      <id>99876fb3-7915-4494-9dd0-778a43be3132</id>
+      <username>test</username>
+      <role>student</role>
+      <password>123</password>
+      <email>hema@example.com</email>
+    </user>
+    <user>
+      <id>eb903a76-2153-4957-a39e-e6c732e446b9</id>
+      <username>test</username>
+      <role>student</role>
+      <password>123</password>
+      <email>hema@example.com</email>
+    </user>
+    <user>
+      <id>c8e84f87-a43a-4e97-92b2-118dbc2912b5</id>
+      <username>test</username>
+      <role>student</role>
+      <password>123</password>
+      <email>hema@example.com</email>
+    </user>
+    <user>
+      <id>b24d1caf-743c-4422-9965-7139b584a421</id>
+      <username>test</username>
+      <role>student</role>
+      <password>123</password>
+      <email>hema@example.com</email>
+    </user>
+    <user>
+      <id>2aec51a0-a6ba-42e7-8aa9-1d8be9b4e05f</id>
+      <username>test</username>
+      <role>student</role>
+      <password>123</password>
+      <email>hema@example.com</email>
+    </user>
+    <user>
+      <id>ca1a875f-656d-4287-bc67-153ccad16023</id>
+      <username>test</username>
+      <role>student</role>
+      <password>123</password>
+      <email>hema@example.com</email>
+    </user>
+    <user>
+      <id>51cc22d4-90da-443b-a885-ff4d0d7f15a5</id>
+      <username>test</username>
+      <role>student</role>
+      <password>123</password>
+      <email>hema@example.com</email>
+    </user>
+    <user>
+      <id>49278b22-adb6-4966-b1ba-c6312f2ff356</id>
+      <username>test</username>
+      <role>student</role>
+      <password>123</password>
+      <email>hema@example.com</email>
+    </user>
+    <user>
+      <id>c97449b4-1c7a-4618-aeac-9bbffedca817</id>
+      <username>test</username>
+      <role>student</role>
+      <password>123</password>
+      <email>hema@example.com</email>
+    </user>
+    <user>
+      <id>f153f852-3d43-441b-a8d3-4b9d06ad68aa</id>
+      <username>test</username>
+      <role>student</role>
+      <password>123</password>
+      <email>hema@example.com</email>
+    </user>
+    <user>
+      <id>5fdc9091-5c6c-4c52-ab7b-90506281e68d</id>
+      <username>test</username>
+      <role>student</role>
+      <password>123</password>
+      <email>hema@example.com</email>
+    </user>
+    <user>
+      <id>2c2d5664-883a-4675-abc1-60d530154060</id>
+      <username>test</username>
+      <role>student</role>
+      <password>123</password>
+      <email>hema@example.com</email>
+    </user>
+    <user>
+      <id>6eb46df3-fb47-45a8-9db1-87c18605b1e6</id>
+      <username>test</username>
+      <role>student</role>
+      <password>123</password>
+      <email>hema@example.com</email>
+    </user>
+    <user>
+      <id>df2ab356-c39f-49b5-893a-af9521568a56</id>
+      <username>test</username>
+      <role>student</role>
+      <password>123</password>
+      <email>hema@example.com</email>
+    </user>
+  </users>
+  <classes>
+    <class>
+      <id>CL-1</id>
+      <name>Math</name>
+      <teacher id="TE-1" />
+      <student id="ST-1" />
+      <student id="ST-2" />
+      <student id="ST-3" />
+    </class>
+  </classes>
+  <session>
+    <user id="ST-1" />
+  </session>
+  <configs>
+    <language>EN</language>
+    <dateFormats>DD-MM-YYYY</dateFormats>
+    <coolDown>false</coolDown>
+    <coolDownStartDate>0</coolDownStartDate>
+  </configs>
 </school>
