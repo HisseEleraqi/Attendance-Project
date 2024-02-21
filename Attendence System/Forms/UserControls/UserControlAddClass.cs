@@ -26,5 +26,10 @@ namespace Attendence_System.Forms.UserControls
         {
 
         }
+
+        private void tabPage_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
