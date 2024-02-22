@@ -30,19 +30,26 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UserControlAddTeacher));
             toolTip = new ToolTip(components);
             tabControlAddClass = new TabControl();
             tabPage = new TabPage();
-            textBox2 = new TextBox();
+            ErrorPassword = new Label();
+            PasswordErrorMsg = new Label();
+            EmailErrorMsg = new Label();
+            LnameErrorMsg = new Label();
+            FnameErrorMsg = new Label();
+            showHide = new PictureBox();
+            textBoxLastName = new TextBox();
             labelEmail = new Label();
-            textBox1 = new TextBox();
+            textBoxEmail = new TextBox();
             label2 = new Label();
             buttonCancel = new Button();
             label12 = new Label();
             buttonAddTeacher = new Button();
-            textBox5 = new TextBox();
+            textBoxFristName = new TextBox();
             labelFname = new Label();
-            textBox6 = new TextBox();
+            textBoxPassWord = new TextBox();
             label1Password = new Label();
             tabPageSearchClass = new TabPage();
             pictureBox2 = new PictureBox();
@@ -57,6 +64,7 @@
             label1 = new Label();
             tabControlAddClass.SuspendLayout();
             tabPage.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)showHide).BeginInit();
             tabPageSearchClass.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridViewClass).BeginInit();
@@ -80,16 +88,22 @@
             // tabPage
             // 
             tabPage.BackColor = Color.FromArgb(250, 250, 250);
-            tabPage.Controls.Add(textBox2);
+            tabPage.Controls.Add(ErrorPassword);
+            tabPage.Controls.Add(PasswordErrorMsg);
+            tabPage.Controls.Add(EmailErrorMsg);
+            tabPage.Controls.Add(LnameErrorMsg);
+            tabPage.Controls.Add(FnameErrorMsg);
+            tabPage.Controls.Add(showHide);
+            tabPage.Controls.Add(textBoxLastName);
             tabPage.Controls.Add(labelEmail);
-            tabPage.Controls.Add(textBox1);
+            tabPage.Controls.Add(textBoxEmail);
             tabPage.Controls.Add(label2);
             tabPage.Controls.Add(buttonCancel);
             tabPage.Controls.Add(label12);
             tabPage.Controls.Add(buttonAddTeacher);
-            tabPage.Controls.Add(textBox5);
+            tabPage.Controls.Add(textBoxFristName);
             tabPage.Controls.Add(labelFname);
-            tabPage.Controls.Add(textBox6);
+            tabPage.Controls.Add(textBoxPassWord);
             tabPage.Controls.Add(label1Password);
             tabPage.Location = new Point(4, 4);
             tabPage.Name = "tabPage";
@@ -99,15 +113,93 @@
             tabPage.Text = "Add Teacher";
             tabPage.UseWaitCursor = true;
             // 
-            // textBox2
+            // ErrorPassword
             // 
-            textBox2.BackColor = Color.FromArgb(189, 195, 199);
-            textBox2.BorderStyle = BorderStyle.FixedSingle;
-            textBox2.Location = new Point(727, 226);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(526, 28);
-            textBox2.TabIndex = 27;
-            textBox2.UseWaitCursor = true;
+            ErrorPassword.AutoSize = true;
+            ErrorPassword.Font = new Font("Cooper Black", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            ErrorPassword.ForeColor = Color.Red;
+            ErrorPassword.Location = new Point(754, 509);
+            ErrorPassword.Name = "ErrorPassword";
+            ErrorPassword.Size = new Size(523, 20);
+            ErrorPassword.TabIndex = 31;
+            ErrorPassword.Text = "8 chars ,uppercase , lowercase letter, digit, and  special char";
+            ErrorPassword.UseWaitCursor = true;
+            ErrorPassword.Visible = false;
+            // 
+            // PasswordErrorMsg
+            // 
+            PasswordErrorMsg.AutoSize = true;
+            PasswordErrorMsg.Font = new Font("Cooper Black", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            PasswordErrorMsg.ForeColor = Color.Red;
+            PasswordErrorMsg.Location = new Point(788, 529);
+            PasswordErrorMsg.Name = "PasswordErrorMsg";
+            PasswordErrorMsg.Size = new Size(404, 26);
+            PasswordErrorMsg.TabIndex = 32;
+            PasswordErrorMsg.Text = "Sorry, Plz Enter a valid Password";
+            PasswordErrorMsg.UseWaitCursor = true;
+            PasswordErrorMsg.Visible = false;
+            // 
+            // EmailErrorMsg
+            // 
+            EmailErrorMsg.AutoSize = true;
+            EmailErrorMsg.Font = new Font("Cooper Black", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            EmailErrorMsg.ForeColor = Color.Red;
+            EmailErrorMsg.Location = new Point(55, 529);
+            EmailErrorMsg.Name = "EmailErrorMsg";
+            EmailErrorMsg.Size = new Size(356, 26);
+            EmailErrorMsg.TabIndex = 33;
+            EmailErrorMsg.Text = "Sorry, Plz Enter a valid Email";
+            EmailErrorMsg.UseWaitCursor = true;
+            EmailErrorMsg.Visible = false;
+            // 
+            // LnameErrorMsg
+            // 
+            LnameErrorMsg.AutoSize = true;
+            LnameErrorMsg.Font = new Font("Cooper Black", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            LnameErrorMsg.ForeColor = Color.Red;
+            LnameErrorMsg.Location = new Point(788, 257);
+            LnameErrorMsg.Name = "LnameErrorMsg";
+            LnameErrorMsg.Size = new Size(355, 26);
+            LnameErrorMsg.TabIndex = 34;
+            LnameErrorMsg.Text = "Sorry, Plz Enter a valid Name";
+            LnameErrorMsg.UseWaitCursor = true;
+            LnameErrorMsg.Visible = false;
+            // 
+            // FnameErrorMsg
+            // 
+            FnameErrorMsg.AutoSize = true;
+            FnameErrorMsg.Font = new Font("Cooper Black", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            FnameErrorMsg.ForeColor = Color.Red;
+            FnameErrorMsg.Location = new Point(56, 249);
+            FnameErrorMsg.Name = "FnameErrorMsg";
+            FnameErrorMsg.Size = new Size(355, 26);
+            FnameErrorMsg.TabIndex = 35;
+            FnameErrorMsg.Text = "Sorry, Plz Enter a valid Name";
+            FnameErrorMsg.UseWaitCursor = true;
+            FnameErrorMsg.Visible = false;
+            // 
+            // showHide
+            // 
+            showHide.BackColor = Color.DarkGray;
+            showHide.ErrorImage = (Image)resources.GetObject("showHide.ErrorImage");
+            showHide.Image = (Image)resources.GetObject("showHide.Image");
+            showHide.Location = new Point(1223, 466);
+            showHide.Name = "showHide";
+            showHide.Size = new Size(30, 26);
+            showHide.TabIndex = 30;
+            showHide.TabStop = false;
+            showHide.UseWaitCursor = true;
+            showHide.Click += showHide_Click;
+            // 
+            // textBoxLastName
+            // 
+            textBoxLastName.BackColor = Color.FromArgb(189, 195, 199);
+            textBoxLastName.BorderStyle = BorderStyle.FixedSingle;
+            textBoxLastName.Location = new Point(727, 226);
+            textBoxLastName.Name = "textBoxLastName";
+            textBoxLastName.Size = new Size(526, 28);
+            textBoxLastName.TabIndex = 27;
+            textBoxLastName.UseWaitCursor = true;
             // 
             // labelEmail
             // 
@@ -122,15 +214,15 @@
             labelEmail.Text = "Email";
             labelEmail.UseWaitCursor = true;
             // 
-            // textBox1
+            // textBoxEmail
             // 
-            textBox1.BackColor = Color.FromArgb(189, 195, 199);
-            textBox1.BorderStyle = BorderStyle.FixedSingle;
-            textBox1.Location = new Point(29, 466);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(526, 28);
-            textBox1.TabIndex = 25;
-            textBox1.UseWaitCursor = true;
+            textBoxEmail.BackColor = Color.FromArgb(189, 195, 199);
+            textBoxEmail.BorderStyle = BorderStyle.FixedSingle;
+            textBoxEmail.Location = new Point(29, 466);
+            textBoxEmail.Name = "textBoxEmail";
+            textBoxEmail.Size = new Size(526, 28);
+            textBoxEmail.TabIndex = 25;
+            textBoxEmail.UseWaitCursor = true;
             // 
             // label2
             // 
@@ -179,16 +271,17 @@
             buttonAddTeacher.Text = "Add Teacher";
             buttonAddTeacher.UseVisualStyleBackColor = false;
             buttonAddTeacher.UseWaitCursor = true;
+            buttonAddTeacher.Click += buttonAddTeacher_Click;
             // 
-            // textBox5
+            // textBoxFristName
             // 
-            textBox5.BackColor = Color.FromArgb(189, 195, 199);
-            textBox5.BorderStyle = BorderStyle.FixedSingle;
-            textBox5.Location = new Point(29, 209);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(526, 28);
-            textBox5.TabIndex = 15;
-            textBox5.UseWaitCursor = true;
+            textBoxFristName.BackColor = Color.FromArgb(189, 195, 199);
+            textBoxFristName.BorderStyle = BorderStyle.FixedSingle;
+            textBoxFristName.Location = new Point(29, 209);
+            textBoxFristName.Name = "textBoxFristName";
+            textBoxFristName.Size = new Size(526, 28);
+            textBoxFristName.TabIndex = 15;
+            textBoxFristName.UseWaitCursor = true;
             // 
             // labelFname
             // 
@@ -203,15 +296,15 @@
             labelFname.Text = "Frist Name";
             labelFname.UseWaitCursor = true;
             // 
-            // textBox6
+            // textBoxPassWord
             // 
-            textBox6.BackColor = Color.FromArgb(189, 195, 199);
-            textBox6.BorderStyle = BorderStyle.FixedSingle;
-            textBox6.Location = new Point(727, 466);
-            textBox6.Name = "textBox6";
-            textBox6.Size = new Size(526, 28);
-            textBox6.TabIndex = 13;
-            textBox6.UseWaitCursor = true;
+            textBoxPassWord.BackColor = Color.FromArgb(189, 195, 199);
+            textBoxPassWord.BorderStyle = BorderStyle.FixedSingle;
+            textBoxPassWord.Location = new Point(727, 466);
+            textBoxPassWord.Name = "textBoxPassWord";
+            textBoxPassWord.Size = new Size(526, 28);
+            textBoxPassWord.TabIndex = 13;
+            textBoxPassWord.UseWaitCursor = true;
             // 
             // label1Password
             // 
@@ -238,7 +331,7 @@
             tabPageSearchClass.Location = new Point(4, 4);
             tabPageSearchClass.Name = "tabPageSearchClass";
             tabPageSearchClass.Padding = new Padding(3);
-            tabPageSearchClass.Size = new Size(1332, 692);
+            tabPageSearchClass.Size = new Size(1332, 691);
             tabPageSearchClass.TabIndex = 1;
             tabPageSearchClass.Text = "Search Teacher";
             tabPageSearchClass.UseWaitCursor = true;
@@ -253,6 +346,7 @@
             pictureBox2.TabIndex = 7;
             pictureBox2.TabStop = false;
             pictureBox2.UseWaitCursor = true;
+            pictureBox2.Click += pictureBox2_Click;
             // 
             // dataGridViewClass
             // 
@@ -278,6 +372,8 @@
             dataGridViewClass.Size = new Size(1247, 534);
             dataGridViewClass.TabIndex = 6;
             dataGridViewClass.UseWaitCursor = true;
+            dataGridViewClass.RowsDefaultCellStyle.ForeColor = Color.Black;
+
             // 
             // Column1
             // 
@@ -369,6 +465,7 @@
             tabControlAddClass.ResumeLayout(false);
             tabPage.ResumeLayout(false);
             tabPage.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)showHide).EndInit();
             tabPageSearchClass.ResumeLayout(false);
             tabPageSearchClass.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
@@ -386,9 +483,9 @@
         private Label label1;
         private Label label12;
         private Button buttonAddTeacher;
-        private TextBox textBox5;
+        private TextBox textBoxFristName;
         private Label labelFname;
-        private TextBox textBox6;
+        private TextBox textBoxPassWord;
         private Label label1Password;
         private TextBox textBoxSearch;
         private Label label3;
@@ -396,13 +493,19 @@
         private DataGridView dataGridViewClass;
         private PictureBox pictureBox2;
         private Button buttonCancel;
-        private TextBox textBox2;
+        private TextBox textBoxLastName;
         private Label labelEmail;
-        private TextBox textBox1;
+        private TextBox textBoxEmail;
         private Label label2;
         private DataGridViewTextBoxColumn Column1;
         private DataGridViewTextBoxColumn Column4;
         private DataGridViewTextBoxColumn Column3;
         private DataGridViewTextBoxColumn Column2;
+        private PictureBox showHide;
+        private Label ErrorPassword;
+        private Label PasswordErrorMsg;
+        private Label EmailErrorMsg;
+        private Label LnameErrorMsg;
+        private Label FnameErrorMsg;
     }
 }

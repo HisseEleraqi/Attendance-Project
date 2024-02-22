@@ -29,15 +29,16 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             toolTip = new ToolTip(components);
             tabControlAddClass = new TabControl();
             tabPage = new TabPage();
             button2 = new Button();
             label12 = new Label();
             button1 = new Button();
-            textBox5 = new TextBox();
+            ClassID = new TextBox();
             label10 = new Label();
-            textBox6 = new TextBox();
+            ClassName = new TextBox();
             label11 = new Label();
             tabPageSearchClass = new TabPage();
             pictureBox2 = new PictureBox();
@@ -78,9 +79,9 @@
             tabPage.Controls.Add(button2);
             tabPage.Controls.Add(label12);
             tabPage.Controls.Add(button1);
-            tabPage.Controls.Add(textBox5);
+            tabPage.Controls.Add(ClassID);
             tabPage.Controls.Add(label10);
-            tabPage.Controls.Add(textBox6);
+            tabPage.Controls.Add(ClassName);
             tabPage.Controls.Add(label11);
             tabPage.Location = new Point(4, 4);
             tabPage.Name = "tabPage";
@@ -125,16 +126,17 @@
             button1.Text = "Add Class";
             button1.UseVisualStyleBackColor = false;
             button1.UseWaitCursor = true;
+            button1.Click += button1_Click;
             // 
-            // textBox5
+            // ClassID
             // 
-            textBox5.BackColor = Color.FromArgb(189, 195, 199);
-            textBox5.BorderStyle = BorderStyle.FixedSingle;
-            textBox5.Location = new Point(453, 237);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(526, 28);
-            textBox5.TabIndex = 15;
-            textBox5.UseWaitCursor = true;
+            ClassID.BackColor = Color.FromArgb(189, 195, 199);
+            ClassID.BorderStyle = BorderStyle.FixedSingle;
+            ClassID.Location = new Point(453, 237);
+            ClassID.Name = "ClassID";
+            ClassID.Size = new Size(526, 28);
+            ClassID.TabIndex = 15;
+            ClassID.UseWaitCursor = true;
             // 
             // label10
             // 
@@ -149,15 +151,15 @@
             label10.Text = "Class ID";
             label10.UseWaitCursor = true;
             // 
-            // textBox6
+            // ClassName
             // 
-            textBox6.BackColor = Color.FromArgb(189, 195, 199);
-            textBox6.BorderStyle = BorderStyle.FixedSingle;
-            textBox6.Location = new Point(453, 392);
-            textBox6.Name = "textBox6";
-            textBox6.Size = new Size(526, 28);
-            textBox6.TabIndex = 13;
-            textBox6.UseWaitCursor = true;
+            ClassName.BackColor = Color.FromArgb(189, 195, 199);
+            ClassName.BorderStyle = BorderStyle.FixedSingle;
+            ClassName.Location = new Point(453, 392);
+            ClassName.Name = "ClassName";
+            ClassName.Size = new Size(526, 28);
+            ClassName.TabIndex = 13;
+            ClassName.UseWaitCursor = true;
             // 
             // label11
             // 
@@ -199,6 +201,7 @@
             pictureBox2.TabIndex = 7;
             pictureBox2.TabStop = false;
             pictureBox2.UseWaitCursor = true;
+            pictureBox2.Click += pictureBox2_Click;
             // 
             // dataGridViewClass
             // 
@@ -217,6 +220,8 @@
             dataGridViewClass.ReadOnly = true;
             dataGridViewClass.RowHeadersWidth = 51;
             dataGridViewClass.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            dataGridViewCellStyle1.ForeColor = Color.Black;
+            dataGridViewClass.RowsDefaultCellStyle = dataGridViewCellStyle1;
             dataGridViewClass.ShowCellErrors = false;
             dataGridViewClass.ShowCellToolTips = false;
             dataGridViewClass.ShowEditingIcon = false;
@@ -326,9 +331,9 @@
         private Label label1;
         private Label label12;
         private Button button1;
-        private TextBox textBox5;
+        private TextBox ClassID;
         private Label label10;
-        private TextBox textBox6;
+        private TextBox ClassName;
         private Label label11;
         private TextBox textBoxSearch;
         private Label label3;

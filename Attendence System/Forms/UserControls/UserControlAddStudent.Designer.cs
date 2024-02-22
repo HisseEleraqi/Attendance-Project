@@ -29,9 +29,17 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UserControlAddStudent));
             toolTip = new ToolTip(components);
             tabControlAddClass = new TabControl();
             tabPage = new TabPage();
+            showHide2 = new PictureBox();
+            showHide = new PictureBox();
+            ErrorPassword = new Label();
+            PasswordErrorMsg = new Label();
+            EmailErrorMsg = new Label();
+            LnameErrorMsg = new Label();
+            FnameErrorMsg = new Label();
             textBoxLastName = new TextBox();
             labelEmail = new Label();
             textBoxEmail = new TextBox();
@@ -41,21 +49,25 @@
             buttonAddStudent = new Button();
             textBoxFristName = new TextBox();
             labelFname = new Label();
+            textBoxPassRep = new TextBox();
             textBoxPassWord = new TextBox();
+            label4 = new Label();
             label1Password = new Label();
             tabPageSearchClass = new TabPage();
             pictureBox2 = new PictureBox();
             dataGridViewClass = new DataGridView();
-            pictureBox1 = new PictureBox();
-            textBoxSearch = new TextBox();
-            label3 = new Label();
-            label1 = new Label();
             Column1 = new DataGridViewTextBoxColumn();
             Column4 = new DataGridViewTextBoxColumn();
             Column3 = new DataGridViewTextBoxColumn();
             Column2 = new DataGridViewTextBoxColumn();
+            pictureBox1 = new PictureBox();
+            textBoxSearch = new TextBox();
+            label3 = new Label();
+            label1 = new Label();
             tabControlAddClass.SuspendLayout();
             tabPage.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)showHide2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)showHide).BeginInit();
             tabPageSearchClass.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridViewClass).BeginInit();
@@ -79,6 +91,13 @@
             // tabPage
             // 
             tabPage.BackColor = Color.FromArgb(250, 250, 250);
+            tabPage.Controls.Add(showHide2);
+            tabPage.Controls.Add(showHide);
+            tabPage.Controls.Add(ErrorPassword);
+            tabPage.Controls.Add(PasswordErrorMsg);
+            tabPage.Controls.Add(EmailErrorMsg);
+            tabPage.Controls.Add(LnameErrorMsg);
+            tabPage.Controls.Add(FnameErrorMsg);
             tabPage.Controls.Add(textBoxLastName);
             tabPage.Controls.Add(labelEmail);
             tabPage.Controls.Add(textBoxEmail);
@@ -88,7 +107,9 @@
             tabPage.Controls.Add(buttonAddStudent);
             tabPage.Controls.Add(textBoxFristName);
             tabPage.Controls.Add(labelFname);
+            tabPage.Controls.Add(textBoxPassRep);
             tabPage.Controls.Add(textBoxPassWord);
+            tabPage.Controls.Add(label4);
             tabPage.Controls.Add(label1Password);
             tabPage.Location = new Point(4, 4);
             tabPage.Name = "tabPage";
@@ -97,6 +118,98 @@
             tabPage.TabIndex = 0;
             tabPage.Text = "Add Student";
             tabPage.UseWaitCursor = true;
+            // 
+            // showHide2
+            // 
+            showHide2.BackColor = Color.DarkGray;
+            showHide2.ErrorImage = (Image)resources.GetObject("showHide2.ErrorImage");
+            showHide2.Image = (Image)resources.GetObject("showHide2.Image");
+            showHide2.Location = new Point(1218, 659);
+            showHide2.Name = "showHide2";
+            showHide2.Size = new Size(25, 28);
+            showHide2.TabIndex = 29;
+            showHide2.TabStop = false;
+            showHide2.UseWaitCursor = true;
+            showHide2.Visible = false;
+            showHide2.Click += showHide2_Click;
+            // 
+            // showHide
+            // 
+            showHide.BackColor = Color.DarkGray;
+            showHide.ErrorImage = (Image)resources.GetObject("showHide.ErrorImage");
+            showHide.Image = (Image)resources.GetObject("showHide.Image");
+            showHide.Location = new Point(1237, 466);
+            showHide.Name = "showHide";
+            showHide.Size = new Size(30, 26);
+            showHide.TabIndex = 29;
+            showHide.TabStop = false;
+            showHide.UseWaitCursor = true;
+            showHide.Click += showHide_Click;
+            // 
+            // ErrorPassword
+            // 
+            ErrorPassword.AutoSize = true;
+            ErrorPassword.Font = new Font("Cooper Black", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            ErrorPassword.ForeColor = Color.Red;
+            ErrorPassword.Location = new Point(744, 498);
+            ErrorPassword.Name = "ErrorPassword";
+            ErrorPassword.Size = new Size(523, 20);
+            ErrorPassword.TabIndex = 28;
+            ErrorPassword.Text = "8 chars ,uppercase , lowercase letter, digit, and  special char";
+            ErrorPassword.UseWaitCursor = true;
+            ErrorPassword.Visible = false;
+            // 
+            // PasswordErrorMsg
+            // 
+            PasswordErrorMsg.AutoSize = true;
+            PasswordErrorMsg.Font = new Font("Cooper Black", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            PasswordErrorMsg.ForeColor = Color.Red;
+            PasswordErrorMsg.Location = new Point(778, 518);
+            PasswordErrorMsg.Name = "PasswordErrorMsg";
+            PasswordErrorMsg.Size = new Size(404, 26);
+            PasswordErrorMsg.TabIndex = 28;
+            PasswordErrorMsg.Text = "Sorry, Plz Enter a valid Password";
+            PasswordErrorMsg.UseWaitCursor = true;
+            PasswordErrorMsg.Visible = false;
+            // 
+            // EmailErrorMsg
+            // 
+            EmailErrorMsg.AutoSize = true;
+            EmailErrorMsg.Font = new Font("Cooper Black", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            EmailErrorMsg.ForeColor = Color.Red;
+            EmailErrorMsg.Location = new Point(46, 518);
+            EmailErrorMsg.Name = "EmailErrorMsg";
+            EmailErrorMsg.Size = new Size(356, 26);
+            EmailErrorMsg.TabIndex = 28;
+            EmailErrorMsg.Text = "Sorry, Plz Enter a valid Email";
+            EmailErrorMsg.UseWaitCursor = true;
+            EmailErrorMsg.Visible = false;
+            // 
+            // LnameErrorMsg
+            // 
+            LnameErrorMsg.AutoSize = true;
+            LnameErrorMsg.Font = new Font("Cooper Black", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            LnameErrorMsg.ForeColor = Color.Red;
+            LnameErrorMsg.Location = new Point(779, 269);
+            LnameErrorMsg.Name = "LnameErrorMsg";
+            LnameErrorMsg.Size = new Size(355, 26);
+            LnameErrorMsg.TabIndex = 28;
+            LnameErrorMsg.Text = "Sorry, Plz Enter a valid Name";
+            LnameErrorMsg.UseWaitCursor = true;
+            LnameErrorMsg.Visible = false;
+            // 
+            // FnameErrorMsg
+            // 
+            FnameErrorMsg.AutoSize = true;
+            FnameErrorMsg.Font = new Font("Cooper Black", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            FnameErrorMsg.ForeColor = Color.Red;
+            FnameErrorMsg.Location = new Point(46, 252);
+            FnameErrorMsg.Name = "FnameErrorMsg";
+            FnameErrorMsg.Size = new Size(355, 26);
+            FnameErrorMsg.TabIndex = 28;
+            FnameErrorMsg.Text = "Sorry, Plz Enter a valid Name";
+            FnameErrorMsg.UseWaitCursor = true;
+            FnameErrorMsg.Visible = false;
             // 
             // textBoxLastName
             // 
@@ -154,6 +267,7 @@
             buttonCancel.Text = "Cancel";
             buttonCancel.UseVisualStyleBackColor = false;
             buttonCancel.UseWaitCursor = true;
+            buttonCancel.Click += buttonCancel_Click;
             // 
             // label12
             // 
@@ -178,6 +292,7 @@
             buttonAddStudent.Text = "Add Student";
             buttonAddStudent.UseVisualStyleBackColor = false;
             buttonAddStudent.UseWaitCursor = true;
+            buttonAddStudent.Click += buttonAddStudent_Click;
             // 
             // textBoxFristName
             // 
@@ -188,6 +303,7 @@
             textBoxFristName.Size = new Size(526, 28);
             textBoxFristName.TabIndex = 15;
             textBoxFristName.UseWaitCursor = true;
+            textBoxFristName.TextChanged += textBoxFristName_TextChanged;
             // 
             // labelFname
             // 
@@ -202,15 +318,42 @@
             labelFname.Text = "Frist Name";
             labelFname.UseWaitCursor = true;
             // 
+            // textBoxPassRep
+            // 
+            textBoxPassRep.BackColor = Color.FromArgb(189, 195, 199);
+            textBoxPassRep.BorderStyle = BorderStyle.FixedSingle;
+            textBoxPassRep.Location = new Point(830, 660);
+            textBoxPassRep.Name = "textBoxPassRep";
+            textBoxPassRep.Size = new Size(413, 28);
+            textBoxPassRep.TabIndex = 13;
+            textBoxPassRep.UseWaitCursor = true;
+            textBoxPassRep.Visible = false;
+            textBoxPassRep.TextChanged += textBoxPassWord_TextChanged;
+            // 
             // textBoxPassWord
             // 
             textBoxPassWord.BackColor = Color.FromArgb(189, 195, 199);
             textBoxPassWord.BorderStyle = BorderStyle.FixedSingle;
-            textBoxPassWord.Location = new Point(727, 466);
+            textBoxPassWord.Location = new Point(779, 464);
             textBoxPassWord.Name = "textBoxPassWord";
-            textBoxPassWord.Size = new Size(526, 28);
+            textBoxPassWord.Size = new Size(488, 28);
             textBoxPassWord.TabIndex = 13;
             textBoxPassWord.UseWaitCursor = true;
+            textBoxPassWord.TextChanged += textBoxPassWord_TextChanged;
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.BackColor = Color.Transparent;
+            label4.Font = new Font("Century Gothic", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label4.ForeColor = Color.FromArgb(52, 73, 94);
+            label4.Location = new Point(643, 653);
+            label4.Name = "label4";
+            label4.Size = new Size(177, 34);
+            label4.TabIndex = 12;
+            label4.Text = "Pass Repeat";
+            label4.UseWaitCursor = true;
+            label4.Visible = false;
             // 
             // label1Password
             // 
@@ -218,7 +361,7 @@
             label1Password.BackColor = Color.Transparent;
             label1Password.Font = new Font("Century Gothic", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1Password.ForeColor = Color.FromArgb(52, 73, 94);
-            label1Password.Location = new Point(727, 400);
+            label1Password.Location = new Point(681, 400);
             label1Password.Name = "label1Password";
             label1Password.Size = new Size(140, 34);
             label1Password.TabIndex = 12;
@@ -252,6 +395,7 @@
             pictureBox2.TabIndex = 7;
             pictureBox2.TabStop = false;
             pictureBox2.UseWaitCursor = true;
+            pictureBox2.Click += pictureBox2_Click;
             // 
             // dataGridViewClass
             // 
@@ -277,54 +421,8 @@
             dataGridViewClass.Size = new Size(1247, 534);
             dataGridViewClass.TabIndex = 6;
             dataGridViewClass.UseWaitCursor = true;
-            // 
-            // pictureBox1
-            // 
-            pictureBox1.Image = Properties.Resources.ixkfkncp;
-            pictureBox1.Location = new Point(877, 394);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(41, 28);
-            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox1.TabIndex = 4;
-            pictureBox1.TabStop = false;
-            pictureBox1.UseWaitCursor = true;
-            // 
-            // textBoxSearch
-            // 
-            textBoxSearch.BackColor = Color.FromArgb(189, 195, 199);
-            textBoxSearch.BorderStyle = BorderStyle.FixedSingle;
-            textBoxSearch.ForeColor = Color.FromArgb(189, 195, 199);
-            textBoxSearch.Location = new Point(322, 99);
-            textBoxSearch.Name = "textBoxSearch";
-            textBoxSearch.Size = new Size(596, 28);
-            textBoxSearch.TabIndex = 3;
-            textBoxSearch.UseWaitCursor = true;
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.BackColor = Color.Transparent;
-            label3.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label3.ForeColor = Color.FromArgb(52, 73, 94);
-            label3.Location = new Point(291, 74);
-            label3.Name = "label3";
-            label3.Size = new Size(76, 23);
-            label3.TabIndex = 2;
-            label3.Text = "Name:";
-            label3.UseWaitCursor = true;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.BackColor = Color.Transparent;
-            label1.Font = new Font("Century Gothic", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.ForeColor = Color.FromArgb(52, 73, 94);
-            label1.Location = new Point(0, 24);
-            label1.Name = "label1";
-            label1.Size = new Size(236, 34);
-            label1.TabIndex = 0;
-            label1.Text = "Search Teacher:";
-            label1.UseWaitCursor = true;
+            dataGridViewClass.CellContentClick += dataGridViewClass_CellContentClick;
+            dataGridViewClass.RowsDefaultCellStyle.ForeColor = Color.Black;
             // 
             // Column1
             // 
@@ -354,6 +452,55 @@
             Column2.Name = "Column2";
             Column2.ReadOnly = true;
             // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = Properties.Resources.ixkfkncp;
+            pictureBox1.Location = new Point(877, 394);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(41, 28);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.TabIndex = 4;
+            pictureBox1.TabStop = false;
+            pictureBox1.UseWaitCursor = true;
+            // 
+            // textBoxSearch
+            // 
+            textBoxSearch.BackColor = Color.FromArgb(189, 195, 199);
+            textBoxSearch.BorderStyle = BorderStyle.FixedSingle;
+            textBoxSearch.ForeColor = Color.FromArgb(189, 195, 199);
+            textBoxSearch.Location = new Point(322, 99);
+            textBoxSearch.Name = "textBoxSearch";
+            textBoxSearch.Size = new Size(596, 28);
+            textBoxSearch.TabIndex = 3;
+            textBoxSearch.UseWaitCursor = true;
+            textBoxSearch.TextChanged += textBoxSearch_TextChanged;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.BackColor = Color.Transparent;
+            label3.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label3.ForeColor = Color.FromArgb(52, 73, 94);
+            label3.Location = new Point(291, 74);
+            label3.Name = "label3";
+            label3.Size = new Size(76, 23);
+            label3.TabIndex = 2;
+            label3.Text = "Name:";
+            label3.UseWaitCursor = true;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.BackColor = Color.Transparent;
+            label1.Font = new Font("Century Gothic", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.ForeColor = Color.FromArgb(52, 73, 94);
+            label1.Location = new Point(0, 24);
+            label1.Name = "label1";
+            label1.Size = new Size(236, 34);
+            label1.TabIndex = 0;
+            label1.Text = "Search Teacher:";
+            label1.UseWaitCursor = true;
+            // 
             // UserControlAddStudent
             // 
             AutoScaleDimensions = new SizeF(10F, 21F);
@@ -368,6 +515,8 @@
             tabControlAddClass.ResumeLayout(false);
             tabPage.ResumeLayout(false);
             tabPage.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)showHide2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)showHide).EndInit();
             tabPageSearchClass.ResumeLayout(false);
             tabPageSearchClass.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
@@ -403,5 +552,14 @@
         private DataGridViewTextBoxColumn Column4;
         private DataGridViewTextBoxColumn Column3;
         private DataGridViewTextBoxColumn Column2;
+        private Label FnameErrorMsg;
+        private Label EmailErrorMsg;
+        private Label LnameErrorMsg;
+        private Label PasswordErrorMsg;
+        private Label ErrorPassword;
+        private PictureBox showHide;
+        private PictureBox showHide2;
+        private TextBox textBoxPassRep;
+        private Label label4;
     }
 }
