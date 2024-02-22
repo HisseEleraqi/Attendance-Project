@@ -42,6 +42,7 @@ namespace Attendence_Management_System
             MoveSidePanel(buttonDashBorde);
             userControDashBoard1.Visible = true;
             userControlAddClass1.Visible = false;
+            userControlReports.Visible = false;
 
 
 
@@ -58,6 +59,7 @@ namespace Attendence_Management_System
             MoveSidePanel(buttonAddStudent);
             userControDashBoard1.Visible = false;
             userControlAddClass1.Visible = false;
+            userControlReports.Visible = false;
 
 
         }
@@ -67,6 +69,7 @@ namespace Attendence_Management_System
             MoveSidePanel(buttonAddClass);
             userControDashBoard1.Visible = false;
             userControlAddClass1.Visible = true;
+            userControlReports.Visible = false;
 
 
         }
@@ -77,12 +80,14 @@ namespace Attendence_Management_System
             userControDashBoard1.Visible = false;
             userControlAddClass1.Visible = false;
 
+            userControlReports.Visible = false;
 
         }
 
         private void Report_Click(object sender, EventArgs e)
         {
             MoveSidePanel(Report);
+            userControlReports.Visible = true;
             userControDashBoard1.Visible = false;
             userControlAddClass1.Visible = false;
 
@@ -96,6 +101,8 @@ namespace Attendence_Management_System
             else { panelExpand.Visible = true; }
             userControDashBoard1.Visible = false;
             userControlAddClass1.Visible = false;
+            userControlReports.Visible = false;
+
 
         }
 
@@ -103,19 +110,20 @@ namespace Attendence_Management_System
         {
             panelExpand.Hide();
             UserName.Text = userName;
-            if (Role.ToLower() == "admin")
+            /*if (Role.ToLower() == "admin")
             {
                 buttonDashBorde.Hide();
                 buttonAddStudent.Hide();
                 buttonAddClass.Hide();
 
-            }
+            }*/
             userControDashBoard1.Visible = false;
             userControlAddClass1.Visible = false;
+            userControlReports.Visible = false;
 
 
         }
-
+        
         private void userControDashBoard1_Load(object sender, EventArgs e)
         {
 

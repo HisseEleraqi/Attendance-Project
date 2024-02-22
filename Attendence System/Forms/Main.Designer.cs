@@ -60,6 +60,7 @@ namespace Attendence_Management_System
             toolTip1 = new ToolTip(components);
             userControlAddClass1 = new Attendence_System.Forms.UserControls.UserControlAddClass();
             panel8 = new Panel();
+            userControlReports = new Attendence_System.Forms.UserControls.UserControlReports();
             panel1.SuspendLayout();
             panel3.SuspendLayout();
             panel4.SuspendLayout();
@@ -370,6 +371,7 @@ namespace Attendence_Management_System
             // 
             // userControlAddClass1
             // 
+            userControlAddClass1.BackColor = Color.Tan;
             userControlAddClass1.Dock = DockStyle.Fill;
             userControlAddClass1.Font = new Font("Century Gothic", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             userControlAddClass1.Location = new Point(0, 0);
@@ -381,12 +383,23 @@ namespace Attendence_Management_System
             // 
             // panel8
             // 
+            panel8.Controls.Add(userControlReports);
             panel8.Controls.Add(userControDashBoard1);
             panel8.Controls.Add(userControlAddClass1);
             panel8.Location = new Point(261, 169);
             panel8.Name = "panel8";
             panel8.Size = new Size(1183, 777);
             panel8.TabIndex = 2;
+            // 
+            // userControlReports
+            // 
+            userControlReports.BackColor = Color.SeaShell;
+            userControlReports.Font = new Font("Century Gothic", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            userControlReports.Location = new Point(-3, -5);
+            userControlReports.Margin = new Padding(4, 3, 4, 3);
+            userControlReports.Name = "userControlReports";
+            userControlReports.Size = new Size(1241, 859);
+            userControlReports.TabIndex = 7;
             // 
             // Main
             // 
@@ -463,5 +476,6 @@ namespace Attendence_Management_System
         private Panel panelTop;
         private Panel panel7;
         private Panel panel8;
+        private Attendence_System.Forms.UserControls.UserControlReports userControlReports;
     }
 }
