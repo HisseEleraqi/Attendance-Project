@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <school>
   <attendance-records>
     <attendance-record>
@@ -99,13 +99,7 @@
       <password>123</password>
       <email>hema@example.com</email>
     </user>
-    <user>
-      <id>3114dc87-5a56-4744-9b6b-dae0e5d7abd9</id>
-      <username>test</username>
-      <role>student</role>
-      <password>123</password>
-      <email>hema@example.com</email>
-    </user>
+    
   </users>
   <classes>
     <class>
