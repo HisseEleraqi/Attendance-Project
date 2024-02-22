@@ -12,6 +12,8 @@ namespace Attendence_Management_System
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
             //Application.Run(new Main("hussein"));
+               // run student form
+            //Application.Run(new Student("../../../Resources/Attendance.xml"));
             Application.Run(new Forms.Login());
         }
     }

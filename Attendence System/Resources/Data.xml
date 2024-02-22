@@ -39,6 +39,12 @@
     <student id="3114dc87-5a56-4744-9b6b-dae0e5d7abd9">
       <name>test</name>
     </student>
+    <student id="0b79fae5-e080-4327-92e6-0ef0500573be">
+      <name>test</name>
+    </student>
+    <student id="1f57f248-d631-4da0-a3a2-788a772461cf">
+      <name>test</name>
+    </student>
   </students>
   <teachers>
     <teacher id="TE-1">
@@ -101,6 +107,20 @@
     </user>
     <user>
       <id>3114dc87-5a56-4744-9b6b-dae0e5d7abd9</id>
+      <username>test</username>
+      <role>student</role>
+      <password>123</password>
+      <email>hema@example.com</email>
+    </user>
+    <user>
+      <id>0b79fae5-e080-4327-92e6-0ef0500573be</id>
+      <username>test</username>
+      <role>student</role>
+      <password>123</password>
+      <email>hema@example.com</email>
+    </user>
+    <user>
+      <id>1f57f248-d631-4da0-a3a2-788a772461cf</id>
       <username>test</username>
       <role>student</role>
       <password>123</password>
