@@ -1,3 +1,5 @@
+using Attendence_System.Forms.UserControls;
+
 namespace Attendence_Management_System
 {
     public partial class Main : Form
@@ -32,9 +34,18 @@ namespace Attendence_Management_System
 
         }
 
-        private void MoveSidePanel(Control Button)
+        private void MoveSidePanel(Button button)
         {
-            panelSlide.Location = new Point(Button.Location.X, Button.Location.Y - 180);
+            // This will align the top of the sliding panel with the top of the button.
+            panelSlide.Top = button.Top;
+
+            // If you want the sliding panel to move with animation, you can use the following:
+            panelSlide.BringToFront();
+            panelSlide.Height = button.Height; // If you want to match the button's height
+            var slidePanelAnimation = panelSlide.BeginInvoke(new Action(() =>
+            {
+                panelSlide.Location = new Point(button.Location.X, button.Location.Y);
+            }));
         }
         private void buttonDashBorde_Click(object sender, EventArgs e)
         {
@@ -42,6 +53,10 @@ namespace Attendence_Management_System
             MoveSidePanel(buttonDashBorde);
             userControDashBoard1.Visible = true;
             userControlAddClass1.Visible = false;
+
+            userControlAddStudent1.Visible = false;
+            userControlAddTeacher1.Visible = false;
+
             userControlReports.Visible = false;
 
 
@@ -59,6 +74,7 @@ namespace Attendence_Management_System
             MoveSidePanel(buttonAddStudent);
             userControDashBoard1.Visible = false;
             userControlAddClass1.Visible = false;
+            userControlAddStudent1.Visible = true;
             userControlReports.Visible = false;
 
 
@@ -69,6 +85,8 @@ namespace Attendence_Management_System
             MoveSidePanel(buttonAddClass);
             userControDashBoard1.Visible = false;
             userControlAddClass1.Visible = true;
+            userControlAddStudent1.Visible = false;
+            userControlAddTeacher1.Visible = false;
             userControlReports.Visible = false;
 
 
@@ -79,6 +97,9 @@ namespace Attendence_Management_System
             MoveSidePanel(Teacher);
             userControDashBoard1.Visible = false;
             userControlAddClass1.Visible = false;
+            userControlAddStudent1.Visible = false;
+            userControlAddTeacher1.Visible = true;
+
 
             userControlReports.Visible = false;
 
@@ -90,7 +111,8 @@ namespace Attendence_Management_System
             userControlReports.Visible = true;
             userControDashBoard1.Visible = false;
             userControlAddClass1.Visible = false;
-
+            userControlAddStudent1.Visible = false;
+            userControlAddTeacher1.Visible = false;
 
         }
 
@@ -101,8 +123,9 @@ namespace Attendence_Management_System
             else { panelExpand.Visible = true; }
             userControDashBoard1.Visible = false;
             userControlAddClass1.Visible = false;
+            userControlAddStudent1.Visible = false;
+            userControlAddTeacher1.Visible = false;
             userControlReports.Visible = false;
-
 
         }
 
@@ -119,6 +142,8 @@ namespace Attendence_Management_System
             }*/
             userControDashBoard1.Visible = false;
             userControlAddClass1.Visible = false;
+            userControlAddStudent1.Visible = false;
+            userControlAddTeacher1.Visible = false;
             userControlReports.Visible = false;
 
 
@@ -130,6 +155,11 @@ namespace Attendence_Management_System
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void userControlAddClass1_Load(object sender, EventArgs e)
         {
 
         }

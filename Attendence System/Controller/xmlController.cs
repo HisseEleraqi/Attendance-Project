@@ -7,6 +7,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml;
 using static System.Net.Mime.MediaTypeNames;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 
 namespace Attendence_Management_System
@@ -59,6 +61,7 @@ namespace Attendence_Management_System
             string xPath = string.Format("{0}[{1}='{2}']", nodePath, target, value);
             XmlNode? userNode = XmlDoc.SelectSingleNode(xPath);
             return userNode;
+
         }
         // function to add a new user to the xml file
         public static void XMLAddUser(string userName, string role, string password, string email, string ID)
@@ -122,7 +125,6 @@ namespace Attendence_Management_System
             root.AppendChild(student);
             root.OwnerDocument.Save("../../../Resources/Data.xml");
         }
-        // add two fns one for addAdmin and one for addTeacher
         public static void AddAdmin(string id, string name)
         {
             XmlDocument XmlDoc = ReadAllDocument();
@@ -150,6 +152,25 @@ namespace Attendence_Management_System
             teacher.AppendChild(nameNode);
             root.AppendChild(teacher);
             root.OwnerDocument.Save("../../../Resources/Data.xml");
+        }
+        
+        public static void XMLAddClass(string id, string name)
+        {
+            //make the root is custom node called users
+            XmlDocument XmlDoc = ReadAllDocument();
+
+            XmlNode root = XmlDoc.SelectSingleNode("/school/classes");
+
+            XmlNode user = XmlDoc.CreateElement("class");
+            XmlNode IdNode = XmlDoc.CreateElement("id");
+            IdNode.InnerText = id;
+            XmlNode NameNode = XmlDoc.CreateElement("name");
+            NameNode.InnerText = name;
+
+            user.AppendChild(IdNode);
+            user.AppendChild(NameNode);
+            root.AppendChild(user);
+            XmlDoc.Save("../../../Resources/Data.xml");
         }
     }
 

@@ -22,8 +22,8 @@ namespace Attendence_Management_System.Forms
 
         private void closeButton_Click(object sender, EventArgs e)
         {
-            string? UserName = userName.Text;
-            string? Password = password.Text;
+            string? UserName = userName.Text.Trim();
+            string? Password = password.Text.Trim();
             ErrorMessage.Visible = false;
             //XmlDocument XmlDoc = xmlController.ReadAllDocument(); //test document
             if (string.IsNullOrEmpty(UserName) || string.IsNullOrEmpty(Password))
@@ -65,8 +65,9 @@ namespace Attendence_Management_System.Forms
                         }
                         ErrorMessage.Visible = false;
                         this.Hide();
-                        AddUser newUser = new AddUser("test", "student", "123","hema@example.com");
-                        newUser.AddUserToXML();
+                        //AddUser newUser = new AddUser("test", "student", "123","hema@example.com");
+                        //newUser.AddUserToXML();
+
                     }
                     else
                     {

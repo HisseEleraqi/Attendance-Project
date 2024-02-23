@@ -36,6 +36,20 @@
         <class id="CL-2" />
       </classes>
     </student>
+    <student id="2eb7aff1-20e1-44e6-8f84-cd28f69a4e08">
+      <name>hema hema</name>
+    </student>
+    <student id="78405142-e7d1-45b5-81b7-bf1dd53d4e65">
+      <name>Ebrahim Osama</name>
+    </student>
+    <student id="e8883771-5276-410f-9d57-b535c4894693">
+      <name>hissen sdfas</name>
+    </student>
+    <student id="ecadf7b2-d466-4d1f-8c51-7b73179cf9da">
+      <name>asdfds asdfasd</name>
+    </student>
+    <student id="cef92dc7-e3e4-4439-b260-60c08c339288">
+      <name>test test</name>
     <student id="3114dc87-5a56-4744-9b6b-dae0e5d7abd9">
       <name>test</name>
     </student>
@@ -53,6 +67,12 @@
         <course id="CL-1" />
         <course id="CL-2" />
       </courses>
+    </teacher>
+    <teacher id="632b155e-48d8-41c6-a332-cc16382439ae">
+      <name>hema Ebrahim</name>
+    </teacher>
+    <teacher id="a3290383-c616-4490-ba87-79de1848220e">
+      <name>jsdhafjk fjkasdhfjk</name>
     </teacher>
   </teachers>
   <admins>
@@ -99,6 +119,39 @@
       <role>Admin</role>
     </user>
     <user>
+      <id>78405142-e7d1-45b5-81b7-bf1dd53d4e65</id>
+      <username>Ebrahim Osama</username>
+      <role>student</role>
+      <password>Aahema#44</password>
+      <email>Ebrahim@example.com</email>
+    </user>
+    <user>
+      <id>ecadf7b2-d466-4d1f-8c51-7b73179cf9da</id>
+      <username>asdfds asdfasd</username>
+      <role>student</role>
+      <password>asdfdsfS222@@</password>
+      <email>Ebradhim@example.com</email>
+    </user>
+    <user>
+      <id>632b155e-48d8-41c6-a332-cc16382439ae</id>
+      <username>hema Ebrahim</username>
+      <role>teacher</role>
+      <password>AdFead202@@</password>
+      <email>Ebrahim@example.comd</email>
+    </user>
+    <user>
+      <id>cef92dc7-e3e4-4439-b260-60c08c339288</id>
+      <username>test test</username>
+      <role>student</role>
+      <password>Aahema2022@@</password>
+      <email>test@exapmle.com</email>
+    </user>
+    <user>
+      <id>a3290383-c616-4490-ba87-79de1848220e</id>
+      <username>jsdhafjk fjkasdhfjk</username>
+      <role>teacher</role>
+      <password>Ahema2023@@</password>
+      <email>sadfasdf@gmail.com</email>
       <id>60e3ec02-02d3-4c30-b618-edd728094c28</id>
       <username>test</username>
       <role>student</role>
@@ -135,6 +188,10 @@
       <student id="ST-1" />
       <student id="ST-2" />
       <student id="ST-3" />
+    </class>
+    <class>
+      <id>6f702148-3452-4742-ab67-0ff0e2291308</id>
+      <name>HTML</name>
     </class>
   </classes>
   <session>
