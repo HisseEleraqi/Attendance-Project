@@ -186,12 +186,12 @@ namespace Attendence_Management_System
         }
         public void ToggleAbsentStatusInXml(string courseName, string studentID, string date)
         {
-            // Print Data
+/*            // Print Data
             Console.WriteLine(courseName);
 
             Console.WriteLine(studentID);
             Console.WriteLine(date);
-
+*/
             // Load XML document
             XmlDocument xmlDoc = new XmlDocument();
             xmlDoc.Load(XmlFilePath);

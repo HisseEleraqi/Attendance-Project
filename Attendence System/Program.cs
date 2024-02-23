@@ -14,7 +14,7 @@ namespace Attendence_Management_System
             //Application.Run(new Main("hussein"));
                // run student form
             //Application.Run(new Student("../../../Resources/Attendance.xml"));
-            Application.Run(new Teacher("..\\..\\..\\Resources\\Attendance.xml"));
+            Application.Run(new Forms.Login());
         }
     }
 }

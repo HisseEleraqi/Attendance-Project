@@ -18,7 +18,7 @@ namespace Attendence_Management_System
             InitializeComponent();
             xmlController = new AttendanceXmlController(xmlFilePath);
             // Fix DateTimePicker MaxDate
-            teacherID = "T001";
+            // teacherID = "T001";
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -118,8 +118,8 @@ namespace Attendence_Management_System
             // only if DataTime Is Today
             if (dateTimePicker.Value.Date == DateTime.Now.Date)
             {
-                Console.WriteLine("Cell Clicked");
-                // Assuming the "AbsentStatus" column is a CheckBox column
+/*                Console.WriteLine("Cell Clicked");
+*/                // Assuming the "AbsentStatus" column is a CheckBox column
                 if (e.ColumnIndex == dataGrid.Columns["AbsentStatus"].Index && e.RowIndex >= 0 && e.RowIndex < dataGrid.Rows.Count)
                 {
                     // Get the student ID, student name, and date from the clicked row
