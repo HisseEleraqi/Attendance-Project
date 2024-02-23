@@ -53,9 +53,11 @@ namespace Attendence_Management_System
             MoveSidePanel(buttonDashBorde);
             userControDashBoard1.Visible = true;
             userControlAddClass1.Visible = false;
+
             userControlAddStudent1.Visible = false;
             userControlAddTeacher1.Visible = false;
 
+            userControlReports.Visible = false;
 
 
 
@@ -73,6 +75,7 @@ namespace Attendence_Management_System
             userControDashBoard1.Visible = false;
             userControlAddClass1.Visible = false;
             userControlAddStudent1.Visible = true;
+            userControlReports.Visible = false;
 
 
         }
@@ -84,6 +87,7 @@ namespace Attendence_Management_System
             userControlAddClass1.Visible = true;
             userControlAddStudent1.Visible = false;
             userControlAddTeacher1.Visible = false;
+            userControlReports.Visible = false;
 
 
         }
@@ -97,12 +101,14 @@ namespace Attendence_Management_System
             userControlAddTeacher1.Visible = true;
 
 
+            userControlReports.Visible = false;
 
         }
 
         private void Report_Click(object sender, EventArgs e)
         {
             MoveSidePanel(Report);
+            userControlReports.Visible = true;
             userControDashBoard1.Visible = false;
             userControlAddClass1.Visible = false;
             userControlAddStudent1.Visible = false;
@@ -119,7 +125,7 @@ namespace Attendence_Management_System
             userControlAddClass1.Visible = false;
             userControlAddStudent1.Visible = false;
             userControlAddTeacher1.Visible = false;
-
+            userControlReports.Visible = false;
 
         }
 
@@ -138,10 +144,11 @@ namespace Attendence_Management_System
             userControlAddClass1.Visible = false;
             userControlAddStudent1.Visible = false;
             userControlAddTeacher1.Visible = false;
+            userControlReports.Visible = false;
 
 
         }
-
+        
         private void userControDashBoard1_Load(object sender, EventArgs e)
         {
 
