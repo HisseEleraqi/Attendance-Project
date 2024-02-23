@@ -184,14 +184,20 @@ namespace Attendence_Management_System
                 Console.WriteLine($"Exception during XML processing: {ex.Message}");
             }
         }
-        public void ToggleAbsentStatusInXml(string studentID, string studentName, string date)
+        public void ToggleAbsentStatusInXml(string courseName, string studentID, string date)
         {
+            // Print Data
+            Console.WriteLine(courseName);
+
+            Console.WriteLine(studentID);
+            Console.WriteLine(date);
+
             // Load XML document
             XmlDocument xmlDoc = new XmlDocument();
             xmlDoc.Load(XmlFilePath);
 
             // Find the student node
-            XmlNode studentNode = FindStudentNode(xmlDoc, studentID, studentName);
+            XmlNode studentNode = FindStudentNodeByCourseName(xmlDoc, courseName, studentID);
 
             if (studentNode != null)
             {
@@ -202,11 +208,21 @@ namespace Attendence_Management_System
                 {
                     // Toggle the "AbsentStatus" value
                     string currentStatus = recordNode.SelectSingleNode("Status").InnerText;
-                    recordNode.SelectSingleNode("Status").InnerText = (currentStatus == "Present") ? "Absent" : "Present";
 
+                    recordNode.SelectSingleNode("Status").InnerText = (currentStatus == "Present") ? "Absent" : "Present";
+                    //
+                    Console.WriteLine("Attendance status updated successfully");
                     // Save changes to XML
                     xmlDoc.Save(XmlFilePath);
                 }
+                else
+                {
+                    Console.WriteLine($"Attendance record for {date} not found");
+                }
+            }
+            else
+            {
+                Console.WriteLine($"Student {studentID} not found");
             }
         }
         public List<AttendanceData> GetAttendanceDataByStudentIDAndClassName(string studentID, string className)
@@ -336,7 +352,10 @@ namespace Attendence_Management_System
         {
             return xmlDoc.SelectSingleNode($"/AttendanceData/Class[ClassID='{className}']/Students/Student[StudentID='{studentID}']");
         }
-
+        private XmlNode FindStudentNodeByCourseName(XmlDocument xmlDoc, string className, string studentID)
+        {
+            return xmlDoc.SelectSingleNode($"/AttendanceData/Class[ClassName='{className}']/Students/Student[StudentID='{studentID}']");
+        }
 
         private XmlNode FindAttendanceRecord(XmlNode studentNode, string date)
         {
