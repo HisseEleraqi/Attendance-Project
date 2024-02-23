@@ -51,7 +51,7 @@
             StartDate_Picker.CustomizableEdges = customizableEdges1;
             StartDate_Picker.Font = new Font("Segoe UI", 9F);
             StartDate_Picker.Format = DateTimePickerFormat.Long;
-            StartDate_Picker.Location = new Point(331, 248);
+            StartDate_Picker.Location = new Point(518, 292);
             StartDate_Picker.MaxDate = new DateTime(9998, 12, 31, 0, 0, 0, 0);
             StartDate_Picker.MinDate = new DateTime(1753, 1, 1, 0, 0, 0, 0);
             StartDate_Picker.Name = "StartDate_Picker";
@@ -66,7 +66,7 @@
             EndDate_Picker.CustomizableEdges = customizableEdges3;
             EndDate_Picker.Font = new Font("Segoe UI", 9F);
             EndDate_Picker.Format = DateTimePickerFormat.Long;
-            EndDate_Picker.Location = new Point(331, 365);
+            EndDate_Picker.Location = new Point(518, 412);
             EndDate_Picker.MaxDate = new DateTime(9998, 12, 31, 0, 0, 0, 0);
             EndDate_Picker.MinDate = new DateTime(1753, 1, 1, 0, 0, 0, 0);
             EndDate_Picker.Name = "EndDate_Picker";
@@ -79,7 +79,7 @@
             // 
             guna2HtmlLabel2.BackColor = Color.Transparent;
             guna2HtmlLabel2.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            guna2HtmlLabel2.Location = new Point(413, 319);
+            guna2HtmlLabel2.Location = new Point(600, 362);
             guna2HtmlLabel2.Name = "guna2HtmlLabel2";
             guna2HtmlLabel2.Size = new Size(86, 25);
             guna2HtmlLabel2.TabIndex = 4;
@@ -89,7 +89,7 @@
             // 
             guna2HtmlLabel3.BackColor = Color.Transparent;
             guna2HtmlLabel3.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            guna2HtmlLabel3.Location = new Point(408, 205);
+            guna2HtmlLabel3.Location = new Point(595, 242);
             guna2HtmlLabel3.Name = "guna2HtmlLabel3";
             guna2HtmlLabel3.Size = new Size(96, 25);
             guna2HtmlLabel3.TabIndex = 5;
@@ -104,13 +104,13 @@
             Generate.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
             Generate.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             Generate.ForeColor = Color.White;
-            Generate.Location = new Point(358, 463);
+            Generate.Location = new Point(545, 482);
             Generate.Name = "Generate";
             Generate.ShadowDecoration.CustomizableEdges = customizableEdges6;
             Generate.Size = new Size(196, 56);
             Generate.TabIndex = 6;
             Generate.Text = "Generate";
-            Generate.Click += Generate_Click;
+            Generate.Click += Generate_Click_1;
             // 
             // guna2ComboBox1
             // 
@@ -123,29 +123,27 @@
             guna2ComboBox1.Font = new Font("Segoe UI", 10F);
             guna2ComboBox1.ForeColor = Color.FromArgb(68, 88, 112);
             guna2ComboBox1.ItemHeight = 30;
-            guna2ComboBox1.Location = new Point(331, 139);
+            guna2ComboBox1.Location = new Point(518, 181);
             guna2ComboBox1.Name = "guna2ComboBox1";
             guna2ComboBox1.ShadowDecoration.CustomizableEdges = customizableEdges8;
             guna2ComboBox1.Size = new Size(250, 36);
             guna2ComboBox1.TabIndex = 7;
-            guna2ComboBox1.SelectedIndexChanged += guna2ComboBox1_SelectedIndexChanged;
             // 
             // guna2HtmlLabel1
             // 
             guna2HtmlLabel1.BackColor = Color.Transparent;
             guna2HtmlLabel1.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            guna2HtmlLabel1.Location = new Point(413, 108);
+            guna2HtmlLabel1.Location = new Point(610, 131);
             guna2HtmlLabel1.Name = "guna2HtmlLabel1";
             guna2HtmlLabel1.Size = new Size(67, 25);
             guna2HtmlLabel1.TabIndex = 8;
             guna2HtmlLabel1.Text = "Course :";
-            guna2HtmlLabel1.Click += guna2HtmlLabel1_Click;
             // 
             // UserControlReports
             // 
             AutoScaleDimensions = new SizeF(10F, 21F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.SeaShell;
+            BackColor = Color.FromArgb(250, 250, 250);
             Controls.Add(guna2HtmlLabel1);
             Controls.Add(guna2ComboBox1);
             Controls.Add(Generate);
@@ -156,8 +154,7 @@
             Font = new Font("Century Gothic", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             Margin = new Padding(4, 3, 4, 3);
             Name = "UserControlReports";
-            Size = new Size(993, 687);
-            Load += UserControlReports_Load;
+            Size = new Size(1456, 713);
             ResumeLayout(false);
             PerformLayout();
         }
