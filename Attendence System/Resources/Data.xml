@@ -50,14 +50,6 @@
     </student>
     <student id="cef92dc7-e3e4-4439-b260-60c08c339288">
       <name>test test</name>
-    <student id="3114dc87-5a56-4744-9b6b-dae0e5d7abd9">
-      <name>test</name>
-    </student>
-    <student id="0b79fae5-e080-4327-92e6-0ef0500573be">
-      <name>test</name>
-    </student>
-    <student id="1f57f248-d631-4da0-a3a2-788a772461cf">
-      <name>test</name>
     </student>
   </students>
   <teachers>
@@ -73,6 +65,9 @@
     </teacher>
     <teacher id="a3290383-c616-4490-ba87-79de1848220e">
       <name>jsdhafjk fjkasdhfjk</name>
+    </teacher>
+    <teacher id="69d62658-3850-417e-ae5c-93d85097a8b1">
+      <name>hissen ahmed</name>
     </teacher>
   </teachers>
   <admins>
@@ -152,32 +147,13 @@
       <role>teacher</role>
       <password>Ahema2023@@</password>
       <email>sadfasdf@gmail.com</email>
-      <id>60e3ec02-02d3-4c30-b618-edd728094c28</id>
-      <username>test</username>
-      <role>student</role>
-      <password>123</password>
-      <email>hema@example.com</email>
     </user>
     <user>
-      <id>3114dc87-5a56-4744-9b6b-dae0e5d7abd9</id>
-      <username>test</username>
-      <role>student</role>
-      <password>123</password>
-      <email>hema@example.com</email>
-    </user>
-    <user>
-      <id>0b79fae5-e080-4327-92e6-0ef0500573be</id>
-      <username>test</username>
-      <role>student</role>
-      <password>123</password>
-      <email>hema@example.com</email>
-    </user>
-    <user>
-      <id>1f57f248-d631-4da0-a3a2-788a772461cf</id>
-      <username>test</username>
-      <role>student</role>
-      <password>123</password>
-      <email>hema@example.com</email>
+      <id>69d62658-3850-417e-ae5c-93d85097a8b1</id>
+      <username>hissen ahmed</username>
+      <role>teacher</role>
+      <password>Hissen1234@</password>
+      <email>se7s_eleraqi@hotmail.com</email>
     </user>
   </users>
   <classes>
