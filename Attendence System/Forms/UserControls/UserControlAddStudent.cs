@@ -36,14 +36,14 @@ namespace Attendence_System.Forms.UserControls
             string? Email = textBoxEmail.Text.Trim();
             string? Password = textBoxPassWord.Text.Trim();
             string? fullName;
-            // call validateEmail from Validator class
+
             Validator validator = new Validator();
             FnameErrorMsg.Visible = false;
             LnameErrorMsg.Visible = false;
             EmailErrorMsg.Visible = false;
             PasswordErrorMsg.Visible = false;
             ErrorPassword.Visible = false;
-            // check if all fields not empty
+
             if (!string.IsNullOrEmpty(firstName) && !string.IsNullOrEmpty(lastName) && !string.IsNullOrEmpty(Email) && !string.IsNullOrEmpty(Password))
             {
                 if (!validator.validateName(firstName))
@@ -56,7 +56,7 @@ namespace Attendence_System.Forms.UserControls
                 }
                 else if (!validator.validateEmail(Email))
                 {
-                    //MessageBox.Show("Invalid Email");
+
                     EmailErrorMsg.Visible = true;
                 }
                 else if (!validator.validatePassword(Password))
@@ -79,6 +79,11 @@ namespace Attendence_System.Forms.UserControls
                     AddUser newUser = new AddUser(fullName, "student", Password, Email);
                     newUser.AddUserToXML();
                     MessageBox.Show("Student Added");
+                    textBoxEmail.Text = "";
+                    textBoxFristName.Text = "";
+                    textBoxLastName.Text = "";
+                    textBoxPassWord.Text = "";
+
                 }
             }
 
