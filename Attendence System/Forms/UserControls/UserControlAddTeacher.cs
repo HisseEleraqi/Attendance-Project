@@ -19,6 +19,9 @@ namespace Attendence_System.Forms.UserControls
             InitializeComponent();
         }
 
+        private bool enterPressed = false;
+        private object originalCellValue;
+
         private void showHide_Click(object sender, EventArgs e)
         {
             if (textBoxPassWord.PasswordChar == '*')
@@ -93,12 +96,12 @@ namespace Attendence_System.Forms.UserControls
             }
         }
 
-        private void pictureBox2_Click(object sender, EventArgs e)
+        private void UserControlAddTeacher_loed(object sender, EventArgs e)
         {
             XmlDocument doc = new XmlDocument();
             doc.Load("..\\..\\..\\Resources\\Data.xml");
             XmlNodeList nodes = doc.SelectNodes("/school/users/user");
-            dataGridViewClass.Rows.Clear();
+            dataGridViewTeacher.Rows.Clear();
             foreach (XmlNode node in nodes)
             {
                 string id = node.SelectSingleNode("id").InnerText;
@@ -108,9 +111,115 @@ namespace Attendence_System.Forms.UserControls
 
                 if (role == "teacher")
                 {
-                    dataGridViewClass.Rows.Add(id, name, role, "test");
+                    dataGridViewTeacher.Rows.Add(id, name, role, "test");
                 }
+            }
+        }
+
+        private void textBoxSearchTeacher_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                string searchValue = textBoxSearchTeacher.Text.ToLower();
+                dataGridViewTeacher.ClearSelection();
+
+                try
+                {
+                    int rowCount = dataGridViewTeacher.Rows.Count;
+                    for (int i = 0; i < rowCount - 1; i++)
+                    {
+                        DataGridViewRow row = dataGridViewTeacher.Rows[i];
+
+                        if (!row.IsNewRow)
+                        {
+                            bool rowVisible = false;
+
+                            foreach (DataGridViewCell cell in row.Cells)
+                            {
+                                if (cell.Value != null && cell.Value.ToString().ToLower().Contains(searchValue))
+                                {
+                                    rowVisible = true;
+                                    break;
+                                }
+                            }
+
+                            row.Visible = rowVisible;
+
+\                            if (rowVisible)
+                            {
+                                dataGridViewTeacher.Rows[row.Index].Selected = true;
+
+                            }
+                        }
+                    }
+                }
+                catch (Exception exc)
+                {
+                    MessageBox.Show(exc.Message);
+                }
+            }
+        }
+
+        private void dataGridViewTeacher_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+        {
+            var currentValue = dataGridViewTeacher.Rows[e.RowIndex].Cells[e.ColumnIndex].Value;
+            if (!Equals(currentValue, originalCellValue))
+            {
+                SaveEditToXml(e.RowIndex, e.ColumnIndex);
+            }
+            else
+            {
+                dataGridViewTeacher.Rows[e.RowIndex].Cells[e.ColumnIndex].Value = originalCellValue;
+            }
+        }
+
+        private void dataGridViewTeacher_CellBeginEdit(object sender, DataGridViewCellCancelEventArgs e)
+        {
+            originalCellValue = dataGridViewTeacher.Rows[e.RowIndex].Cells[e.ColumnIndex].Value;
+
+
+        }
+
+        private void SaveEditToXml(int rowIndex, int columnIndex)
+        {
+            string userId = dataGridViewTeacher.Rows[rowIndex].Cells[0].Value.ToString(); // Adjust if your ID is in a different column
+            string newValue = dataGridViewTeacher.Rows[rowIndex].Cells[columnIndex].Value.ToString();
+
+            XmlDocument doc = new XmlDocument();
+            doc.Load("..\\..\\..\\Resources\\Data.xml"); // Adjust the path as necessary
+
+            XmlNode userNode = doc.SelectSingleNode($"/school/users/user[id='{userId}']");
+
+            if (userNode != null)
+            {
+                switch (columnIndex)
+                {
+                    case 1: 
+                        userNode.SelectSingleNode("username").InnerText = newValue;
+                        break;
+                    case 2: 
+                        userNode.SelectSingleNode("role").InnerText = newValue;
+                        break;
+
+                }
+
+                // Save the updated XML document
+                doc.Save("..\\..\\..\\Resources\\Data.xml");
+            }
+        }
+
+
+        private void dataGridViewTeacher_KeyDown(object sender, KeyEventArgs e)
+        {
+
+            if (e.KeyCode == Keys.Enter)
+            {
+                dataGridViewTeacher.EndEdit();
+                e.Handled = true; 
             }
         }
     }
 }
+
+
+   
