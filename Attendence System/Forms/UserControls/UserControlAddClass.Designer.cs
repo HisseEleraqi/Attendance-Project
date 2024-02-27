@@ -41,21 +41,21 @@
             ClassName = new TextBox();
             label11 = new Label();
             tabPageSearchClass = new TabPage();
-            pictureBox2 = new PictureBox();
             dataGridViewClass = new DataGridView();
             Column1 = new DataGridViewTextBoxColumn();
             Column4 = new DataGridViewTextBoxColumn();
             Column3 = new DataGridViewTextBoxColumn();
             pictureBox1 = new PictureBox();
+            label1 = new Label();
+            pictureBox2 = new PictureBox();
             textBoxSearch = new TextBox();
             label3 = new Label();
-            label1 = new Label();
             tabControlAddClass.SuspendLayout();
             tabPage.SuspendLayout();
             tabPageSearchClass.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridViewClass).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             SuspendLayout();
             // 
             // tabControlAddClass
@@ -68,7 +68,7 @@
             tabControlAddClass.Multiline = true;
             tabControlAddClass.Name = "tabControlAddClass";
             tabControlAddClass.SelectedIndex = 0;
-            tabControlAddClass.Size = new Size(1340, 725);
+            tabControlAddClass.Size = new Size(1260, 675);
             tabControlAddClass.TabIndex = 0;
             tabControlAddClass.UseWaitCursor = true;
             tabControlAddClass.SelectedIndexChanged += tabControlAddClass_SelectedIndexChanged;
@@ -86,7 +86,7 @@
             tabPage.Location = new Point(4, 4);
             tabPage.Name = "tabPage";
             tabPage.Padding = new Padding(3);
-            tabPage.Size = new Size(1332, 691);
+            tabPage.Size = new Size(1252, 641);
             tabPage.TabIndex = 0;
             tabPage.Text = "Add Class";
             tabPage.UseWaitCursor = true;
@@ -178,30 +178,18 @@
             // 
             tabPageSearchClass.BackColor = Color.FromArgb(250, 250, 250);
             tabPageSearchClass.Controls.Add(pictureBox2);
-            tabPageSearchClass.Controls.Add(dataGridViewClass);
-            tabPageSearchClass.Controls.Add(pictureBox1);
             tabPageSearchClass.Controls.Add(textBoxSearch);
             tabPageSearchClass.Controls.Add(label3);
+            tabPageSearchClass.Controls.Add(dataGridViewClass);
+            tabPageSearchClass.Controls.Add(pictureBox1);
             tabPageSearchClass.Controls.Add(label1);
             tabPageSearchClass.Location = new Point(4, 4);
             tabPageSearchClass.Name = "tabPageSearchClass";
             tabPageSearchClass.Padding = new Padding(3);
-            tabPageSearchClass.Size = new Size(1332, 691);
+            tabPageSearchClass.Size = new Size(1252, 641);
             tabPageSearchClass.TabIndex = 1;
             tabPageSearchClass.Text = "Search Class";
             tabPageSearchClass.UseWaitCursor = true;
-            // 
-            // pictureBox2
-            // 
-            pictureBox2.Image = Properties.Resources.ixkfkncp;
-            pictureBox2.Location = new Point(877, 120);
-            pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(52, 28);
-            pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox2.TabIndex = 7;
-            pictureBox2.TabStop = false;
-            pictureBox2.UseWaitCursor = true;
-            pictureBox2.Click += pictureBox2_Click;
             // 
             // dataGridViewClass
             // 
@@ -215,7 +203,7 @@
             dataGridViewClass.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
             dataGridViewClass.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewClass.Columns.AddRange(new DataGridViewColumn[] { Column1, Column4, Column3 });
-            dataGridViewClass.Location = new Point(28, 170);
+            dataGridViewClass.Location = new Point(84, 230);
             dataGridViewClass.Name = "dataGridViewClass";
             dataGridViewClass.ReadOnly = true;
             dataGridViewClass.RowHeadersWidth = 51;
@@ -226,7 +214,7 @@
             dataGridViewClass.ShowCellToolTips = false;
             dataGridViewClass.ShowEditingIcon = false;
             dataGridViewClass.ShowRowErrors = false;
-            dataGridViewClass.Size = new Size(1247, 510);
+            dataGridViewClass.Size = new Size(1104, 324);
             dataGridViewClass.TabIndex = 6;
             dataGridViewClass.UseWaitCursor = true;
             dataGridViewClass.CellContentClick += dataGridViewClass_CellContentClick;
@@ -263,30 +251,6 @@
             pictureBox1.TabStop = false;
             pictureBox1.UseWaitCursor = true;
             // 
-            // textBoxSearch
-            // 
-            textBoxSearch.BackColor = Color.FromArgb(189, 195, 199);
-            textBoxSearch.BorderStyle = BorderStyle.FixedSingle;
-            textBoxSearch.ForeColor = Color.FromArgb(189, 195, 199);
-            textBoxSearch.Location = new Point(291, 120);
-            textBoxSearch.Name = "textBoxSearch";
-            textBoxSearch.Size = new Size(596, 28);
-            textBoxSearch.TabIndex = 3;
-            textBoxSearch.UseWaitCursor = true;
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.BackColor = Color.Transparent;
-            label3.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label3.ForeColor = Color.FromArgb(52, 73, 94);
-            label3.Location = new Point(291, 74);
-            label3.Name = "label3";
-            label3.Size = new Size(76, 23);
-            label3.TabIndex = 2;
-            label3.Text = "Name:";
-            label3.UseWaitCursor = true;
-            // 
             // label1
             // 
             label1.AutoSize = true;
@@ -300,6 +264,41 @@
             label1.Text = "Search Class :";
             label1.UseWaitCursor = true;
             // 
+            // pictureBox2
+            // 
+            pictureBox2.Image = Properties.Resources.ixkfkncp;
+            pictureBox2.Location = new Point(450, 163);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(52, 28);
+            pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox2.TabIndex = 10;
+            pictureBox2.TabStop = false;
+            pictureBox2.UseWaitCursor = true;
+            // 
+            // textBoxSearch
+            // 
+            textBoxSearch.BackColor = Color.FromArgb(189, 195, 199);
+            textBoxSearch.BorderStyle = BorderStyle.FixedSingle;
+            textBoxSearch.ForeColor = Color.FromArgb(189, 195, 199);
+            textBoxSearch.Location = new Point(450, 163);
+            textBoxSearch.Name = "textBoxSearch";
+            textBoxSearch.Size = new Size(365, 28);
+            textBoxSearch.TabIndex = 9;
+            textBoxSearch.UseWaitCursor = true;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.BackColor = Color.Transparent;
+            label3.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label3.ForeColor = Color.FromArgb(52, 73, 94);
+            label3.Location = new Point(450, 168);
+            label3.Name = "label3";
+            label3.Size = new Size(76, 23);
+            label3.TabIndex = 8;
+            label3.Text = "Name:";
+            label3.UseWaitCursor = true;
+            // 
             // UserControlAddClass
             // 
             AutoScaleDimensions = new SizeF(10F, 21F);
@@ -310,15 +309,15 @@
             Margin = new Padding(4, 3, 4, 3);
             Name = "UserControlAddClass";
             RightToLeft = RightToLeft.No;
-            Size = new Size(1340, 725);
+            Size = new Size(1260, 675);
             tabControlAddClass.ResumeLayout(false);
             tabPage.ResumeLayout(false);
             tabPage.PerformLayout();
             tabPageSearchClass.ResumeLayout(false);
             tabPageSearchClass.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)dataGridViewClass).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ResumeLayout(false);
         }
 
@@ -335,14 +334,14 @@
         private Label label10;
         private TextBox ClassName;
         private Label label11;
-        private TextBox textBoxSearch;
-        private Label label3;
         private PictureBox pictureBox1;
         private DataGridView dataGridViewClass;
-        private PictureBox pictureBox2;
         private Button button2;
         private DataGridViewTextBoxColumn Column1;
         private DataGridViewTextBoxColumn Column4;
         private DataGridViewTextBoxColumn Column3;
+        private PictureBox pictureBox2;
+        private TextBox textBoxSearch;
+        private Label label3;
     }
 }

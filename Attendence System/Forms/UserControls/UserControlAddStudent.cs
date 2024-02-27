@@ -173,5 +173,15 @@ namespace Attendence_System.Forms.UserControls
                 }
             }
         }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tabPageSearchClass_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

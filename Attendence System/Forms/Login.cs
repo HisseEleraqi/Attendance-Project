@@ -44,13 +44,13 @@ namespace Attendence_Management_System.Forms
                     if (userNode.SelectSingleNode("password").InnerText == Password)
                     {
 
-                        if (role == "Teacher" || role=="teacher ")
+                        if (role == "Teacher" || role == "teacher ")
                         {
                             Teacher teacher = new Teacher("..\\..\\..\\Resources\\Attendance.xml");
                             teacher.teacherID = userID;
                             teacher.Show();
                         }
-                        else if(role == "Student" || role=="student" )
+                        else if (role == "Student" || role == "student")
                         {
                             Student main = new Student("..\\..\\..\\Resources\\Attendance.xml");
                             main.studentID = userID;
@@ -58,7 +58,7 @@ namespace Attendence_Management_System.Forms
                             main.Show();
 
                         }
-                        else if(role == "Admin" || role =="admin")
+                        else if (role == "Admin" || role == "admin")
                         {
                             Main main = new Main(userName, role);
                             main.Show();
@@ -119,6 +119,21 @@ namespace Attendence_Management_System.Forms
             {
                 closeButton_Click(sender, e);
             }
+        }
+
+        private void userName_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel2_Paint_1(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void userName_TextChanged_1(object sender, EventArgs e)
+        {
+
         }
     }
 }
