@@ -36,6 +36,9 @@
         <class id="CL-2" />
       </classes>
     </student>
+    <student id="ST-4">
+      <name>sfds sf</name>
+    </student>
   </students>
   <teachers>
     <teacher id="TE-1">
@@ -140,6 +143,13 @@
       <role>teacher</role>
       <password>Aahema@1</password>
       <email>hema@example.com</email>
+    </user>
+    <user>
+      <id>ST-4</id>
+      <username>sfds sf</username>
+      <role>student</role>
+      <password>asdkfjA2@</password>
+      <email>sdaf@dsf.com</email>
     </user>
   </users>
   <classes>

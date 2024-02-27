@@ -41,14 +41,14 @@ namespace Attendence_System.Forms.UserControls
             string? Email = textBoxEmail.Text;
             string? Password = textBoxPassWord.Text;
             string? fullName;
-            // call validateEmail from Validator class
+
             Validator validator = new Validator();
             FnameErrorMsg.Visible = false;
             LnameErrorMsg.Visible = false;
             EmailErrorMsg.Visible = false;
             PasswordErrorMsg.Visible = false;
             ErrorPassword.Visible = false;
-            // check if all fields not empty
+
             if (!string.IsNullOrEmpty(firstName) && !string.IsNullOrEmpty(lastName) && !string.IsNullOrEmpty(Email) && !string.IsNullOrEmpty(Password))
             {
                 if (!validator.validateName(firstName))
@@ -84,6 +84,10 @@ namespace Attendence_System.Forms.UserControls
                     AddUser newUser = new AddUser(fullName, "teacher", Password, Email);
                     newUser.AddUserToXML();
                     MessageBox.Show("Teacher Added");
+                    textBoxFristName.Text = "";
+                    textBoxLastName.Text = "";
+                    textBoxEmail.Text = "";
+                    textBoxPassWord.Text = "";
                 }
             }
 
@@ -110,6 +114,28 @@ namespace Attendence_System.Forms.UserControls
                 {
                     dataGridViewClass.Rows.Add(id, name, role, "test");
                 }
+            }
+        }
+
+        private void buttonCancel_Click(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(textBoxFristName.Text) || !string.IsNullOrEmpty(textBoxLastName.Text) || !string.IsNullOrEmpty(textBoxEmail.Text) || !string.IsNullOrEmpty(textBoxPassWord.Text))
+            {
+                DialogResult dialogResult = MessageBox.Show("Are you sure you want to cancel?", "Cancel", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    textBoxFristName.Text = "";
+                    textBoxLastName.Text = "";
+                    textBoxEmail.Text = "";
+                    textBoxPassWord.Text = "";
+                }
+            }
+            else
+            {
+                textBoxFristName.Text = "";
+                textBoxLastName.Text = "";
+                textBoxEmail.Text = "";
+                textBoxPassWord.Text = "";
             }
         }
     }
