@@ -1,12 +1,22 @@
-﻿using System.Data;
-using System.Xml.Linq;
+﻿using Attendence_System.Controller;
 using OfficeOpenXml;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using System.Xml;
+using System.Xml.Linq;
 
-namespace Attendence_System.Forms.UserControls2
+namespace Attendence_System.Forms.UserControls
 {
-    public partial class UserControlReports : UserControl
+    public partial class UserControlReports2 : UserControl
     {
-        public UserControlReports()
+        public UserControlReports2()
         {
             InitializeComponent();
             // Move the logic from userControlReports_Load here
@@ -17,10 +27,6 @@ namespace Attendence_System.Forms.UserControls2
             StartDate_Picker.MaxDate = DateTime.Now;
             EndDate_Picker.MaxDate = DateTime.Now;
         }
-
-
-
-
 
         public class AttendanceData
         {
@@ -212,23 +218,7 @@ namespace Attendence_System.Forms.UserControls2
 
         }
 
-        public void Generate_Click(object sender, EventArgs e)
-        {
-
-            
-        }
-
-        private void guna2HtmlLabel1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void guna2ComboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Generate_Click_1(object sender, EventArgs e)
+        private void Generate_Click(object sender, EventArgs e)
         {
             Console.WriteLine("Generate button clicked"); // Add this line for debugging
 
@@ -283,3 +273,6 @@ namespace Attendence_System.Forms.UserControls2
         }
     }
 }
+
+
+   

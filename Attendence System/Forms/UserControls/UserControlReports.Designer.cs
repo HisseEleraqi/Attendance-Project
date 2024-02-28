@@ -1,4 +1,4 @@
-﻿namespace Attendence_System.Forms.UserControls
+﻿namespace Attendence_System.Forms.UserControls2
 {
     partial class UserControlReports
     {
