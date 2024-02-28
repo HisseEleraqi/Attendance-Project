@@ -460,6 +460,7 @@
             dataGridViewClass.TabIndex = 6;
             dataGridViewClass.UseWaitCursor = true;
             dataGridViewClass.CellContentClick += dataGridViewClass_CellContentClick;
+
             // 
             // Column1
             // 
@@ -504,6 +505,13 @@
             dataGridViewCellStyle1.BackColor = Color.Red;
             dataGridViewCellStyle1.Font = new Font("Tahoma", 7.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             dataGridViewCellStyle1.ForeColor = Color.Black;
+            Update.DefaultCellStyle = dataGridViewCellStyle1;
+            Update.HeaderText = "Update";
+            Update.MinimumWidth = 6;
+            Update.Name = "Update";
+            Update.Text = "Update";
+            Update.ToolTipText = "Update";
+            Update.UseColumnTextForButtonValue = true;
             Update.DefaultCellStyle = dataGridViewCellStyle1;
             Update.HeaderText = "UpdateStudent";
             Update.MinimumWidth = 6;

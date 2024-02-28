@@ -161,7 +161,7 @@ namespace Attendence_System.Forms.UserControls
 
         private void dataGridViewTeacher_CellEndEdit(object sender, DataGridViewCellEventArgs e)
         {
-           
+
         }
 
         private void dataGridViewTeacher_CellBeginEdit(object sender, DataGridViewCellCancelEventArgs e)
@@ -199,7 +199,7 @@ namespace Attendence_System.Forms.UserControls
         private void dataGridViewTeacher_KeyDown(object sender, KeyEventArgs e)
         {
 
-           
+
         }
 
         private void dataGridViewClass_CellBeginEdit(object sender, DataGridViewCellCancelEventArgs e)
@@ -230,6 +230,22 @@ namespace Attendence_System.Forms.UserControls
             }
 
         }
+
+        private void dataGridViewClass_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            
+                if (e.ColumnIndex == 5 && e.RowIndex >= 0) 
+                {
+                    using (FormCrudTeacher popup = new FormCrudTeacher())
+                    {
+                        popup.ShowDialog();
+
+
+                    }
+
+
+                }
+            }
     }
 }
 
