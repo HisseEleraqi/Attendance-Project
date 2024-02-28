@@ -56,11 +56,11 @@ namespace Attendence_Management_System
             pictureBoxExpand = new PictureBox();
             pictureBox2 = new PictureBox();
             toolTip1 = new ToolTip(components);
-            userControlAddClass1 = new Attendence_System.Forms.UserControls.UserControlAddClass();
             userControlAddStudent1 = new Attendence_System.Forms.UserControls.UserControlAddStudent();
             userControDashBoard1 = new Attendence_System.Forms.UserControls.UserControDashBoard();
             userControlAddTeacher1 = new Attendence_System.Forms.UserControls.UserControlAddTeacher();
             panel8 = new Panel();
+            userControlAddClass1 = new Attendence_System.Forms.UserControls.UserControlAddClass();
             panel1.SuspendLayout();
             panel3.SuspendLayout();
             panel4.SuspendLayout();
@@ -342,19 +342,6 @@ namespace Attendence_Management_System
             pictureBox2.TabIndex = 1;
             pictureBox2.TabStop = false;
             // 
-            // userControlAddClass1
-            // 
-            userControlAddClass1.BackColor = SystemColors.ActiveCaption;
-            userControlAddClass1.Font = new Font("Century Gothic", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            userControlAddClass1.ForeColor = Color.White;
-            userControlAddClass1.Location = new Point(258, 164);
-            userControlAddClass1.Margin = new Padding(4, 3, 4, 3);
-            userControlAddClass1.Name = "userControlAddClass1";
-            userControlAddClass1.RightToLeft = RightToLeft.No;
-            userControlAddClass1.Size = new Size(1700, 871);
-            userControlAddClass1.TabIndex = 6;
-            userControlAddClass1.Load += userControlAddClass1_Load;
-            // 
             // userControlAddStudent1
             // 
             userControlAddStudent1.BackColor = Color.SeaShell;
@@ -395,6 +382,19 @@ namespace Attendence_Management_System
             panel8.Name = "panel8";
             panel8.Size = new Size(1183, 777);
             panel8.TabIndex = 2;
+            // 
+            // userControlAddClass1
+            // 
+            userControlAddClass1.BackColor = SystemColors.ActiveCaption;
+            userControlAddClass1.Font = new Font("Century Gothic", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            userControlAddClass1.ForeColor = Color.White;
+            userControlAddClass1.Location = new Point(258, 164);
+            userControlAddClass1.Margin = new Padding(4, 3, 4, 3);
+            userControlAddClass1.Name = "userControlAddClass1";
+            userControlAddClass1.RightToLeft = RightToLeft.No;
+            userControlAddClass1.Size = new Size(1700, 871);
+            userControlAddClass1.TabIndex = 6;
+            userControlAddClass1.Load += userControlAddClass1_Load;
             // 
             // Main
             // 
@@ -469,11 +469,11 @@ namespace Attendence_Management_System
         private Panel panel6;
         private Panel panelTop;
         private Panel panel7;
-        private Attendence_System.Forms.UserControls.UserControlAddClass userControlAddClass1;
         private Attendence_System.Forms.UserControls.UserControlAddStudent userControlAddStudent1;
         private Attendence_System.Forms.UserControls.UserControDashBoard userControDashBoard1;
         private Attendence_System.Forms.UserControls.UserControlAddTeacher userControlAddTeacher1;
         private Panel panel8;
         private Attendence_System.Forms.UserControls.UserControlReports userControlReports1;
+        private Attendence_System.Forms.UserControls.UserControlAddClass userControlAddClass1;
     }
 }

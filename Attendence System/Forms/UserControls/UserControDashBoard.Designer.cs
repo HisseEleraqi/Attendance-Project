@@ -32,10 +32,10 @@
             pictureBox1 = new PictureBox();
             pictureBox2 = new PictureBox();
             labelstudent = new Label();
-            label2 = new Label();
-            label3 = new Label();
+            studentCount = new Label();
+            teacherCount = new Label();
             labelTeachers = new Label();
-            labelClasss = new Label();
+            classsCount = new Label();
             labelClasses = new Label();
             pictureBox3 = new PictureBox();
             label1 = new Label();
@@ -77,23 +77,24 @@
             labelstudent.TabIndex = 3;
             labelstudent.Text = "student";
             // 
-            // label2
+            // studentCount
             // 
-            label2.AutoSize = true;
-            label2.Location = new Point(225, 347);
-            label2.Name = "label2";
-            label2.Size = new Size(33, 21);
-            label2.TabIndex = 4;
-            label2.Text = "{?}";
+            studentCount.AutoSize = true;
+            studentCount.Location = new Point(225, 347);
+            studentCount.Name = "studentCount";
+            studentCount.Size = new Size(33, 21);
+            studentCount.TabIndex = 4;
+            studentCount.Text = "{?}";
+            studentCount.Click += label2_Click;
             // 
-            // label3
+            // teacherCount
             // 
-            label3.AutoSize = true;
-            label3.Location = new Point(444, 575);
-            label3.Name = "label3";
-            label3.Size = new Size(33, 21);
-            label3.TabIndex = 6;
-            label3.Text = "{?}";
+            teacherCount.AutoSize = true;
+            teacherCount.Location = new Point(444, 575);
+            teacherCount.Name = "teacherCount";
+            teacherCount.Size = new Size(33, 21);
+            teacherCount.TabIndex = 6;
+            teacherCount.Text = "{?}";
             // 
             // labelTeachers
             // 
@@ -106,14 +107,14 @@
             labelTeachers.TabIndex = 5;
             labelTeachers.Text = "Teacher";
             // 
-            // labelClasss
+            // classsCount
             // 
-            labelClasss.AutoSize = true;
-            labelClasss.Location = new Point(672, 334);
-            labelClasss.Name = "labelClasss";
-            labelClasss.Size = new Size(33, 21);
-            labelClasss.TabIndex = 8;
-            labelClasss.Text = "{?}";
+            classsCount.AutoSize = true;
+            classsCount.Location = new Point(672, 334);
+            classsCount.Name = "classsCount";
+            classsCount.Size = new Size(33, 21);
+            classsCount.TabIndex = 8;
+            classsCount.Text = "{?}";
             // 
             // labelClasses
             // 
@@ -165,11 +166,11 @@
             Controls.Add(label1);
             Controls.Add(pictureBox4);
             Controls.Add(pictureBox3);
-            Controls.Add(labelClasss);
+            Controls.Add(classsCount);
             Controls.Add(labelClasses);
-            Controls.Add(label3);
+            Controls.Add(teacherCount);
             Controls.Add(labelTeachers);
-            Controls.Add(label2);
+            Controls.Add(studentCount);
             Controls.Add(labelstudent);
             Controls.Add(pictureBox2);
             Controls.Add(pictureBox1);
@@ -177,6 +178,7 @@
             Margin = new Padding(4, 3, 4, 3);
             Name = "UserControDashBoard";
             Size = new Size(993, 687);
+            Load += UserControDashBoard_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
@@ -190,10 +192,10 @@
         private PictureBox pictureBox1;
         private PictureBox pictureBox2;
         private Label labelstudent;
-        private Label label2;
-        private Label label3;
+        private Label studentCount;
+        private Label teacherCount;
         private Label labelTeachers;
-        private Label labelClasss;
+        private Label classsCount;
         private Label labelClasses;
         private PictureBox pictureBox3;
         private Label label1;

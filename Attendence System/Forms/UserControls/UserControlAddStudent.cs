@@ -205,9 +205,8 @@ namespace Attendence_System.Forms.UserControls
                 comboBox1.Items.Add(name);
             }
         }
-        private void UserControlAddStudent_Load(object sender, EventArgs e)
+        public void FillDataGrid()
         {
-            FillCompoBox();
             XmlDocument doc = new XmlDocument();
             doc.Load("..\\..\\..\\Resources\\Data.xml");
             XmlNodeList nodes = doc.SelectNodes("/school/users/user");
@@ -217,13 +216,19 @@ namespace Attendence_System.Forms.UserControls
                 string id = node.SelectSingleNode("id").InnerText;
                 string name = node.SelectSingleNode("username").InnerText;
                 string role = node.SelectSingleNode("role").InnerText;
-                //change row font color to black
 
                 if (role == "student")
                 {
                     dataGridViewClass.Rows.Add(id, name, role, "test");
                 }
             }
+
+
+        }
+        private void UserControlAddStudent_Load(object sender, EventArgs e)
+        {
+            FillCompoBox();
+            FillDataGrid();
 
         }
 
@@ -299,8 +304,6 @@ namespace Attendence_System.Forms.UserControls
                 using (FormCrudStudent popup = new FormCrudStudent(userId))
                 {
                     popup.ShowDialog();
-
-
                 }
 
 

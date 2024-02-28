@@ -69,7 +69,6 @@ namespace Attendence_Management_System
             return userNode;
 
         }
-        // function to add a new user to the xml file
         public static void XMLAddUser(string userName, string role, string password, string email, string ID)
         {
             XmlDocument XmlDoc = ReadAllDocument();
@@ -224,6 +223,54 @@ namespace Attendence_Management_System
 
             return student;
         }
+      
+        // get all the students count
+        public  string GetStudentCount()
+        {
+            XmlDocument XmlDoc = ReadAllDocument();
+            XmlNode root = XmlDoc.SelectSingleNode("/school/students");
+            return root.ChildNodes.Count.ToString();
+        }
+        public  List<string> GetTeacher(string ID)
+        {
+            XmlDocument XmlDoc = ReadAllDocument();
+            XmlNode user = XmlDoc.SelectSingleNode($"/school/users/user[id=\"{ID}\"]\r\n");
+            XmlNode userNameNode = user.SelectSingleNode("username");
+            XmlNode passwordNode = user.SelectSingleNode("password");
+            XmlNode roleNode = user.SelectSingleNode("role");
+            XmlNode emailNode = user.SelectSingleNode("email");
+            XmlNode idNode = user.SelectSingleNode("id");
+            List<string> teacher = new List<string>();
+            teacher.Add(userNameNode.InnerText);
+            teacher.Add(passwordNode.InnerText);
+            teacher.Add(roleNode.InnerText);
+            teacher.Add(emailNode.InnerText);
+            teacher.Add(idNode.InnerText);
+
+            return teacher;
+        }
+        public string GetTeacherCount()
+        {
+            XmlDocument XmlDoc = ReadAllDocument();
+            XmlNode root = XmlDoc.SelectSingleNode("/school/teachers");
+            return root.ChildNodes.Count.ToString();
+        }
+        // get all the classes count
+        public  string GetClassCount()
+        {
+            XmlDocument XmlDoc = ReadSecondDocument();
+            XmlNode root = XmlDoc.SelectSingleNode("/AttendanceData");
+            return root.ChildNodes.Count.ToString();
+        }
+        public  void XMLAddTeacherToClass(string classID, string teacherID)
+        {
+            XmlDocument XmlDoc = ReadSecondDocument();
+            XmlNode root = XmlDoc.SelectSingleNode("/AttendanceData");
+            XmlNode user = root.SelectSingleNode($"/AttendanceData/Class[ClassID=\"{classID}\"]\r\n");
+            XmlNode teacher = user.SelectSingleNode("TeacherID");
+            teacher.InnerText = teacherID;
+            root.OwnerDocument.Save("../../../Resources/Attendance.xml");
+        }
         public static void XMLAddStudentToClass(string classID, string studentID)
         {
             XmlDocument XmlDoc = ReadSecondDocument();
@@ -235,6 +282,7 @@ namespace Attendence_Management_System
             Students.AppendChild(student);
             root.OwnerDocument.Save("../../../Resources/Attendance.xml");
         }
+      
         public  static void deleteUserInXML(string ID)
         {
             XmlDocument XmlDoc = ReadAllDocument();

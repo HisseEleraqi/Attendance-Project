@@ -30,13 +30,13 @@
         {
             labelFristName = new Label();
             labelLastName = new Label();
-            labelEmail = new Label();
-            labelPassword = new Label();
+            password = new Label();
+            rePassword = new Label();
             label6 = new Label();
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
-            textBox3 = new TextBox();
-            textBox4 = new TextBox();
+            FstName = new TextBox();
+            LstName = new TextBox();
+            pass = new TextBox();
+            rePass = new TextBox();
             buttonCancel = new Button();
             buttonUpdate = new Button();
             buttonDelete = new Button();
@@ -64,27 +64,27 @@
             labelLastName.TabIndex = 1;
             labelLastName.Text = "Last Name";
             // 
-            // labelEmail
+            // password
             // 
-            labelEmail.AutoSize = true;
-            labelEmail.Font = new Font("Century Gothic", 12.2F, FontStyle.Bold);
-            labelEmail.ForeColor = Color.CornflowerBlue;
-            labelEmail.Location = new Point(566, 213);
-            labelEmail.Name = "labelEmail";
-            labelEmail.Size = new Size(76, 25);
-            labelEmail.TabIndex = 2;
-            labelEmail.Text = "E-mail";
+            password.AutoSize = true;
+            password.Font = new Font("Century Gothic", 12.2F, FontStyle.Bold);
+            password.ForeColor = Color.CornflowerBlue;
+            password.Location = new Point(538, 213);
+            password.Name = "password";
+            password.Size = new Size(107, 25);
+            password.TabIndex = 2;
+            password.Text = "Password";
             // 
-            // labelPassword
+            // rePassword
             // 
-            labelPassword.AutoSize = true;
-            labelPassword.Font = new Font("Century Gothic", 12.2F, FontStyle.Bold);
-            labelPassword.ForeColor = Color.CornflowerBlue;
-            labelPassword.Location = new Point(548, 278);
-            labelPassword.Name = "labelPassword";
-            labelPassword.Size = new Size(107, 25);
-            labelPassword.TabIndex = 3;
-            labelPassword.Text = "Password";
+            rePassword.AutoSize = true;
+            rePassword.Font = new Font("Century Gothic", 12.2F, FontStyle.Bold);
+            rePassword.ForeColor = Color.CornflowerBlue;
+            rePassword.Location = new Point(539, 278);
+            rePassword.Name = "rePassword";
+            rePassword.Size = new Size(182, 25);
+            rePassword.TabIndex = 3;
+            rePassword.Text = "ReEnterPassword";
             // 
             // label6
             // 
@@ -97,41 +97,41 @@
             label6.TabIndex = 5;
             label6.Text = "Edit Student";
             // 
-            // textBox1
+            // FstName
             // 
-            textBox1.Font = new Font("Century Gothic", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            textBox1.ForeColor = Color.DarkBlue;
-            textBox1.Location = new Point(220, 116);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(253, 28);
-            textBox1.TabIndex = 6;
+            FstName.Font = new Font("Century Gothic", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            FstName.ForeColor = Color.DarkBlue;
+            FstName.Location = new Point(220, 116);
+            FstName.Name = "FstName";
+            FstName.Size = new Size(253, 28);
+            FstName.TabIndex = 6;
             // 
-            // textBox2
+            // LstName
             // 
-            textBox2.Font = new Font("Century Gothic", 10.2F, FontStyle.Bold);
-            textBox2.ForeColor = Color.DarkBlue;
-            textBox2.Location = new Point(220, 161);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(253, 28);
-            textBox2.TabIndex = 7;
+            LstName.Font = new Font("Century Gothic", 10.2F, FontStyle.Bold);
+            LstName.ForeColor = Color.DarkBlue;
+            LstName.Location = new Point(220, 161);
+            LstName.Name = "LstName";
+            LstName.Size = new Size(253, 28);
+            LstName.TabIndex = 7;
             // 
-            // textBox3
+            // pass
             // 
-            textBox3.Font = new Font("Century Gothic", 10.2F, FontStyle.Bold);
-            textBox3.ForeColor = Color.DarkBlue;
-            textBox3.Location = new Point(220, 210);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(253, 28);
-            textBox3.TabIndex = 8;
+            pass.Font = new Font("Century Gothic", 10.2F, FontStyle.Bold);
+            pass.ForeColor = Color.DarkBlue;
+            pass.Location = new Point(220, 210);
+            pass.Name = "pass";
+            pass.Size = new Size(253, 28);
+            pass.TabIndex = 8;
             // 
-            // textBox4
+            // rePass
             // 
-            textBox4.Font = new Font("Century Gothic", 10.2F, FontStyle.Bold);
-            textBox4.ForeColor = Color.DarkBlue;
-            textBox4.Location = new Point(220, 275);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(253, 28);
-            textBox4.TabIndex = 9;
+            rePass.Font = new Font("Century Gothic", 10.2F, FontStyle.Bold);
+            rePass.ForeColor = Color.DarkBlue;
+            rePass.Location = new Point(220, 275);
+            rePass.Name = "rePass";
+            rePass.Size = new Size(253, 28);
+            rePass.TabIndex = 9;
             // 
             // buttonCancel
             // 
@@ -154,6 +154,7 @@
             buttonUpdate.TabIndex = 12;
             buttonUpdate.Text = "Update";
             buttonUpdate.UseVisualStyleBackColor = false;
+            buttonUpdate.Click += buttonUpdate_Click;
             // 
             // buttonDelete
             // 
@@ -165,8 +166,9 @@
             buttonDelete.TabIndex = 13;
             buttonDelete.Text = "Delete";
             buttonDelete.UseVisualStyleBackColor = false;
+            buttonDelete.Click += buttonDelete_Click;
             // 
-            // FormCrudStudent
+            // FormCrudTeacher
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -174,16 +176,16 @@
             Controls.Add(buttonDelete);
             Controls.Add(buttonUpdate);
             Controls.Add(buttonCancel);
-            Controls.Add(textBox4);
-            Controls.Add(textBox3);
-            Controls.Add(textBox2);
-            Controls.Add(textBox1);
+            Controls.Add(rePass);
+            Controls.Add(pass);
+            Controls.Add(LstName);
+            Controls.Add(FstName);
             Controls.Add(label6);
-            Controls.Add(labelPassword);
-            Controls.Add(labelEmail);
+            Controls.Add(rePassword);
+            Controls.Add(password);
             Controls.Add(labelLastName);
             Controls.Add(labelFristName);
-            Name = "FormCrudStudent";
+            Name = "FormCrudTeacher";
             Text = "FormCrudStudent";
             ResumeLayout(false);
             PerformLayout();
@@ -193,13 +195,13 @@
 
         private Label labelFristName;
         private Label labelLastName;
-        private Label labelEmail;
-        private Label labelPassword;
+        private Label password;
+        private Label rePassword;
         private Label label6;
-        private TextBox textBox1;
-        private TextBox textBox2;
-        private TextBox textBox3;
-        private TextBox textBox4;
+        private TextBox FstName;
+        private TextBox LstName;
+        private TextBox pass;
+        private TextBox rePass;
         private Button buttonCancel;
         private Button buttonUpdate;
         private Button buttonDelete;
