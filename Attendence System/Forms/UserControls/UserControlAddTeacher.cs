@@ -19,7 +19,6 @@ namespace Attendence_System.Forms.UserControls
             InitializeComponent();
         }
 
-        private bool enterPressed = false;
         private object originalCellValue;
 
         private void showHide_Click(object sender, EventArgs e)
@@ -187,9 +186,6 @@ namespace Attendence_System.Forms.UserControls
                 {
                     case 1:
                         userNode.SelectSingleNode("username").InnerText = newValue;
-                        break;
-                    case 2:
-                        userNode.SelectSingleNode("role").InnerText = newValue;
                         break;
 
                 }

@@ -58,14 +58,14 @@
             label5 = new Label();
             comboBox1 = new ComboBox();
             dataGridViewClass = new DataGridView();
+            pictureBox1 = new PictureBox();
+            label1 = new Label();
+            pictureBox2 = new PictureBox();
             Column1 = new DataGridViewTextBoxColumn();
             Column4 = new DataGridViewTextBoxColumn();
             Column3 = new DataGridViewTextBoxColumn();
             Column2 = new DataGridViewTextBoxColumn();
             Column5 = new DataGridViewCheckBoxColumn();
-            pictureBox1 = new PictureBox();
-            label1 = new Label();
-            pictureBox2 = new PictureBox();
             tabControlAddClass.SuspendLayout();
             tabPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)showHide).BeginInit();
@@ -395,7 +395,6 @@
             // 
             dataGridViewClass.AllowUserToAddRows = false;
             dataGridViewClass.AllowUserToDeleteRows = false;
-            dataGridViewClass.AllowUserToResizeColumns = false;
             dataGridViewClass.AllowUserToResizeRows = false;
             dataGridViewClass.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridViewClass.BackgroundColor = Color.WhiteSmoke;
@@ -403,9 +402,9 @@
             dataGridViewClass.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
             dataGridViewClass.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewClass.Columns.AddRange(new DataGridViewColumn[] { Column1, Column4, Column3, Column2, Column5 });
+            dataGridViewClass.GridColor = Color.YellowGreen;
             dataGridViewClass.Location = new Point(61, 255);
             dataGridViewClass.Name = "dataGridViewClass";
-            dataGridViewClass.ReadOnly = true;
             dataGridViewClass.RowHeadersWidth = 51;
             dataGridViewClass.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             dataGridViewCellStyle1.ForeColor = Color.Black;
@@ -417,47 +416,8 @@
             dataGridViewClass.Size = new Size(1247, 412);
             dataGridViewClass.TabIndex = 6;
             dataGridViewClass.UseWaitCursor = true;
-            dataGridViewClass.CellBeginEdit += dataGridViewClass_CellBeginEdit;
             dataGridViewClass.CellEndEdit += dataGridViewClass_CellEndEdit;
             dataGridViewClass.KeyDown += dataGridViewClass_KeyDown;
-            // 
-            // Column1
-            // 
-            Column1.HeaderText = "ID";
-            Column1.MinimumWidth = 6;
-            Column1.Name = "Column1";
-            Column1.ReadOnly = true;
-            // 
-            // Column4
-            // 
-            Column4.HeaderText = "Teacher Name";
-            Column4.MinimumWidth = 6;
-            Column4.Name = "Column4";
-            Column4.ReadOnly = true;
-            // 
-            // Column3
-            // 
-            Column3.HeaderText = "Email";
-            Column3.MinimumWidth = 6;
-            Column3.Name = "Column3";
-            Column3.ReadOnly = true;
-            // 
-            // Column2
-            // 
-            Column2.HeaderText = "Class Name";
-            Column2.MinimumWidth = 6;
-            Column2.Name = "Column2";
-            Column2.ReadOnly = true;
-            // 
-            // Column5
-            // 
-            Column5.HeaderText = "Add To Classes";
-            Column5.MinimumWidth = 6;
-            Column5.Name = "Column5";
-            Column5.ReadOnly = true;
-            Column5.Resizable = DataGridViewTriState.True;
-            Column5.SortMode = DataGridViewColumnSortMode.Automatic;
-            Column5.ThreeState = true;
             // 
             // pictureBox1
             // 
@@ -493,6 +453,39 @@
             pictureBox2.TabIndex = 22;
             pictureBox2.TabStop = false;
             pictureBox2.UseWaitCursor = true;
+            // 
+            // Column1
+            // 
+            Column1.HeaderText = "ID";
+            Column1.MinimumWidth = 6;
+            Column1.Name = "Column1";
+            Column1.ReadOnly = true;
+            // 
+            // Column4
+            // 
+            Column4.HeaderText = "Teacher Name";
+            Column4.MinimumWidth = 6;
+            Column4.Name = "Column4";
+            // 
+            // Column3
+            // 
+            Column3.HeaderText = "Email";
+            Column3.MinimumWidth = 6;
+            Column3.Name = "Column3";
+            // 
+            // Column2
+            // 
+            Column2.HeaderText = "Class Name";
+            Column2.MinimumWidth = 6;
+            Column2.Name = "Column2";
+            // 
+            // Column5
+            // 
+            Column5.HeaderText = "Add To Classes";
+            Column5.MinimumWidth = 6;
+            Column5.Name = "Column5";
+            Column5.Resizable = DataGridViewTriState.True;
+            Column5.SortMode = DataGridViewColumnSortMode.Automatic;
             // 
             // UserControlAddTeacher
             // 

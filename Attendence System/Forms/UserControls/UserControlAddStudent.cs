@@ -22,6 +22,7 @@ namespace Attendence_System.Forms.UserControls
         {
             InitializeComponent();
         }
+        private object originalCellValue;
 
         private void textBoxFristName_TextChanged(object sender, EventArgs e)
         {
@@ -159,7 +160,33 @@ namespace Attendence_System.Forms.UserControls
         {
 
         }
+        private void SaveEditToXml(int rowIndex, int columnIndex)
+        {
+            string userId = dataGridViewClass.Rows[rowIndex].Cells[0].Value.ToString(); // Adjust if your ID is in a different column
+            string newValue = dataGridViewClass.Rows[rowIndex].Cells[columnIndex].Value.ToString();
 
+            XmlDocument doc = new XmlDocument();
+            doc.Load("..\\..\\..\\Resources\\Data.xml"); // Adjust the path as necessary
+
+            XmlNode userNode = doc.SelectSingleNode($"/school/users/user[id='{userId}']");
+
+            if (userNode != null)
+            {
+                switch (columnIndex)
+                {
+                    case 1:
+                        userNode.SelectSingleNode("username").InnerText = newValue;
+                        break;
+                    case 2:
+                        userNode.SelectSingleNode("role").InnerText = newValue;
+                        break;
+
+                }
+
+                // Save the updated XML document
+                doc.Save("..\\..\\..\\Resources\\Data.xml");
+            }
+        }
 
         private void UserControlAddStudent_Load(object sender, EventArgs e)
         {
@@ -213,7 +240,7 @@ namespace Attendence_System.Forms.UserControls
                             if (rowVisible)
                             {
                                 dataGridViewClass.Rows[row.Index].Selected = true;
-                                
+
                             }
                         }
                     }
@@ -224,6 +251,79 @@ namespace Attendence_System.Forms.UserControls
                 }
             }
         }
+
+
+
+        private void DeleteUserFromXml(string userId)
+        {
+            XmlDocument doc = new XmlDocument();
+            doc.Load("..\\..\\..\\Resources\\Data.xml"); // Adjust the path as necessary
+
+            // XPath to find the user node by ID. Adjust XPath according to your XML structure if needed.
+            XmlNode userNode = doc.SelectSingleNode($"/school/users/user[id='{userId}']");
+            if (userNode != null)
+            {
+                // Remove the found node from its parent
+                userNode.ParentNode.RemoveChild(userNode);
+
+                // Save the XML document back to the file
+                doc.Save("..\\..\\..\\Resources\\Data.xml");
+            }
+        }
+
+
+        private void dataGridViewClass_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == 5 && e.RowIndex >= 0) // Ensuring valid row
+            {
+                // Confirmation dialog
+                DialogResult dialogResult = MessageBox.Show("Are you sure you want to delete this user?", "Delete User", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    // Assuming the ID is stored in the first column of the DataGridView
+                    string userId = dataGridViewClass.Rows[e.RowIndex].Cells[0].Value.ToString();
+                    DeleteUserFromXml(userId); // Method to delete the user from XML
+                    dataGridViewClass.Rows.RemoveAt(e.RowIndex); // Remove the row from DataGridView
+                }
+            }
+
+            if (e.RowIndex >= 0 && e.RowIndex < dataGridViewClass.Rows.Count &&
+                e.ColumnIndex >= 0 && e.ColumnIndex < dataGridViewClass.Columns.Count)
+            {
+                var currentValue = dataGridViewClass.Rows[e.RowIndex].Cells[e.ColumnIndex].Value; if (currentValue != null && originalCellValue != null && !Equals(currentValue, originalCellValue))
+            {
+                SaveEditToXml(e.RowIndex, e.ColumnIndex);
+            }
+            else
+            {
+                dataGridViewClass.Rows[e.RowIndex].Cells[e.ColumnIndex].Value = originalCellValue;
+            }
+
+        }
+
+        private void dataGridViewClass_CellBeginEdit(object sender, DataGridViewCellCancelEventArgs e)
+        {
+            originalCellValue = dataGridViewClass.Rows[e.RowIndex].Cells[e.ColumnIndex].Value;
+
+        }
+
+        private void dataGridViewClass_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                dataGridViewClass.EndEdit();
+                e.Handled = true;
+            }
+        }
+
+        private void dataGridViewClass_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+        {
+            var currentValue = dataGridViewClass.Rows[e.RowIndex].Cells[e.ColumnIndex].Value;
+            if (currentValue != null && originalCellValue != null && !Equals(currentValue, originalCellValue))
+            {
+                SaveEditToXml(e.RowIndex, e.ColumnIndex);
+            }
+        }
     }
-    
+
 }

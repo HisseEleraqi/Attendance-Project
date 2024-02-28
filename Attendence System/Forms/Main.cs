@@ -1,5 +1,4 @@
 using Attendence_System.Forms.UserControls;
-using Attendence_System.Forms.UserControls2;
 
 namespace Attendence_Management_System
 {
@@ -57,7 +56,7 @@ namespace Attendence_Management_System
 
             userControlAddStudent1.Visible = false;
             userControlAddTeacher1.Visible = false;
-            userControlReports21.Visible = false;
+       //     userControlReports1.Visible = false;
 
 
 
@@ -77,7 +76,7 @@ namespace Attendence_Management_System
             userControDashBoard1.Visible = false;
             userControlAddClass1.Visible = false;
             userControlAddStudent1.Visible = true;
-             userControlReports21.Visible = false;
+           // userControlReports1.Visible = false;
 
 
         }
@@ -89,7 +88,7 @@ namespace Attendence_Management_System
             userControlAddClass1.Visible = true;
             userControlAddStudent1.Visible = false;
             userControlAddTeacher1.Visible = false;
-           userControlReports21.Visible = false;
+        //    userControlReports1.Visible = false;
 
 
         }
@@ -101,7 +100,7 @@ namespace Attendence_Management_System
             userControlAddClass1.Visible = false;
             userControlAddStudent1.Visible = false;
             userControlAddTeacher1.Visible = true;
-           userControlReports21.Visible = false;
+          //  userControlReports1.Visible = false;
 
 
 
@@ -114,7 +113,7 @@ namespace Attendence_Management_System
             userControlAddClass1.Visible = false;
             userControlAddStudent1.Visible = false;
             userControlAddTeacher1.Visible = false;
-            userControlReports21.Visible = true;
+           // userControlReports1.Visible = true;
 
         }
 
@@ -127,7 +126,7 @@ namespace Attendence_Management_System
             userControlAddClass1.Visible = false;
             userControlAddStudent1.Visible = false;
             userControlAddTeacher1.Visible = false;
-            userControlReports21.Visible = false;
+          //  userControlReports1.Visible = false;
 
         }
 
@@ -146,7 +145,7 @@ namespace Attendence_Management_System
             userControlAddClass1.Visible = false;
             userControlAddStudent1.Visible = false;
             userControlAddTeacher1.Visible = false;
-          userControlReports21.Visible = false;
+       //     userControlReports1.Visible = false;
 
         }
 

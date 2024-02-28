@@ -1,19 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <school>
-  <attendance-records>
-    <attendance-record>
-      <date>2024-02-16</date>
-      <class>
-        <id>CL-1</id>
-      </class>
-      <student id="ST-1">
-        <status>Present</status>
-      </student>
-      <student id="ST-2">
-        <status>Absent</status>
-      </student>
-    </attendance-record>
-  </attendance-records>
   <students>
     <student id="ST-1">
       <name>Ebrahim</name>
@@ -36,38 +22,20 @@
         <class id="CL-2" />
       </classes>
     </student>
-    <student id="2eb7aff1-20e1-44e6-8f84-cd28f69a4e08">
-      <name>hema hema</name>
-    </student>
-    <student id="78405142-e7d1-45b5-81b7-bf1dd53d4e65">
-      <name>Ebrahim Osama</name>
-    </student>
-    <student id="e8883771-5276-410f-9d57-b535c4894693">
-      <name>hissen sdfas</name>
-    </student>
-    <student id="ecadf7b2-d466-4d1f-8c51-7b73179cf9da">
-      <name>asdfds asdfasd</name>
-    </student>
-    <student id="cef92dc7-e3e4-4439-b260-60c08c339288">
-      <name>test test</name>
+    <student id="ST-4">
+      <name>sfds sf</name>
     </student>
   </students>
   <teachers>
     <teacher id="TE-1">
       <name>Hema</name>
-      <courses>
-        <course id="CL-1" />
-        <course id="CL-2" />
-      </courses>
+      <classes>
+        <class id="CL-1" />
+        <class id="CL-2" />
+      </classes>
     </teacher>
-    <teacher id="632b155e-48d8-41c6-a332-cc16382439ae">
-      <name>hema Ebrahim</name>
-    </teacher>
-    <teacher id="a3290383-c616-4490-ba87-79de1848220e">
-      <name>jsdhafjk fjkasdhfjk</name>
-    </teacher>
-    <teacher id="69d62658-3850-417e-ae5c-93d85097a8b1">
-      <name>hissen ahmed</name>
+    <teacher id="TE-2">
+      <name>hema sadf</name>
     </teacher>
   </teachers>
   <admins>
@@ -121,25 +89,11 @@
       <email>Ebrahim@example.com</email>
     </user>
     <user>
-      <id>ecadf7b2-d466-4d1f-8c51-7b73179cf9da</id>
-      <username>asdfds asdfasd</username>
-      <role>student</role>
-      <password>asdfdsfS222@@</password>
-      <email>Ebradhim@example.com</email>
-    </user>
-    <user>
       <id>632b155e-48d8-41c6-a332-cc16382439ae</id>
       <username>hema Ebrahim</username>
       <role>teacher</role>
       <password>AdFead202@@</password>
       <email>Ebrahim@example.comd</email>
-    </user>
-    <user>
-      <id>cef92dc7-e3e4-4439-b260-60c08c339288</id>
-      <username>test test</username>
-      <role>student</role>
-      <password>Aahema2022@@</password>
-      <email>test@exapmle.com</email>
     </user>
     <user>
       <id>a3290383-c616-4490-ba87-79de1848220e</id>
@@ -155,6 +109,13 @@
       <password>Hissen1234@</password>
       <email>se7s_eleraqi@hotmail.com</email>
     </user>
+    <user>
+      <id>T-2</id>
+      <username>hema sadf</username>
+      <role>teacher</role>
+      <password>Aahema@1</password>
+      <email>hema@example.com</email>
+    </user>
   </users>
   <classes>
     <class>
@@ -166,17 +127,30 @@
       <student id="ST-3" />
     </class>
     <class>
-      <id>6f702148-3452-4742-ab67-0ff0e2291308</id>
-      <name>HTML</name>
+    </class>
+    <class>
+      <id>CL-0</id>
+      <name>Hema</name>
+    </class>
+    <class>
+      <id>CLS-1</id>
+      <name>JS</name>
+    </class>
+    <class>
+      <id>CLS-1</id>
+      <name>HAMED</name>
+    </class>
+    <class>
+      <id>CLS-1</id>
+      <name>HEHE</name>
+    </class>
+    <class>
+      <id>CLS-1</id>
+      <name>EMAD</name>
+    </class>
+    <class>
+      <id>CLS-4</id>
+      <name>A7A</name>
     </class>
   </classes>
-  <session>
-    <user id="ST-1" />
-  </session>
-  <configs>
-    <language>EN</language>
-    <dateFormats>DD-MM-YYYY</dateFormats>
-    <coolDown>false</coolDown>
-    <coolDownStartDate>0</coolDownStartDate>
-  </configs>
 </school>

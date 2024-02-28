@@ -30,6 +30,7 @@
         {
             components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UserControlAddStudent));
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             toolTip = new ToolTip(components);
             tabControlAddClass = new TabControl();
@@ -64,6 +65,7 @@
             Column3 = new DataGridViewTextBoxColumn();
             Column2 = new DataGridViewTextBoxColumn();
             Column5 = new DataGridViewCheckBoxColumn();
+            delete = new DataGridViewButtonColumn();
             pictureBox1 = new PictureBox();
             textBoxSearchStudent = new TextBox();
             label1 = new Label();
@@ -433,7 +435,7 @@
             // dataGridViewClass
             // 
             dataGridViewClass.AllowUserToAddRows = false;
-            dataGridViewClass.AllowUserToDeleteRows = false;
+            dataGridViewClass.AllowUserToOrderColumns = true;
             dataGridViewClass.AllowUserToResizeColumns = false;
             dataGridViewClass.AllowUserToResizeRows = false;
             dataGridViewClass.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
@@ -441,13 +443,13 @@
             dataGridViewClass.ClipboardCopyMode = DataGridViewClipboardCopyMode.EnableWithoutHeaderText;
             dataGridViewClass.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
             dataGridViewClass.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewClass.Columns.AddRange(new DataGridViewColumn[] { Column1, Column4, Column3, Column2, Column5 });
+            dataGridViewClass.Columns.AddRange(new DataGridViewColumn[] { Column1, Column4, Column3, Column2, Column5, delete });
             dataGridViewClass.Location = new Point(84, 269);
             dataGridViewClass.Name = "dataGridViewClass";
             dataGridViewClass.RowHeadersWidth = 51;
             dataGridViewClass.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle1.ForeColor = Color.Black;
-            dataGridViewClass.RowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.ForeColor = Color.Black;
+            dataGridViewClass.RowsDefaultCellStyle = dataGridViewCellStyle2;
             dataGridViewClass.ShowCellErrors = false;
             dataGridViewClass.ShowCellToolTips = false;
             dataGridViewClass.ShowEditingIcon = false;
@@ -455,6 +457,10 @@
             dataGridViewClass.Size = new Size(1175, 334);
             dataGridViewClass.TabIndex = 6;
             dataGridViewClass.UseWaitCursor = true;
+            dataGridViewClass.CellBeginEdit += dataGridViewClass_CellBeginEdit;
+            dataGridViewClass.CellContentClick += dataGridViewClass_CellContentClick;
+            dataGridViewClass.CellEndEdit += dataGridViewClass_CellEndEdit;
+            dataGridViewClass.KeyDown += dataGridViewClass_KeyDown;
             // 
             // Column1
             // 
@@ -488,6 +494,20 @@
             Column5.Resizable = DataGridViewTriState.True;
             Column5.SortMode = DataGridViewColumnSortMode.Automatic;
             // 
+            // delete
+            // 
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = Color.Red;
+            dataGridViewCellStyle1.Font = new Font("Tahoma", 7.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle1.ForeColor = Color.Black;
+            delete.DefaultCellStyle = dataGridViewCellStyle1;
+            delete.HeaderText = "delete";
+            delete.MinimumWidth = 6;
+            delete.Name = "delete";
+            delete.Text = "delete";
+            delete.ToolTipText = "delete";
+            delete.UseColumnTextForButtonValue = true;
+            // 
             // pictureBox1
             // 
             pictureBox1.Image = Properties.Resources.ixkfkncp;
@@ -519,9 +539,9 @@
             label1.ForeColor = Color.FromArgb(52, 73, 94);
             label1.Location = new Point(0, 24);
             label1.Name = "label1";
-            label1.Size = new Size(236, 34);
+            label1.Size = new Size(227, 34);
             label1.TabIndex = 0;
-            label1.Text = "Search Teacher:";
+            label1.Text = "Search Student:";
             label1.UseWaitCursor = true;
             // 
             // pictureBox2
@@ -600,5 +620,6 @@
         private DataGridViewTextBoxColumn Column3;
         private DataGridViewTextBoxColumn Column2;
         private DataGridViewCheckBoxColumn Column5;
+        private DataGridViewButtonColumn delete;
     }
 }

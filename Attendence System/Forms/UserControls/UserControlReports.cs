@@ -2,7 +2,7 @@
 using System.Xml.Linq;
 using OfficeOpenXml;
 
-namespace Attendence_System.Forms.UserControls2
+namespace Attendence_System.Forms.UserControls
 {
     public partial class UserControlReports : UserControl
     {
