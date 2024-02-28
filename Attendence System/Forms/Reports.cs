@@ -1,26 +1,29 @@
-﻿using System.Data;
+﻿using System;
+using System.Collections.Generic;
+using System.Drawing;
+using System.Windows.Forms;
 using System.Xml.Linq;
+using Attendence_Management_System.Forms;
+using Guna.UI2.WinForms;
 using OfficeOpenXml;
 
-namespace Attendence_System.Forms.UserControls
+namespace Attendence_Management_System2
 {
-    public partial class UserControlReports : UserControl
+    public partial class Reports : Form
     {
-        public UserControlReports()
+
+  
+        public Reports()
         {
             InitializeComponent();
-            // Move the logic from userControlReports_Load here
             List<string> classIDs = new AttendanceXmlController(".\\..\\..\\..\\Resources\\Attendance.xml").GetAllClassIDs();
             guna2ComboBox1.DataSource = classIDs;
 
             // Lock the Date Picker to the current date
             StartDate_Picker.MaxDate = DateTime.Now;
             EndDate_Picker.MaxDate = DateTime.Now;
+
         }
-
-
-
-
 
         public class AttendanceData
         {
@@ -215,7 +218,7 @@ namespace Attendence_System.Forms.UserControls
         public void Generate_Click(object sender, EventArgs e)
         {
 
-            
+
         }
 
         private void guna2HtmlLabel1_Click(object sender, EventArgs e)
@@ -229,6 +232,11 @@ namespace Attendence_System.Forms.UserControls
         }
 
         private void Generate_Click_1(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void Generate_Click_2(object sender, EventArgs e)
         {
             Console.WriteLine("Generate button clicked"); // Add this line for debugging
 
