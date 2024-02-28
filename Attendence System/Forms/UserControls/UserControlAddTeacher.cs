@@ -145,7 +145,7 @@ namespace Attendence_System.Forms.UserControls
 
                             row.Visible = rowVisible;
 
-\                            if (rowVisible)
+                            if (rowVisible)
                             {
                                 dataGridViewTeacher.Rows[row.Index].Selected = true;
 
