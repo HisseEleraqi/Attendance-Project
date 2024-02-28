@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <AttendanceData>
   <Class>
-    <ClassID>CS-101</ClassID>
+    <ClassID>CS101</ClassID>
     <ClassName>Computer Science 101</ClassName>
     <TeacherID>T001</TeacherID>
     <TeacherName>Qamary</TeacherName>
@@ -132,7 +132,7 @@
           </Record>
           <Record>
             <Date>2024-02-23</Date>
-            <Status>Absent</Status>
+            <Status>Present</Status>
           </Record>
           <Record>
             <Date>2024-02-20</Date>
@@ -340,7 +340,7 @@
           </Record>
           <Record>
             <Date>2024-02-23</Date>
-            <Status>Absent</Status>
+            <Status>Present</Status>
           </Record>
           <Record>
             <Date>2024-02-20</Date>
@@ -440,7 +440,7 @@
           </Record>
           <Record>
             <Date>2024-02-23</Date>
-            <Status>Absent</Status>
+            <Status>Present</Status>
           </Record>
           <Record>
             <Date>2024-02-20</Date>
@@ -617,7 +617,7 @@
     </Students>
   </Class>
   <Class>
-    <ClassID>JS-200</ClassID>
+    <ClassID>JS 200</ClassID>
     <ClassName>Java Script</ClassName>
     <TeacherID>T002</TeacherID>
     <TeacherName>Smith</TeacherName>
@@ -648,7 +648,7 @@
           </Record>
           <Record>
             <Date>2024-02-23</Date>
-            <Status>Absent</Status>
+            <Status>Present</Status>
           </Record>
           <Record>
             <Date>2024-02-20</Date>
@@ -922,15 +922,6 @@
           </Record>
         </AttendanceRecords>
       </Student>
-    </Students>
-  </Class>
-  <Class>
-    <ClassID>CLS-201</ClassID>
-    <ClassName>SD</ClassName>
-    <TeacherID>0</TeacherID>
-    <TeacherName />
-    <Students>
-      <Student>0</Student>
     </Students>
   </Class>
 </AttendanceData>
