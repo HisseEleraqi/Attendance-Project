@@ -193,6 +193,7 @@ namespace Attendence_System.Forms.UserControls
             XmlDocument doc = new XmlDocument();
             doc.Load("..\\..\\..\\Resources\\Attendance.xml");
             XmlNodeList nodes = doc.SelectNodes("/AttendanceData/Class");
+            Console.WriteLine("iside Fill Compo");
             Console.WriteLine(nodes.Count);
             foreach (XmlNode node in nodes)
             {
@@ -325,5 +326,9 @@ namespace Attendence_System.Forms.UserControls
             //}
         }
 
+        private void ButtonAddToClass_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

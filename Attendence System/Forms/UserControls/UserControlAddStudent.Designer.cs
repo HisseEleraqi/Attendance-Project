@@ -408,6 +408,7 @@
             ButtonAddToClass.Text = "Add to Class";
             ButtonAddToClass.UseVisualStyleBackColor = false;
             ButtonAddToClass.UseWaitCursor = true;
+            ButtonAddToClass.Click += ButtonAddToClass_Click;
             // 
             // label5
             // 
@@ -458,6 +459,55 @@
             dataGridViewClass.TabIndex = 6;
             dataGridViewClass.UseWaitCursor = true;
             dataGridViewClass.CellContentClick += dataGridViewClass_CellContentClick;
+<<<<<<< HEAD
+=======
+            // 
+            // Column1
+            // 
+            Column1.HeaderText = "ID";
+            Column1.MinimumWidth = 6;
+            Column1.Name = "Column1";
+            // 
+            // Column4
+            // 
+            Column4.HeaderText = "Student Name";
+            Column4.MinimumWidth = 6;
+            Column4.Name = "Column4";
+            // 
+            // Column3
+            // 
+            Column3.HeaderText = "Email";
+            Column3.MinimumWidth = 6;
+            Column3.Name = "Column3";
+            // 
+            // Column2
+            // 
+            Column2.HeaderText = "Class Name";
+            Column2.MinimumWidth = 6;
+            Column2.Name = "Column2";
+            // 
+            // Column5
+            // 
+            Column5.HeaderText = "Add To Class";
+            Column5.MinimumWidth = 6;
+            Column5.Name = "Column5";
+            Column5.Resizable = DataGridViewTriState.True;
+            Column5.SortMode = DataGridViewColumnSortMode.Automatic;
+            // 
+            // delete
+            // 
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = Color.Red;
+            dataGridViewCellStyle1.Font = new Font("Tahoma", 7.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle1.ForeColor = Color.Black;
+            delete.DefaultCellStyle = dataGridViewCellStyle1;
+            delete.HeaderText = "delete";
+            delete.MinimumWidth = 6;
+            delete.Name = "delete";
+            delete.Text = "delete";
+            delete.ToolTipText = "delete";
+            delete.UseColumnTextForButtonValue = true;
+>>>>>>> 1e26c02d720d285420ef366b77be51c175024b31
             // 
             // pictureBox1
             // 
