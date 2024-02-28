@@ -59,7 +59,47 @@ namespace Attendence_Management_System
 
             return courseList;
         }
+        public List<Course> GetCourses()
+        {
+            List<Course> courseList = new List<Course>();
 
+            try
+            {
+                XmlDocument xmlDoc = new XmlDocument();
+                xmlDoc.Load(XmlFilePath);
+
+                XmlNodeList classNodes = xmlDoc.SelectNodes("/AttendanceData/Class");
+
+                if (classNodes != null)
+                {
+                    foreach (XmlNode classNode in classNodes)
+                    {
+                       
+                            XmlNode courseIDNode = classNode.SelectSingleNode("ClassID");
+                            XmlNode courseNameNode = classNode.SelectSingleNode("ClassName");
+
+                            if (courseIDNode != null && courseNameNode != null)
+                            {
+                                string courseID = courseIDNode.InnerText;
+                                string courseName = courseNameNode.InnerText;
+
+                                courseList.Add(new Course
+                                {
+                                    CourseID = courseID,
+                                    CourseName = courseName
+                                });
+                            
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Exception during XML processing: {ex.Message}");
+            }
+
+            return courseList;
+        }
         public List<StudentData> GetStudentDataByClassName(string className, string selectedDate)
         {
             List<StudentData> studentList = new List<StudentData>();
@@ -217,7 +257,8 @@ namespace Attendence_Management_System
                 }
                 else
                 {
-                    Console.WriteLine($"Attendance record for {date} not found");
+                    MessageBox.Show($"Attendance record for the {date} not found , Your Changes Will not effect the DataBase ^^");
+
                 }
             }
             else

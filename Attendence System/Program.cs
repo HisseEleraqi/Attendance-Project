@@ -1,3 +1,4 @@
+using  Attendence_Management_System2;
 namespace Attendence_Management_System
 {
     internal static class Program
@@ -14,7 +15,9 @@ namespace Attendence_Management_System
             //Application.Run(new Main("hussein"));
                // run student form
             //Application.Run(new Student("../../../Resources/Attendance.xml"));
-            Application.Run(new Forms.Login());
+/*            Application.Run(new AdminAttendance("..\\..\\..\\Resources\\Attendance.xml"));
+*/            Application.Run(new Reports());
+
         }
     }
 }
