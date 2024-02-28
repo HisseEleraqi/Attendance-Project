@@ -12,10 +12,15 @@ namespace Attendence_System.Controller
     public class AddClass
     {
         //the class has id , name 
-       public string Name { get; set; }
-       public string ID = Guid.NewGuid().ToString();
+        public string Name { get; set; }
+        public string ID;
+        private static int classCounter = 1;
+        public static int GetClassCounter() => classCounter;
+        public static void SetClassCounter(int value) => classCounter = value;
+
         public void AddClassToXML()
         {
+            ID = "CLS-" + GetClassCounter().ToString();
             xmlController.XMLAddClass(ID, Name);
         }
 

@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <AttendanceData>
   <Class>
-    <ClassID>CS101</ClassID>
+    <ClassID>CS-101</ClassID>
     <ClassName>Computer Science 101</ClassName>
     <TeacherID>T001</TeacherID>
     <TeacherName>Qamary</TeacherName>
@@ -617,7 +617,7 @@
     </Students>
   </Class>
   <Class>
-    <ClassID>JS 200</ClassID>
+    <ClassID>JS-200</ClassID>
     <ClassName>Java Script</ClassName>
     <TeacherID>T002</TeacherID>
     <TeacherName>Smith</TeacherName>

@@ -457,10 +457,10 @@
             dataGridViewClass.Size = new Size(1175, 334);
             dataGridViewClass.TabIndex = 6;
             dataGridViewClass.UseWaitCursor = true;
-            dataGridViewClass.CellBeginEdit += dataGridViewClass_CellBeginEdit;
+            //dataGridViewClass.CellBeginEdit += dataGridViewClass_CellBeginEdit;
             dataGridViewClass.CellContentClick += dataGridViewClass_CellContentClick;
-            dataGridViewClass.CellEndEdit += dataGridViewClass_CellEndEdit;
-            dataGridViewClass.KeyDown += dataGridViewClass_KeyDown;
+            //dataGridViewClass.CellEndEdit += dataGridViewClass_CellEndEdit;
+            //dataGridViewClass.KeyDown += dataGridViewClass_KeyDown;
             // 
             // Column1
             // 

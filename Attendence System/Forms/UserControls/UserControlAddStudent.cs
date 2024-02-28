@@ -13,6 +13,7 @@ using Attendence_System.Forms;
 using Attendence_System.Controller;
 
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
+using OfficeOpenXml.FormulaParsing.Excel.Functions;
 
 namespace Attendence_System.Forms.UserControls
 {
@@ -187,9 +188,21 @@ namespace Attendence_System.Forms.UserControls
                 doc.Save("..\\..\\..\\Resources\\Data.xml");
             }
         }
-
+        public void FillCompoBox()
+        {
+            XmlDocument doc = new XmlDocument();
+            doc.Load("..\\..\\..\\Resources\\Attendance.xml");
+            XmlNodeList nodes = doc.SelectNodes("/AttendanceData/Class");
+            Console.WriteLine(nodes.Count);
+            foreach (XmlNode node in nodes)
+            {
+                string name = node.SelectSingleNode("ClassName").InnerText;
+                comboBox1.Items.Add(name);
+            }
+        }
         private void UserControlAddStudent_Load(object sender, EventArgs e)
         {
+            FillCompoBox();
             XmlDocument doc = new XmlDocument();
             doc.Load("..\\..\\..\\Resources\\Data.xml");
             XmlNodeList nodes = doc.SelectNodes("/school/users/user");
@@ -206,6 +219,7 @@ namespace Attendence_System.Forms.UserControls
                     dataGridViewClass.Rows.Add(id, name, role, "test");
                 }
             }
+
         }
 
         private void textBoxSearchStudent_KeyDown(object sender, KeyEventArgs e)
@@ -291,39 +305,40 @@ namespace Attendence_System.Forms.UserControls
                 e.ColumnIndex >= 0 && e.ColumnIndex < dataGridViewClass.Columns.Count)
             {
                 var currentValue = dataGridViewClass.Rows[e.RowIndex].Cells[e.ColumnIndex].Value; if (currentValue != null && originalCellValue != null && !Equals(currentValue, originalCellValue))
-            {
-                SaveEditToXml(e.RowIndex, e.ColumnIndex);
-            }
-            else
-            {
-                dataGridViewClass.Rows[e.RowIndex].Cells[e.ColumnIndex].Value = originalCellValue;
+                {
+                    SaveEditToXml(e.RowIndex, e.ColumnIndex);
+                }
+                else
+                {
+                    dataGridViewClass.Rows[e.RowIndex].Cells[e.ColumnIndex].Value = originalCellValue;
+                }
+
             }
 
+            //private void dataGridViewClass_CellBeginEdit(object sender, DataGridViewCellCancelEventArgs e)
+            //{
+            //    originalCellValue = dataGridViewClass.Rows[e.RowIndex].Cells[e.ColumnIndex].Value;
+
+            //}
+
+            //private void dataGridViewClass_KeyDown(object sender, KeyEventArgs e)
+            //{
+            //    if (e.KeyCode == Keys.Enter)
+            //    {
+            //        dataGridViewClass.EndEdit();
+            //        e.Handled = true;
+            //    }
+            //}
+
+            //private void dataGridViewClass_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+            //{
+            //    var currentValue = dataGridViewClass.Rows[e.RowIndex].Cells[e.ColumnIndex].Value;
+            //    if (currentValue != null && originalCellValue != null && !Equals(currentValue, originalCellValue))
+            //    {
+            //        SaveEditToXml(e.RowIndex, e.ColumnIndex);
+            //    }
+            //}
         }
 
-        private void dataGridViewClass_CellBeginEdit(object sender, DataGridViewCellCancelEventArgs e)
-        {
-            originalCellValue = dataGridViewClass.Rows[e.RowIndex].Cells[e.ColumnIndex].Value;
-
-        }
-
-        private void dataGridViewClass_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Enter)
-            {
-                dataGridViewClass.EndEdit();
-                e.Handled = true;
-            }
-        }
-
-        private void dataGridViewClass_CellEndEdit(object sender, DataGridViewCellEventArgs e)
-        {
-            var currentValue = dataGridViewClass.Rows[e.RowIndex].Cells[e.ColumnIndex].Value;
-            if (currentValue != null && originalCellValue != null && !Equals(currentValue, originalCellValue))
-            {
-                SaveEditToXml(e.RowIndex, e.ColumnIndex);
-            }
-        }
     }
-
 }

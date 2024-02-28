@@ -18,9 +18,15 @@ namespace Attendence_Management_System
         public static XmlDocument ReadAllDocument()
         {
             XmlDocument XmlDoc = new XmlDocument();
-            
+
             XmlDoc.Load("../../../Resources/Data.xml");
 
+            return XmlDoc;
+        }
+        public static XmlDocument ReadSecondDocument()
+        {
+            XmlDocument XmlDoc = new XmlDocument();
+            XmlDoc.Load("../../../Resources/Attendance.xml");
             return XmlDoc;
         }
 
@@ -36,7 +42,7 @@ namespace Attendence_Management_System
             return list;
         }
 
-       
+
 
         public static List<List<string>> MultibleNodesToList(string nodepath, string target, params string[] targets)
         {
@@ -68,8 +74,8 @@ namespace Attendence_Management_System
         {
             XmlDocument XmlDoc = ReadAllDocument();
             //make the root is custom node called users
-            XmlNode root = XmlDoc.SelectSingleNode("/school/users") ;
-            
+            XmlNode root = XmlDoc.SelectSingleNode("/school/users");
+
             XmlNode user = XmlDoc.CreateElement("user");
             XmlNode userNameNode = XmlDoc.CreateElement("username");
             userNameNode.InnerText = userName;
@@ -98,8 +104,8 @@ namespace Attendence_Management_System
             switch (role.ToLower())
             {
                 case "admin":
-                     root = XmlDoc.SelectSingleNode("/school/admins");
-                     AddAdmin(id, name);
+                    root = XmlDoc.SelectSingleNode("/school/admins");
+                    AddAdmin(id, name);
                     break;
                 case "teacher":
                     root = XmlDoc.SelectSingleNode("/school/teachers");
@@ -110,10 +116,10 @@ namespace Attendence_Management_System
                     AddStudent(id, name, root);
                     break;
             }
-            }
+        }
         public static void AddStudent(string id, string name, XmlNode root)
         {
-          // create node student with id attribute and name as value
+            // create node student with id attribute and name as value
             XmlNode student = root.OwnerDocument.CreateElement("student");
             XmlAttribute idAttribute = root.OwnerDocument.CreateAttribute("id");
             idAttribute.Value = id;
@@ -141,7 +147,7 @@ namespace Attendence_Management_System
         }
         public static void AddTeacher(string id, string name)
         {
-            XmlDocument XmlDoc = ReadAllDocument();
+            XmlDocument XmlDoc = ReadSecondDocument();
             XmlNode root = XmlDoc.SelectSingleNode("/school/teachers");
             XmlNode teacher = root.OwnerDocument.CreateElement("teacher");
             XmlAttribute idAttribute = root.OwnerDocument.CreateAttribute("id");
@@ -153,24 +159,36 @@ namespace Attendence_Management_System
             root.AppendChild(teacher);
             root.OwnerDocument.Save("../../../Resources/Data.xml");
         }
-        
+
         public static void XMLAddClass(string id, string name)
         {
-            //make the root is custom node called users
-            XmlDocument XmlDoc = ReadAllDocument();
 
-            XmlNode root = XmlDoc.SelectSingleNode("/school/classes");
+            XmlDocument XmlDoc = ReadSecondDocument();
+            XmlNode root = XmlDoc.SelectSingleNode("/AttendanceData");
 
-            XmlNode user = XmlDoc.CreateElement("class");
-            XmlNode IdNode = XmlDoc.CreateElement("id");
+            XmlNode user = root.OwnerDocument.CreateElement("Class");
+            XmlNode IdNode = root.OwnerDocument.CreateElement("ClassID");
             IdNode.InnerText = id;
-            XmlNode NameNode = XmlDoc.CreateElement("name");
+            XmlNode NameNode = root.OwnerDocument.CreateElement("ClassName");
             NameNode.InnerText = name;
+            XmlNode teacherIdNode = root.OwnerDocument.CreateElement("TeacherID");
+            teacherIdNode.InnerText = "0";
+
+            XmlNode teacherNameNode = root.OwnerDocument.CreateElement("TeacherName");
+            teacherIdNode.InnerText = "0";
+
+            XmlNode Students = root.OwnerDocument.CreateElement("Students");
+            XmlNode student = root.OwnerDocument.CreateElement("Student");
+            student.InnerText = "0";
+            Students.AppendChild(student);
 
             user.AppendChild(IdNode);
             user.AppendChild(NameNode);
+            user.AppendChild(teacherIdNode);
+            user.AppendChild(teacherNameNode);
+            user.AppendChild(Students);
             root.AppendChild(user);
-            XmlDoc.Save("../../../Resources/Data.xml");
+            root.OwnerDocument.Save("../../../Resources/Attendance.xml");
         }
     }
 

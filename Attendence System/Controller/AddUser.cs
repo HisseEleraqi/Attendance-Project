@@ -4,10 +4,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+
 namespace Attendence_System.Controller
 {
     public class AddUser
     {
+        private static int studentCounter = 0;
+        private static int teacherCounter = 0;
         private string UserName;
         private string Role;
         private string Password;
@@ -15,43 +18,47 @@ namespace Attendence_System.Controller
         private string ID;
         private xmlController xmlController;
 
+        public static int GetStudentCounter() => studentCounter;
+        public static int GetTeacherCounter() => teacherCounter;
+
+        public static void SetStudentCounter(int value) => studentCounter = value;
+        public static void SetTeacherCounter(int value) => teacherCounter = value;
 
         public AddUser(string userName, string role, string password, string email)
         {
             UserName = userName;
-            Role = role;
+            Role = role.ToLower();
             Password = password;
             Email = email;
-            ID = Guid.NewGuid().ToString();
+
+            if (Role == "student")
+            {
+                studentCounter++;
+                ID = "ST-" + studentCounter.ToString();
+            }
+            else if (Role == "teacher")
+            {
+                teacherCounter++;
+                ID = "TE-" + teacherCounter.ToString();
+            }
+            else
+            {
+                throw new ArgumentException("Invalid user role");
+            }
         }
-        public string GetUserName()
-        {
-            return UserName;
-        }
-        public string GetRole()
-        {
-            return Role;
-        }
-        public string GetPassword()
-        {
-            return Password;
-        }
-        public string GetEmail()
-        {
-            return Email;
-        }
-        public string GetID()
-        {
-            return ID;
-        }
-        public string toString()
-        {
-            return "UserName: " + UserName + " Role: " + Role + " Password: " + Password + " Email: " + Email + " ID: " + ID;
-        }
+
+        public string GetUserName() => UserName;
+        public string GetRole() => Role;
+        public string GetPassword() => Password;
+        public string GetEmail() => Email;
+        public string GetID() => ID;
+
+        public override string ToString() =>
+            $"UserName: {UserName} Role: {Role} Password: {Password} Email: {Email} ID: {ID}";
+
         public void AddUserToXML()
         {
-             xmlController.XMLAddUser(UserName, Role, Password, Email, ID);
+            xmlController.XMLAddUser(UserName, Role, Password, Email, ID);
         }
-        
     }
 }

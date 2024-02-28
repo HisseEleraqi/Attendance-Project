@@ -81,8 +81,22 @@ namespace Attendence_System.Forms.UserControls
 
                 XmlNodeList students = doc.SelectNodes("/school/classes/class/student");
                 dataGridViewClass.Rows.Add(id, name, students.Count);
-               
+
             }
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            if (ClassName.Text != "" || ClassID.Text != "")
+            {
+                DialogResult dialogResult = MessageBox.Show("Do you want to clear the fields?", "Clear Fields", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    ClassName.Text = "";
+                    ClassID.Text = "";
+                }
+            }
+        
+    }
     }
 }
