@@ -408,6 +408,7 @@
             ButtonAddToClass.Text = "Add to Class";
             ButtonAddToClass.UseVisualStyleBackColor = false;
             ButtonAddToClass.UseWaitCursor = true;
+            ButtonAddToClass.Click += ButtonAddToClass_Click;
             // 
             // label5
             // 
@@ -457,10 +458,7 @@
             dataGridViewClass.Size = new Size(1175, 334);
             dataGridViewClass.TabIndex = 6;
             dataGridViewClass.UseWaitCursor = true;
-            //dataGridViewClass.CellBeginEdit += dataGridViewClass_CellBeginEdit;
             dataGridViewClass.CellContentClick += dataGridViewClass_CellContentClick;
-            //dataGridViewClass.CellEndEdit += dataGridViewClass_CellEndEdit;
-            //dataGridViewClass.KeyDown += dataGridViewClass_KeyDown;
             // 
             // Column1
             // 
