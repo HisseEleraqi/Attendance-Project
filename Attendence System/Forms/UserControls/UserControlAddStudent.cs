@@ -155,9 +155,28 @@ namespace Attendence_System.Forms.UserControls
 
         }
 
+        private void textBoxSearch_TextChanged(object sender, EventArgs e)
+        {
+        }
+
         private void pictureBox2_Click(object sender, EventArgs e)
         {
+            XmlDocument doc = new XmlDocument();
+            doc.Load("..\\..\\..\\Resources\\Data.xml");
+            XmlNodeList nodes = doc.SelectNodes("/school/users/user");
+            dataGridViewClass.Rows.Clear();
+            foreach (XmlNode node in nodes)
+            {
+                string id = node.SelectSingleNode("id").InnerText;
+                string name = node.SelectSingleNode("username").InnerText;
+                string role = node.SelectSingleNode("role").InnerText;
+                //change row font color to black
 
+                if (role == "student")
+                {
+                    dataGridViewClass.Rows.Add(id, name, role, "test");
+                }
+            }
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -169,71 +188,5 @@ namespace Attendence_System.Forms.UserControls
         {
 
         }
-
-
-        private void UserControlAddStudent_Load(object sender, EventArgs e)
-        {
-            XmlDocument doc = new XmlDocument();
-            doc.Load("..\\..\\..\\Resources\\Data.xml");
-            XmlNodeList nodes = doc.SelectNodes("/school/users/user");
-            dataGridViewStudent.Rows.Clear();
-            foreach (XmlNode node in nodes)
-            {
-                string id = node.SelectSingleNode("id").InnerText;
-                string name = node.SelectSingleNode("username").InnerText;
-                string role = node.SelectSingleNode("role").InnerText;
-                //change row font color to black
-
-                if (role == "student")
-                {
-                    dataGridViewStudent.Rows.Add(id, name, role, "test");
-                }
-            }
-        }
-
-        private void textBoxSearchStudent_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Enter)
-            {
-                string searchValue = textBoxSearchStudent.Text.ToLower();
-                dataGridViewStudent.ClearSelection();
-
-                try
-                {
-                    int rowCount = dataGridViewStudent.Rows.Count;
-                    for (int i = 0; i < rowCount - 1; i++)
-                    {
-                        DataGridViewRow row = dataGridViewStudent.Rows[i];
-
-                        if (!row.IsNewRow)
-                        {
-                            bool rowVisible = false;
-
-                            foreach (DataGridViewCell cell in row.Cells)
-                            {
-                                if (cell.Value != null && cell.Value.ToString().ToLower().Contains(searchValue))
-                                {
-                                    rowVisible = true;
-                                    break;
-                                }
-                            }
-
-                            row.Visible = rowVisible;
-
-                            if (rowVisible)
-                            {
-                                dataGridViewStudent.Rows[row.Index].Selected = true;
-                                
-                            }
-                        }
-                    }
-                }
-                catch (Exception exc)
-                {
-                    MessageBox.Show(exc.Message);
-                }
-            }
-        }
     }
-    
 }
