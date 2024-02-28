@@ -31,7 +31,7 @@
         {
             components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UserControlAddTeacher));
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             toolTip = new ToolTip(components);
             tabControlAddClass = new TabControl();
             tabPage = new TabPage();
@@ -66,6 +66,7 @@
             Column3 = new DataGridViewTextBoxColumn();
             Column2 = new DataGridViewTextBoxColumn();
             Column5 = new DataGridViewCheckBoxColumn();
+            Column6 = new DataGridViewButtonColumn();
             tabControlAddClass.SuspendLayout();
             tabPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)showHide).BeginInit();
@@ -346,7 +347,7 @@
             textBoxSearchTeacher.BackColor = Color.FromArgb(189, 195, 199);
             textBoxSearchTeacher.BorderStyle = BorderStyle.FixedSingle;
             textBoxSearchTeacher.ForeColor = Color.Black;
-            textBoxSearchTeacher.Location = new Point(552, 187);
+            textBoxSearchTeacher.Location = new Point(514, 122);
             textBoxSearchTeacher.Name = "textBoxSearchTeacher";
             textBoxSearchTeacher.Size = new Size(292, 28);
             textBoxSearchTeacher.TabIndex = 21;
@@ -401,14 +402,15 @@
             dataGridViewClass.ClipboardCopyMode = DataGridViewClipboardCopyMode.EnableWithoutHeaderText;
             dataGridViewClass.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
             dataGridViewClass.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewClass.Columns.AddRange(new DataGridViewColumn[] { Column1, Column4, Column3, Column2, Column5 });
+            dataGridViewClass.Columns.AddRange(new DataGridViewColumn[] { Column1, Column4, Column3, Column2, Column5, Column6 });
             dataGridViewClass.GridColor = Color.YellowGreen;
             dataGridViewClass.Location = new Point(61, 255);
             dataGridViewClass.Name = "dataGridViewClass";
+            dataGridViewClass.ReadOnly = true;
             dataGridViewClass.RowHeadersWidth = 51;
             dataGridViewClass.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle1.ForeColor = Color.Black;
-            dataGridViewClass.RowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.ForeColor = Color.Black;
+            dataGridViewClass.RowsDefaultCellStyle = dataGridViewCellStyle2;
             dataGridViewClass.ShowCellErrors = false;
             dataGridViewClass.ShowCellToolTips = false;
             dataGridViewClass.ShowEditingIcon = false;
@@ -416,6 +418,7 @@
             dataGridViewClass.Size = new Size(1247, 412);
             dataGridViewClass.TabIndex = 6;
             dataGridViewClass.UseWaitCursor = true;
+            dataGridViewClass.CellContentClick += dataGridViewClass_CellContentClick;
             dataGridViewClass.CellEndEdit += dataGridViewClass_CellEndEdit;
             dataGridViewClass.KeyDown += dataGridViewClass_KeyDown;
             // 
@@ -446,7 +449,7 @@
             // pictureBox2
             // 
             pictureBox2.Image = Properties.Resources.ixkfkncp;
-            pictureBox2.Location = new Point(494, 187);
+            pictureBox2.Location = new Point(389, 122);
             pictureBox2.Name = "pictureBox2";
             pictureBox2.Size = new Size(52, 28);
             pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
@@ -466,26 +469,40 @@
             Column4.HeaderText = "Teacher Name";
             Column4.MinimumWidth = 6;
             Column4.Name = "Column4";
+            Column4.ReadOnly = true;
             // 
             // Column3
             // 
             Column3.HeaderText = "Email";
             Column3.MinimumWidth = 6;
             Column3.Name = "Column3";
+            Column3.ReadOnly = true;
             // 
             // Column2
             // 
             Column2.HeaderText = "Class Name";
             Column2.MinimumWidth = 6;
             Column2.Name = "Column2";
+            Column2.ReadOnly = true;
             // 
             // Column5
             // 
             Column5.HeaderText = "Add To Classes";
             Column5.MinimumWidth = 6;
             Column5.Name = "Column5";
+            Column5.ReadOnly = true;
             Column5.Resizable = DataGridViewTriState.True;
             Column5.SortMode = DataGridViewColumnSortMode.Automatic;
+            // 
+            // Column6
+            // 
+            Column6.HeaderText = "UpdateTeacher";
+            Column6.MinimumWidth = 6;
+            Column6.Name = "Column6";
+            Column6.ReadOnly = true;
+            Column6.Text = "UpdateTeacher";
+            Column6.ToolTipText = "UpdateTeacher";
+            Column6.UseColumnTextForButtonValue = true;
             // 
             // UserControlAddTeacher
             // 
@@ -548,5 +565,6 @@
         private DataGridViewTextBoxColumn Column3;
         private DataGridViewTextBoxColumn Column2;
         private DataGridViewCheckBoxColumn Column5;
+        private DataGridViewButtonColumn Column6;
     }
 }

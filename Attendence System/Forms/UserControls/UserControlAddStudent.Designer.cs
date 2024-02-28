@@ -459,8 +459,7 @@
             dataGridViewClass.TabIndex = 6;
             dataGridViewClass.UseWaitCursor = true;
             dataGridViewClass.CellContentClick += dataGridViewClass_CellContentClick;
-<<<<<<< HEAD
-=======
+
             // 
             // Column1
             // 
@@ -500,14 +499,13 @@
             dataGridViewCellStyle1.BackColor = Color.Red;
             dataGridViewCellStyle1.Font = new Font("Tahoma", 7.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             dataGridViewCellStyle1.ForeColor = Color.Black;
-            delete.DefaultCellStyle = dataGridViewCellStyle1;
-            delete.HeaderText = "delete";
-            delete.MinimumWidth = 6;
-            delete.Name = "delete";
-            delete.Text = "delete";
-            delete.ToolTipText = "delete";
-            delete.UseColumnTextForButtonValue = true;
->>>>>>> 1e26c02d720d285420ef366b77be51c175024b31
+            Update.DefaultCellStyle = dataGridViewCellStyle1;
+            Update.HeaderText = "Update";
+            Update.MinimumWidth = 6;
+            Update.Name = "Update";
+            Update.Text = "Update";
+            Update.ToolTipText = "Update";
+            Update.UseColumnTextForButtonValue = true;
             // 
             // pictureBox1
             // 
