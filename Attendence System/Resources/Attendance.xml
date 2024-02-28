@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <AttendanceData>
   <Class>
-    <ClassID>CS101</ClassID>
+    <ClassID>CS-101</ClassID>
     <ClassName>Computer Science 101</ClassName>
     <TeacherID>T001</TeacherID>
     <TeacherName>Qamary</TeacherName>
@@ -54,10 +54,6 @@
             <Date>2024-03-01</Date>
             <Status>Absent</Status>
           </Record>
-          <Record>
-            <Date>2024-02-27</Date>
-            <Status>Absent</Status>
-          </Record>
         </AttendanceRecords>
       </Student>
       <Student>
@@ -106,10 +102,6 @@
           </Record>
           <Record>
             <Date>2024-03-01</Date>
-            <Status>Absent</Status>
-          </Record>
-          <Record>
-            <Date>2024-02-27</Date>
             <Status>Absent</Status>
           </Record>
         </AttendanceRecords>
@@ -162,10 +154,6 @@
             <Date>2024-03-01</Date>
             <Status>Absent</Status>
           </Record>
-          <Record>
-            <Date>2024-02-27</Date>
-            <Status>Absent</Status>
-          </Record>
         </AttendanceRecords>
       </Student>
       <Student>
@@ -214,10 +202,6 @@
           </Record>
           <Record>
             <Date>2024-03-01</Date>
-            <Status>Absent</Status>
-          </Record>
-          <Record>
-            <Date>2024-02-27</Date>
             <Status>Absent</Status>
           </Record>
         </AttendanceRecords>
@@ -270,10 +254,6 @@
             <Date>2024-03-01</Date>
             <Status>Absent</Status>
           </Record>
-          <Record>
-            <Date>2024-02-27</Date>
-            <Status>Absent</Status>
-          </Record>
         </AttendanceRecords>
       </Student>
       <Student>
@@ -322,10 +302,6 @@
           </Record>
           <Record>
             <Date>2024-03-01</Date>
-            <Status>Absent</Status>
-          </Record>
-          <Record>
-            <Date>2024-02-27</Date>
             <Status>Absent</Status>
           </Record>
         </AttendanceRecords>
@@ -386,10 +362,6 @@
             <Date>2024-03-01</Date>
             <Status>Absent</Status>
           </Record>
-          <Record>
-            <Date>2024-02-27</Date>
-            <Status>Present</Status>
-          </Record>
         </AttendanceRecords>
       </Student>
       <Student>
@@ -439,10 +411,6 @@
           <Record>
             <Date>2024-03-01</Date>
             <Status>Absent</Status>
-          </Record>
-          <Record>
-            <Date>2024-02-27</Date>
-            <Status>Present</Status>
           </Record>
         </AttendanceRecords>
       </Student>
@@ -494,10 +462,6 @@
             <Date>2024-03-01</Date>
             <Status>Absent</Status>
           </Record>
-          <Record>
-            <Date>2024-02-27</Date>
-            <Status>Present</Status>
-          </Record>
         </AttendanceRecords>
       </Student>
       <Student>
@@ -547,10 +511,6 @@
           <Record>
             <Date>2024-03-01</Date>
             <Status>Absent</Status>
-          </Record>
-          <Record>
-            <Date>2024-02-27</Date>
-            <Status>Present</Status>
           </Record>
         </AttendanceRecords>
       </Student>
@@ -602,10 +562,6 @@
             <Date>2024-03-01</Date>
             <Status>Absent</Status>
           </Record>
-          <Record>
-            <Date>2024-02-27</Date>
-            <Status>Present</Status>
-          </Record>
         </AttendanceRecords>
       </Student>
       <Student>
@@ -656,16 +612,12 @@
             <Date>2024-03-01</Date>
             <Status>Absent</Status>
           </Record>
-          <Record>
-            <Date>2024-02-27</Date>
-            <Status>Present</Status>
-          </Record>
         </AttendanceRecords>
       </Student>
     </Students>
   </Class>
   <Class>
-    <ClassID>JS 200</ClassID>
+    <ClassID>JS-200</ClassID>
     <ClassName>Java Script</ClassName>
     <TeacherID>T002</TeacherID>
     <TeacherName>Smith</TeacherName>
@@ -718,10 +670,6 @@
             <Date>2024-03-01</Date>
             <Status>Absent</Status>
           </Record>
-          <Record>
-            <Date>2024-02-27</Date>
-            <Status>Absent</Status>
-          </Record>
         </AttendanceRecords>
       </Student>
       <Student>
@@ -770,10 +718,6 @@
           </Record>
           <Record>
             <Date>2024-03-01</Date>
-            <Status>Absent</Status>
-          </Record>
-          <Record>
-            <Date>2024-02-27</Date>
             <Status>Absent</Status>
           </Record>
         </AttendanceRecords>
@@ -826,10 +770,6 @@
             <Date>2024-03-01</Date>
             <Status>Absent</Status>
           </Record>
-          <Record>
-            <Date>2024-02-27</Date>
-            <Status>Absent</Status>
-          </Record>
         </AttendanceRecords>
       </Student>
       <Student>
@@ -878,10 +818,6 @@
           </Record>
           <Record>
             <Date>2024-03-01</Date>
-            <Status>Absent</Status>
-          </Record>
-          <Record>
-            <Date>2024-02-27</Date>
             <Status>Absent</Status>
           </Record>
         </AttendanceRecords>
@@ -934,10 +870,6 @@
             <Date>2024-03-01</Date>
             <Status>Absent</Status>
           </Record>
-          <Record>
-            <Date>2024-02-27</Date>
-            <Status>Absent</Status>
-          </Record>
         </AttendanceRecords>
       </Student>
       <Student>
@@ -986,10 +918,6 @@
           </Record>
           <Record>
             <Date>2024-03-01</Date>
-            <Status>Absent</Status>
-          </Record>
-          <Record>
-            <Date>2024-02-27</Date>
             <Status>Absent</Status>
           </Record>
         </AttendanceRecords>

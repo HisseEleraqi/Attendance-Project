@@ -53,27 +53,26 @@
             textBoxPassWord = new TextBox();
             label1Password = new Label();
             tabPageSearchClass = new TabPage();
-            pictureBox2 = new PictureBox();
-            textBoxSearch = new TextBox();
-            label3 = new Label();
+            textBoxSearchTeacher = new TextBox();
             ButtonAddToClass = new Button();
             label5 = new Label();
             comboBox1 = new ComboBox();
             dataGridViewClass = new DataGridView();
+            pictureBox1 = new PictureBox();
+            label1 = new Label();
+            pictureBox2 = new PictureBox();
             Column1 = new DataGridViewTextBoxColumn();
             Column4 = new DataGridViewTextBoxColumn();
             Column3 = new DataGridViewTextBoxColumn();
             Column2 = new DataGridViewTextBoxColumn();
             Column5 = new DataGridViewCheckBoxColumn();
-            pictureBox1 = new PictureBox();
-            label1 = new Label();
             tabControlAddClass.SuspendLayout();
             tabPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)showHide).BeginInit();
             tabPageSearchClass.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridViewClass).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             SuspendLayout();
             // 
             // tabControlAddClass
@@ -81,12 +80,11 @@
             tabControlAddClass.Alignment = TabAlignment.Bottom;
             tabControlAddClass.Controls.Add(tabPage);
             tabControlAddClass.Controls.Add(tabPageSearchClass);
-            tabControlAddClass.Dock = DockStyle.Fill;
             tabControlAddClass.Location = new Point(0, 0);
             tabControlAddClass.Multiline = true;
             tabControlAddClass.Name = "tabControlAddClass";
             tabControlAddClass.SelectedIndex = 0;
-            tabControlAddClass.Size = new Size(1340, 725);
+            tabControlAddClass.Size = new Size(1326, 722);
             tabControlAddClass.TabIndex = 0;
             tabControlAddClass.UseWaitCursor = true;
             // 
@@ -113,7 +111,7 @@
             tabPage.Location = new Point(4, 4);
             tabPage.Name = "tabPage";
             tabPage.Padding = new Padding(3);
-            tabPage.Size = new Size(1332, 691);
+            tabPage.Size = new Size(1318, 688);
             tabPage.TabIndex = 0;
             tabPage.Text = "Add Teacher";
             tabPage.UseWaitCursor = true;
@@ -252,7 +250,6 @@
             buttonCancel.Text = "Cancel";
             buttonCancel.UseVisualStyleBackColor = false;
             buttonCancel.UseWaitCursor = true;
-            buttonCancel.Click += buttonCancel_Click;
             // 
             // label12
             // 
@@ -328,57 +325,33 @@
             // tabPageSearchClass
             // 
             tabPageSearchClass.BackColor = Color.FromArgb(250, 250, 250);
-            tabPageSearchClass.Controls.Add(pictureBox2);
-            tabPageSearchClass.Controls.Add(textBoxSearch);
-            tabPageSearchClass.Controls.Add(label3);
+            tabPageSearchClass.Controls.Add(textBoxSearchTeacher);
             tabPageSearchClass.Controls.Add(ButtonAddToClass);
             tabPageSearchClass.Controls.Add(label5);
             tabPageSearchClass.Controls.Add(comboBox1);
             tabPageSearchClass.Controls.Add(dataGridViewClass);
             tabPageSearchClass.Controls.Add(pictureBox1);
             tabPageSearchClass.Controls.Add(label1);
+            tabPageSearchClass.Controls.Add(pictureBox2);
             tabPageSearchClass.Location = new Point(4, 4);
             tabPageSearchClass.Name = "tabPageSearchClass";
             tabPageSearchClass.Padding = new Padding(3);
-            tabPageSearchClass.Size = new Size(1332, 692);
+            tabPageSearchClass.Size = new Size(1318, 688);
             tabPageSearchClass.TabIndex = 1;
             tabPageSearchClass.Text = "Search Teacher";
             tabPageSearchClass.UseWaitCursor = true;
             // 
-            // pictureBox2
+            // textBoxSearchTeacher
             // 
-            pictureBox2.Image = Properties.Resources.ixkfkncp;
-            pictureBox2.Location = new Point(479, 187);
-            pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(52, 28);
-            pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox2.TabIndex = 22;
-            pictureBox2.TabStop = false;
-            pictureBox2.UseWaitCursor = true;
-            // 
-            // textBoxSearch
-            // 
-            textBoxSearch.BackColor = Color.FromArgb(189, 195, 199);
-            textBoxSearch.BorderStyle = BorderStyle.FixedSingle;
-            textBoxSearch.ForeColor = Color.FromArgb(189, 195, 199);
-            textBoxSearch.Location = new Point(479, 187);
-            textBoxSearch.Name = "textBoxSearch";
-            textBoxSearch.Size = new Size(365, 28);
-            textBoxSearch.TabIndex = 21;
-            textBoxSearch.UseWaitCursor = true;
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.BackColor = Color.Transparent;
-            label3.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label3.ForeColor = Color.FromArgb(52, 73, 94);
-            label3.Location = new Point(479, 192);
-            label3.Name = "label3";
-            label3.Size = new Size(76, 23);
-            label3.TabIndex = 20;
-            label3.Text = "Name:";
-            label3.UseWaitCursor = true;
+            textBoxSearchTeacher.BackColor = Color.FromArgb(189, 195, 199);
+            textBoxSearchTeacher.BorderStyle = BorderStyle.FixedSingle;
+            textBoxSearchTeacher.ForeColor = Color.Black;
+            textBoxSearchTeacher.Location = new Point(552, 187);
+            textBoxSearchTeacher.Name = "textBoxSearchTeacher";
+            textBoxSearchTeacher.Size = new Size(292, 28);
+            textBoxSearchTeacher.TabIndex = 21;
+            textBoxSearchTeacher.UseWaitCursor = true;
+            textBoxSearchTeacher.KeyDown += textBoxSearchTeacher_KeyDown;
             // 
             // ButtonAddToClass
             // 
@@ -422,7 +395,6 @@
             // 
             dataGridViewClass.AllowUserToAddRows = false;
             dataGridViewClass.AllowUserToDeleteRows = false;
-            dataGridViewClass.AllowUserToResizeColumns = false;
             dataGridViewClass.AllowUserToResizeRows = false;
             dataGridViewClass.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridViewClass.BackgroundColor = Color.WhiteSmoke;
@@ -430,9 +402,9 @@
             dataGridViewClass.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
             dataGridViewClass.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewClass.Columns.AddRange(new DataGridViewColumn[] { Column1, Column4, Column3, Column2, Column5 });
+            dataGridViewClass.GridColor = Color.YellowGreen;
             dataGridViewClass.Location = new Point(61, 255);
             dataGridViewClass.Name = "dataGridViewClass";
-            dataGridViewClass.ReadOnly = true;
             dataGridViewClass.RowHeadersWidth = 51;
             dataGridViewClass.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             dataGridViewCellStyle1.ForeColor = Color.Black;
@@ -444,43 +416,8 @@
             dataGridViewClass.Size = new Size(1247, 412);
             dataGridViewClass.TabIndex = 6;
             dataGridViewClass.UseWaitCursor = true;
-            // 
-            // Column1
-            // 
-            Column1.HeaderText = "ID";
-            Column1.MinimumWidth = 6;
-            Column1.Name = "Column1";
-            Column1.ReadOnly = true;
-            // 
-            // Column4
-            // 
-            Column4.HeaderText = "Teacher Name";
-            Column4.MinimumWidth = 6;
-            Column4.Name = "Column4";
-            Column4.ReadOnly = true;
-            // 
-            // Column3
-            // 
-            Column3.HeaderText = "Email";
-            Column3.MinimumWidth = 6;
-            Column3.Name = "Column3";
-            Column3.ReadOnly = true;
-            // 
-            // Column2
-            // 
-            Column2.HeaderText = "Class Name";
-            Column2.MinimumWidth = 6;
-            Column2.Name = "Column2";
-            Column2.ReadOnly = true;
-            // 
-            // Column5
-            // 
-            Column5.HeaderText = "Add To Classes";
-            Column5.MinimumWidth = 6;
-            Column5.Name = "Column5";
-            Column5.ReadOnly = true;
-            Column5.Resizable = DataGridViewTriState.True;
-            Column5.SortMode = DataGridViewColumnSortMode.Automatic;
+            dataGridViewClass.CellEndEdit += dataGridViewClass_CellEndEdit;
+            dataGridViewClass.KeyDown += dataGridViewClass_KeyDown;
             // 
             // pictureBox1
             // 
@@ -506,6 +443,50 @@
             label1.Text = "Search Teacher:";
             label1.UseWaitCursor = true;
             // 
+            // pictureBox2
+            // 
+            pictureBox2.Image = Properties.Resources.ixkfkncp;
+            pictureBox2.Location = new Point(494, 187);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(52, 28);
+            pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox2.TabIndex = 22;
+            pictureBox2.TabStop = false;
+            pictureBox2.UseWaitCursor = true;
+            // 
+            // Column1
+            // 
+            Column1.HeaderText = "ID";
+            Column1.MinimumWidth = 6;
+            Column1.Name = "Column1";
+            Column1.ReadOnly = true;
+            // 
+            // Column4
+            // 
+            Column4.HeaderText = "Teacher Name";
+            Column4.MinimumWidth = 6;
+            Column4.Name = "Column4";
+            // 
+            // Column3
+            // 
+            Column3.HeaderText = "Email";
+            Column3.MinimumWidth = 6;
+            Column3.Name = "Column3";
+            // 
+            // Column2
+            // 
+            Column2.HeaderText = "Class Name";
+            Column2.MinimumWidth = 6;
+            Column2.Name = "Column2";
+            // 
+            // Column5
+            // 
+            Column5.HeaderText = "Add To Classes";
+            Column5.MinimumWidth = 6;
+            Column5.Name = "Column5";
+            Column5.Resizable = DataGridViewTriState.True;
+            Column5.SortMode = DataGridViewColumnSortMode.Automatic;
+            // 
             // UserControlAddTeacher
             // 
             AutoScaleDimensions = new SizeF(10F, 21F);
@@ -517,15 +498,16 @@
             Name = "UserControlAddTeacher";
             RightToLeft = RightToLeft.No;
             Size = new Size(1340, 725);
+            Load += UserControlAddTeacher_loed;
             tabControlAddClass.ResumeLayout(false);
             tabPage.ResumeLayout(false);
             tabPage.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)showHide).EndInit();
             tabPageSearchClass.ResumeLayout(false);
             tabPageSearchClass.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)dataGridViewClass).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ResumeLayout(false);
         }
 
@@ -560,11 +542,11 @@
         private TextBox textBoxSearch;
         private Label label5;
         private ComboBox comboBox1;
+        private TextBox textBoxSearchTeacher;
         private DataGridViewTextBoxColumn Column1;
         private DataGridViewTextBoxColumn Column4;
         private DataGridViewTextBoxColumn Column3;
         private DataGridViewTextBoxColumn Column2;
         private DataGridViewCheckBoxColumn Column5;
-        private Label label3;
     }
 }

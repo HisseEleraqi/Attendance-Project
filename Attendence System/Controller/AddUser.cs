@@ -20,12 +20,14 @@ namespace Attendence_System.Controller
 
         public static int GetStudentCounter() => studentCounter;
         public static int GetTeacherCounter() => teacherCounter;
+
         public static void SetStudentCounter(int value) => studentCounter = value;
         public static void SetTeacherCounter(int value) => teacherCounter = value;
+
         public AddUser(string userName, string role, string password, string email)
         {
             UserName = userName;
-            Role = role.ToLower(); 
+            Role = role.ToLower();
             Password = password;
             Email = email;
 

@@ -1,19 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <school>
-  <attendance-records>
-    <attendance-record>
-      <date>2024-02-16</date>
-      <class>
-        <id>CL-1</id>
-      </class>
-      <student id="ST-1">
-        <status>Present</status>
-      </student>
-      <student id="ST-2">
-        <status>Absent</status>
-      </student>
-    </attendance-record>
-  </attendance-records>
   <students>
     <student id="ST-1">
       <name>Ebrahim</name>
@@ -103,25 +89,11 @@
       <email>Ebrahim@example.com</email>
     </user>
     <user>
-      <id>ecadf7b2-d466-4d1f-8c51-7b73179cf9da</id>
-      <username>asdfds asdfasd</username>
-      <role>student</role>
-      <password>asdfdsfS222@@</password>
-      <email>Ebradhim@example.com</email>
-    </user>
-    <user>
       <id>632b155e-48d8-41c6-a332-cc16382439ae</id>
       <username>hema Ebrahim</username>
       <role>teacher</role>
       <password>AdFead202@@</password>
       <email>Ebrahim@example.comd</email>
-    </user>
-    <user>
-      <id>cef92dc7-e3e4-4439-b260-60c08c339288</id>
-      <username>test test</username>
-      <role>student</role>
-      <password>Aahema2022@@</password>
-      <email>test@exapmle.com</email>
     </user>
     <user>
       <id>a3290383-c616-4490-ba87-79de1848220e</id>
@@ -144,13 +116,6 @@
       <password>Aahema@1</password>
       <email>hema@example.com</email>
     </user>
-    <user>
-      <id>ST-4</id>
-      <username>sfds sf</username>
-      <role>student</role>
-      <password>asdkfjA2@</password>
-      <email>sdaf@dsf.com</email>
-    </user>
   </users>
   <classes>
     <class>
@@ -162,8 +127,34 @@
       <student id="ST-3" />
     </class>
     <class>
-      <id>6f702148-3452-4742-ab67-0ff0e2291308</id>
-      <name>HTML</name>
+    </class>
+    <class>
+      <id>CL-0</id>
+      <name>Hema</name>
+    </class>
+    <class>
+      <id>CLS-1</id>
+      <name>JS</name>
+    </class>
+    <class>
+      <id>CLS-1</id>
+      <name>HAMED</name>
+    </class>
+    <class>
+      <id>CLS-1</id>
+      <name>HEHE</name>
+    </class>
+    <class>
+      <id>CLS-1</id>
+      <name>EMAD</name>
+    </class>
+    <class>
+      <id>CLS-4</id>
+      <name>A7A</name>
+    </class>
+    <class>
+      <id>97bf7c02-846c-4e41-bb7a-77884d57dc9f</id>
+      <name>22df</name>
     </class>
   </classes>
 </school>

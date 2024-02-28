@@ -22,11 +22,12 @@ namespace Attendence_Management_System.Forms
 
         private void closeButton_Click(object sender, EventArgs e)
         {
-            CounterLoader.LoadCountersFromXML("..\\..\\..\\Resources\\Data.xml");
+            //CounterLoader.LoadCountersFromXML("..\\..\\..\\Resources\\Data.xml");
+            CounterLoader.LoadCountersFromXML("..\\..\\..\\Resources\\Attendance.xml");
             string? UserName = userName.Text.Trim();
             string? Password = password.Text.Trim();
             ErrorMessage.Visible = false;
-            //XmlDocument XmlDoc = xmlController.ReadAllDocument(); //test document
+
             if (string.IsNullOrEmpty(UserName) || string.IsNullOrEmpty(Password))
             {
                 ErrorMessage.Text = "Please fill all the fields";
@@ -55,7 +56,6 @@ namespace Attendence_Management_System.Forms
                         {
                             Student main = new Student("..\\..\\..\\Resources\\Attendance.xml");
                             main.studentID = userID;
-
                             main.Show();
 
                         }
@@ -66,7 +66,7 @@ namespace Attendence_Management_System.Forms
                         }
                         ErrorMessage.Visible = false;
                         this.Hide();
-                       
+
 
                     }
                     else
@@ -89,6 +89,8 @@ namespace Attendence_Management_System.Forms
 
 
         }
+
+
 
 
 
@@ -117,7 +119,61 @@ namespace Attendence_Management_System.Forms
         {
             if (e.KeyCode == Keys.Enter)
             {
-                closeButton_Click(sender, e);
+                string UserName = userName.Text.Trim();
+                string Password = password.Text.Trim();
+                ErrorMessage.Visible = false;
+
+                if (string.IsNullOrEmpty(UserName) || string.IsNullOrEmpty(Password))
+                {
+                    ErrorMessage.Text = "Please fill all the fields";
+                    ErrorMessage.Visible = true;
+                }
+                else
+                {
+                    XmlDocument XmlDoc = xmlController.ReadAllDocument();
+                    XmlNode userNode = xmlController.GetNode(XmlDoc, "/school/users/user", "email", UserName);
+
+                    if (userNode != null)
+                    {
+                        string role = userNode.SelectSingleNode("role").InnerText;
+                        string userName = userNode.SelectSingleNode("username").InnerText;
+                        string userID = userNode.SelectSingleNode("id").InnerText;
+
+                        if (userNode.SelectSingleNode("password").InnerText == Password)
+                        {
+                            if (role.ToLower() == "teacher")
+                            {
+                                Teacher teacher = new Teacher("..\\..\\..\\Resources\\Attendance.xml");
+                                teacher.teacherID = userID;
+                                teacher.Show();
+                            }
+                            else if (role.ToLower() == "student")
+                            {
+                                Student main = new Student("..\\..\\..\\Resources\\Attendance.xml");
+                                main.studentID = userID;
+                                main.Show();
+                            }
+                            else if (role.ToLower() == "admin")
+                            {
+                                Main main = new Main(userName, role);
+                                main.Show();
+                            }
+
+                            ErrorMessage.Visible = false;
+                            this.Hide();
+                        }
+                        else
+                        {
+                            ErrorMessage.Text = "Invalid Password";
+                            ErrorMessage.Visible = true;
+                        }
+                    }
+                    else
+                    {
+                        ErrorMessage.Text = "Invalid UserName";
+                        ErrorMessage.Visible = true;
+                    }
+                }
             }
         }
 
@@ -135,5 +191,73 @@ namespace Attendence_Management_System.Forms
         {
 
         }
-    }
+
+        private void password_KeyPress(object sender, KeyPressEventArgs e)
+        {
+           
+        }
+
+        private void userName_KeyDown(object sender, KeyEventArgs e)
+        {
+
+            if (e.KeyCode == Keys.Enter)
+            {
+                string UserName = userName.Text.Trim();
+                string Password = password.Text.Trim();
+                ErrorMessage.Visible = false;
+
+                if (string.IsNullOrEmpty(UserName) || string.IsNullOrEmpty(Password))
+                {
+                    ErrorMessage.Text = "Please fill all the fields";
+                    ErrorMessage.Visible = true;
+                }
+                else
+                {
+                    XmlDocument XmlDoc = xmlController.ReadAllDocument();
+                    XmlNode userNode = xmlController.GetNode(XmlDoc, "/school/users/user", "email", UserName);
+
+                    if (userNode != null)
+                    {
+                        string role = userNode.SelectSingleNode("role").InnerText;
+                        string userName = userNode.SelectSingleNode("username").InnerText;
+                        string userID = userNode.SelectSingleNode("id").InnerText;
+
+                        if (userNode.SelectSingleNode("password").InnerText == Password)
+                        {
+                            if (role.ToLower() == "teacher")
+                            {
+                                Teacher teacher = new Teacher("..\\..\\..\\Resources\\Attendance.xml");
+                                teacher.teacherID = userID;
+                                teacher.Show();
+                            }
+                            else if (role.ToLower() == "student")
+                            {
+                                Student main = new Student("..\\..\\..\\Resources\\Attendance.xml");
+                                main.studentID = userID;
+                                main.Show();
+                            }
+                            else if (role.ToLower() == "admin")
+                            {
+                                Main main = new Main(userName, role);
+                                main.Show();
+                            }
+
+                            ErrorMessage.Visible = false;
+                            this.Hide();
+                        }
+                        else
+                        {
+                            ErrorMessage.Text = "Invalid Password";
+                            ErrorMessage.Visible = true;
+                        }
+                    }
+                    else
+                    {
+                        ErrorMessage.Text = "Invalid UserName";
+                        ErrorMessage.Visible = true;
+                    }
+                }
+            }
+        }
+    }    
 }

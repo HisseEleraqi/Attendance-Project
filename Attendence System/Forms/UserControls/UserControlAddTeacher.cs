@@ -19,6 +19,8 @@ namespace Attendence_System.Forms.UserControls
             InitializeComponent();
         }
 
+        private object originalCellValue;
+
         private void showHide_Click(object sender, EventArgs e)
         {
             if (textBoxPassWord.PasswordChar == '*')
@@ -41,14 +43,14 @@ namespace Attendence_System.Forms.UserControls
             string? Email = textBoxEmail.Text;
             string? Password = textBoxPassWord.Text;
             string? fullName;
-
+            // call validateEmail from Validator class
             Validator validator = new Validator();
             FnameErrorMsg.Visible = false;
             LnameErrorMsg.Visible = false;
             EmailErrorMsg.Visible = false;
             PasswordErrorMsg.Visible = false;
             ErrorPassword.Visible = false;
-
+            // check if all fields not empty
             if (!string.IsNullOrEmpty(firstName) && !string.IsNullOrEmpty(lastName) && !string.IsNullOrEmpty(Email) && !string.IsNullOrEmpty(Password))
             {
                 if (!validator.validateName(firstName))
@@ -84,10 +86,6 @@ namespace Attendence_System.Forms.UserControls
                     AddUser newUser = new AddUser(fullName, "teacher", Password, Email);
                     newUser.AddUserToXML();
                     MessageBox.Show("Teacher Added");
-                    textBoxFristName.Text = "";
-                    textBoxLastName.Text = "";
-                    textBoxEmail.Text = "";
-                    textBoxPassWord.Text = "";
                 }
             }
 
@@ -97,7 +95,7 @@ namespace Attendence_System.Forms.UserControls
             }
         }
 
-        private void pictureBox2_Click(object sender, EventArgs e)
+        private void UserControlAddTeacher_loed(object sender, EventArgs e)
         {
             XmlDocument doc = new XmlDocument();
             doc.Load("..\\..\\..\\Resources\\Data.xml");
@@ -117,26 +115,123 @@ namespace Attendence_System.Forms.UserControls
             }
         }
 
-        private void buttonCancel_Click(object sender, EventArgs e)
+        private void textBoxSearchTeacher_KeyDown(object sender, KeyEventArgs e)
         {
-            if (!string.IsNullOrEmpty(textBoxFristName.Text) || !string.IsNullOrEmpty(textBoxLastName.Text) || !string.IsNullOrEmpty(textBoxEmail.Text) || !string.IsNullOrEmpty(textBoxPassWord.Text))
+            if (e.KeyCode == Keys.Enter)
             {
-                DialogResult dialogResult = MessageBox.Show("Are you sure you want to cancel?", "Cancel", MessageBoxButtons.YesNo);
-                if (dialogResult == DialogResult.Yes)
+                string searchValue = textBoxSearchTeacher.Text.ToLower();
+                dataGridViewClass.ClearSelection();
+
+                try
                 {
-                    textBoxFristName.Text = "";
-                    textBoxLastName.Text = "";
-                    textBoxEmail.Text = "";
-                    textBoxPassWord.Text = "";
+                    int rowCount = dataGridViewClass.Rows.Count;
+                    for (int i = 0; i < rowCount - 1; i++)
+                    {
+                        DataGridViewRow row = dataGridViewClass.Rows[i];
+
+                        if (!row.IsNewRow)
+                        {
+                            bool rowVisible = false;
+
+                            foreach (DataGridViewCell cell in row.Cells)
+                            {
+                                if (cell.Value != null && cell.Value.ToString().ToLower().Contains(searchValue))
+                                {
+                                    rowVisible = true;
+                                    break;
+                                }
+                            }
+
+                            row.Visible = rowVisible;
+
+                            if (rowVisible)
+                            {
+                                dataGridViewClass.Rows[row.Index].Selected = true;
+
+                            }
+                        }
+                    }
                 }
+                catch (Exception exc)
+                {
+                    MessageBox.Show(exc.Message);
+                }
+            }
+        }
+
+        private void dataGridViewTeacher_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+        {
+           
+        }
+
+        private void dataGridViewTeacher_CellBeginEdit(object sender, DataGridViewCellCancelEventArgs e)
+        {
+
+
+        }
+
+        private void SaveEditToXml(int rowIndex, int columnIndex)
+        {
+            string userId = dataGridViewClass.Rows[rowIndex].Cells[0].Value.ToString(); // Adjust if your ID is in a different column
+            string newValue = dataGridViewClass.Rows[rowIndex].Cells[columnIndex].Value.ToString();
+
+            XmlDocument doc = new XmlDocument();
+            doc.Load("..\\..\\..\\Resources\\Data.xml"); // Adjust the path as necessary
+
+            XmlNode userNode = doc.SelectSingleNode($"/school/users/user[id='{userId}']");
+
+            if (userNode != null)
+            {
+                switch (columnIndex)
+                {
+                    case 1:
+                        userNode.SelectSingleNode("username").InnerText = newValue;
+                        break;
+
+                }
+
+                // Save the updated XML document
+                doc.Save("..\\..\\..\\Resources\\Data.xml");
+            }
+        }
+
+
+        private void dataGridViewTeacher_KeyDown(object sender, KeyEventArgs e)
+        {
+
+           
+        }
+
+        private void dataGridViewClass_CellBeginEdit(object sender, DataGridViewCellCancelEventArgs e)
+        {
+            originalCellValue = dataGridViewClass.Rows[e.RowIndex].Cells[e.ColumnIndex].Value;
+
+        }
+
+        private void dataGridViewClass_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+        {
+            var currentValue = dataGridViewClass.Rows[e.RowIndex].Cells[e.ColumnIndex].Value;
+            if (!Equals(currentValue, originalCellValue))
+            {
+                SaveEditToXml(e.RowIndex, e.ColumnIndex);
             }
             else
             {
-                textBoxFristName.Text = "";
-                textBoxLastName.Text = "";
-                textBoxEmail.Text = "";
-                textBoxPassWord.Text = "";
+                dataGridViewClass.Rows[e.RowIndex].Cells[e.ColumnIndex].Value = originalCellValue;
             }
+        }
+
+        private void dataGridViewClass_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                dataGridViewClass.EndEdit();
+                e.Handled = true;
+            }
+
         }
     }
 }
+
+
+   
