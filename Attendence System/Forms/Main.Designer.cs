@@ -61,6 +61,7 @@ namespace Attendence_Management_System
             userControDashBoard1 = new Attendence_System.Forms.UserControls.UserControDashBoard();
             userControlAddTeacher1 = new Attendence_System.Forms.UserControls.UserControlAddTeacher();
             panel8 = new Panel();
+            userControlReports1 = new Attendence_System.Forms.UserControls.UserControlReports();
             panel1.SuspendLayout();
             panel3.SuspendLayout();
             panel4.SuspendLayout();
@@ -344,10 +345,11 @@ namespace Attendence_Management_System
             // 
             // userControlAddClass1
             // 
-            userControlAddClass1.BackColor = SystemColors.ActiveCaption;
+            userControlAddClass1.BackColor = Color.Tan;
+            userControlAddClass1.Dock = DockStyle.Fill;
             userControlAddClass1.Font = new Font("Century Gothic", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             userControlAddClass1.ForeColor = Color.White;
-            userControlAddClass1.Location = new Point(258, 164);
+            userControlAddClass1.Location = new Point(0, 0);
             userControlAddClass1.Margin = new Padding(4, 3, 4, 3);
             userControlAddClass1.Name = "userControlAddClass1";
             userControlAddClass1.RightToLeft = RightToLeft.No;
@@ -396,12 +398,24 @@ namespace Attendence_Management_System
             panel8.Size = new Size(1183, 777);
             panel8.TabIndex = 2;
             // 
+            // userControlReports1
+            // 
+            userControlReports1.BackColor = Color.FromArgb(250, 250, 250);
+            userControlReports1.Font = new Font("Century Gothic", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            userControlReports1.Location = new Point(258, 171);
+            userControlReports1.Margin = new Padding(4, 3, 4, 3);
+            userControlReports1.Name = "userControlReports1";
+            userControlReports1.Size = new Size(1820, 891);
+            userControlReports1.TabIndex = 7;
+            userControlReports1.Load += userControlReports1_Load;
+            // 
             // Main
             // 
             AutoScaleDimensions = new SizeF(12F, 23F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(236, 240, 241);
             ClientSize = new Size(1700, 871);
+            Controls.Add(userControlReports1);
             Controls.Add(panelBack);
             Controls.Add(panel1);
             Controls.Add(userControlAddClass1);
