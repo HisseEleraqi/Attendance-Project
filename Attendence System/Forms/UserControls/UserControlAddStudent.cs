@@ -290,28 +290,13 @@ namespace Attendence_System.Forms.UserControls
         {
             if (e.ColumnIndex == 5 && e.RowIndex >= 0) // Ensuring valid row
             {
-                // Confirmation dialog
-                DialogResult dialogResult = MessageBox.Show("Are you sure you want to delete this user?", "Delete User", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-                if (dialogResult == DialogResult.Yes)
+                using (FormCrudStudent popup = new FormCrudStudent())
                 {
-                    // Assuming the ID is stored in the first column of the DataGridView
-                    string userId = dataGridViewClass.Rows[e.RowIndex].Cells[0].Value.ToString();
-                    DeleteUserFromXml(userId); // Method to delete the user from XML
-                    dataGridViewClass.Rows.RemoveAt(e.RowIndex); // Remove the row from DataGridView
-                }
-            }
+                    popup.ShowDialog();
 
-            if (e.RowIndex >= 0 && e.RowIndex < dataGridViewClass.Rows.Count &&
-                e.ColumnIndex >= 0 && e.ColumnIndex < dataGridViewClass.Columns.Count)
-            {
-                var currentValue = dataGridViewClass.Rows[e.RowIndex].Cells[e.ColumnIndex].Value; if (currentValue != null && originalCellValue != null && !Equals(currentValue, originalCellValue))
-                {
-                    SaveEditToXml(e.RowIndex, e.ColumnIndex);
+
                 }
-                else
-                {
-                    dataGridViewClass.Rows[e.RowIndex].Cells[e.ColumnIndex].Value = originalCellValue;
-                }
+           
 
             }
 

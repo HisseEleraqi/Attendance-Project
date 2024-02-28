@@ -60,16 +60,16 @@
             label5 = new Label();
             comboBox1 = new ComboBox();
             dataGridViewClass = new DataGridView();
+            pictureBox1 = new PictureBox();
+            textBoxSearchStudent = new TextBox();
+            label1 = new Label();
+            pictureBox2 = new PictureBox();
             Column1 = new DataGridViewTextBoxColumn();
             Column4 = new DataGridViewTextBoxColumn();
             Column3 = new DataGridViewTextBoxColumn();
             Column2 = new DataGridViewTextBoxColumn();
             Column5 = new DataGridViewCheckBoxColumn();
-            delete = new DataGridViewButtonColumn();
-            pictureBox1 = new PictureBox();
-            textBoxSearchStudent = new TextBox();
-            label1 = new Label();
-            pictureBox2 = new PictureBox();
+            Update = new DataGridViewButtonColumn();
             tabControlAddClass.SuspendLayout();
             tabPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)showHide2).BeginInit();
@@ -435,7 +435,6 @@
             // dataGridViewClass
             // 
             dataGridViewClass.AllowUserToAddRows = false;
-            dataGridViewClass.AllowUserToOrderColumns = true;
             dataGridViewClass.AllowUserToResizeColumns = false;
             dataGridViewClass.AllowUserToResizeRows = false;
             dataGridViewClass.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
@@ -443,9 +442,10 @@
             dataGridViewClass.ClipboardCopyMode = DataGridViewClipboardCopyMode.EnableWithoutHeaderText;
             dataGridViewClass.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
             dataGridViewClass.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewClass.Columns.AddRange(new DataGridViewColumn[] { Column1, Column4, Column3, Column2, Column5, delete });
+            dataGridViewClass.Columns.AddRange(new DataGridViewColumn[] { Column1, Column4, Column3, Column2, Column5, Update });
             dataGridViewClass.Location = new Point(84, 269);
             dataGridViewClass.Name = "dataGridViewClass";
+            dataGridViewClass.ReadOnly = true;
             dataGridViewClass.RowHeadersWidth = 51;
             dataGridViewClass.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             dataGridViewCellStyle2.ForeColor = Color.Black;
@@ -457,56 +457,7 @@
             dataGridViewClass.Size = new Size(1175, 334);
             dataGridViewClass.TabIndex = 6;
             dataGridViewClass.UseWaitCursor = true;
-            //dataGridViewClass.CellBeginEdit += dataGridViewClass_CellBeginEdit;
             dataGridViewClass.CellContentClick += dataGridViewClass_CellContentClick;
-            //dataGridViewClass.CellEndEdit += dataGridViewClass_CellEndEdit;
-            //dataGridViewClass.KeyDown += dataGridViewClass_KeyDown;
-            // 
-            // Column1
-            // 
-            Column1.HeaderText = "ID";
-            Column1.MinimumWidth = 6;
-            Column1.Name = "Column1";
-            // 
-            // Column4
-            // 
-            Column4.HeaderText = "Student Name";
-            Column4.MinimumWidth = 6;
-            Column4.Name = "Column4";
-            // 
-            // Column3
-            // 
-            Column3.HeaderText = "Email";
-            Column3.MinimumWidth = 6;
-            Column3.Name = "Column3";
-            // 
-            // Column2
-            // 
-            Column2.HeaderText = "Class Name";
-            Column2.MinimumWidth = 6;
-            Column2.Name = "Column2";
-            // 
-            // Column5
-            // 
-            Column5.HeaderText = "Add To Class";
-            Column5.MinimumWidth = 6;
-            Column5.Name = "Column5";
-            Column5.Resizable = DataGridViewTriState.True;
-            Column5.SortMode = DataGridViewColumnSortMode.Automatic;
-            // 
-            // delete
-            // 
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = Color.Red;
-            dataGridViewCellStyle1.Font = new Font("Tahoma", 7.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle1.ForeColor = Color.Black;
-            delete.DefaultCellStyle = dataGridViewCellStyle1;
-            delete.HeaderText = "delete";
-            delete.MinimumWidth = 6;
-            delete.Name = "delete";
-            delete.Text = "delete";
-            delete.ToolTipText = "delete";
-            delete.UseColumnTextForButtonValue = true;
             // 
             // pictureBox1
             // 
@@ -555,6 +506,58 @@
             pictureBox2.TabStop = false;
             pictureBox2.UseWaitCursor = true;
             pictureBox2.Click += pictureBox2_Click;
+            // 
+            // Column1
+            // 
+            Column1.HeaderText = "ID";
+            Column1.MinimumWidth = 6;
+            Column1.Name = "Column1";
+            Column1.ReadOnly = true;
+            // 
+            // Column4
+            // 
+            Column4.HeaderText = "Student Name";
+            Column4.MinimumWidth = 6;
+            Column4.Name = "Column4";
+            Column4.ReadOnly = true;
+            // 
+            // Column3
+            // 
+            Column3.HeaderText = "Email";
+            Column3.MinimumWidth = 6;
+            Column3.Name = "Column3";
+            Column3.ReadOnly = true;
+            // 
+            // Column2
+            // 
+            Column2.HeaderText = "Class Name";
+            Column2.MinimumWidth = 6;
+            Column2.Name = "Column2";
+            Column2.ReadOnly = true;
+            // 
+            // Column5
+            // 
+            Column5.HeaderText = "Add To Class";
+            Column5.MinimumWidth = 6;
+            Column5.Name = "Column5";
+            Column5.ReadOnly = true;
+            Column5.Resizable = DataGridViewTriState.True;
+            Column5.SortMode = DataGridViewColumnSortMode.Automatic;
+            // 
+            // Update
+            // 
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = Color.Red;
+            dataGridViewCellStyle1.Font = new Font("Tahoma", 7.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle1.ForeColor = Color.Black;
+            Update.DefaultCellStyle = dataGridViewCellStyle1;
+            Update.HeaderText = "UpdateStudent";
+            Update.MinimumWidth = 6;
+            Update.Name = "Update";
+            Update.ReadOnly = true;
+            Update.Text = "UpdateStudent";
+            Update.ToolTipText = "UpdateStudent";
+            Update.UseColumnTextForButtonValue = true;
             // 
             // UserControlAddStudent
             // 
@@ -620,6 +623,6 @@
         private DataGridViewTextBoxColumn Column3;
         private DataGridViewTextBoxColumn Column2;
         private DataGridViewCheckBoxColumn Column5;
-        private DataGridViewButtonColumn delete;
+        private DataGridViewButtonColumn Update;
     }
 }
