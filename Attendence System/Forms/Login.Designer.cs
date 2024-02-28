@@ -190,6 +190,7 @@ namespace Attendence_Management_System.Forms
             password.PasswordChar = '*';
             password.Size = new Size(414, 45);
             password.TabIndex = 4;
+            password.KeyDown += password_KeyDown;
             // 
             // panel3
             // 
@@ -212,6 +213,7 @@ namespace Attendence_Management_System.Forms
             userName.Size = new Size(391, 45);
             userName.TabIndex = 3;
             userName.TextChanged += userName_TextChanged_1;
+            userName.KeyDown += userName_KeyDown;
             // 
             // pictureBox1
             // 

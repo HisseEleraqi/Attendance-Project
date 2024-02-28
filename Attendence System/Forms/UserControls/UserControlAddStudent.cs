@@ -36,14 +36,14 @@ namespace Attendence_System.Forms.UserControls
             string? Email = textBoxEmail.Text.Trim();
             string? Password = textBoxPassWord.Text.Trim();
             string? fullName;
-
+            // call validateEmail from Validator class
             Validator validator = new Validator();
             FnameErrorMsg.Visible = false;
             LnameErrorMsg.Visible = false;
             EmailErrorMsg.Visible = false;
             PasswordErrorMsg.Visible = false;
             ErrorPassword.Visible = false;
-
+            // check if all fields not empty
             if (!string.IsNullOrEmpty(firstName) && !string.IsNullOrEmpty(lastName) && !string.IsNullOrEmpty(Email) && !string.IsNullOrEmpty(Password))
             {
                 if (!validator.validateName(firstName))
@@ -56,7 +56,7 @@ namespace Attendence_System.Forms.UserControls
                 }
                 else if (!validator.validateEmail(Email))
                 {
-
+                    //MessageBox.Show("Invalid Email");
                     EmailErrorMsg.Visible = true;
                 }
                 else if (!validator.validatePassword(Password))
@@ -79,11 +79,6 @@ namespace Attendence_System.Forms.UserControls
                     AddUser newUser = new AddUser(fullName, "student", Password, Email);
                     newUser.AddUserToXML();
                     MessageBox.Show("Student Added");
-                    textBoxEmail.Text = "";
-                    textBoxFristName.Text = "";
-                    textBoxLastName.Text = "";
-                    textBoxPassWord.Text = "";
-
                 }
             }
 
@@ -150,16 +145,23 @@ namespace Attendence_System.Forms.UserControls
             }
         }
 
-        private void dataGridViewClass_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void textBoxSearch_TextChanged(object sender, EventArgs e)
-        {
-        }
-
         private void pictureBox2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tabPageSearchClass_Click(object sender, EventArgs e)
+        {
+
+        }
+
+
+        private void UserControlAddStudent_Load(object sender, EventArgs e)
         {
             XmlDocument doc = new XmlDocument();
             doc.Load("..\\..\\..\\Resources\\Data.xml");
@@ -179,14 +181,49 @@ namespace Attendence_System.Forms.UserControls
             }
         }
 
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        private void textBoxSearchStudent_KeyDown(object sender, KeyEventArgs e)
         {
+            if (e.KeyCode == Keys.Enter)
+            {
+                string searchValue = textBoxSearchStudent.Text.ToLower();
+                dataGridViewClass.ClearSelection();
 
-        }
+                try
+                {
+                    int rowCount = dataGridViewClass.Rows.Count;
+                    for (int i = 0; i < rowCount - 1; i++)
+                    {
+                        DataGridViewRow row = dataGridViewClass.Rows[i];
 
-        private void tabPageSearchClass_Click(object sender, EventArgs e)
-        {
+                        if (!row.IsNewRow)
+                        {
+                            bool rowVisible = false;
 
+                            foreach (DataGridViewCell cell in row.Cells)
+                            {
+                                if (cell.Value != null && cell.Value.ToString().ToLower().Contains(searchValue))
+                                {
+                                    rowVisible = true;
+                                    break;
+                                }
+                            }
+
+                            row.Visible = rowVisible;
+
+                            if (rowVisible)
+                            {
+                                dataGridViewClass.Rows[row.Index].Selected = true;
+                                
+                            }
+                        }
+                    }
+                }
+                catch (Exception exc)
+                {
+                    MessageBox.Show(exc.Message);
+                }
+            }
         }
     }
+    
 }

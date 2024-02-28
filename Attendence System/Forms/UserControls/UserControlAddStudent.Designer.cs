@@ -55,28 +55,27 @@
             label4 = new Label();
             label1Password = new Label();
             tabPageSearchClass = new TabPage();
-            comboBox1 = new ComboBox();
-            pictureBox2 = new PictureBox();
-            dataGridViewClass = new DataGridView();
-            pictureBox1 = new PictureBox();
-            textBoxSearch = new TextBox();
-            label3 = new Label();
-            label1 = new Label();
-            label5 = new Label();
             ButtonAddToClass = new Button();
+            label5 = new Label();
+            comboBox1 = new ComboBox();
+            dataGridViewClass = new DataGridView();
             Column1 = new DataGridViewTextBoxColumn();
             Column4 = new DataGridViewTextBoxColumn();
             Column3 = new DataGridViewTextBoxColumn();
             Column2 = new DataGridViewTextBoxColumn();
             Column5 = new DataGridViewCheckBoxColumn();
+            pictureBox1 = new PictureBox();
+            textBoxSearchStudent = new TextBox();
+            label1 = new Label();
+            pictureBox2 = new PictureBox();
             tabControlAddClass.SuspendLayout();
             tabPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)showHide2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)showHide).BeginInit();
             tabPageSearchClass.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridViewClass).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             SuspendLayout();
             // 
             // tabControlAddClass
@@ -379,12 +378,11 @@
             tabPageSearchClass.Controls.Add(ButtonAddToClass);
             tabPageSearchClass.Controls.Add(label5);
             tabPageSearchClass.Controls.Add(comboBox1);
-            tabPageSearchClass.Controls.Add(pictureBox2);
             tabPageSearchClass.Controls.Add(dataGridViewClass);
             tabPageSearchClass.Controls.Add(pictureBox1);
-            tabPageSearchClass.Controls.Add(textBoxSearch);
-            tabPageSearchClass.Controls.Add(label3);
+            tabPageSearchClass.Controls.Add(textBoxSearchStudent);
             tabPageSearchClass.Controls.Add(label1);
+            tabPageSearchClass.Controls.Add(pictureBox2);
             tabPageSearchClass.Location = new Point(4, 4);
             tabPageSearchClass.Name = "tabPageSearchClass";
             tabPageSearchClass.Padding = new Padding(3);
@@ -393,6 +391,33 @@
             tabPageSearchClass.Text = "Search Update Student";
             tabPageSearchClass.UseWaitCursor = true;
             tabPageSearchClass.Click += tabPageSearchClass_Click;
+            // 
+            // ButtonAddToClass
+            // 
+            ButtonAddToClass.BackColor = Color.SpringGreen;
+            ButtonAddToClass.FlatAppearance.BorderColor = Color.White;
+            ButtonAddToClass.FlatAppearance.BorderSize = 99;
+            ButtonAddToClass.Font = new Font("Century Gothic", 10.2F, FontStyle.Bold);
+            ButtonAddToClass.ForeColor = SystemColors.InactiveCaptionText;
+            ButtonAddToClass.Location = new Point(1092, 117);
+            ButtonAddToClass.Name = "ButtonAddToClass";
+            ButtonAddToClass.Size = new Size(137, 41);
+            ButtonAddToClass.TabIndex = 10;
+            ButtonAddToClass.Text = "Add to Class";
+            ButtonAddToClass.UseVisualStyleBackColor = false;
+            ButtonAddToClass.UseWaitCursor = true;
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Font = new Font("Century Gothic", 12F, FontStyle.Bold);
+            label5.ForeColor = Color.FromArgb(0, 0, 64);
+            label5.Location = new Point(914, 68);
+            label5.Name = "label5";
+            label5.Size = new Size(134, 23);
+            label5.TabIndex = 9;
+            label5.Text = "Select Class:";
+            label5.UseWaitCursor = true;
             // 
             // comboBox1
             // 
@@ -404,18 +429,6 @@
             comboBox1.Size = new Size(191, 29);
             comboBox1.TabIndex = 8;
             comboBox1.UseWaitCursor = true;
-            // 
-            // pictureBox2
-            // 
-            pictureBox2.Image = Properties.Resources.ixkfkncp;
-            pictureBox2.Location = new Point(491, 215);
-            pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(52, 28);
-            pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox2.TabIndex = 7;
-            pictureBox2.TabStop = false;
-            pictureBox2.UseWaitCursor = true;
-            pictureBox2.Click += pictureBox2_Click;
             // 
             // dataGridViewClass
             // 
@@ -442,81 +455,6 @@
             dataGridViewClass.Size = new Size(1175, 334);
             dataGridViewClass.TabIndex = 6;
             dataGridViewClass.UseWaitCursor = true;
-            dataGridViewClass.CellContentClick += dataGridViewClass_CellContentClick;
-            // 
-            // pictureBox1
-            // 
-            pictureBox1.Image = Properties.Resources.ixkfkncp;
-            pictureBox1.Location = new Point(877, 394);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(41, 28);
-            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox1.TabIndex = 4;
-            pictureBox1.TabStop = false;
-            pictureBox1.UseWaitCursor = true;
-            // 
-            // textBoxSearch
-            // 
-            textBoxSearch.BackColor = Color.FromArgb(189, 195, 199);
-            textBoxSearch.BorderStyle = BorderStyle.FixedSingle;
-            textBoxSearch.ForeColor = Color.FromArgb(189, 195, 199);
-            textBoxSearch.Location = new Point(491, 215);
-            textBoxSearch.Name = "textBoxSearch";
-            textBoxSearch.Size = new Size(365, 28);
-            textBoxSearch.TabIndex = 3;
-            textBoxSearch.UseWaitCursor = true;
-            textBoxSearch.TextChanged += textBoxSearch_TextChanged;
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.BackColor = Color.Transparent;
-            label3.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label3.ForeColor = Color.FromArgb(52, 73, 94);
-            label3.Location = new Point(491, 220);
-            label3.Name = "label3";
-            label3.Size = new Size(76, 23);
-            label3.TabIndex = 2;
-            label3.Text = "Name:";
-            label3.UseWaitCursor = true;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.BackColor = Color.Transparent;
-            label1.Font = new Font("Century Gothic", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.ForeColor = Color.FromArgb(52, 73, 94);
-            label1.Location = new Point(0, 24);
-            label1.Name = "label1";
-            label1.Size = new Size(236, 34);
-            label1.TabIndex = 0;
-            label1.Text = "Search Teacher:";
-            label1.UseWaitCursor = true;
-            // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.Font = new Font("Century Gothic", 12F, FontStyle.Bold);
-            label5.ForeColor = Color.FromArgb(0, 0, 64);
-            label5.Location = new Point(914, 68);
-            label5.Name = "label5";
-            label5.Size = new Size(134, 23);
-            label5.TabIndex = 9;
-            label5.Text = "Select Class:";
-            // 
-            // ButtonAddToClass
-            // 
-            ButtonAddToClass.BackColor = Color.SpringGreen;
-            ButtonAddToClass.FlatAppearance.BorderColor = Color.White;
-            ButtonAddToClass.FlatAppearance.BorderSize = 99;
-            ButtonAddToClass.Font = new Font("Century Gothic", 10.2F, FontStyle.Bold);
-            ButtonAddToClass.ForeColor = SystemColors.InactiveCaptionText;
-            ButtonAddToClass.Location = new Point(1092, 117);
-            ButtonAddToClass.Name = "ButtonAddToClass";
-            ButtonAddToClass.Size = new Size(137, 41);
-            ButtonAddToClass.TabIndex = 10;
-            ButtonAddToClass.Text = "Add to Class";
-            ButtonAddToClass.UseVisualStyleBackColor = false;
             // 
             // Column1
             // 
@@ -550,6 +488,54 @@
             Column5.Resizable = DataGridViewTriState.True;
             Column5.SortMode = DataGridViewColumnSortMode.Automatic;
             // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = Properties.Resources.ixkfkncp;
+            pictureBox1.Location = new Point(877, 394);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(41, 28);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.TabIndex = 4;
+            pictureBox1.TabStop = false;
+            pictureBox1.UseWaitCursor = true;
+            // 
+            // textBoxSearchStudent
+            // 
+            textBoxSearchStudent.BackColor = Color.FromArgb(189, 195, 199);
+            textBoxSearchStudent.BorderStyle = BorderStyle.FixedSingle;
+            textBoxSearchStudent.ForeColor = Color.Black;
+            textBoxSearchStudent.Location = new Point(549, 215);
+            textBoxSearchStudent.Name = "textBoxSearchStudent";
+            textBoxSearchStudent.Size = new Size(307, 28);
+            textBoxSearchStudent.TabIndex = 3;
+            textBoxSearchStudent.UseWaitCursor = true;
+            textBoxSearchStudent.KeyDown += textBoxSearchStudent_KeyDown;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.BackColor = Color.Transparent;
+            label1.Font = new Font("Century Gothic", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.ForeColor = Color.FromArgb(52, 73, 94);
+            label1.Location = new Point(0, 24);
+            label1.Name = "label1";
+            label1.Size = new Size(236, 34);
+            label1.TabIndex = 0;
+            label1.Text = "Search Teacher:";
+            label1.UseWaitCursor = true;
+            // 
+            // pictureBox2
+            // 
+            pictureBox2.Image = Properties.Resources.ixkfkncp;
+            pictureBox2.Location = new Point(491, 215);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(52, 28);
+            pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox2.TabIndex = 7;
+            pictureBox2.TabStop = false;
+            pictureBox2.UseWaitCursor = true;
+            pictureBox2.Click += pictureBox2_Click;
+            // 
             // UserControlAddStudent
             // 
             AutoScaleDimensions = new SizeF(10F, 21F);
@@ -561,6 +547,7 @@
             Name = "UserControlAddStudent";
             RightToLeft = RightToLeft.No;
             Size = new Size(1340, 725);
+            Load += UserControlAddStudent_Load;
             tabControlAddClass.ResumeLayout(false);
             tabPage.ResumeLayout(false);
             tabPage.PerformLayout();
@@ -568,9 +555,9 @@
             ((System.ComponentModel.ISupportInitialize)showHide).EndInit();
             tabPageSearchClass.ResumeLayout(false);
             tabPageSearchClass.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)dataGridViewClass).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ResumeLayout(false);
         }
 
@@ -587,8 +574,7 @@
         private Label labelFname;
         private TextBox textBoxPassWord;
         private Label label1Password;
-        private TextBox textBoxSearch;
-        private Label label3;
+        private TextBox textBoxSearchStudent;
         private PictureBox pictureBox1;
         private DataGridView dataGridViewClass;
         private PictureBox pictureBox2;
