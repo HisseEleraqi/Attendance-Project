@@ -81,6 +81,10 @@ namespace Attendence_System.Forms.UserControls
                     AddUser newUser = new AddUser(fullName, "student", Password, Email);
                     newUser.AddUserToXML();
                     MessageBox.Show("Student Added");
+                    textBoxFristName.Text = "";
+                    textBoxLastName.Text = "";
+                    textBoxEmail.Text = "";
+                    textBoxPassWord.Text = "";
                 }
             }
 
@@ -291,13 +295,14 @@ namespace Attendence_System.Forms.UserControls
         {
             if (e.ColumnIndex == 5 && e.RowIndex >= 0) // Ensuring valid row
             {
-                using (FormCrudStudent popup = new FormCrudStudent())
+                string userId = dataGridViewClass.Rows[e.RowIndex].Cells[0].Value.ToString();
+                using (FormCrudStudent popup = new FormCrudStudent(userId))
                 {
                     popup.ShowDialog();
 
 
                 }
-           
+
 
             }
 
@@ -327,6 +332,11 @@ namespace Attendence_System.Forms.UserControls
         }
 
         private void ButtonAddToClass_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tabPage_Click(object sender, EventArgs e)
         {
 
         }

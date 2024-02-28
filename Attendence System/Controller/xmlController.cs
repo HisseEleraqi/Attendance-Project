@@ -119,12 +119,10 @@ namespace Attendence_Management_System
         }
         public static void AddStudent(string id, string name, XmlNode root)
         {
-            // create node student with id attribute and name as value
             XmlNode student = root.OwnerDocument.CreateElement("student");
             XmlAttribute idAttribute = root.OwnerDocument.CreateAttribute("id");
             idAttribute.Value = id;
             student.Attributes.Append(idAttribute);
-            // add name as node
             XmlNode nameNode = root.OwnerDocument.CreateElement("name");
             nameNode.InnerText = name;
             student.AppendChild(nameNode);
@@ -147,7 +145,7 @@ namespace Attendence_Management_System
         }
         public static void AddTeacher(string id, string name)
         {
-            XmlDocument XmlDoc = ReadSecondDocument();
+            XmlDocument XmlDoc = ReadAllDocument();
             XmlNode root = XmlDoc.SelectSingleNode("/school/teachers");
             XmlNode teacher = root.OwnerDocument.CreateElement("teacher");
             XmlAttribute idAttribute = root.OwnerDocument.CreateAttribute("id");
@@ -159,7 +157,6 @@ namespace Attendence_Management_System
             root.AppendChild(teacher);
             root.OwnerDocument.Save("../../../Resources/Data.xml");
         }
-
         public static void XMLAddClass(string id, string name)
         {
 
@@ -189,6 +186,65 @@ namespace Attendence_Management_System
             user.AppendChild(Students);
             root.AppendChild(user);
             root.OwnerDocument.Save("../../../Resources/Attendance.xml");
+        }
+        public void editUserInXML(string Id, string userName, string password, string role)
+        {
+            //add to tag user
+            XmlDocument XmlDoc = ReadAllDocument();
+            XmlNode root = XmlDoc.SelectSingleNode("/school/users");
+            XmlNode user = XmlDoc.SelectSingleNode($"/school/users/user[id=\"{Id}\"]\r\n");
+            XmlNode userNameNode = user.SelectSingleNode("username");
+            XmlNode passwordNode = user.SelectSingleNode("password");
+            userNameNode.InnerText = userName;
+            passwordNode.InnerText = password;
+            // add to Tage role
+            XmlNode Roler = XmlDoc.SelectSingleNode($"/school/{role}s/{role}[@id=\"{Id}\"]\r\n");
+            XmlNode NameNode = Roler.SelectSingleNode("name");
+            NameNode.InnerText = userName;
+            root.OwnerDocument.Save("../../../Resources/Data.xml");
+
+
+
+        }
+        public List<string> GetStudent(string ID)
+        {
+            XmlDocument XmlDoc = ReadAllDocument();
+            XmlNode user = XmlDoc.SelectSingleNode($"/school/users/user[id=\"{ID}\"]\r\n");
+            XmlNode userNameNode = user.SelectSingleNode("username");
+            XmlNode passwordNode = user.SelectSingleNode("password");
+            XmlNode roleNode = user.SelectSingleNode("role");
+            XmlNode emailNode = user.SelectSingleNode("email");
+            XmlNode idNode = user.SelectSingleNode("id");
+            List<string> student = new List<string>();
+            student.Add(userNameNode.InnerText);
+            student.Add(passwordNode.InnerText);
+            student.Add(roleNode.InnerText);
+            student.Add(emailNode.InnerText);
+            student.Add(idNode.InnerText);
+
+            return student;
+        }
+        public static void XMLAddStudentToClass(string classID, string studentID)
+        {
+            XmlDocument XmlDoc = ReadSecondDocument();
+            XmlNode root = XmlDoc.SelectSingleNode("/AttendanceData");
+            XmlNode user = root.SelectSingleNode($"/AttendanceData/Class[ClassID=\"{classID}\"]\r\n");
+            XmlNode Students = user.SelectSingleNode("Students");
+            XmlNode student = Students.OwnerDocument.CreateElement("Student");
+            student.InnerText = studentID;
+            Students.AppendChild(student);
+            root.OwnerDocument.Save("../../../Resources/Attendance.xml");
+        }
+        public  static void deleteUserInXML(string ID)
+        {
+            XmlDocument XmlDoc = ReadAllDocument();
+            XmlNode root = XmlDoc.SelectSingleNode("/school/users");
+            XmlNode user = XmlDoc.SelectSingleNode($"/school/users/user[id=\"{ID}\"]\r\n");
+            XmlNode roleNode = user.SelectSingleNode("role");
+            XmlNode Roler = XmlDoc.SelectSingleNode($"/school/{roleNode.InnerText}s/{roleNode.InnerText}[@id=\"{ID}\"]\r\n");
+            root.RemoveChild(user);
+            Roler.ParentNode.RemoveChild(Roler);
+            root.OwnerDocument.Save("../../../Resources/Data.xml");
         }
     }
 

@@ -35,19 +35,22 @@ internal class CounterLoader
             AddUser.SetTeacherCounter(int.Parse(lastId) + 1);
         }
 
-
-        XmlDocument XmlDoc = xmlController.ReadSecondDocument();
-        XmlDoc.Load(filePath);
-        XmlNodeList nodeList = XmlDoc.SelectNodes("/AttendanceData/Class");
-        Console.WriteLine(nodeList.Count);
-        if (nodeList != null)
+        if (classes!= null)
         {
-            var lastClass = nodeList[nodeList.Count - 1];
-            string lastClassId = lastClass.SelectSingleNode("ClassID").InnerText.Split('-')[1];
+            XmlDocument XmlDoc = xmlController.ReadSecondDocument();
+            XmlDoc.Load(filePath);
+            XmlNodeList nodeList = XmlDoc.SelectNodes("/AttendanceData/Class");
+            Console.WriteLine(nodeList.Count);
+            if (nodeList != null)
+            {
+                var lastClass = nodeList[nodeList.Count - 1];
+                string lastClassId = lastClass.SelectSingleNode("ClassID").InnerText.Split('-')[1];
 
 
-            AddClass.SetClassCounter(int.Parse(lastClassId) + 1);
+                AddClass.SetClassCounter(int.Parse(lastClassId) + 1);
+            }
         }
+      
 
 
     }

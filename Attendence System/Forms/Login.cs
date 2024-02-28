@@ -22,7 +22,7 @@ namespace Attendence_Management_System.Forms
 
         private void closeButton_Click(object sender, EventArgs e)
         {
-            //CounterLoader.LoadCountersFromXML("..\\..\\..\\Resources\\Data.xml");
+            CounterLoader.LoadCountersFromXML("..\\..\\..\\Resources\\Data.xml");
             CounterLoader.LoadCountersFromXML("..\\..\\..\\Resources\\Attendance.xml");
             string? UserName = userName.Text.Trim();
             string? Password = password.Text.Trim();
