@@ -11,12 +11,14 @@ using Attendence_Management_System;
 using System.Xml;
 using Attendence_System.Forms;
 using Attendence_System.Controller;
+using System.Globalization;
 namespace Attendence_Management_System.Forms
 {
     public partial class Login : Form
     {
         public Login()
         {
+            Thread.CurrentThread.CurrentUICulture = new CultureInfo("ar");
             InitializeComponent();
         }
 
@@ -270,5 +272,9 @@ namespace Attendence_Management_System.Forms
         {
             timerDate.Start();
         }
+
+       
+       
+
     }
 }
