@@ -89,8 +89,7 @@ namespace Attendence_System.Forms
 
         private void FormCrudTeacher_Load(object sender, EventArgs e)
         {
-            comboBoxLanguage.Items.Add("English");
-            comboBoxLanguage.Items.Add("Arabic");
+            
         }
     }
 }

@@ -166,11 +166,11 @@ namespace Attendence_System.Forms.UserControls
         }
         private void SaveEditToXml(int rowIndex, int columnIndex)
         {
-            string userId = dataGridViewClass.Rows[rowIndex].Cells[0].Value.ToString(); 
+            string userId = dataGridViewClass.Rows[rowIndex].Cells[0].Value.ToString();
             string newValue = dataGridViewClass.Rows[rowIndex].Cells[columnIndex].Value.ToString();
 
             XmlDocument doc = new XmlDocument();
-            doc.Load("..\\..\\..\\Resources\\Data.xml"); 
+            doc.Load("..\\..\\..\\Resources\\Data.xml");
 
             XmlNode userNode = doc.SelectSingleNode($"/school/users/user[id='{userId}']");
 
@@ -217,7 +217,7 @@ namespace Attendence_System.Forms.UserControls
                 string name = node.SelectSingleNode("username").InnerText;
                 string role = node.SelectSingleNode("role").InnerText;
                 string email = node.SelectSingleNode("email").InnerText;
-                 flag  = false;
+                flag = false;
                 if (role == "student")
                 {
                     if (comboBox1.SelectedItem != null)
@@ -229,7 +229,7 @@ namespace Attendence_System.Forms.UserControls
                         XmlNodeList classNodes = xmlDocument.SelectNodes("/AttendanceData/Class");
                         foreach (XmlNode classNode in classNodes)
                         {
-                            
+
                             if (classNode.SelectSingleNode("ClassName").InnerText == selectedClass)
                             {
 
@@ -237,14 +237,14 @@ namespace Attendence_System.Forms.UserControls
                                 {
                                     dataGridViewClass.Rows.Add(id, name, email, selectedClass, true);
                                     flag = true;
-                                    
+
                                 }
-                                
+
                             }
 
 
                         }
-                        if(flag == false)
+                        if (flag == false)
                         {
                             dataGridViewClass.Rows.Add(id, name, email, "not Erolled", false);
                         }
@@ -331,7 +331,7 @@ namespace Attendence_System.Forms.UserControls
 
         private void dataGridViewClass_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.ColumnIndex == 5 && e.RowIndex >= 0) 
+            if (e.ColumnIndex == 5 && e.RowIndex >= 0)
             {
                 string userId = dataGridViewClass.Rows[e.RowIndex].Cells[0].Value.ToString();
                 using (FormCrudStudent popup = new FormCrudStudent(userId))
@@ -339,7 +339,7 @@ namespace Attendence_System.Forms.UserControls
                     popup.ShowDialog();
                 }
             }
-            if (e.ColumnIndex == 4 && e.RowIndex >= 0) 
+            if (e.ColumnIndex == 4 && e.RowIndex >= 0)
             {
                 if (dataGridViewClass.Rows[e.RowIndex].Cells[4].Value != null)
                 {
@@ -355,7 +355,7 @@ namespace Attendence_System.Forms.UserControls
                             XmlNodeList nodes = doc.SelectNodes($"/AttendanceData/Class[ClassName=\"{className}\"]/Students/Student");
                             foreach (XmlNode node in nodes)
                             {
-                                if(node.SelectSingleNode("StudentID") != null)
+                                if (node.SelectSingleNode("StudentID") != null)
                                 {
                                     if (node.SelectSingleNode("StudentID").InnerText == userId)
                                     {
@@ -368,7 +368,7 @@ namespace Attendence_System.Forms.UserControls
                                     }
 
                                 }
-                                
+
                             }
                         }
                     }
@@ -382,7 +382,7 @@ namespace Attendence_System.Forms.UserControls
                             XmlDocument doc = new XmlDocument();
                             doc.Load("..\\..\\..\\Resources\\Attendance.xml");
                             XmlNode node = doc.SelectSingleNode($"/AttendanceData/Class[ClassName=\"{className}\"]/Students");
-                            
+
                             XmlElement student = doc.CreateElement("Student");
                             student.InnerXml = $"<StudentID>{userId}</StudentID>";
                             XmlElement studentName = doc.CreateElement("StudentName");
@@ -391,30 +391,30 @@ namespace Attendence_System.Forms.UserControls
                             XmlElement attendanceRecords = doc.CreateElement("AttendanceRecords");
                             List<string> absentDates = new List<string> { "2024-02-15", "2024-02-14", "2024-02-16", "2024-02-17", "2024-02-28", "2024-02-23", "2024-02-20", "2024-02-08", "2024-02-13", "2024-02-22", "2024-03-01" };
 
-                                foreach (string date in absentDates)
-                                {
-                                    XmlElement record = doc.CreateElement("Record");
+                            foreach (string date in absentDates)
+                            {
+                                XmlElement record = doc.CreateElement("Record");
 
-                                    XmlElement dateElement = doc.CreateElement("Date");
-                                    dateElement.InnerText = date;
-                                    record.AppendChild(dateElement);
+                                XmlElement dateElement = doc.CreateElement("Date");
+                                dateElement.InnerText = date;
+                                record.AppendChild(dateElement);
 
-                                    XmlElement statusElement = doc.CreateElement("Status");
-                                    statusElement.InnerText = "Absent";
-                                    record.AppendChild(statusElement);
+                                XmlElement statusElement = doc.CreateElement("Status");
+                                statusElement.InnerText = "Absent";
+                                record.AppendChild(statusElement);
 
-                                    attendanceRecords.AppendChild(record);
-                                }
+                                attendanceRecords.AppendChild(record);
+                            }
 
-                        student.AppendChild(attendanceRecords);
-                        node.AppendChild(student);
+                            student.AppendChild(attendanceRecords);
+                            node.AppendChild(student);
 
-                        doc.Save("..\\..\\..\\Resources\\Attendance.xml");
-                        dataGridViewClass.Rows[e.RowIndex].Cells[4].Value = true;
-                        MessageBox.Show("Student Added");
-                        FillDataGrid();
+                            doc.Save("..\\..\\..\\Resources\\Attendance.xml");
+                            dataGridViewClass.Rows[e.RowIndex].Cells[4].Value = true;
+                            MessageBox.Show("Student Added");
+                            FillDataGrid();
                         }
-                        
+
                     }
                 }
             }
@@ -457,6 +457,11 @@ namespace Attendence_System.Forms.UserControls
         private void comboBox1_SelectedIndexChanged_1(object sender, EventArgs e)
         {
             FillDataGrid();
+        }
+
+        private void textBoxSearchStudent_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

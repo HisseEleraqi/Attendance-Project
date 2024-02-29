@@ -35,6 +35,7 @@ namespace Attendence_Management_System
             panel1 = new Panel();
             panel3 = new Panel();
             panel4 = new Panel();
+            button2 = new Button();
             Report = new Button();
             panelSlide = new Panel();
             buttonAddStudent = new Button();
@@ -60,13 +61,11 @@ namespace Attendence_Management_System
             pictureBox2 = new PictureBox();
             toolTip1 = new ToolTip(components);
             panel8 = new Panel();
-            comboBoxLanguage = new ComboBox();
             userControlAddClass1 = new Attendence_System.Forms.UserControls.UserControlAddClass();
             userControlAddStudent1 = new Attendence_System.Forms.UserControls.UserControlAddStudent();
             userControDashBoard1 = new Attendence_System.Forms.UserControls.UserControDashBoard();
             userControlAddTeacher1 = new Attendence_System.Forms.UserControls.UserControlAddTeacher();
             timerDateTime = new System.Windows.Forms.Timer(components);
-            button2 = new Button();
             panel1.SuspendLayout();
             panel3.SuspendLayout();
             panel4.SuspendLayout();
@@ -107,6 +106,16 @@ namespace Attendence_Management_System
             panel4.Controls.Add(buttonDashBorde);
             resources.ApplyResources(panel4, "panel4");
             panel4.Name = "panel4";
+            // 
+            // button2
+            // 
+            resources.ApplyResources(button2, "button2");
+            button2.FlatAppearance.BorderSize = 0;
+            button2.ForeColor = Color.White;
+            button2.Image = Attendence_System.Properties.Resources.immigration__1_;
+            button2.Name = "button2";
+            button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
             // 
             // Report
             // 
@@ -292,13 +301,6 @@ namespace Attendence_Management_System
             resources.ApplyResources(panel8, "panel8");
             panel8.Name = "panel8";
             // 
-            // comboBoxLanguage
-            // 
-            comboBoxLanguage.FormattingEnabled = true;
-            resources.ApplyResources(comboBoxLanguage, "comboBoxLanguage");
-            comboBoxLanguage.Name = "comboBoxLanguage";
-            comboBoxLanguage.SelectedIndexChanged += comboBoxLanguage_SelectedIndexChanged;
-            // 
             // userControlAddClass1
             // 
             userControlAddClass1.BackColor = SystemColors.ActiveCaption;
@@ -331,27 +333,17 @@ namespace Attendence_Management_System
             // 
             timerDateTime.Tick += timerDateTime_Tick;
             // 
-            // button2
-            // 
-            resources.ApplyResources(button2, "button2");
-            button2.FlatAppearance.BorderSize = 0;
-            button2.ForeColor = Color.White;
-            button2.Name = "button2";
-            button2.UseVisualStyleBackColor = true;
-            button2.Click += button2_Click;
-            // 
             // Main
             // 
             resources.ApplyResources(this, "$this");
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(236, 240, 241);
-            Controls.Add(comboBoxLanguage);
             Controls.Add(panelBack);
             Controls.Add(panel1);
-            Controls.Add(userControDashBoard1);
             Controls.Add(userControlAddStudent1);
             Controls.Add(userControlAddClass1);
             Controls.Add(userControlAddTeacher1);
+            Controls.Add(userControDashBoard1);
             ForeColor = Color.FromArgb(67, 3, 125);
             FormBorderStyle = FormBorderStyle.None;
             Name = "Main";
@@ -412,7 +404,6 @@ namespace Attendence_Management_System
         private Panel panel7;
         private Panel panel8;
         private Attendence_System.Forms.UserControls.UserControlReports userControlReports1;
-        private ComboBox comboBoxLanguage;
         private Label label3;
         private Label label2;
         private System.Windows.Forms.Timer timerDateTime;

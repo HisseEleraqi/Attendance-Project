@@ -54,7 +54,6 @@
             label1Password = new Label();
             tabPageSearchClass = new TabPage();
             textBoxSearchTeacher = new TextBox();
-            ButtonAddToClass = new Button();
             label5 = new Label();
             comboBox1 = new ComboBox();
             dataGridViewClass = new DataGridView();
@@ -329,7 +328,6 @@
             // 
             tabPageSearchClass.BackColor = Color.FromArgb(250, 250, 250);
             tabPageSearchClass.Controls.Add(textBoxSearchTeacher);
-            tabPageSearchClass.Controls.Add(ButtonAddToClass);
             tabPageSearchClass.Controls.Add(label5);
             tabPageSearchClass.Controls.Add(comboBox1);
             tabPageSearchClass.Controls.Add(dataGridViewClass);
@@ -341,7 +339,7 @@
             tabPageSearchClass.Padding = new Padding(3);
             tabPageSearchClass.Size = new Size(1332, 691);
             tabPageSearchClass.TabIndex = 1;
-            tabPageSearchClass.Text = "Search Teacher";
+            tabPageSearchClass.Text = "Crud Teacher";
             tabPageSearchClass.UseWaitCursor = true;
             // 
             // textBoxSearchTeacher
@@ -355,21 +353,6 @@
             textBoxSearchTeacher.TabIndex = 21;
             textBoxSearchTeacher.UseWaitCursor = true;
             textBoxSearchTeacher.KeyDown += textBoxSearchTeacher_KeyDown;
-            // 
-            // ButtonAddToClass
-            // 
-            ButtonAddToClass.BackColor = Color.SpringGreen;
-            ButtonAddToClass.FlatAppearance.BorderColor = Color.White;
-            ButtonAddToClass.FlatAppearance.BorderSize = 99;
-            ButtonAddToClass.Font = new Font("Century Gothic", 10.2F, FontStyle.Bold);
-            ButtonAddToClass.ForeColor = SystemColors.InactiveCaptionText;
-            ButtonAddToClass.Location = new Point(1060, 99);
-            ButtonAddToClass.Name = "ButtonAddToClass";
-            ButtonAddToClass.Size = new Size(137, 41);
-            ButtonAddToClass.TabIndex = 19;
-            ButtonAddToClass.Text = "Add to Class";
-            ButtonAddToClass.UseVisualStyleBackColor = false;
-            ButtonAddToClass.UseWaitCursor = true;
             // 
             // label5
             // 
@@ -557,7 +540,6 @@
         private Label EmailErrorMsg;
         private Label LnameErrorMsg;
         private Label FnameErrorMsg;
-        private Button ButtonAddToClass;
         private TextBox textBoxSearch;
         private Label label5;
         private ComboBox comboBox1;

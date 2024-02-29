@@ -35,7 +35,6 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Reports));
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
@@ -48,7 +47,6 @@
             guna2ControlBox1 = new Guna.UI2.WinForms.Guna2ControlBox();
             label1 = new Label();
             pictureBox1 = new PictureBox();
-            comboBoxLanguage = new ComboBox();
             guna2Separator1 = new Guna.UI2.WinForms.Guna2Separator();
             StartDate_Picker = new Guna.UI2.WinForms.Guna2DateTimePicker();
             guna2DragControl1 = new Guna.UI2.WinForms.Guna2DragControl(components);
@@ -75,7 +73,6 @@
             teacherPanel.Controls.Add(guna2ControlBox1);
             teacherPanel.Controls.Add(label1);
             teacherPanel.Controls.Add(pictureBox1);
-            teacherPanel.Controls.Add(comboBoxLanguage);
             teacherPanel.CustomizableEdges = customizableEdges11;
             teacherPanel.Dock = DockStyle.Top;
             teacherPanel.Location = new Point(0, 0);
@@ -118,25 +115,17 @@
             label1.Size = new Size(130, 20);
             label1.TabIndex = 2;
             label1.Text = "Reports Generator";
+            label1.Click += label1_Click;
             // 
             // pictureBox1
             // 
-            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Image = Attendence_System.Properties.Resources.logo1;
             pictureBox1.Location = new Point(11, 12);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(89, 50);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 1;
             pictureBox1.TabStop = false;
-            // 
-            // comboBoxLanguage
-            // 
-            comboBoxLanguage.FormattingEnabled = true;
-            comboBoxLanguage.Location = new Point(554, 22);
-            comboBoxLanguage.Name = "comboBoxLanguage";
-            comboBoxLanguage.Size = new Size(170, 28);
-            comboBoxLanguage.TabIndex = 5;
-            comboBoxLanguage.SelectedIndexChanged += comboBoxLanguage_SelectedIndexChanged;
             // 
             // guna2Separator1
             // 
@@ -303,7 +292,6 @@
         private System.Windows.Forms.ComboBox guna2ComboBox1;
         private Guna.UI2.WinForms.Guna2Button Generate;
         private Guna.UI2.WinForms.Guna2DateTimePicker EndDate_Picker;
-        private ComboBox comboBoxLanguage;
         private PictureBox pictureBox4;
         private Label label3;
         private TextBox textBox1;

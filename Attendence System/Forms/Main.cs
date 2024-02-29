@@ -164,8 +164,7 @@ namespace Attendence_Management_System
         {
 
             timerDateTime.Start();
-            comboBoxLanguage.Items.Add("English");
-            comboBoxLanguage.Items.Add("Arabic");
+           
             panelExpand.Hide();
             UserName.Text = userName;
             /*if (Role.ToLower() == "admin")

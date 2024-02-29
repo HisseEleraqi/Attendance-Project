@@ -115,15 +115,15 @@ namespace Attendence_System.Forms.UserControls
             //Console.WriteLine($"/AttendanceData/Class[ClassName=\"{comboBoxClassName.SelectedItem}\"]/Students/Student");
             foreach (XmlNode student in students)
             {
-             if(student.SelectSingleNode("StudentID") != null && student.SelectSingleNode("StudentName") != null)
+                if (student.SelectSingleNode("StudentID") != null && student.SelectSingleNode("StudentName") != null)
                 {
                     string id = student.SelectSingleNode("StudentID").InnerText;
                     string name = student.SelectSingleNode("StudentName").InnerText;
                     dataGridViewClass.Rows.Add(id, name, comboBoxClassName.SelectedItem.ToString());
                 }
-                    
-                
-                
+
+
+
             }
         }
         public void FillCompoBox()
@@ -132,7 +132,7 @@ namespace Attendence_System.Forms.UserControls
             XmlDocument doc = new XmlDocument();
             doc.Load("..\\..\\..\\Resources\\Attendance.xml");
             XmlNodeList nodes = doc.SelectNodes("/AttendanceData/Class");
- 
+
             foreach (XmlNode node in nodes)
             {
                 string name = node.SelectSingleNode("ClassName").InnerText;
@@ -154,13 +154,57 @@ namespace Attendence_System.Forms.UserControls
 
         private void textBoxSearch_TextChanged(object sender, EventArgs e)
         {
-           
+
         }
 
         private void label1_Click(object sender, EventArgs e)
         {
-          
 
+
+        }
+
+        private void textBoxSearch_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                string searchValue = textBoxSearch.Text.ToLower();
+                dataGridViewClass.ClearSelection();
+
+                try
+                {
+                    int rowCount = dataGridViewClass.Rows.Count;
+                    for (int i = 0; i < rowCount - 1; i++)
+                    {
+                        DataGridViewRow row = dataGridViewClass.Rows[i];
+
+                        if (!row.IsNewRow)
+                        {
+                            bool rowVisible = false;
+
+                            foreach (DataGridViewCell cell in row.Cells)
+                            {
+                                if (cell.Value != null && cell.Value.ToString().ToLower().Contains(searchValue))
+                                {
+                                    rowVisible = true;
+                                    break;
+                                }
+                            }
+
+                            row.Visible = rowVisible;
+
+                            if (rowVisible)
+                            {
+                                dataGridViewClass.Rows[row.Index].Selected = true;
+
+                            }
+                        }
+                    }
+                }
+                catch (Exception exc)
+                {
+                    MessageBox.Show(exc.Message);
+                }
+            }
         }
     }
 }

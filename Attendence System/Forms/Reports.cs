@@ -292,8 +292,6 @@ namespace Attendence_Management_System2
 
         private void Reports_Load(object sender, EventArgs e)
         {
-            comboBoxLanguage.Items.Add("English");
-            comboBoxLanguage.Items.Add("Arabic");
             timer1.Start();
         }
 
@@ -304,11 +302,16 @@ namespace Attendence_Management_System2
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            label3.Text= DateTime.Now.ToLongTimeString();
-            label4.Text=DateTime.Now.ToLongDateString();
+            label3.Text = DateTime.Now.ToLongTimeString();
+            label4.Text = DateTime.Now.ToLongDateString();
         }
 
         private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
         {
 
         }

@@ -103,6 +103,16 @@ namespace Attendence_System.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap immigration__1_ {
+            get {
+                object obj = ResourceManager.GetObject("immigration (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap ixkfkncp {
             get {
                 object obj = ResourceManager.GetObject("ixkfkncp", resourceCulture);

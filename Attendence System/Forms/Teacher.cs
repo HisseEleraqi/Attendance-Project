@@ -25,8 +25,7 @@ namespace Attendence_Management_System
 
         {
             timer1.Start();
-            comboBoxLanguage.Items.Add("English");
-            comboBoxLanguage.Items.Add("Arabic");
+            
             // Query and add student data to the DataGridView
             List<Course> courses = xmlController.GetCoursesByTeacherID(teacherID);
 

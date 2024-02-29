@@ -47,7 +47,6 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(components);
             teacherPanel = new Guna.UI2.WinForms.Guna2Panel();
-            comboBoxLanguage = new ComboBox();
             guna2ControlBox2 = new Guna.UI2.WinForms.Guna2ControlBox();
             guna2ControlBox1 = new Guna.UI2.WinForms.Guna2ControlBox();
             label1 = new Label();
@@ -78,7 +77,6 @@
             // 
             // teacherPanel
             // 
-            teacherPanel.Controls.Add(comboBoxLanguage);
             teacherPanel.Controls.Add(guna2ControlBox2);
             teacherPanel.Controls.Add(guna2ControlBox1);
             teacherPanel.Controls.Add(label1);
@@ -90,15 +88,6 @@
             teacherPanel.ShadowDecoration.CustomizableEdges = customizableEdges10;
             teacherPanel.Size = new Size(857, 65);
             teacherPanel.TabIndex = 0;
-            // 
-            // comboBoxLanguage
-            // 
-            comboBoxLanguage.FormattingEnabled = true;
-            comboBoxLanguage.Location = new Point(674, 21);
-            comboBoxLanguage.Name = "comboBoxLanguage";
-            comboBoxLanguage.Size = new Size(70, 28);
-            comboBoxLanguage.TabIndex = 12;
-            comboBoxLanguage.SelectedIndexChanged += comboBoxLanguage_SelectedIndexChanged;
             // 
             // guna2ControlBox2
             // 
@@ -402,7 +391,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn StudentID;
         private System.Windows.Forms.DataGridViewTextBoxColumn StudentName;
         private System.Windows.Forms.DataGridViewCheckBoxColumn AbsentStatus;
-        private ComboBox comboBoxLanguage;
         private PictureBox pictureBox4;
         private Label label3;
         private Label label4;

@@ -29,9 +29,7 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UserControlAddClass));
-
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             toolTip = new ToolTip(components);
             tabControlAddClass = new TabControl();
             tabPage = new TabPage();
@@ -193,7 +191,7 @@
             tabPageSearchClass.Padding = new Padding(3);
             tabPageSearchClass.Size = new Size(1252, 641);
             tabPageSearchClass.TabIndex = 1;
-            tabPageSearchClass.Text = "Search Class";
+            tabPageSearchClass.Text = "Crud Class";
             tabPageSearchClass.UseWaitCursor = true;
             tabPageSearchClass.Click += tabPageSearchClass_Click;
             // 
@@ -243,6 +241,7 @@
             textBoxSearch.TabIndex = 9;
             textBoxSearch.UseWaitCursor = true;
             textBoxSearch.TextChanged += textBoxSearch_TextChanged;
+            textBoxSearch.KeyDown += textBoxSearch_KeyDown;
             // 
             // dataGridViewClass
             // 
@@ -261,8 +260,8 @@
             dataGridViewClass.ReadOnly = true;
             dataGridViewClass.RowHeadersWidth = 51;
             dataGridViewClass.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle1.ForeColor = Color.Black;
-            dataGridViewClass.RowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.ForeColor = Color.Black;
+            dataGridViewClass.RowsDefaultCellStyle = dataGridViewCellStyle2;
             dataGridViewClass.ShowCellErrors = false;
             dataGridViewClass.ShowCellToolTips = false;
             dataGridViewClass.ShowEditingIcon = false;
