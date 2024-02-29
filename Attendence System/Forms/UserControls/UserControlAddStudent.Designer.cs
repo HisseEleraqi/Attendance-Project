@@ -90,7 +90,7 @@
             tabControlAddClass.Multiline = true;
             tabControlAddClass.Name = "tabControlAddClass";
             tabControlAddClass.SelectedIndex = 0;
-            tabControlAddClass.Size = new Size(1340, 725);
+            tabControlAddClass.Size = new Size(1322, 718);
             tabControlAddClass.TabIndex = 0;
             tabControlAddClass.UseWaitCursor = true;
             // 
@@ -120,7 +120,7 @@
             tabPage.Location = new Point(4, 4);
             tabPage.Name = "tabPage";
             tabPage.Padding = new Padding(3);
-            tabPage.Size = new Size(1332, 691);
+            tabPage.Size = new Size(1314, 684);
             tabPage.TabIndex = 0;
             tabPage.Text = "Add Student";
             tabPage.UseWaitCursor = true;
@@ -572,7 +572,7 @@
             Margin = new Padding(4, 3, 4, 3);
             Name = "UserControlAddStudent";
             RightToLeft = RightToLeft.No;
-            Size = new Size(1340, 725);
+            Size = new Size(1322, 718);
             Load += UserControlAddStudent_Load;
             tabControlAddClass.ResumeLayout(false);
             tabPage.ResumeLayout(false);

@@ -43,10 +43,11 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Teacher));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminAttendance));
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(components);
             teacherPanel = new Guna.UI2.WinForms.Guna2Panel();
+            comboBoxLanguage = new ComboBox();
             guna2ControlBox2 = new Guna.UI2.WinForms.Guna2ControlBox();
             guna2ControlBox1 = new Guna.UI2.WinForms.Guna2ControlBox();
             label1 = new Label();
@@ -61,9 +62,14 @@
             AbsentStatus = new DataGridViewCheckBoxColumn();
             guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
+            timer1 = new System.Windows.Forms.Timer(components);
+            pictureBox4 = new PictureBox();
+            label3 = new Label();
+            label4 = new Label();
             teacherPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGrid).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
             SuspendLayout();
             // 
             // guna2Elipse1
@@ -72,6 +78,7 @@
             // 
             // teacherPanel
             // 
+            teacherPanel.Controls.Add(comboBoxLanguage);
             teacherPanel.Controls.Add(guna2ControlBox2);
             teacherPanel.Controls.Add(guna2ControlBox1);
             teacherPanel.Controls.Add(label1);
@@ -83,6 +90,15 @@
             teacherPanel.ShadowDecoration.CustomizableEdges = customizableEdges10;
             teacherPanel.Size = new Size(857, 65);
             teacherPanel.TabIndex = 0;
+            // 
+            // comboBoxLanguage
+            // 
+            comboBoxLanguage.FormattingEnabled = true;
+            comboBoxLanguage.Location = new Point(594, 21);
+            comboBoxLanguage.Name = "comboBoxLanguage";
+            comboBoxLanguage.Size = new Size(132, 28);
+            comboBoxLanguage.TabIndex = 5;
+            comboBoxLanguage.SelectedIndexChanged += comboBoxLanguage_SelectedIndexChanged;
             // 
             // guna2ControlBox2
             // 
@@ -112,12 +128,13 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 9F);
+            label1.Font = new Font("Century Gothic", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.ForeColor = Color.FromArgb(67, 3, 125);
             label1.Location = new Point(116, 25);
             label1.Name = "label1";
-            label1.Size = new Size(85, 20);
+            label1.Size = new Size(186, 27);
             label1.TabIndex = 2;
-            label1.Text = "Attendance";
+            label1.Text = "Welcom Admin";
             // 
             // pictureBox1
             // 
@@ -145,7 +162,7 @@
             dateTimePicker.Font = new Font("Segoe UI", 9F);
             dateTimePicker.ForeColor = SystemColors.ButtonFace;
             dateTimePicker.Format = DateTimePickerFormat.Long;
-            dateTimePicker.Location = new Point(78, 114);
+            dateTimePicker.Location = new Point(78, 141);
             dateTimePicker.MaxDate = new DateTime(9998, 12, 31, 0, 0, 0, 0);
             dateTimePicker.MinDate = new DateTime(1753, 1, 1, 0, 0, 0, 0);
             dateTimePicker.Name = "dateTimePicker";
@@ -166,7 +183,7 @@
             comboBox1.FormattingEnabled = true;
             comboBox1.IntegralHeight = false;
             comboBox1.ItemHeight = 20;
-            comboBox1.Location = new Point(535, 122);
+            comboBox1.Location = new Point(537, 141);
             comboBox1.Name = "comboBox1";
             comboBox1.Size = new Size(165, 28);
             comboBox1.TabIndex = 8;
@@ -299,11 +316,53 @@
             guna2Button2.UseTransparentBackground = true;
             guna2Button2.Click += guna2Button2_Click;
             // 
-            // Teacher
+            // timer1
+            // 
+            timer1.Tick += timer1_Tick;
+            // 
+            // pictureBox4
+            // 
+            pictureBox4.Image = Attendence_System.Properties.Resources.time;
+            pictureBox4.ImeMode = ImeMode.NoControl;
+            pictureBox4.Location = new Point(21, 68);
+            pictureBox4.Name = "pictureBox4";
+            pictureBox4.Size = new Size(28, 25);
+            pictureBox4.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox4.TabIndex = 25;
+            pictureBox4.TabStop = false;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("Century Gothic", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label3.ForeColor = Color.FromArgb(67, 3, 125);
+            label3.ImeMode = ImeMode.NoControl;
+            label3.Location = new Point(20, 119);
+            label3.Name = "label3";
+            label3.Size = new Size(43, 18);
+            label3.TabIndex = 24;
+            label3.Text = "Date";
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Font = new Font("Century Gothic", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label4.ForeColor = Color.FromArgb(67, 3, 125);
+            label4.ImeMode = ImeMode.NoControl;
+            label4.Location = new Point(21, 101);
+            label4.Name = "label4";
+            label4.Size = new Size(42, 18);
+            label4.TabIndex = 23;
+            label4.Text = "Time";
+            // 
+            // AdminAttendance
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(857, 595);
+            Controls.Add(pictureBox4);
+            Controls.Add(label3);
+            Controls.Add(label4);
             Controls.Add(guna2Button2);
             Controls.Add(dataGrid);
             Controls.Add(comboBox1);
@@ -312,7 +371,7 @@
             Controls.Add(teacherPanel);
             Controls.Add(guna2Button1);
             FormBorderStyle = FormBorderStyle.None;
-            Name = "Teacher";
+            Name = "AdminAttendance";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Attendance Sheet";
             Load += Form1_Load;
@@ -320,7 +379,9 @@
             teacherPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)dataGrid).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -341,6 +402,11 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn StudentID;
         private System.Windows.Forms.DataGridViewTextBoxColumn StudentName;
         private System.Windows.Forms.DataGridViewCheckBoxColumn AbsentStatus;
+        private ComboBox comboBoxLanguage;
+        private System.Windows.Forms.Timer timer1;
+        private PictureBox pictureBox4;
+        private Label label3;
+        private Label label4;
     }
 }
 

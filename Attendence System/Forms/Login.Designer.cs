@@ -30,13 +30,17 @@ namespace Attendence_Management_System.Forms
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
             panel1 = new Panel();
             label2 = new Label();
             button1 = new Button();
             label1 = new Label();
             panel2 = new Panel();
+            pictureBox4 = new PictureBox();
+            label3 = new Label();
             textBox1 = new TextBox();
+            label4 = new Label();
             pictureBox2 = new PictureBox();
             panel4 = new Panel();
             pictureBox3 = new PictureBox();
@@ -47,8 +51,10 @@ namespace Attendence_Management_System.Forms
             pictureBox1 = new PictureBox();
             ErrorMessage = new Label();
             closeButton = new Button();
+            timerDate = new System.Windows.Forms.Timer(components);
             panel1.SuspendLayout();
             panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
@@ -110,7 +116,10 @@ namespace Attendence_Management_System.Forms
             // panel2
             // 
             panel2.BackColor = Color.Azure;
+            panel2.Controls.Add(pictureBox4);
+            panel2.Controls.Add(label3);
             panel2.Controls.Add(textBox1);
+            panel2.Controls.Add(label4);
             panel2.Controls.Add(pictureBox2);
             panel2.Controls.Add(panel4);
             panel2.Controls.Add(panel3);
@@ -124,6 +133,29 @@ namespace Attendence_Management_System.Forms
             panel2.TabIndex = 1;
             panel2.Paint += panel2_Paint_1;
             // 
+            // pictureBox4
+            // 
+            pictureBox4.Image = Attendence_System.Properties.Resources.time;
+            pictureBox4.ImeMode = ImeMode.NoControl;
+            pictureBox4.Location = new Point(27, 3);
+            pictureBox4.Name = "pictureBox4";
+            pictureBox4.Size = new Size(38, 30);
+            pictureBox4.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox4.TabIndex = 12;
+            pictureBox4.TabStop = false;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("Century Gothic", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label3.ForeColor = Color.FromArgb(67, 3, 125);
+            label3.ImeMode = ImeMode.NoControl;
+            label3.Location = new Point(27, 63);
+            label3.Name = "label3";
+            label3.Size = new Size(43, 18);
+            label3.TabIndex = 11;
+            label3.Text = "Date";
+            // 
             // textBox1
             // 
             textBox1.BackColor = Color.White;
@@ -131,6 +163,18 @@ namespace Attendence_Management_System.Forms
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(0, 27);
             textBox1.TabIndex = 3;
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Font = new Font("Century Gothic", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label4.ForeColor = Color.FromArgb(67, 3, 125);
+            label4.ImeMode = ImeMode.NoControl;
+            label4.Location = new Point(27, 33);
+            label4.Name = "label4";
+            label4.Size = new Size(42, 18);
+            label4.TabIndex = 10;
+            label4.Text = "Time";
             // 
             // pictureBox2
             // 
@@ -254,6 +298,10 @@ namespace Attendence_Management_System.Forms
             closeButton.UseVisualStyleBackColor = false;
             closeButton.Click += closeButton_Click;
             // 
+            // timerDate
+            // 
+            timerDate.Tick += timerDate_Tick;
+            // 
             // Login
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -265,10 +313,12 @@ namespace Attendence_Management_System.Forms
             FormBorderStyle = FormBorderStyle.None;
             Name = "Login";
             Text = "Logincs";
+            Load += Login_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             panel4.ResumeLayout(false);
             panel4.PerformLayout();
@@ -298,5 +348,9 @@ namespace Attendence_Management_System.Forms
         private TextBox password;
         private PictureBox showHide;
         private Label ErrorMessage;
+        private PictureBox pictureBox4;
+        private Label label3;
+        private Label label4;
+        private System.Windows.Forms.Timer timerDate;
     }
 }

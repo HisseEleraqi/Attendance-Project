@@ -194,7 +194,7 @@ namespace Attendence_Management_System.Forms
 
         private void password_KeyPress(object sender, KeyPressEventArgs e)
         {
-           
+
         }
 
         private void userName_KeyDown(object sender, KeyEventArgs e)
@@ -259,5 +259,16 @@ namespace Attendence_Management_System.Forms
                 }
             }
         }
-    }    
+
+        private void timerDate_Tick(object sender, EventArgs e)
+        {
+            label4.Text = DateTime.Now.ToLongTimeString();
+            label3.Text = DateTime.Now.ToLongDateString();
+        }
+
+        private void Login_Load(object sender, EventArgs e)
+        {
+            timerDate.Start();
+        }
+    }
 }

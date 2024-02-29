@@ -1,4 +1,9 @@
+using Attendence_Management_System2;
+using Attendence_System.Forms;
 using Attendence_System.Forms.UserControls;
+using Attendence_System.Properties;
+using System.ComponentModel;
+using System.Globalization;
 
 namespace Attendence_Management_System
 {
@@ -56,7 +61,7 @@ namespace Attendence_Management_System
 
             userControlAddStudent1.Visible = false;
             userControlAddTeacher1.Visible = false;
-       //     userControlReports1.Visible = false;
+            //     userControlReports1.Visible = false;
 
 
 
@@ -76,7 +81,7 @@ namespace Attendence_Management_System
             userControDashBoard1.Visible = false;
             userControlAddClass1.Visible = false;
             userControlAddStudent1.Visible = true;
-           // userControlReports1.Visible = false;
+            // userControlReports1.Visible = false;
 
 
         }
@@ -88,7 +93,7 @@ namespace Attendence_Management_System
             userControlAddClass1.Visible = true;
             userControlAddStudent1.Visible = false;
             userControlAddTeacher1.Visible = false;
-        //    userControlReports1.Visible = false;
+            //    userControlReports1.Visible = false;
 
 
         }
@@ -100,7 +105,7 @@ namespace Attendence_Management_System
             userControlAddClass1.Visible = false;
             userControlAddStudent1.Visible = false;
             userControlAddTeacher1.Visible = true;
-          //  userControlReports1.Visible = false;
+            //  userControlReports1.Visible = false;
 
 
 
@@ -113,7 +118,14 @@ namespace Attendence_Management_System
             userControlAddClass1.Visible = false;
             userControlAddStudent1.Visible = false;
             userControlAddTeacher1.Visible = false;
-           // userControlReports1.Visible = true;
+
+            // userControlReports1.Visible = true;
+            using (Reports popup =new Reports())
+            {
+                popup.ShowDialog();
+
+
+            }
 
         }
 
@@ -126,12 +138,15 @@ namespace Attendence_Management_System
             userControlAddClass1.Visible = false;
             userControlAddStudent1.Visible = false;
             userControlAddTeacher1.Visible = false;
-          //  userControlReports1.Visible = false;
+            //  userControlReports1.Visible = false;
 
         }
 
         private void Main_Load(object sender, EventArgs e)
         {
+            timerDateTime.Start();
+            comboBoxLanguage.Items.Add("English");
+            comboBoxLanguage.Items.Add("Arabic");
             panelExpand.Hide();
             UserName.Text = userName;
             /*if (Role.ToLower() == "admin")
@@ -145,7 +160,7 @@ namespace Attendence_Management_System
             userControlAddClass1.Visible = false;
             userControlAddStudent1.Visible = false;
             userControlAddTeacher1.Visible = false;
-       //     userControlReports1.Visible = false;
+            //     userControlReports1.Visible = false;
 
         }
 
@@ -168,5 +183,53 @@ namespace Attendence_Management_System
         {
 
         }
+
+        private void comboBoxLanguage_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (comboBoxLanguage.SelectedItem.ToString() == "Arabic")
+            {
+                SwitchLanguage("ar");
+            }
+            else
+            {
+                // Switch back to English or handle other languages
+                SwitchLanguage("en");
+
+            }
+        }
+        private void SwitchLanguage(string languageCode)
+        {
+            if (this.InvokeRequired)
+            {
+                this.Invoke(new Action<string>(SwitchLanguage), languageCode);
+                return;
+            }
+
+            CultureInfo culture = new CultureInfo(languageCode);
+            Thread.CurrentThread.CurrentUICulture = culture;
+            Thread.CurrentThread.CurrentCulture = culture;
+            this.RightToLeft = culture.TextInfo.IsRightToLeft ? RightToLeft.Yes : RightToLeft.No;
+            this.RightToLeftLayout = culture.TextInfo.IsRightToLeft;
+
+            this.Refresh();
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void timerDateTime_Tick(object sender, EventArgs e)
+        {
+            label2.Text = DateTime.Now.ToLongTimeString();
+            label3.Text = DateTime.Now.ToLongDateString();
+        }
+
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
+
+

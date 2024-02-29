@@ -23,16 +23,25 @@ namespace Attendence_System.Forms.UserControls
 
         }
 
+        private void UserControDashBoard_Load(object sender, EventArgs e)
+        {
+            
+            studentCount.Text = new xmlController().GetStudentCount();
+            teacherCount.Text = new xmlController().GetTeacherCount();
+            classsCount.Text = new xmlController().GetClassCount();
+        }
+
+        private void comboBoxLanguage_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+
+           
+        }
+
         private void label2_Click(object sender, EventArgs e)
         {
 
         }
-
-        private void UserControDashBoard_Load(object sender, EventArgs e)
-        {
-            studentCount.Text = new xmlController().GetStudentCount();
-            teacherCount.Text  = new xmlController().GetTeacherCount();
-            classsCount.Text = new xmlController().GetClassCount();
-        }
     }
 }
+

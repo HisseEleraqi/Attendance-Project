@@ -81,11 +81,12 @@
             tabControlAddClass.Alignment = TabAlignment.Bottom;
             tabControlAddClass.Controls.Add(tabPage);
             tabControlAddClass.Controls.Add(tabPageSearchClass);
+            tabControlAddClass.Dock = DockStyle.Fill;
             tabControlAddClass.Location = new Point(0, 0);
             tabControlAddClass.Multiline = true;
             tabControlAddClass.Name = "tabControlAddClass";
             tabControlAddClass.SelectedIndex = 0;
-            tabControlAddClass.Size = new Size(1326, 722);
+            tabControlAddClass.Size = new Size(1340, 725);
             tabControlAddClass.TabIndex = 0;
             tabControlAddClass.UseWaitCursor = true;
             // 
@@ -112,7 +113,7 @@
             tabPage.Location = new Point(4, 4);
             tabPage.Name = "tabPage";
             tabPage.Padding = new Padding(3);
-            tabPage.Size = new Size(1318, 688);
+            tabPage.Size = new Size(1332, 691);
             tabPage.TabIndex = 0;
             tabPage.Text = "Add Teacher";
             tabPage.UseWaitCursor = true;
@@ -338,7 +339,7 @@
             tabPageSearchClass.Location = new Point(4, 4);
             tabPageSearchClass.Name = "tabPageSearchClass";
             tabPageSearchClass.Padding = new Padding(3);
-            tabPageSearchClass.Size = new Size(1318, 688);
+            tabPageSearchClass.Size = new Size(1332, 691);
             tabPageSearchClass.TabIndex = 1;
             tabPageSearchClass.Text = "Search Teacher";
             tabPageSearchClass.UseWaitCursor = true;

@@ -7,7 +7,7 @@ namespace Attendence_Management_System
 {
     public partial class Student : Form
     {
-        public  AttendanceXmlController xmlController;
+        public AttendanceXmlController xmlController;
 
         public string studentID;
 
@@ -20,6 +20,9 @@ namespace Attendence_Management_System
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            timer1.Start();
+            comboBoxLanguage.Items.Add("English");
+            comboBoxLanguage.Items.Add("Arabic");
             // Query and add student data to the DataGridView
             List<Course> courses = xmlController.GetCoursesByStudentID(studentID);
 
@@ -51,7 +54,7 @@ namespace Attendence_Management_System
         private void AddStudentDataToGrid(string studentID, string className)
         {
 
-            
+
             List<AttendanceData> attendanceList = xmlController.GetAttendanceDataByStudentIDAndClassName(studentID, comboBox1.SelectedValue.ToString());
 
             // Clear existing rows
@@ -92,16 +95,16 @@ namespace Attendence_Management_System
         }
 
 
-        
+
 
         private void dataGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-           
+
         }
 
         private void dateTimePicker_ValueChanged(object sender, EventArgs e)
         {
-           
+
         }
 
         private void guna2Button1_Click(object sender, EventArgs e)
@@ -118,6 +121,17 @@ namespace Attendence_Management_System
         {
             Class_Data();
 
+        }
+
+        private void comboBoxLanguage_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            label4.Text = DateTime.Now.ToLongTimeString();
+            label3.Text = DateTime.Now.ToLongDateString();
         }
     }
 }
