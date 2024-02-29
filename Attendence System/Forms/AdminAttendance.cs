@@ -22,7 +22,7 @@ namespace Attendence_Management_System2
             xmlController = new Attendence_Management_System.AttendanceXmlController(xmlFilePath);
             currentXmlFilePath = xmlFilePath;
 
-            backupTimer = new System.Timers.Timer(60 * 60 * 1000); 
+            backupTimer = new System.Timers.Timer(60 * 60 * 1000);
             backupTimer.Elapsed += (sender, e) => Backup();
             backupTimer.Start();
         }
@@ -61,7 +61,7 @@ namespace Attendence_Management_System2
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            
+
             // Query and add student data to the DataGridView
             List<Attendence_Management_System.Course> courses = xmlController.GetCourses();
 
@@ -145,7 +145,7 @@ namespace Attendence_Management_System2
                 Attendence_Management_System.ExcelPrinter.SaveAsExcel(dataGrid, saveFileDialog.FileName);
             }
 
-            
+
         }
 
 
@@ -214,7 +214,7 @@ namespace Attendence_Management_System2
             Print2();
         }
 
-        
+
 
         private void loadToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -299,6 +299,11 @@ namespace Attendence_Management_System2
 
             // Return null or throw an exception if the operation is canceled
             return null;
+        }
+
+        private void guna2ControlBox1_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

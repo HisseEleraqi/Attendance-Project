@@ -73,9 +73,10 @@
             teacherPanel.CustomizableEdges = customizableEdges5;
             teacherPanel.Dock = DockStyle.Top;
             teacherPanel.Location = new Point(0, 0);
+            teacherPanel.Margin = new Padding(4, 4, 4, 4);
             teacherPanel.Name = "teacherPanel";
             teacherPanel.ShadowDecoration.CustomizableEdges = customizableEdges6;
-            teacherPanel.Size = new Size(857, 65);
+            teacherPanel.Size = new Size(1071, 81);
             teacherPanel.TabIndex = 0;
             // 
             // guna2ControlBox2
@@ -85,10 +86,11 @@
             guna2ControlBox2.CustomizableEdges = customizableEdges1;
             guna2ControlBox2.FillColor = Color.FromArgb(139, 152, 166);
             guna2ControlBox2.IconColor = Color.White;
-            guna2ControlBox2.Location = new Point(750, 21);
+            guna2ControlBox2.Location = new Point(938, 26);
+            guna2ControlBox2.Margin = new Padding(4, 4, 4, 4);
             guna2ControlBox2.Name = "guna2ControlBox2";
             guna2ControlBox2.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            guna2ControlBox2.Size = new Size(40, 29);
+            guna2ControlBox2.Size = new Size(50, 36);
             guna2ControlBox2.TabIndex = 4;
             // 
             // guna2ControlBox1
@@ -97,10 +99,11 @@
             guna2ControlBox1.CustomizableEdges = customizableEdges3;
             guna2ControlBox1.FillColor = Color.FromArgb(139, 152, 166);
             guna2ControlBox1.IconColor = Color.White;
-            guna2ControlBox1.Location = new Point(806, 21);
+            guna2ControlBox1.Location = new Point(1008, 26);
+            guna2ControlBox1.Margin = new Padding(4, 4, 4, 4);
             guna2ControlBox1.Name = "guna2ControlBox1";
             guna2ControlBox1.ShadowDecoration.CustomizableEdges = customizableEdges4;
-            guna2ControlBox1.Size = new Size(40, 29);
+            guna2ControlBox1.Size = new Size(50, 36);
             guna2ControlBox1.TabIndex = 3;
             // 
             // label1
@@ -108,18 +111,20 @@
             label1.AutoSize = true;
             label1.Font = new Font("Century Gothic", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.FromArgb(67, 3, 125);
-            label1.Location = new Point(116, 14);
+            label1.Location = new Point(145, 18);
+            label1.Margin = new Padding(4, 0, 4, 0);
             label1.Name = "label1";
-            label1.Size = new Size(171, 34);
+            label1.Size = new Size(208, 39);
             label1.TabIndex = 2;
-            label1.Text = "Welcom {?}";
+            label1.Text = "Attendance";
             // 
             // pictureBox1
             // 
             pictureBox1.Image = Attendence_System.Properties.Resources.logo1;
             pictureBox1.Location = new Point(0, 0);
+            pictureBox1.Margin = new Padding(4, 4, 4, 4);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(101, 59);
+            pictureBox1.Size = new Size(126, 74);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 1;
             pictureBox1.TabStop = false;
@@ -127,9 +132,10 @@
             // guna2Separator1
             // 
             guna2Separator1.FillThickness = 3;
-            guna2Separator1.Location = new Point(-19, 56);
+            guna2Separator1.Location = new Point(-24, 70);
+            guna2Separator1.Margin = new Padding(4, 4, 4, 4);
             guna2Separator1.Name = "guna2Separator1";
-            guna2Separator1.Size = new Size(837, 10);
+            guna2Separator1.Size = new Size(1046, 12);
             guna2Separator1.TabIndex = 1;
             // 
             // guna2DragControl1
@@ -143,10 +149,11 @@
             comboBox1.BackColor = Color.FromArgb(149, 165, 166);
             comboBox1.FormattingEnabled = true;
             comboBox1.IntegralHeight = false;
-            comboBox1.ItemHeight = 20;
-            comboBox1.Location = new Point(78, 144);
+            comboBox1.ItemHeight = 25;
+            comboBox1.Location = new Point(98, 180);
+            comboBox1.Margin = new Padding(4, 4, 4, 4);
             comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(720, 28);
+            comboBox1.Size = new Size(899, 33);
             comboBox1.TabIndex = 8;
             comboBox1.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
             // 
@@ -179,7 +186,8 @@
             dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
             dataGrid.DefaultCellStyle = dataGridViewCellStyle3;
             dataGrid.GridColor = Color.FromArgb(231, 229, 255);
-            dataGrid.Location = new Point(78, 198);
+            dataGrid.Location = new Point(98, 248);
+            dataGrid.Margin = new Padding(4, 4, 4, 4);
             dataGrid.Name = "dataGrid";
             dataGrid.ReadOnly = true;
             dataGrid.RowHeadersVisible = false;
@@ -190,7 +198,7 @@
             dataGrid.ShowCellToolTips = false;
             dataGrid.ShowEditingIcon = false;
             dataGrid.ShowRowErrors = false;
-            dataGrid.Size = new Size(720, 351);
+            dataGrid.Size = new Size(900, 439);
             dataGrid.TabIndex = 9;
             dataGrid.ThemeStyle.AlternatingRowsStyle.BackColor = Color.White;
             dataGrid.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -233,9 +241,10 @@
             // 
             pictureBox4.Image = Attendence_System.Properties.Resources.time;
             pictureBox4.ImeMode = ImeMode.NoControl;
-            pictureBox4.Location = new Point(12, 61);
+            pictureBox4.Location = new Point(15, 76);
+            pictureBox4.Margin = new Padding(4, 4, 4, 4);
             pictureBox4.Name = "pictureBox4";
-            pictureBox4.Size = new Size(28, 30);
+            pictureBox4.Size = new Size(35, 38);
             pictureBox4.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox4.TabIndex = 22;
             pictureBox4.TabStop = false;
@@ -246,9 +255,10 @@
             label3.Font = new Font("Century Gothic", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label3.ForeColor = Color.FromArgb(67, 3, 125);
             label3.ImeMode = ImeMode.NoControl;
-            label3.Location = new Point(11, 112);
+            label3.Location = new Point(14, 140);
+            label3.Margin = new Padding(4, 0, 4, 0);
             label3.Name = "label3";
-            label3.Size = new Size(43, 18);
+            label3.Size = new Size(52, 22);
             label3.TabIndex = 21;
             label3.Text = "Date";
             // 
@@ -258,9 +268,10 @@
             label4.Font = new Font("Century Gothic", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label4.ForeColor = Color.FromArgb(67, 3, 125);
             label4.ImeMode = ImeMode.NoControl;
-            label4.Location = new Point(12, 94);
+            label4.Location = new Point(15, 118);
+            label4.Margin = new Padding(4, 0, 4, 0);
             label4.Name = "label4";
-            label4.Size = new Size(42, 18);
+            label4.Size = new Size(51, 22);
             label4.TabIndex = 20;
             label4.Text = "Time";
             // 
@@ -270,10 +281,10 @@
             // 
             // Student
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(236, 240, 241);
-            ClientSize = new Size(857, 595);
+            ClientSize = new Size(1071, 744);
             Controls.Add(pictureBox4);
             Controls.Add(label3);
             Controls.Add(label4);
@@ -282,6 +293,7 @@
             Controls.Add(guna2Separator1);
             Controls.Add(teacherPanel);
             FormBorderStyle = FormBorderStyle.None;
+            Margin = new Padding(4, 4, 4, 4);
             Name = "Student";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Attendance Sheet";
