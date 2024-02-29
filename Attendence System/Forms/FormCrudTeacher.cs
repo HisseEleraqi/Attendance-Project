@@ -1,4 +1,5 @@
 ﻿using Attendence_Management_System;
+using Attendence_System.Controller;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -38,12 +39,12 @@ namespace Attendence_System.Forms
         {
             string? firstName = FstName.Text.Trim();
             string? lastName = LstName.Text.Trim();
-            string? Password = pass.Text.Trim();
-            string? RePassword = rePass.Text.Trim();
+            string? Password = password.Text.Trim();
+            string? RePassword = rePassword.Text.Trim();
             string? fullName;
-            if (firstName == "" || lastName == "" || Password == "" || RePassword == "")
+            if (firstName == "" || lastName == "")
             {
-                MessageBox.Show("Please fill all the fields");
+                MessageBox.Show("name is required");
             }
             else if (Password != RePassword)
             {
@@ -51,6 +52,26 @@ namespace Attendence_System.Forms
             }
             else
             {
+                Validator validator = new Validator();
+                if (!validator.validateName(firstName))
+                {
+                    MessageBox.Show("First Name is not valid");
+                    return;
+                }
+                if (!validator.validateName(lastName))
+                {
+                    MessageBox.Show("Last Name is not valid");
+                    return;
+                }
+                if (Password != "")
+                {
+                    if (!validator.validatePassword(Password))
+                    {
+                        MessageBox.Show("Password is not valid");
+                        return;
+                    }
+
+                }
                 fullName = firstName + " " + lastName;
                 xmlController xmlController = new xmlController();
                 xmlController.editUserInXML(ID, fullName, Password, "teacher");
@@ -62,12 +83,13 @@ namespace Attendence_System.Forms
 
         private void buttonDelete_Click(object sender, EventArgs e)
         {
+
             if (MessageBox.Show("Are you sure you want to delete?", "Delete", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 xmlController xmlController = new xmlController();
                 XmlDocument XmlDoc = xmlController.ReadSecondDocument();
                 XmlNode TeacherIDNode = XmlDoc.SelectSingleNode($"//*[TeacherID=\"{ID}\"]/TeacherID");
-                if(TeacherIDNode != null)
+                if (TeacherIDNode != null)
                 {
                     MessageBox.Show("Teacher is assigned to a class, cannot delete");
                 }
@@ -77,8 +99,9 @@ namespace Attendence_System.Forms
                     MessageBox.Show("Teacher Deleted");
                     this.Close();
                 }
-                
+
             }
+
 
         }
 
