@@ -1,3 +1,5 @@
+using Attendence_Management_System2;
+using Attendence_System.Forms;
 using Attendence_System.Forms.UserControls;
 using Attendence_System.Properties;
 using System.ComponentModel;
@@ -116,7 +118,14 @@ namespace Attendence_Management_System
             userControlAddClass1.Visible = false;
             userControlAddStudent1.Visible = false;
             userControlAddTeacher1.Visible = false;
+
             // userControlReports1.Visible = true;
+            using (Reports popup =new Reports())
+            {
+                popup.ShowDialog();
+
+
+            }
 
         }
 
@@ -214,6 +223,11 @@ namespace Attendence_Management_System
         {
             label2.Text = DateTime.Now.ToLongTimeString();
             label3.Text = DateTime.Now.ToLongDateString();
+        }
+
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

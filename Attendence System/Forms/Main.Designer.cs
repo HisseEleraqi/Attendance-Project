@@ -59,16 +59,14 @@ namespace Attendence_Management_System
             pictureBoxExpand = new PictureBox();
             pictureBox2 = new PictureBox();
             toolTip1 = new ToolTip(components);
+            panel8 = new Panel();
+            comboBoxLanguage = new ComboBox();
+            timerDateTime = new System.Windows.Forms.Timer(components);
+            userControlAddClass1 = new Attendence_System.Forms.UserControls.UserControlAddClass();
             userControlAddStudent1 = new Attendence_System.Forms.UserControls.UserControlAddStudent();
             userControDashBoard1 = new Attendence_System.Forms.UserControls.UserControDashBoard();
             userControlAddTeacher1 = new Attendence_System.Forms.UserControls.UserControlAddTeacher();
-            panel8 = new Panel();
-
-            comboBoxLanguage = new ComboBox();
-            timerDateTime = new System.Windows.Forms.Timer(components);
-
-            userControlAddClass1 = new Attendence_System.Forms.UserControls.UserControlAddClass();
-
+            label4 = new Label();
             panel1.SuspendLayout();
             panel3.SuspendLayout();
             panel4.SuspendLayout();
@@ -114,6 +112,7 @@ namespace Attendence_Management_System
             resources.ApplyResources(Report, "Report");
             Report.FlatAppearance.BorderSize = 0;
             Report.ForeColor = Color.White;
+            Report.Image = Attendence_System.Properties.Resources.seo_report__1_;
             Report.Name = "Report";
             Report.UseVisualStyleBackColor = true;
             Report.Click += Report_Click;
@@ -129,6 +128,7 @@ namespace Attendence_Management_System
             resources.ApplyResources(buttonAddStudent, "buttonAddStudent");
             buttonAddStudent.FlatAppearance.BorderSize = 0;
             buttonAddStudent.ForeColor = Color.White;
+            buttonAddStudent.Image = Attendence_System.Properties.Resources.student;
             buttonAddStudent.Name = "buttonAddStudent";
             buttonAddStudent.UseVisualStyleBackColor = true;
             buttonAddStudent.Click += buttonAddStudent_Click;
@@ -138,6 +138,7 @@ namespace Attendence_Management_System
             resources.ApplyResources(buttonAddClass, "buttonAddClass");
             buttonAddClass.FlatAppearance.BorderSize = 0;
             buttonAddClass.ForeColor = Color.White;
+            buttonAddClass.Image = Attendence_System.Properties.Resources._class;
             buttonAddClass.Name = "buttonAddClass";
             buttonAddClass.UseVisualStyleBackColor = true;
             buttonAddClass.Click += addClass_Click;
@@ -147,6 +148,7 @@ namespace Attendence_Management_System
             resources.ApplyResources(Teacher, "Teacher");
             Teacher.FlatAppearance.BorderSize = 0;
             Teacher.ForeColor = Color.White;
+            Teacher.Image = Attendence_System.Properties.Resources.teacher;
             Teacher.Name = "Teacher";
             Teacher.UseVisualStyleBackColor = true;
             Teacher.Click += Teacher_Click;
@@ -280,37 +282,8 @@ namespace Attendence_Management_System
             // pictureBox2
             // 
             resources.ApplyResources(pictureBox2, "pictureBox2");
-            pictureBox2.Image = Attendence_System.Properties.Resources.logo;
             pictureBox2.Name = "pictureBox2";
             pictureBox2.TabStop = false;
-            // 
-
-            // userControlAddClass1
-            // 
-            userControlAddClass1.BackColor = SystemColors.ActiveCaption;
-            resources.ApplyResources(userControlAddClass1, "userControlAddClass1");
-            userControlAddClass1.ForeColor = Color.White;
-            userControlAddClass1.Name = "userControlAddClass1";
-            userControlAddClass1.Load += userControlAddClass1_Load;
-            // 
-
-            userControlAddStudent1.BackColor = Color.SeaShell;
-            resources.ApplyResources(userControlAddStudent1, "userControlAddStudent1");
-            userControlAddStudent1.ForeColor = Color.White;
-            userControlAddStudent1.Name = "userControlAddStudent1";
-            // 
-            // userControDashBoard1
-            // 
-            userControDashBoard1.BackColor = Color.FromArgb(236, 240, 241);
-            resources.ApplyResources(userControDashBoard1, "userControDashBoard1");
-            userControDashBoard1.Name = "userControDashBoard1";
-            // 
-            // userControlAddTeacher1
-            // 
-            userControlAddTeacher1.BackColor = Color.SeaShell;
-            resources.ApplyResources(userControlAddTeacher1, "userControlAddTeacher1");
-            userControlAddTeacher1.ForeColor = Color.White;
-            userControlAddTeacher1.Name = "userControlAddTeacher1";
             // 
             // panel8
             // 
@@ -331,28 +304,52 @@ namespace Attendence_Management_System
             // userControlAddClass1
             // 
             userControlAddClass1.BackColor = SystemColors.ActiveCaption;
-            userControlAddClass1.Font = new Font("Century Gothic", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            resources.ApplyResources(userControlAddClass1, "userControlAddClass1");
             userControlAddClass1.ForeColor = Color.White;
-            userControlAddClass1.Location = new Point(258, 164);
-            userControlAddClass1.Margin = new Padding(4, 3, 4, 3);
             userControlAddClass1.Name = "userControlAddClass1";
-            userControlAddClass1.RightToLeft = RightToLeft.No;
-            userControlAddClass1.Size = new Size(1700, 871);
-            userControlAddClass1.TabIndex = 6;
             userControlAddClass1.Load += userControlAddClass1_Load;
+            // 
+            // userControlAddStudent1
+            // 
+            userControlAddStudent1.BackColor = Color.SeaShell;
+            resources.ApplyResources(userControlAddStudent1, "userControlAddStudent1");
+            userControlAddStudent1.ForeColor = Color.White;
+            userControlAddStudent1.Name = "userControlAddStudent1";
+            // 
+            // userControDashBoard1
+            // 
+            userControDashBoard1.BackColor = Color.FromArgb(236, 240, 241);
+            resources.ApplyResources(userControDashBoard1, "userControDashBoard1");
+            userControDashBoard1.Name = "userControDashBoard1";
+            // 
+            // userControlAddTeacher1
+            // 
+            userControlAddTeacher1.BackColor = Color.SeaShell;
+            resources.ApplyResources(userControlAddTeacher1, "userControlAddTeacher1");
+            userControlAddTeacher1.ForeColor = Color.White;
+            userControlAddTeacher1.Name = "userControlAddTeacher1";
+            // 
+            // label4
+            // 
+            resources.ApplyResources(label4, "label4");
+            label4.BackColor = Color.FromArgb(192, 255, 192);
+            label4.ForeColor = Color.FromArgb(0, 0, 192);
+            label4.Image = Attendence_System.Properties.Resources.time_management;
+            label4.Name = "label4";
             // 
             // Main
             // 
             resources.ApplyResources(this, "$this");
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(236, 240, 241);
+            Controls.Add(label4);
             Controls.Add(comboBoxLanguage);
             Controls.Add(panelBack);
             Controls.Add(panel1);
-            Controls.Add(userControlAddClass1);
-            Controls.Add(userControlAddTeacher1);
             Controls.Add(userControDashBoard1);
             Controls.Add(userControlAddStudent1);
+            Controls.Add(userControlAddClass1);
+            Controls.Add(userControlAddTeacher1);
             ForeColor = Color.FromArgb(67, 3, 125);
             FormBorderStyle = FormBorderStyle.None;
             Name = "Main";
@@ -373,6 +370,7 @@ namespace Attendence_Management_System
             ((System.ComponentModel.ISupportInitialize)pictureBoxExpand).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -411,9 +409,6 @@ namespace Attendence_Management_System
         private Panel panel6;
         private Panel panelTop;
         private Panel panel7;
-        private Attendence_System.Forms.UserControls.UserControlAddStudent userControlAddStudent1;
-        private Attendence_System.Forms.UserControls.UserControDashBoard userControDashBoard1;
-        private Attendence_System.Forms.UserControls.UserControlAddTeacher userControlAddTeacher1;
         private Panel panel8;
         private Attendence_System.Forms.UserControls.UserControlReports userControlReports1;
         private ComboBox comboBoxLanguage;
@@ -422,5 +417,9 @@ namespace Attendence_Management_System
         private System.Windows.Forms.Timer timerDateTime;
         private PictureBox pictureBox3;
         private Attendence_System.Forms.UserControls.UserControlAddClass userControlAddClass1;
+        private Attendence_System.Forms.UserControls.UserControlAddStudent userControlAddStudent1;
+        private Attendence_System.Forms.UserControls.UserControDashBoard userControDashBoard1;
+        private Attendence_System.Forms.UserControls.UserControlAddTeacher userControlAddTeacher1;
+        private Label label4;
     }
 }

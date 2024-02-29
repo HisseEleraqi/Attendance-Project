@@ -24,6 +24,7 @@ namespace Attendence_Management_System
         private void Form1_Load(object sender, EventArgs e)
 
         {
+            timer1.Start();
             comboBoxLanguage.Items.Add("English");
             comboBoxLanguage.Items.Add("Arabic");
             // Query and add student data to the DataGridView
@@ -162,6 +163,12 @@ namespace Attendence_Management_System
         private void comboBoxLanguage_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            label4.Text=DateTime.Now.ToLongTimeString();
+            label3.Text=DateTime.Now.ToLongDateString();
         }
     }
 }

@@ -40,7 +40,6 @@
             pictureBox3 = new PictureBox();
             label1 = new Label();
             pictureBox4 = new PictureBox();
-            comboBoxLanguage = new ComboBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
@@ -159,21 +158,11 @@
             pictureBox4.TabIndex = 10;
             pictureBox4.TabStop = false;
             // 
-            // comboBoxLanguage
-            // 
-            comboBoxLanguage.FormattingEnabled = true;
-            comboBoxLanguage.Location = new Point(788, 22);
-            comboBoxLanguage.Name = "comboBoxLanguage";
-            comboBoxLanguage.Size = new Size(170, 29);
-            comboBoxLanguage.TabIndex = 12;
-            comboBoxLanguage.SelectedIndexChanged += comboBoxLanguage_SelectedIndexChanged;
-            // 
             // UserControDashBoard
             // 
             AutoScaleDimensions = new SizeF(10F, 21F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(236, 240, 241);
-            Controls.Add(comboBoxLanguage);
             Controls.Add(label1);
             Controls.Add(pictureBox4);
             Controls.Add(pictureBox3);
@@ -211,6 +200,5 @@
         private PictureBox pictureBox3;
         private Label label1;
         private PictureBox pictureBox4;
-        private ComboBox comboBoxLanguage;
     }
 }

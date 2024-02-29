@@ -25,8 +25,7 @@ namespace Attendence_System.Forms.UserControls
 
         private void UserControDashBoard_Load(object sender, EventArgs e)
         {
-            comboBoxLanguage.Items.Add("English");
-            comboBoxLanguage.Items.Add("Arabic");
+            
             studentCount.Text = new xmlController().GetStudentCount();
             teacherCount.Text = new xmlController().GetTeacherCount();
             classsCount.Text = new xmlController().GetClassCount();

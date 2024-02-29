@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Reflection.Emit;
 using System.Windows.Forms;
 using Attendence_Management_System.Forms;
 
@@ -158,6 +159,12 @@ namespace Attendence_Management_System
         private void comboBoxLanguage_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            label4.Text = DateTime.Now.ToLongTimeString();
+            label3.Text = DateTime.Now.ToLongDateString();
         }
     }
 }
