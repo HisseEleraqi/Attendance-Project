@@ -12,7 +12,7 @@ namespace Attendence_Management_System2
     public partial class Reports : Form
     {
 
-  
+
         public Reports()
         {
             InitializeComponent();
@@ -233,7 +233,7 @@ namespace Attendence_Management_System2
 
         private void Generate_Click_1(object sender, EventArgs e)
         {
-            
+
         }
 
         private void Generate_Click_2(object sender, EventArgs e)
@@ -288,6 +288,17 @@ namespace Attendence_Management_System2
                     }
                 }
             }
+        }
+
+        private void Reports_Load(object sender, EventArgs e)
+        {
+            comboBoxLanguage.Items.Add("English");
+            comboBoxLanguage.Items.Add("Arabic");
+        }
+
+        private void comboBoxLanguage_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

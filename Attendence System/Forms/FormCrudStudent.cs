@@ -16,5 +16,11 @@ namespace Attendence_System.Forms
         {
             InitializeComponent();
         }
+
+        private void FormCrudStudent_Load(object sender, EventArgs e)
+        {
+            comboBoxLanguage.Items.Add("English");
+            comboBoxLanguage.Items.Add("Arabic");
+        }
     }
 }

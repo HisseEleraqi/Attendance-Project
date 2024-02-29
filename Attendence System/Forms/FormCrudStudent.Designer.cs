@@ -40,6 +40,7 @@
             buttonCancel = new Button();
             buttonUpdate = new Button();
             buttonDelete = new Button();
+            comboBoxLanguage = new ComboBox();
             SuspendLayout();
             // 
             // labelFristName
@@ -166,11 +167,20 @@
             buttonDelete.Text = "Delete";
             buttonDelete.UseVisualStyleBackColor = false;
             // 
+            // comboBoxLanguage
+            // 
+            comboBoxLanguage.FormattingEnabled = true;
+            comboBoxLanguage.Location = new Point(538, 44);
+            comboBoxLanguage.Name = "comboBoxLanguage";
+            comboBoxLanguage.Size = new Size(170, 28);
+            comboBoxLanguage.TabIndex = 14;
+            // 
             // FormCrudStudent
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(768, 440);
+            Controls.Add(comboBoxLanguage);
             Controls.Add(buttonDelete);
             Controls.Add(buttonUpdate);
             Controls.Add(buttonCancel);
@@ -185,6 +195,7 @@
             Controls.Add(labelFristName);
             Name = "FormCrudStudent";
             Text = "FormCrudStudent";
+            Load += FormCrudStudent_Load;
             ResumeLayout(false);
             PerformLayout();
         }
@@ -203,5 +214,6 @@
         private Button buttonCancel;
         private Button buttonUpdate;
         private Button buttonDelete;
+        private ComboBox comboBoxLanguage;
     }
 }

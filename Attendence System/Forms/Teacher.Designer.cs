@@ -61,6 +61,7 @@
             AbsentStatus = new DataGridViewCheckBoxColumn();
             guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
+            comboBoxLanguage = new ComboBox();
             teacherPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGrid).BeginInit();
@@ -299,11 +300,21 @@
             guna2Button2.UseTransparentBackground = true;
             guna2Button2.Click += guna2Button2_Click;
             // 
+            // comboBoxLanguage
+            // 
+            comboBoxLanguage.FormattingEnabled = true;
+            comboBoxLanguage.Location = new Point(0, 71);
+            comboBoxLanguage.Name = "comboBoxLanguage";
+            comboBoxLanguage.Size = new Size(170, 28);
+            comboBoxLanguage.TabIndex = 12;
+            comboBoxLanguage.SelectedIndexChanged += comboBoxLanguage_SelectedIndexChanged;
+            // 
             // Teacher
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(857, 595);
+            Controls.Add(comboBoxLanguage);
             Controls.Add(guna2Button2);
             Controls.Add(dataGrid);
             Controls.Add(comboBox1);
@@ -341,6 +352,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn StudentID;
         private System.Windows.Forms.DataGridViewTextBoxColumn StudentName;
         private System.Windows.Forms.DataGridViewCheckBoxColumn AbsentStatus;
+        private ComboBox comboBoxLanguage;
     }
 }
 

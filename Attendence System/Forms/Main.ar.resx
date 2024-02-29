@@ -1,17 +1,17 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
-  <!--
+  <!-- 
     Microsoft ResX Schema 
-
+    
     Version 2.0
-
-    The primary goals of this format is to allow a simple XML format
-    that is mostly human readable. The generation and parsing of the
-    various data types are done through the TypeConverter classes
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
     associated with the data types.
-
+    
     Example:
-
+    
     ... ado.net/XML headers & schema ...
     <resheader name="resmimetype">text/microsoft-resx</resheader>
     <resheader name="version">2.0</resheader>
@@ -26,36 +26,36 @@
         <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
         <comment>This is a comment</comment>
     </data>
-
-    There are any number of "resheader" rows that contain simple
+                
+    There are any number of "resheader" rows that contain simple 
     name/value pairs.
-
-    Each data row contains a name, and value. The row also contains a
-    type or mimetype. Type corresponds to a .NET class that support
-    text/value conversion through the TypeConverter architecture.
-    Classes that don't support this are serialized and stored with the
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
     mimetype set.
-
-    The mimetype is used for serialized objects, and tells the
-    ResXResourceReader how to depersist the object. This is currently not
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
     extensible. For a given mimetype the value must be set accordingly:
-
-    Note - application/x-microsoft.net.object.binary.base64 is the format
-    that the ResXResourceWriter will generate, however the reader can
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
     read any of the formats listed below.
-
+    
     mimetype: application/x-microsoft.net.object.binary.base64
-    value   : The object must be serialized with
+    value   : The object must be serialized with 
             : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
             : and then encoded with base64 encoding.
     
     mimetype: application/x-microsoft.net.object.soap.base64
-    value   : The object must be serialized with
+    value   : The object must be serialized with 
             : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
             : and then encoded with base64 encoding.
 
     mimetype: application/x-microsoft.net.object.bytearray.base64
-    value   : The object must be serialized into a byte array
+    value   : The object must be serialized into a byte array 
             : using a System.ComponentModel.TypeConverter
             : and then encoded with base64 encoding.
     -->
@@ -117,40 +117,10 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="toolTip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="showHide.ErrorImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        DAAACwwBP0AiyAAAAXZJREFUSEvd1bsvBGEYxeFxDYJEISQKDeEfIIJEoRBRapUKDSWVRCkqCb1bQuIS
-        pcpGoaBAJAqFRkSi0RAUCn6HeZPXzGStNdvsSZ7s7Ow3e/ab+WY2KLp0ovR7M/304QmbKNOOtNMLFXxg
-        C+VIPf14hkrWoZnICBaxD5XPYxh5/QhfcojbcDvJAyZRgT/Fl8gLljCGUSzgEfb5JTqQUyrDV1+yi+iF
-        b8IZrETXbwBZM4QbtH29+1myhinolNRDacUbrEQzHURieqABGniHpBJzATvv2/CfvaILsVzDD/ytpBvK
-        HPx+0XfFolMQHailaYmWtEBZhj9GVhBLDY7hB16hBBZfsgrdBxrjjzlBNRJTiyP4A8bh40vOw1dzigZk
-        jWayBzvoHTOogiXpmuygDjlnAv5m0jrPoB2KL9FpyuuxoenOwq+we9hd60s28K+ncDN0r+ip26gdYXyJ
-        VmJB/k/8o16rqyAlfibT2lGIqOQAWu5FkSD4BNhJkpnqljqMAAAAAElFTkSuQmCC
-</value>
+  <data name="Dashbord" xml:space="preserve">
+    <value>لوحة التحكم</value>
   </data>
-  <data name="showHide.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        DAAACwwBP0AiyAAAARhJREFUSEvtlLlNxFAYBh0gEo5gYyRK4WiHAtAicqAMOkBABRDRANlGXAUQEMKM
-        ZK/wt+95ITAi2JFGst5/+F12s+LfM8EjvMUn/Gj12TFj5vyaNZziO34u0RxzrfkRO/iApWZDWmPtILs4
-        wyy+wj3caN3Ha8w8a+1RZBMfMYuOscYJZr497LXAJWayM5d1vMBXfMHzdkxuMOvs1cMlZ5K6LWLDjDkm
-        B5gxteeceywldUt15hl7Q9nCjOkdzln2ArclY88o25gx7b2gtkXdMktbdIZyiBnT3hZJ6ZC9iuKB+hJX
-        kofsF511C4cstWvqVaxxiplfvaZS+9C8it4WC9VtKc188EPrGPVX0THqz+47o/2uV/wVTfMF4jXIWBEl
-        OwEAAAAASUVORK5CYII=
-</value>
+  <data name="Teacher" xml:space="preserve">
+    <value>المعلمين</value>
   </data>
-  <metadata name="Column2.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="Column5.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="Column6.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
 </root>

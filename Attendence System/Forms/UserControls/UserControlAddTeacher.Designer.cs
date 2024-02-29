@@ -31,7 +31,7 @@
         {
             components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UserControlAddTeacher));
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             toolTip = new ToolTip(components);
             tabControlAddClass = new TabControl();
             tabPage = new TabPage();
@@ -58,15 +58,15 @@
             label5 = new Label();
             comboBox1 = new ComboBox();
             dataGridViewClass = new DataGridView();
-            pictureBox1 = new PictureBox();
-            label1 = new Label();
-            pictureBox2 = new PictureBox();
             Column1 = new DataGridViewTextBoxColumn();
             Column4 = new DataGridViewTextBoxColumn();
             Column3 = new DataGridViewTextBoxColumn();
             Column2 = new DataGridViewTextBoxColumn();
             Column5 = new DataGridViewCheckBoxColumn();
             Column6 = new DataGridViewButtonColumn();
+            pictureBox1 = new PictureBox();
+            label1 = new Label();
+            pictureBox2 = new PictureBox();
             tabControlAddClass.SuspendLayout();
             tabPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)showHide).BeginInit();
@@ -81,11 +81,12 @@
             tabControlAddClass.Alignment = TabAlignment.Bottom;
             tabControlAddClass.Controls.Add(tabPage);
             tabControlAddClass.Controls.Add(tabPageSearchClass);
+            tabControlAddClass.Dock = DockStyle.Fill;
             tabControlAddClass.Location = new Point(0, 0);
             tabControlAddClass.Multiline = true;
             tabControlAddClass.Name = "tabControlAddClass";
             tabControlAddClass.SelectedIndex = 0;
-            tabControlAddClass.Size = new Size(1326, 722);
+            tabControlAddClass.Size = new Size(1340, 725);
             tabControlAddClass.TabIndex = 0;
             tabControlAddClass.UseWaitCursor = true;
             // 
@@ -112,7 +113,7 @@
             tabPage.Location = new Point(4, 4);
             tabPage.Name = "tabPage";
             tabPage.Padding = new Padding(3);
-            tabPage.Size = new Size(1318, 688);
+            tabPage.Size = new Size(1332, 691);
             tabPage.TabIndex = 0;
             tabPage.Text = "Add Teacher";
             tabPage.UseWaitCursor = true;
@@ -337,7 +338,7 @@
             tabPageSearchClass.Location = new Point(4, 4);
             tabPageSearchClass.Name = "tabPageSearchClass";
             tabPageSearchClass.Padding = new Padding(3);
-            tabPageSearchClass.Size = new Size(1318, 688);
+            tabPageSearchClass.Size = new Size(1332, 691);
             tabPageSearchClass.TabIndex = 1;
             tabPageSearchClass.Text = "Search Teacher";
             tabPageSearchClass.UseWaitCursor = true;
@@ -409,8 +410,8 @@
             dataGridViewClass.ReadOnly = true;
             dataGridViewClass.RowHeadersWidth = 51;
             dataGridViewClass.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle2.ForeColor = Color.Black;
-            dataGridViewClass.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.ForeColor = Color.Black;
+            dataGridViewClass.RowsDefaultCellStyle = dataGridViewCellStyle1;
             dataGridViewClass.ShowCellErrors = false;
             dataGridViewClass.ShowCellToolTips = false;
             dataGridViewClass.ShowEditingIcon = false;
@@ -421,41 +422,6 @@
             dataGridViewClass.CellContentClick += dataGridViewClass_CellContentClick;
             dataGridViewClass.CellEndEdit += dataGridViewClass_CellEndEdit;
             dataGridViewClass.KeyDown += dataGridViewClass_KeyDown;
-            // 
-            // pictureBox1
-            // 
-            pictureBox1.Image = Properties.Resources.ixkfkncp;
-            pictureBox1.Location = new Point(877, 394);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(41, 28);
-            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox1.TabIndex = 4;
-            pictureBox1.TabStop = false;
-            pictureBox1.UseWaitCursor = true;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.BackColor = Color.Transparent;
-            label1.Font = new Font("Century Gothic", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.ForeColor = Color.FromArgb(52, 73, 94);
-            label1.Location = new Point(0, 24);
-            label1.Name = "label1";
-            label1.Size = new Size(236, 34);
-            label1.TabIndex = 0;
-            label1.Text = "Search Teacher:";
-            label1.UseWaitCursor = true;
-            // 
-            // pictureBox2
-            // 
-            pictureBox2.Image = Properties.Resources.ixkfkncp;
-            pictureBox2.Location = new Point(389, 122);
-            pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(52, 28);
-            pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox2.TabIndex = 22;
-            pictureBox2.TabStop = false;
-            pictureBox2.UseWaitCursor = true;
             // 
             // Column1
             // 
@@ -503,6 +469,41 @@
             Column6.Text = "UpdateTeacher";
             Column6.ToolTipText = "UpdateTeacher";
             Column6.UseColumnTextForButtonValue = true;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = Properties.Resources.ixkfkncp;
+            pictureBox1.Location = new Point(877, 394);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(41, 28);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.TabIndex = 4;
+            pictureBox1.TabStop = false;
+            pictureBox1.UseWaitCursor = true;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.BackColor = Color.Transparent;
+            label1.Font = new Font("Century Gothic", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.ForeColor = Color.FromArgb(52, 73, 94);
+            label1.Location = new Point(0, 24);
+            label1.Name = "label1";
+            label1.Size = new Size(236, 34);
+            label1.TabIndex = 0;
+            label1.Text = "Search Teacher:";
+            label1.UseWaitCursor = true;
+            // 
+            // pictureBox2
+            // 
+            pictureBox2.Image = Properties.Resources.ixkfkncp;
+            pictureBox2.Location = new Point(389, 122);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(52, 28);
+            pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox2.TabIndex = 22;
+            pictureBox2.TabStop = false;
+            pictureBox2.UseWaitCursor = true;
             // 
             // UserControlAddTeacher
             // 

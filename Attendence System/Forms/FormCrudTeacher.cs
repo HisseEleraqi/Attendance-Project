@@ -16,5 +16,16 @@ namespace Attendence_System.Forms
         {
             InitializeComponent();
         }
+
+        private void comboBoxLanguage_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void FormCrudTeacher_Load(object sender, EventArgs e)
+        {
+            comboBoxLanguage.Items.Add("English");
+            comboBoxLanguage.Items.Add("Arabic");
+        }
     }
 }

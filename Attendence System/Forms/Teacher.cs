@@ -22,14 +22,17 @@ namespace Attendence_Management_System
         }
 
         private void Form1_Load(object sender, EventArgs e)
+
         {
+            comboBoxLanguage.Items.Add("English");
+            comboBoxLanguage.Items.Add("Arabic");
             // Query and add student data to the DataGridView
             List<Course> courses = xmlController.GetCoursesByTeacherID(teacherID);
 
             comboBox1.DataSource = courses;
             comboBox1.DisplayMember = "CourseName";
             comboBox1.ValueMember = "CourseName";
-            
+
             dateTimePicker.Value = DateTime.Now;
             dateTimePicker.MaxDate = DateTime.Now;
             xmlController.AddNewRecordDateForAllStudents(dateTimePicker.Value.ToString("yyyy-MM-dd"));
@@ -42,7 +45,7 @@ namespace Attendence_Management_System
 
         private void Class_Data()
         {
-            
+
             // Load if the Teacher Has Courses elese Drop Error Msg and Exit
             if (comboBox1.Items.Count == 0)
             {
@@ -118,8 +121,8 @@ namespace Attendence_Management_System
             // only if DataTime Is Today
             if (dateTimePicker.Value.Date == DateTime.Now.Date)
             {
-/*                Console.WriteLine("Cell Clicked");
-*/                // Assuming the "AbsentStatus" column is a CheckBox column
+                /*                Console.WriteLine("Cell Clicked");
+                */                // Assuming the "AbsentStatus" column is a CheckBox column
                 if (e.ColumnIndex == dataGrid.Columns["AbsentStatus"].Index && e.RowIndex >= 0 && e.RowIndex < dataGrid.Rows.Count)
                 {
                     // Get the student ID, student name, and date from the clicked row
@@ -153,6 +156,11 @@ namespace Attendence_Management_System
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             Class_Data();
+
+        }
+
+        private void comboBoxLanguage_SelectedIndexChanged(object sender, EventArgs e)
+        {
 
         }
     }

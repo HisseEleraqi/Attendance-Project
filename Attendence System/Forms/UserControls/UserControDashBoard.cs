@@ -21,5 +21,16 @@ namespace Attendence_System.Forms.UserControls
         {
 
         }
+
+        private void UserControDashBoard_Load(object sender, EventArgs e)
+        {
+            comboBoxLanguage.Items.Add("English");
+            comboBoxLanguage.Items.Add("Arabic");
+        }
+
+        private void comboBoxLanguage_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

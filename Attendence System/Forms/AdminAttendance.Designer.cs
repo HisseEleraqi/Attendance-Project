@@ -43,7 +43,7 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Teacher));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminAttendance));
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(components);
             teacherPanel = new Guna.UI2.WinForms.Guna2Panel();
@@ -61,6 +61,7 @@
             AbsentStatus = new DataGridViewCheckBoxColumn();
             guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
+            comboBoxLanguage = new ComboBox();
             teacherPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGrid).BeginInit();
@@ -299,11 +300,21 @@
             guna2Button2.UseTransparentBackground = true;
             guna2Button2.Click += guna2Button2_Click;
             // 
-            // Teacher
+            // comboBoxLanguage
+            // 
+            comboBoxLanguage.FormattingEnabled = true;
+            comboBoxLanguage.Location = new Point(0, 72);
+            comboBoxLanguage.Name = "comboBoxLanguage";
+            comboBoxLanguage.Size = new Size(170, 28);
+            comboBoxLanguage.TabIndex = 5;
+            comboBoxLanguage.SelectedIndexChanged += comboBoxLanguage_SelectedIndexChanged;
+            // 
+            // AdminAttendance
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(857, 595);
+            Controls.Add(comboBoxLanguage);
             Controls.Add(guna2Button2);
             Controls.Add(dataGrid);
             Controls.Add(comboBox1);
@@ -312,7 +323,7 @@
             Controls.Add(teacherPanel);
             Controls.Add(guna2Button1);
             FormBorderStyle = FormBorderStyle.None;
-            Name = "Teacher";
+            Name = "AdminAttendance";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Attendance Sheet";
             Load += Form1_Load;
@@ -341,6 +352,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn StudentID;
         private System.Windows.Forms.DataGridViewTextBoxColumn StudentName;
         private System.Windows.Forms.DataGridViewCheckBoxColumn AbsentStatus;
+        private ComboBox comboBoxLanguage;
     }
 }
 

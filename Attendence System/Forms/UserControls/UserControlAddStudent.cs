@@ -203,6 +203,7 @@ namespace Attendence_System.Forms.UserControls
         }
         private void UserControlAddStudent_Load(object sender, EventArgs e)
         {
+
             FillCompoBox();
             XmlDocument doc = new XmlDocument();
             doc.Load("..\\..\\..\\Resources\\Data.xml");
@@ -297,7 +298,7 @@ namespace Attendence_System.Forms.UserControls
 
 
                 }
-           
+
 
             }
 
@@ -327,6 +328,11 @@ namespace Attendence_System.Forms.UserControls
         }
 
         private void ButtonAddToClass_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tabPage_Click(object sender, EventArgs e)
         {
 
         }

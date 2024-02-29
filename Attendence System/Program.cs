@@ -1,3 +1,4 @@
+using Attendence_Management_System.Forms;
 using  Attendence_Management_System2;
 namespace Attendence_Management_System
 {
@@ -16,7 +17,7 @@ namespace Attendence_Management_System
                // run student form
             //Application.Run(new Student("../../../Resources/Attendance.xml"));
 /*            Application.Run(new AdminAttendance("..\\..\\..\\Resources\\Attendance.xml"));
-*/            Application.Run(new Reports());
+*/            Application.Run(new Login());
 
         }
     }
