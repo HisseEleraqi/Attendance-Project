@@ -1,9 +1,25 @@
 using Attendence_Management_System2;
-using Attendence_System.Forms;
-using Attendence_System.Forms.UserControls;
-using Attendence_System.Properties;
+
 using System.ComponentModel;
 using System.Globalization;
+using System.Resources;
+using System.Threading;
+using static Guna.UI2.WinForms.Suite.Descriptions;
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Xml;
+using System.Threading;
+using System.Drawing;
+using System.Xml.Serialization;
+using System.Windows.Forms;
+using System;
+using System.Collections.Generic;
+using System.Threading;
+using System.Windows.Forms;
 
 namespace Attendence_Management_System
 {
@@ -20,6 +36,8 @@ namespace Attendence_Management_System
             UserName.Text = userName;
             Role = role;
         }
+
+
 
 
 
@@ -120,7 +138,7 @@ namespace Attendence_Management_System
             userControlAddTeacher1.Visible = false;
 
             // userControlReports1.Visible = true;
-            using (Reports popup =new Reports())
+            using (Reports popup = new Reports())
             {
                 popup.ShowDialog();
 
@@ -144,6 +162,7 @@ namespace Attendence_Management_System
 
         private void Main_Load(object sender, EventArgs e)
         {
+
             timerDateTime.Start();
             comboBoxLanguage.Items.Add("English");
             comboBoxLanguage.Items.Add("Arabic");
@@ -186,35 +205,15 @@ namespace Attendence_Management_System
 
         private void comboBoxLanguage_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (comboBoxLanguage.SelectedItem.ToString() == "Arabic")
-            {
-                SwitchLanguage("ar");
-            }
-            else
-            {
-                // Switch back to English or handle other languages
-                SwitchLanguage("en");
 
-            }
         }
-        private void SwitchLanguage(string languageCode)
-        {
-            if (this.InvokeRequired)
-            {
-                this.Invoke(new Action<string>(SwitchLanguage), languageCode);
-                return;
-            }
 
-            CultureInfo culture = new CultureInfo(languageCode);
-            Thread.CurrentThread.CurrentUICulture = culture;
-            Thread.CurrentThread.CurrentCulture = culture;
-            this.RightToLeft = culture.TextInfo.IsRightToLeft ? RightToLeft.Yes : RightToLeft.No;
-            this.RightToLeftLayout = culture.TextInfo.IsRightToLeft;
 
-            this.Refresh();
-        }
+
+
 
         private void label3_Click(object sender, EventArgs e)
+
         {
 
         }
@@ -228,6 +227,23 @@ namespace Attendence_Management_System
         private void pictureBox3_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            MoveSidePanel(Report);
+            userControDashBoard1.Visible = false;
+            userControlAddClass1.Visible = false;
+            userControlAddStudent1.Visible = false;
+            userControlAddTeacher1.Visible = false;
+
+            // userControlReports1.Visible = true;
+            using ( AdminAttendance popup = new  AdminAttendance("..\\..\\..\\Resources\\Attendance.xml"))
+            {
+                popup.ShowDialog();
+
+
+            }
         }
     }
 }

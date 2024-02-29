@@ -61,12 +61,12 @@ namespace Attendence_Management_System
             toolTip1 = new ToolTip(components);
             panel8 = new Panel();
             comboBoxLanguage = new ComboBox();
-            timerDateTime = new System.Windows.Forms.Timer(components);
             userControlAddClass1 = new Attendence_System.Forms.UserControls.UserControlAddClass();
             userControlAddStudent1 = new Attendence_System.Forms.UserControls.UserControlAddStudent();
             userControDashBoard1 = new Attendence_System.Forms.UserControls.UserControDashBoard();
             userControlAddTeacher1 = new Attendence_System.Forms.UserControls.UserControlAddTeacher();
-            label4 = new Label();
+            timerDateTime = new System.Windows.Forms.Timer(components);
+            button2 = new Button();
             panel1.SuspendLayout();
             panel3.SuspendLayout();
             panel4.SuspendLayout();
@@ -98,6 +98,7 @@ namespace Attendence_Management_System
             // panel4
             // 
             panel4.BackColor = Color.FromArgb(44, 62, 80);
+            panel4.Controls.Add(button2);
             panel4.Controls.Add(Report);
             panel4.Controls.Add(panelSlide);
             panel4.Controls.Add(buttonAddStudent);
@@ -159,6 +160,7 @@ namespace Attendence_Management_System
             buttonDashBorde.FlatAppearance.BorderSize = 0;
             buttonDashBorde.ForeColor = Color.White;
             buttonDashBorde.Name = "buttonDashBorde";
+            toolTip1.SetToolTip(buttonDashBorde, resources.GetString("buttonDashBorde.ToolTip"));
             buttonDashBorde.UseVisualStyleBackColor = true;
             buttonDashBorde.Click += buttonDashBorde_Click;
             // 
@@ -297,10 +299,6 @@ namespace Attendence_Management_System
             comboBoxLanguage.Name = "comboBoxLanguage";
             comboBoxLanguage.SelectedIndexChanged += comboBoxLanguage_SelectedIndexChanged;
             // 
-            // timerDateTime
-            // 
-            timerDateTime.Tick += timerDateTime_Tick;
-            // 
             // userControlAddClass1
             // 
             userControlAddClass1.BackColor = SystemColors.ActiveCaption;
@@ -329,20 +327,24 @@ namespace Attendence_Management_System
             userControlAddTeacher1.ForeColor = Color.White;
             userControlAddTeacher1.Name = "userControlAddTeacher1";
             // 
-            // label4
+            // timerDateTime
             // 
-            resources.ApplyResources(label4, "label4");
-            label4.BackColor = Color.FromArgb(192, 255, 192);
-            label4.ForeColor = Color.FromArgb(0, 0, 192);
-            label4.Image = Attendence_System.Properties.Resources.time_management;
-            label4.Name = "label4";
+            timerDateTime.Tick += timerDateTime_Tick;
+            // 
+            // button2
+            // 
+            resources.ApplyResources(button2, "button2");
+            button2.FlatAppearance.BorderSize = 0;
+            button2.ForeColor = Color.White;
+            button2.Name = "button2";
+            button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
             // 
             // Main
             // 
             resources.ApplyResources(this, "$this");
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(236, 240, 241);
-            Controls.Add(label4);
             Controls.Add(comboBoxLanguage);
             Controls.Add(panelBack);
             Controls.Add(panel1);
@@ -370,7 +372,6 @@ namespace Attendence_Management_System
             ((System.ComponentModel.ISupportInitialize)pictureBoxExpand).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -420,6 +421,6 @@ namespace Attendence_Management_System
         private Attendence_System.Forms.UserControls.UserControlAddStudent userControlAddStudent1;
         private Attendence_System.Forms.UserControls.UserControDashBoard userControDashBoard1;
         private Attendence_System.Forms.UserControls.UserControlAddTeacher userControlAddTeacher1;
-        private Label label4;
+        private Button button2;
     }
 }

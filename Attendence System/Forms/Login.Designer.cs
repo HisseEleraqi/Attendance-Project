@@ -66,52 +66,33 @@ namespace Attendence_Management_System.Forms
             // panel1
             // 
             panel1.BackColor = SystemColors.HighlightText;
-            panel1.BackgroundImage = (Image)resources.GetObject("panel1.BackgroundImage");
-            panel1.BackgroundImageLayout = ImageLayout.Stretch;
+            resources.ApplyResources(panel1, "panel1");
             panel1.Controls.Add(label2);
             panel1.Controls.Add(button1);
-            panel1.Dock = DockStyle.Left;
-            panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(300, 531);
-            panel1.TabIndex = 0;
             // 
             // label2
             // 
-            label2.AutoSize = true;
+            resources.ApplyResources(label2, "label2");
             label2.BackColor = Color.Transparent;
-            label2.Font = new Font("Century Gothic", 13.2000008F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
             label2.ForeColor = Color.MidnightBlue;
-            label2.Location = new Point(50, 22);
             label2.Name = "label2";
-            label2.Size = new Size(181, 29);
-            label2.TabIndex = 0;
-            label2.Text = "Wlcome to EHE";
             // 
             // button1
             // 
             button1.Cursor = Cursors.Hand;
-            button1.Font = new Font("Verdana", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            resources.ApplyResources(button1, "button1");
             button1.ForeColor = SystemColors.Highlight;
-            button1.Location = new Point(398, -18);
             button1.Name = "button1";
-            button1.Size = new Size(40, 40);
-            button1.TabIndex = 0;
-            button1.Text = "X";
             button1.UseVisualStyleBackColor = true;
             button1.Click += closeButton_Click;
             // 
             // label1
             // 
-            label1.AutoSize = true;
+            resources.ApplyResources(label1, "label1");
             label1.BackColor = Color.Transparent;
-            label1.Font = new Font("Century Gothic", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.DarkBlue;
-            label1.Location = new Point(66, 100);
             label1.Name = "label1";
-            label1.Size = new Size(319, 34);
-            label1.TabIndex = 0;
-            label1.Text = "Login To Your Account";
             // 
             // panel2
             // 
@@ -126,64 +107,41 @@ namespace Attendence_Management_System.Forms
             panel2.Controls.Add(ErrorMessage);
             panel2.Controls.Add(label1);
             panel2.Controls.Add(closeButton);
-            panel2.Dock = DockStyle.Right;
-            panel2.Location = new Point(296, 0);
+            resources.ApplyResources(panel2, "panel2");
             panel2.Name = "panel2";
-            panel2.Size = new Size(454, 531);
-            panel2.TabIndex = 1;
             panel2.Paint += panel2_Paint_1;
             // 
             // pictureBox4
             // 
             pictureBox4.Image = Attendence_System.Properties.Resources.time;
-            pictureBox4.ImeMode = ImeMode.NoControl;
-            pictureBox4.Location = new Point(27, 3);
+            resources.ApplyResources(pictureBox4, "pictureBox4");
             pictureBox4.Name = "pictureBox4";
-            pictureBox4.Size = new Size(38, 30);
-            pictureBox4.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox4.TabIndex = 12;
             pictureBox4.TabStop = false;
             // 
             // label3
             // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Century Gothic", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            resources.ApplyResources(label3, "label3");
             label3.ForeColor = Color.FromArgb(67, 3, 125);
-            label3.ImeMode = ImeMode.NoControl;
-            label3.Location = new Point(27, 63);
             label3.Name = "label3";
-            label3.Size = new Size(43, 18);
-            label3.TabIndex = 11;
-            label3.Text = "Date";
             // 
             // textBox1
             // 
             textBox1.BackColor = Color.White;
-            textBox1.Location = new Point(49, 84);
+            resources.ApplyResources(textBox1, "textBox1");
             textBox1.Name = "textBox1";
-            textBox1.Size = new Size(0, 27);
-            textBox1.TabIndex = 3;
             // 
             // label4
             // 
-            label4.AutoSize = true;
-            label4.Font = new Font("Century Gothic", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            resources.ApplyResources(label4, "label4");
             label4.ForeColor = Color.FromArgb(67, 3, 125);
-            label4.ImeMode = ImeMode.NoControl;
-            label4.Location = new Point(27, 33);
             label4.Name = "label4";
-            label4.Size = new Size(42, 18);
-            label4.TabIndex = 10;
-            label4.Text = "Time";
             // 
             // pictureBox2
             // 
             pictureBox2.BackColor = Color.Transparent;
             pictureBox2.BackgroundImage = Attendence_System.Properties.Resources.exit;
-            pictureBox2.Location = new Point(403, 0);
+            resources.ApplyResources(pictureBox2, "pictureBox2");
             pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(54, 51);
-            pictureBox2.TabIndex = 2;
             pictureBox2.TabStop = false;
             pictureBox2.Click += pictureBox1_Click_1;
             // 
@@ -193,47 +151,30 @@ namespace Attendence_Management_System.Forms
             panel4.Controls.Add(pictureBox3);
             panel4.Controls.Add(showHide);
             panel4.Controls.Add(password);
-            panel4.Location = new Point(15, 252);
+            resources.ApplyResources(panel4, "panel4");
             panel4.Name = "panel4";
-            panel4.Size = new Size(427, 45);
-            panel4.TabIndex = 1;
             // 
             // pictureBox3
             // 
             pictureBox3.BackColor = Color.Transparent;
-            pictureBox3.Image = (Image)resources.GetObject("pictureBox3.Image");
-            pictureBox3.Location = new Point(0, 0);
+            resources.ApplyResources(pictureBox3, "pictureBox3");
             pictureBox3.Name = "pictureBox3";
-            pictureBox3.Size = new Size(37, 45);
-            pictureBox3.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox3.TabIndex = 2;
             pictureBox3.TabStop = false;
             pictureBox3.Click += pictureBox1_Click_1;
             // 
             // showHide
             // 
             showHide.BackColor = Color.Transparent;
-            showHide.Dock = DockStyle.Right;
-            showHide.ErrorImage = (Image)resources.GetObject("showHide.ErrorImage");
-            showHide.Image = (Image)resources.GetObject("showHide.Image");
-            showHide.Location = new Point(388, 0);
+            resources.ApplyResources(showHide, "showHide");
             showHide.Name = "showHide";
-            showHide.Size = new Size(39, 45);
-            showHide.SizeMode = PictureBoxSizeMode.Zoom;
-            showHide.TabIndex = 2;
             showHide.TabStop = false;
             showHide.Click += showHide_Click_1;
             // 
             // password
             // 
-            password.Font = new Font("Century Gothic", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            resources.ApplyResources(password, "password");
             password.ForeColor = Color.DarkBlue;
-            password.Location = new Point(36, 0);
-            password.Multiline = true;
             password.Name = "password";
-            password.PasswordChar = '*';
-            password.Size = new Size(414, 45);
-            password.TabIndex = 4;
             password.KeyDown += password_KeyDown;
             // 
             // panel3
@@ -241,60 +182,39 @@ namespace Attendence_Management_System.Forms
             panel3.BackColor = Color.White;
             panel3.Controls.Add(userName);
             panel3.Controls.Add(pictureBox1);
-            panel3.Location = new Point(15, 177);
+            resources.ApplyResources(panel3, "panel3");
             panel3.Name = "panel3";
-            panel3.Size = new Size(427, 45);
-            panel3.TabIndex = 1;
             // 
             // userName
             // 
-            userName.Dock = DockStyle.Right;
-            userName.Font = new Font("Rockwell", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            resources.ApplyResources(userName, "userName");
             userName.ForeColor = Color.DarkBlue;
-            userName.Location = new Point(36, 0);
-            userName.Multiline = true;
             userName.Name = "userName";
-            userName.Size = new Size(391, 45);
-            userName.TabIndex = 3;
             userName.TextChanged += userName_TextChanged_1;
             userName.KeyDown += userName_KeyDown;
             // 
             // pictureBox1
             // 
             pictureBox1.BackColor = Color.Transparent;
-            pictureBox1.Dock = DockStyle.Left;
-            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(0, 0);
+            resources.ApplyResources(pictureBox1, "pictureBox1");
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(37, 45);
-            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox1.TabIndex = 2;
             pictureBox1.TabStop = false;
             pictureBox1.Click += pictureBox1_Click_1;
             // 
             // ErrorMessage
             // 
-            ErrorMessage.AutoSize = true;
+            resources.ApplyResources(ErrorMessage, "ErrorMessage");
             ErrorMessage.BackColor = Color.Transparent;
-            ErrorMessage.Font = new Font("Century Gothic", 10.8F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
             ErrorMessage.ForeColor = Color.DarkBlue;
-            ErrorMessage.Location = new Point(122, 322);
             ErrorMessage.Name = "ErrorMessage";
-            ErrorMessage.Size = new Size(206, 22);
-            ErrorMessage.TabIndex = 0;
-            ErrorMessage.Text = "Login To Your Account";
             // 
             // closeButton
             // 
             closeButton.BackColor = Color.AliceBlue;
             closeButton.Cursor = Cursors.Hand;
-            closeButton.Font = new Font("Century Gothic", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            resources.ApplyResources(closeButton, "closeButton");
             closeButton.ForeColor = Color.DodgerBlue;
-            closeButton.Location = new Point(161, 371);
             closeButton.Name = "closeButton";
-            closeButton.Size = new Size(128, 52);
-            closeButton.TabIndex = 0;
-            closeButton.Text = "Login";
             closeButton.UseVisualStyleBackColor = false;
             closeButton.Click += closeButton_Click;
             // 
@@ -304,15 +224,13 @@ namespace Attendence_Management_System.Forms
             // 
             // Login
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            resources.ApplyResources(this, "$this");
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(750, 531);
             ControlBox = false;
             Controls.Add(panel1);
             Controls.Add(panel2);
             FormBorderStyle = FormBorderStyle.None;
             Name = "Login";
-            Text = "Logincs";
             Load += Login_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
