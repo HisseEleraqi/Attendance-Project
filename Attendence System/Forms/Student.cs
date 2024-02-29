@@ -42,6 +42,7 @@ namespace Attendence_Management_System
 
         private void Class_Data()
         {
+
             string selectedCourseID = comboBox1.SelectedValue.ToString();
 
             AddStudentDataToGrid(studentID, selectedCourseID);

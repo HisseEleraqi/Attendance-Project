@@ -31,7 +31,7 @@
         {
             components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UserControlAddTeacher));
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             toolTip = new ToolTip(components);
             tabControlAddClass = new TabControl();
             tabPage = new TabPage();
@@ -58,15 +58,15 @@
             label5 = new Label();
             comboBox1 = new ComboBox();
             dataGridViewClass = new DataGridView();
-            pictureBox1 = new PictureBox();
-            label1 = new Label();
-            pictureBox2 = new PictureBox();
             Column1 = new DataGridViewTextBoxColumn();
             Column4 = new DataGridViewTextBoxColumn();
             Column3 = new DataGridViewTextBoxColumn();
             Column2 = new DataGridViewTextBoxColumn();
             Column5 = new DataGridViewCheckBoxColumn();
             Column6 = new DataGridViewButtonColumn();
+            pictureBox1 = new PictureBox();
+            label1 = new Label();
+            pictureBox2 = new PictureBox();
             tabControlAddClass.SuspendLayout();
             tabPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)showHide).BeginInit();
@@ -251,6 +251,7 @@
             buttonCancel.Text = "Cancel";
             buttonCancel.UseVisualStyleBackColor = false;
             buttonCancel.UseWaitCursor = true;
+            buttonCancel.Click += buttonCancel_Click;
             // 
             // label12
             // 
@@ -385,12 +386,12 @@
             // 
             comboBox1.BackColor = SystemColors.InactiveCaption;
             comboBox1.FormattingEnabled = true;
-            comboBox1.Items.AddRange(new object[] { "Add Class " });
             comboBox1.Location = new Point(1036, 44);
             comboBox1.Name = "comboBox1";
             comboBox1.Size = new Size(191, 29);
             comboBox1.TabIndex = 17;
             comboBox1.UseWaitCursor = true;
+            comboBox1.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
             // 
             // dataGridViewClass
             // 
@@ -409,8 +410,8 @@
             dataGridViewClass.ReadOnly = true;
             dataGridViewClass.RowHeadersWidth = 51;
             dataGridViewClass.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle2.ForeColor = Color.Black;
-            dataGridViewClass.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.ForeColor = Color.Black;
+            dataGridViewClass.RowsDefaultCellStyle = dataGridViewCellStyle1;
             dataGridViewClass.ShowCellErrors = false;
             dataGridViewClass.ShowCellToolTips = false;
             dataGridViewClass.ShowEditingIcon = false;
@@ -421,41 +422,6 @@
             dataGridViewClass.CellContentClick += dataGridViewClass_CellContentClick;
             dataGridViewClass.CellEndEdit += dataGridViewClass_CellEndEdit;
             dataGridViewClass.KeyDown += dataGridViewClass_KeyDown;
-            // 
-            // pictureBox1
-            // 
-            pictureBox1.Image = Properties.Resources.ixkfkncp;
-            pictureBox1.Location = new Point(877, 394);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(41, 28);
-            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox1.TabIndex = 4;
-            pictureBox1.TabStop = false;
-            pictureBox1.UseWaitCursor = true;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.BackColor = Color.Transparent;
-            label1.Font = new Font("Century Gothic", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.ForeColor = Color.FromArgb(52, 73, 94);
-            label1.Location = new Point(0, 24);
-            label1.Name = "label1";
-            label1.Size = new Size(236, 34);
-            label1.TabIndex = 0;
-            label1.Text = "Search Teacher:";
-            label1.UseWaitCursor = true;
-            // 
-            // pictureBox2
-            // 
-            pictureBox2.Image = Properties.Resources.ixkfkncp;
-            pictureBox2.Location = new Point(389, 122);
-            pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(52, 28);
-            pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox2.TabIndex = 22;
-            pictureBox2.TabStop = false;
-            pictureBox2.UseWaitCursor = true;
             // 
             // Column1
             // 
@@ -503,6 +469,41 @@
             Column6.Text = "UpdateTeacher";
             Column6.ToolTipText = "UpdateTeacher";
             Column6.UseColumnTextForButtonValue = true;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = Properties.Resources.ixkfkncp;
+            pictureBox1.Location = new Point(877, 394);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(41, 28);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.TabIndex = 4;
+            pictureBox1.TabStop = false;
+            pictureBox1.UseWaitCursor = true;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.BackColor = Color.Transparent;
+            label1.Font = new Font("Century Gothic", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.ForeColor = Color.FromArgb(52, 73, 94);
+            label1.Location = new Point(0, 24);
+            label1.Name = "label1";
+            label1.Size = new Size(236, 34);
+            label1.TabIndex = 0;
+            label1.Text = "Search Teacher:";
+            label1.UseWaitCursor = true;
+            // 
+            // pictureBox2
+            // 
+            pictureBox2.Image = Properties.Resources.ixkfkncp;
+            pictureBox2.Location = new Point(389, 122);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(52, 28);
+            pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox2.TabIndex = 22;
+            pictureBox2.TabStop = false;
+            pictureBox2.UseWaitCursor = true;
             // 
             // UserControlAddTeacher
             // 

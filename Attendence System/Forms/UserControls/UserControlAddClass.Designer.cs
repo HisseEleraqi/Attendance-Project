@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UserControlAddClass));
+
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             toolTip = new ToolTip(components);
             tabControlAddClass = new TabControl();
@@ -41,16 +43,16 @@
             ClassName = new TextBox();
             label11 = new Label();
             tabPageSearchClass = new TabPage();
+            comboBoxClassName = new ComboBox();
+            label2 = new Label();
             pictureBox2 = new PictureBox();
             textBoxSearch = new TextBox();
             dataGridViewClass = new DataGridView();
-            pictureBox1 = new PictureBox();
-            label1 = new Label();
-            label2 = new Label();
-            comboBoxClassName = new ComboBox();
             Column1 = new DataGridViewTextBoxColumn();
             Column4 = new DataGridViewTextBoxColumn();
             Column3 = new DataGridViewTextBoxColumn();
+            pictureBox1 = new PictureBox();
+            label1 = new Label();
             tabControlAddClass.SuspendLayout();
             tabPage.SuspendLayout();
             tabPageSearchClass.SuspendLayout();
@@ -193,6 +195,31 @@
             tabPageSearchClass.TabIndex = 1;
             tabPageSearchClass.Text = "Search Class";
             tabPageSearchClass.UseWaitCursor = true;
+            tabPageSearchClass.Click += tabPageSearchClass_Click;
+            // 
+            // comboBoxClassName
+            // 
+            comboBoxClassName.BackColor = Color.FromArgb(189, 195, 199);
+            comboBoxClassName.FormattingEnabled = true;
+            comboBoxClassName.Location = new Point(396, 128);
+            comboBoxClassName.Name = "comboBoxClassName";
+            comboBoxClassName.Size = new Size(442, 29);
+            comboBoxClassName.TabIndex = 12;
+            comboBoxClassName.UseWaitCursor = true;
+            comboBoxClassName.SelectedIndexChanged += comboBoxClassName_SelectedIndexChanged;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.BackColor = Color.Transparent;
+            label2.Font = new Font("Century Gothic", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label2.ForeColor = Color.FromArgb(128, 128, 255);
+            label2.Location = new Point(505, 46);
+            label2.Name = "label2";
+            label2.Size = new Size(193, 34);
+            label2.TabIndex = 11;
+            label2.Text = "Class Name :";
+            label2.UseWaitCursor = true;
             // 
             // pictureBox2
             // 
@@ -215,6 +242,7 @@
             textBoxSearch.Size = new Size(173, 28);
             textBoxSearch.TabIndex = 9;
             textBoxSearch.UseWaitCursor = true;
+            textBoxSearch.TextChanged += textBoxSearch_TextChanged;
             // 
             // dataGridViewClass
             // 
@@ -244,6 +272,27 @@
             dataGridViewClass.UseWaitCursor = true;
             dataGridViewClass.CellContentClick += dataGridViewClass_CellContentClick;
             // 
+            // Column1
+            // 
+            Column1.HeaderText = "ID";
+            Column1.MinimumWidth = 6;
+            Column1.Name = "Column1";
+            Column1.ReadOnly = true;
+            // 
+            // Column4
+            // 
+            Column4.HeaderText = "Students Name";
+            Column4.MinimumWidth = 6;
+            Column4.Name = "Column4";
+            Column4.ReadOnly = true;
+            // 
+            // Column3
+            // 
+            Column3.HeaderText = "Class Name";
+            Column3.MinimumWidth = 6;
+            Column3.Name = "Column3";
+            Column3.ReadOnly = true;
+            // 
             // pictureBox1
             // 
             pictureBox1.Image = Properties.Resources.ixkfkncp;
@@ -267,49 +316,7 @@
             label1.TabIndex = 0;
             label1.Text = "Search Class :";
             label1.UseWaitCursor = true;
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.BackColor = Color.Transparent;
-            label2.Font = new Font("Century Gothic", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.ForeColor = Color.FromArgb(128, 128, 255);
-            label2.Location = new Point(505, 46);
-            label2.Name = "label2";
-            label2.Size = new Size(193, 34);
-            label2.TabIndex = 11;
-            label2.Text = "Class Name :";
-            label2.UseWaitCursor = true;
-            // 
-            // comboBoxClassName
-            // 
-            comboBoxClassName.BackColor = Color.FromArgb(189, 195, 199);
-            comboBoxClassName.FormattingEnabled = true;
-            comboBoxClassName.Location = new Point(396, 128);
-            comboBoxClassName.Name = "comboBoxClassName";
-            comboBoxClassName.Size = new Size(442, 29);
-            comboBoxClassName.TabIndex = 12;
-            // 
-            // Column1
-            // 
-            Column1.HeaderText = "ID";
-            Column1.MinimumWidth = 6;
-            Column1.Name = "Column1";
-            Column1.ReadOnly = true;
-            // 
-            // Column4
-            // 
-            Column4.HeaderText = "Students Name";
-            Column4.MinimumWidth = 6;
-            Column4.Name = "Column4";
-            Column4.ReadOnly = true;
-            // 
-            // Column3
-            // 
-            Column3.HeaderText = "Class Name";
-            Column3.MinimumWidth = 6;
-            Column3.Name = "Column3";
-            Column3.ReadOnly = true;
+            label1.Click += label1_Click;
             // 
             // UserControlAddClass
             // 
@@ -322,6 +329,7 @@
             Name = "UserControlAddClass";
             RightToLeft = RightToLeft.No;
             Size = new Size(1260, 675);
+            Load += UserControlAddClass_Load;
             tabControlAddClass.ResumeLayout(false);
             tabPage.ResumeLayout(false);
             tabPage.PerformLayout();

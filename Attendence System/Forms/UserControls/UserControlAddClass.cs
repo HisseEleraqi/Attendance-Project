@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Attendence_System.Forms.UserControls
 {
@@ -96,7 +97,62 @@ namespace Attendence_System.Forms.UserControls
                     ClassID.Text = "";
                 }
             }
-        
-    }
+
+        }
+
+        private void comboBoxClassName_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            fillDataGrid();
+        }
+        public void fillDataGrid()
+        {
+            dataGridViewClass.Rows.Clear();
+
+            XmlDocument doc = new XmlDocument();
+            doc.Load("..\\..\\..\\Resources\\Attendance.xml");
+            XmlNodeList students = doc.SelectNodes($"/AttendanceData/Class[ClassName=\"{comboBoxClassName.SelectedItem}\"]/Students/Student");
+            Console.WriteLine($"/AttendanceData/Class[ClassName=\"{comboBoxClassName.SelectedItem}\"]/Students/Student");
+            foreach (XmlNode student in students)
+            {
+                string id = student.SelectSingleNode("StudentID").InnerText;
+                string name = student.SelectSingleNode("StudentName").InnerText;
+                dataGridViewClass.Rows.Add(id, name, comboBoxClassName.SelectedItem.ToString());
+            }
+        }
+        public void FillCompoBox()
+        {
+            XmlDocument doc = new XmlDocument();
+            doc.Load("..\\..\\..\\Resources\\Attendance.xml");
+            XmlNodeList nodes = doc.SelectNodes("/AttendanceData/Class");
+ 
+            foreach (XmlNode node in nodes)
+            {
+                string name = node.SelectSingleNode("ClassName").InnerText;
+                comboBoxClassName.Items.Add(name);
+            }
+            comboBoxClassName.SelectedIndex = 0;
+        }
+        private void UserControlAddClass_Load(object sender, EventArgs e)
+        {
+            FillCompoBox();
+            fillDataGrid();
+
+        }
+
+        private void tabPageSearchClass_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBoxSearch_TextChanged(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+          
+
+        }
     }
 }
