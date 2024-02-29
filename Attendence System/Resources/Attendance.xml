@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <AttendanceData>
   <Class>
-    <ClassID>CS-101</ClassID>
+    <ClassID>CLS-1</ClassID>
     <ClassName>Computer Science 101</ClassName>
     <TeacherID>T001</TeacherID>
     <TeacherName>Qamary</TeacherName>
@@ -283,6 +283,56 @@
           <Record>
             <Date>2024-02-15</Date>
             <Status>Present</Status>
+          </Record>
+          <Record>
+            <Date>2024-02-14</Date>
+            <Status>Absent</Status>
+          </Record>
+          <Record>
+            <Date>2024-02-16</Date>
+            <Status>Absent</Status>
+          </Record>
+          <Record>
+            <Date>2024-02-17</Date>
+            <Status>Absent</Status>
+          </Record>
+          <Record>
+            <Date>2024-02-28</Date>
+            <Status>Absent</Status>
+          </Record>
+          <Record>
+            <Date>2024-02-23</Date>
+            <Status>Absent</Status>
+          </Record>
+          <Record>
+            <Date>2024-02-20</Date>
+            <Status>Absent</Status>
+          </Record>
+          <Record>
+            <Date>2024-02-08</Date>
+            <Status>Absent</Status>
+          </Record>
+          <Record>
+            <Date>2024-02-13</Date>
+            <Status>Absent</Status>
+          </Record>
+          <Record>
+            <Date>2024-02-22</Date>
+            <Status>Absent</Status>
+          </Record>
+          <Record>
+            <Date>2024-03-01</Date>
+            <Status>Absent</Status>
+          </Record>
+        </AttendanceRecords>
+      </Student>
+      <Student>
+        <StudentID>TE-4</StudentID>
+        <StudentName>KHALED Gala</StudentName>
+        <AttendanceRecords>
+          <Record>
+            <Date>2024-02-15</Date>
+            <Status>Absent</Status>
           </Record>
           <Record>
             <Date>2024-02-14</Date>
@@ -997,12 +1047,24 @@
     </Students>
   </Class>
   <Class>
-    <ClassID>CLS-201</ClassID>
-    <ClassName>SD</ClassName>
-    <TeacherID>0</TeacherID>
-    <TeacherName />
+    <ClassID>CLS-4</ClassID>
+    <ClassName>C#</ClassName>
+    <TeacherID>TE-1</TeacherID>
+	  <TeacherName>3sawy </TeacherName>
     <Students>
       <Student>0</Student>
     </Students>
+  </Class>
+  <Class>
+    <ClassID>CLS-5</ClassID>
+    <ClassName>FG</ClassName>
+    <Students>
+    </Students>
+  </Class>
+  <Class>
+    <ClassID>CLS-6</ClassID>
+    <ClassName>JPG</ClassName>
+	  <Students>
+	  </Students>
   </Class>
 </AttendanceData>

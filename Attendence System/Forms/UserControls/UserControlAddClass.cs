@@ -106,6 +106,7 @@ namespace Attendence_System.Forms.UserControls
         }
         public void fillDataGrid()
         {
+
             dataGridViewClass.Rows.Clear();
 
             XmlDocument doc = new XmlDocument();
@@ -127,6 +128,7 @@ namespace Attendence_System.Forms.UserControls
         }
         public void FillCompoBox()
         {
+            //comboBoxClassName.Items.clear() ; comboBoxClassName.SelectedIndex = 0 ;
             XmlDocument doc = new XmlDocument();
             doc.Load("..\\..\\..\\Resources\\Attendance.xml");
             XmlNodeList nodes = doc.SelectNodes("/AttendanceData/Class");
