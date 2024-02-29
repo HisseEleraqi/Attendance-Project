@@ -36,9 +36,9 @@ namespace Attendence_System.Forms
             string? Password = password.Text.Trim();
             string? RePassword = rePassword.Text.Trim();
             string? fullName;
-            if (firstName == "" || lastName == "" || Password == "" || RePassword == "")
+            if (firstName == "" || lastName == "")
             {
-                MessageBox.Show("Please fill all the fields");
+                MessageBox.Show("name is required");
             }
             else if (Password != RePassword)
             {
@@ -46,6 +46,26 @@ namespace Attendence_System.Forms
             }
             else
             {
+                Validator validator = new Validator();
+                if (!validator.validateName(firstName))
+                {
+                    MessageBox.Show("First Name is not valid");
+                    return;
+                }
+                if (!validator.validateName(lastName))
+                {
+                    MessageBox.Show("Last Name is not valid");
+                    return;
+                }
+                if(Password != "")
+                {
+                    if (!validator.validatePassword(Password))
+                    {
+                        MessageBox.Show("Password is not valid");
+                        return;
+                    }
+
+                }
                 fullName = firstName + " " + lastName;
                 xmlController xmlController = new xmlController();
                 xmlController.editUserInXML(ID, fullName, Password, "student");
