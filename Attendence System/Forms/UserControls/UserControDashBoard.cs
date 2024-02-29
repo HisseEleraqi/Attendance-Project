@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Attendence_Management_System;
 
 namespace Attendence_System.Forms.UserControls
 {
@@ -26,11 +27,22 @@ namespace Attendence_System.Forms.UserControls
         {
             comboBoxLanguage.Items.Add("English");
             comboBoxLanguage.Items.Add("Arabic");
+            studentCount.Text = new xmlController().GetStudentCount();
+            teacherCount.Text = new xmlController().GetTeacherCount();
+            classsCount.Text = new xmlController().GetClassCount();
         }
 
         private void comboBoxLanguage_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+
+           
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
+

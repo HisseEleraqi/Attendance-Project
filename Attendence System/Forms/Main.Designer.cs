@@ -59,13 +59,16 @@ namespace Attendence_Management_System
             pictureBoxExpand = new PictureBox();
             pictureBox2 = new PictureBox();
             toolTip1 = new ToolTip(components);
-            userControlAddClass1 = new Attendence_System.Forms.UserControls.UserControlAddClass();
             userControlAddStudent1 = new Attendence_System.Forms.UserControls.UserControlAddStudent();
             userControDashBoard1 = new Attendence_System.Forms.UserControls.UserControDashBoard();
             userControlAddTeacher1 = new Attendence_System.Forms.UserControls.UserControlAddTeacher();
             panel8 = new Panel();
+
             comboBoxLanguage = new ComboBox();
             timerDateTime = new System.Windows.Forms.Timer(components);
+
+            userControlAddClass1 = new Attendence_System.Forms.UserControls.UserControlAddClass();
+
             panel1.SuspendLayout();
             panel3.SuspendLayout();
             panel4.SuspendLayout();
@@ -281,6 +284,7 @@ namespace Attendence_Management_System
             pictureBox2.Name = "pictureBox2";
             pictureBox2.TabStop = false;
             // 
+
             // userControlAddClass1
             // 
             userControlAddClass1.BackColor = SystemColors.ActiveCaption;
@@ -289,8 +293,7 @@ namespace Attendence_Management_System
             userControlAddClass1.Name = "userControlAddClass1";
             userControlAddClass1.Load += userControlAddClass1_Load;
             // 
-            // userControlAddStudent1
-            // 
+
             userControlAddStudent1.BackColor = Color.SeaShell;
             resources.ApplyResources(userControlAddStudent1, "userControlAddStudent1");
             userControlAddStudent1.ForeColor = Color.White;
@@ -324,6 +327,19 @@ namespace Attendence_Management_System
             // timerDateTime
             // 
             timerDateTime.Tick += timerDateTime_Tick;
+            // 
+            // userControlAddClass1
+            // 
+            userControlAddClass1.BackColor = SystemColors.ActiveCaption;
+            userControlAddClass1.Font = new Font("Century Gothic", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            userControlAddClass1.ForeColor = Color.White;
+            userControlAddClass1.Location = new Point(258, 164);
+            userControlAddClass1.Margin = new Padding(4, 3, 4, 3);
+            userControlAddClass1.Name = "userControlAddClass1";
+            userControlAddClass1.RightToLeft = RightToLeft.No;
+            userControlAddClass1.Size = new Size(1700, 871);
+            userControlAddClass1.TabIndex = 6;
+            userControlAddClass1.Load += userControlAddClass1_Load;
             // 
             // Main
             // 
@@ -395,7 +411,6 @@ namespace Attendence_Management_System
         private Panel panel6;
         private Panel panelTop;
         private Panel panel7;
-        private Attendence_System.Forms.UserControls.UserControlAddClass userControlAddClass1;
         private Attendence_System.Forms.UserControls.UserControlAddStudent userControlAddStudent1;
         private Attendence_System.Forms.UserControls.UserControDashBoard userControDashBoard1;
         private Attendence_System.Forms.UserControls.UserControlAddTeacher userControlAddTeacher1;
@@ -406,5 +421,6 @@ namespace Attendence_Management_System
         private Label label2;
         private System.Windows.Forms.Timer timerDateTime;
         private PictureBox pictureBox3;
+        private Attendence_System.Forms.UserControls.UserControlAddClass userControlAddClass1;
     }
 }

@@ -236,7 +236,8 @@ namespace Attendence_System.Forms.UserControls
             
                 if (e.ColumnIndex == 5 && e.RowIndex >= 0) 
                 {
-                    using (FormCrudTeacher popup = new FormCrudTeacher())
+                string ID = dataGridViewClass.Rows[e.RowIndex].Cells[0].Value.ToString();
+                    using (FormCrudTeacher popup = new FormCrudTeacher(ID))
                     {
                         popup.ShowDialog();
 
