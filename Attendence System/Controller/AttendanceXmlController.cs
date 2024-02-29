@@ -406,6 +406,26 @@ namespace Attendence_Management_System
             }
             return null;
         }
+
+        internal void SaveXml(string newSaveFilePath)
+        {
+            try
+            {
+                // Load the existing XML document
+                XmlDocument xmlDoc = new XmlDocument();
+                xmlDoc.Load(XmlFilePath);
+
+                // Save the modified XML document to a new file
+                xmlDoc.Save(newSaveFilePath);
+
+                Console.WriteLine($"XML file saved successfully at: {newSaveFilePath}");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Exception during XML saving: {ex.Message}");
+            }
+        }
+
     }
 }
 public class AttendanceData

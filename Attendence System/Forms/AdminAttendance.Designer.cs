@@ -1,4 +1,4 @@
-﻿namespace Attendence_Management_System
+﻿namespace Attendence_Management_System2
 {
     partial class AdminAttendance
     {
@@ -29,30 +29,17 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges45 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges46 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            DataGridViewCellStyle dataGridViewCellStyle22 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle23 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle24 = new DataGridViewCellStyle();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges47 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges48 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges43 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminAttendance));
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges44 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(components);
-            teacherPanel = new Guna.UI2.WinForms.Guna2Panel();
-            comboBoxLanguage = new ComboBox();
-            guna2ControlBox2 = new Guna.UI2.WinForms.Guna2ControlBox();
-            guna2ControlBox1 = new Guna.UI2.WinForms.Guna2ControlBox();
-            label1 = new Label();
-            pictureBox1 = new PictureBox();
-            guna2Separator1 = new Guna.UI2.WinForms.Guna2Separator();
             dateTimePicker = new Guna.UI2.WinForms.Guna2DateTimePicker();
             guna2DragControl1 = new Guna.UI2.WinForms.Guna2DragControl(components);
             comboBox1 = new ComboBox();
@@ -66,108 +53,38 @@
             pictureBox4 = new PictureBox();
             label3 = new Label();
             label4 = new Label();
-            teacherPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            menuStrip1 = new MenuStrip();
+            fileToolStripMenuItem = new ToolStripMenuItem();
+            newToolStripMenuItem = new ToolStripMenuItem();
+            loadToolStripMenuItem = new ToolStripMenuItem();
+            saveToolStripMenuItem = new ToolStripMenuItem();
+            eToolStripMenuItem = new ToolStripMenuItem();
+            pDFToolStripMenuItem = new ToolStripMenuItem();
+            eXCELToolStripMenuItem = new ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)dataGrid).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
+            menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
             // guna2Elipse1
             // 
             guna2Elipse1.TargetControl = this;
             // 
-            // teacherPanel
-            // 
-            teacherPanel.Controls.Add(comboBoxLanguage);
-            teacherPanel.Controls.Add(guna2ControlBox2);
-            teacherPanel.Controls.Add(guna2ControlBox1);
-            teacherPanel.Controls.Add(label1);
-            teacherPanel.Controls.Add(pictureBox1);
-            teacherPanel.CustomizableEdges = customizableEdges9;
-            teacherPanel.Dock = DockStyle.Top;
-            teacherPanel.Location = new Point(0, 0);
-            teacherPanel.Name = "teacherPanel";
-            teacherPanel.ShadowDecoration.CustomizableEdges = customizableEdges10;
-            teacherPanel.Size = new Size(857, 65);
-            teacherPanel.TabIndex = 0;
-            // 
-            // comboBoxLanguage
-            // 
-            comboBoxLanguage.FormattingEnabled = true;
-            comboBoxLanguage.Location = new Point(594, 21);
-            comboBoxLanguage.Name = "comboBoxLanguage";
-            comboBoxLanguage.Size = new Size(132, 28);
-            comboBoxLanguage.TabIndex = 5;
-            comboBoxLanguage.SelectedIndexChanged += comboBoxLanguage_SelectedIndexChanged;
-            // 
-            // guna2ControlBox2
-            // 
-            guna2ControlBox2.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            guna2ControlBox2.ControlBoxType = Guna.UI2.WinForms.Enums.ControlBoxType.MinimizeBox;
-            guna2ControlBox2.CustomizableEdges = customizableEdges5;
-            guna2ControlBox2.FillColor = Color.FromArgb(139, 152, 166);
-            guna2ControlBox2.IconColor = Color.White;
-            guna2ControlBox2.Location = new Point(750, 21);
-            guna2ControlBox2.Name = "guna2ControlBox2";
-            guna2ControlBox2.ShadowDecoration.CustomizableEdges = customizableEdges6;
-            guna2ControlBox2.Size = new Size(40, 29);
-            guna2ControlBox2.TabIndex = 4;
-            // 
-            // guna2ControlBox1
-            // 
-            guna2ControlBox1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            guna2ControlBox1.CustomizableEdges = customizableEdges7;
-            guna2ControlBox1.FillColor = Color.FromArgb(139, 152, 166);
-            guna2ControlBox1.IconColor = Color.White;
-            guna2ControlBox1.Location = new Point(806, 21);
-            guna2ControlBox1.Name = "guna2ControlBox1";
-            guna2ControlBox1.ShadowDecoration.CustomizableEdges = customizableEdges8;
-            guna2ControlBox1.Size = new Size(40, 29);
-            guna2ControlBox1.TabIndex = 3;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Century Gothic", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.ForeColor = Color.FromArgb(67, 3, 125);
-            label1.Location = new Point(116, 25);
-            label1.Name = "label1";
-            label1.Size = new Size(186, 27);
-            label1.TabIndex = 2;
-            label1.Text = "Welcom Admin";
-            // 
-            // pictureBox1
-            // 
-            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(11, 12);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(89, 50);
-            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox1.TabIndex = 1;
-            pictureBox1.TabStop = false;
-            // 
-            // guna2Separator1
-            // 
-            guna2Separator1.FillThickness = 3;
-            guna2Separator1.Location = new Point(-19, 56);
-            guna2Separator1.Name = "guna2Separator1";
-            guna2Separator1.Size = new Size(877, 10);
-            guna2Separator1.TabIndex = 1;
-            // 
             // dateTimePicker
             // 
             dateTimePicker.Checked = true;
-            dateTimePicker.CustomizableEdges = customizableEdges3;
+            dateTimePicker.CustomizableEdges = customizableEdges45;
             dateTimePicker.FillColor = Color.DodgerBlue;
             dateTimePicker.Font = new Font("Segoe UI", 9F);
             dateTimePicker.ForeColor = SystemColors.ButtonFace;
             dateTimePicker.Format = DateTimePickerFormat.Long;
-            dateTimePicker.Location = new Point(78, 141);
+            dateTimePicker.Location = new Point(98, 176);
+            dateTimePicker.Margin = new Padding(4);
             dateTimePicker.MaxDate = new DateTime(9998, 12, 31, 0, 0, 0, 0);
             dateTimePicker.MinDate = new DateTime(1753, 1, 1, 0, 0, 0, 0);
             dateTimePicker.Name = "dateTimePicker";
-            dateTimePicker.ShadowDecoration.CustomizableEdges = customizableEdges4;
-            dateTimePicker.Size = new Size(310, 36);
+            dateTimePicker.ShadowDecoration.CustomizableEdges = customizableEdges46;
+            dateTimePicker.Size = new Size(388, 45);
             dateTimePicker.TabIndex = 2;
             dateTimePicker.Value = new DateTime(2024, 2, 16, 17, 14, 22, 39);
             dateTimePicker.ValueChanged += dateTimePicker_ValueChanged;
@@ -175,17 +92,17 @@
             // guna2DragControl1
             // 
             guna2DragControl1.DockIndicatorTransparencyValue = 0.6D;
-            guna2DragControl1.TargetControl = teacherPanel;
             guna2DragControl1.UseTransparentDrag = true;
             // 
             // comboBox1
             // 
             comboBox1.FormattingEnabled = true;
             comboBox1.IntegralHeight = false;
-            comboBox1.ItemHeight = 20;
-            comboBox1.Location = new Point(537, 141);
+            comboBox1.ItemHeight = 25;
+            comboBox1.Location = new Point(671, 176);
+            comboBox1.Margin = new Padding(4);
             comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(165, 28);
+            comboBox1.Size = new Size(205, 33);
             comboBox1.TabIndex = 8;
             comboBox1.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
             // 
@@ -195,29 +112,30 @@
             dataGrid.AllowUserToDeleteRows = false;
             dataGrid.AllowUserToResizeColumns = false;
             dataGrid.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = Color.White;
-            dataGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = Color.FromArgb(100, 88, 255);
-            dataGridViewCellStyle2.Font = new Font("Microsoft Sans Serif", 8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle2.ForeColor = Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
-            dataGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle22.BackColor = Color.White;
+            dataGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle22;
+            dataGridViewCellStyle23.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle23.BackColor = Color.FromArgb(100, 88, 255);
+            dataGridViewCellStyle23.Font = new Font("Microsoft Sans Serif", 8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle23.ForeColor = Color.White;
+            dataGridViewCellStyle23.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle23.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle23.WrapMode = DataGridViewTriState.True;
+            dataGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle23;
             dataGrid.ColumnHeadersHeight = 22;
             dataGrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             dataGrid.Columns.AddRange(new DataGridViewColumn[] { StudentID, StudentName, AbsentStatus });
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = Color.White;
-            dataGridViewCellStyle3.Font = new Font("Microsoft Sans Serif", 8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle3.ForeColor = Color.FromArgb(71, 69, 94);
-            dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(231, 229, 255);
-            dataGridViewCellStyle3.SelectionForeColor = Color.FromArgb(71, 69, 94);
-            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
-            dataGrid.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle24.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle24.BackColor = Color.White;
+            dataGridViewCellStyle24.Font = new Font("Microsoft Sans Serif", 8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle24.ForeColor = Color.FromArgb(71, 69, 94);
+            dataGridViewCellStyle24.SelectionBackColor = Color.FromArgb(231, 229, 255);
+            dataGridViewCellStyle24.SelectionForeColor = Color.FromArgb(71, 69, 94);
+            dataGridViewCellStyle24.WrapMode = DataGridViewTriState.False;
+            dataGrid.DefaultCellStyle = dataGridViewCellStyle24;
             dataGrid.GridColor = Color.FromArgb(231, 229, 255);
-            dataGrid.Location = new Point(78, 198);
+            dataGrid.Location = new Point(98, 248);
+            dataGrid.Margin = new Padding(4);
             dataGrid.Name = "dataGrid";
             dataGrid.RowHeadersVisible = false;
             dataGrid.RowHeadersWidth = 62;
@@ -227,7 +145,7 @@
             dataGrid.ShowCellToolTips = false;
             dataGrid.ShowEditingIcon = false;
             dataGrid.ShowRowErrors = false;
-            dataGrid.Size = new Size(720, 263);
+            dataGrid.Size = new Size(900, 329);
             dataGrid.TabIndex = 9;
             dataGrid.ThemeStyle.AlternatingRowsStyle.BackColor = Color.White;
             dataGrid.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -274,7 +192,7 @@
             // 
             // guna2Button1
             // 
-            guna2Button1.CustomizableEdges = customizableEdges11;
+            guna2Button1.CustomizableEdges = customizableEdges47;
             guna2Button1.DisabledState.BorderColor = Color.DarkGray;
             guna2Button1.DisabledState.CustomBorderColor = Color.DarkGray;
             guna2Button1.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -284,10 +202,11 @@
             guna2Button1.Image = (Image)resources.GetObject("guna2Button1.Image");
             guna2Button1.ImageAlign = HorizontalAlignment.Right;
             guna2Button1.ImageSize = new Size(64, 64);
-            guna2Button1.Location = new Point(498, 494);
+            guna2Button1.Location = new Point(622, 618);
+            guna2Button1.Margin = new Padding(4);
             guna2Button1.Name = "guna2Button1";
-            guna2Button1.ShadowDecoration.CustomizableEdges = customizableEdges12;
-            guna2Button1.Size = new Size(258, 89);
+            guna2Button1.ShadowDecoration.CustomizableEdges = customizableEdges48;
+            guna2Button1.Size = new Size(322, 111);
             guna2Button1.TabIndex = 10;
             guna2Button1.Text = "Export to EXCEL";
             guna2Button1.TextAlign = HorizontalAlignment.Left;
@@ -296,7 +215,7 @@
             // guna2Button2
             // 
             guna2Button2.BackColor = Color.Transparent;
-            guna2Button2.CustomizableEdges = customizableEdges1;
+            guna2Button2.CustomizableEdges = customizableEdges43;
             guna2Button2.DisabledState.BorderColor = Color.DarkGray;
             guna2Button2.DisabledState.CustomBorderColor = Color.DarkGray;
             guna2Button2.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -306,10 +225,11 @@
             guna2Button2.Image = (Image)resources.GetObject("guna2Button2.Image");
             guna2Button2.ImageAlign = HorizontalAlignment.Right;
             guna2Button2.ImageSize = new Size(64, 64);
-            guna2Button2.Location = new Point(140, 494);
+            guna2Button2.Location = new Point(175, 618);
+            guna2Button2.Margin = new Padding(4);
             guna2Button2.Name = "guna2Button2";
-            guna2Button2.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            guna2Button2.Size = new Size(258, 89);
+            guna2Button2.ShadowDecoration.CustomizableEdges = customizableEdges44;
+            guna2Button2.Size = new Size(322, 111);
             guna2Button2.TabIndex = 11;
             guna2Button2.Text = "Export to PDF";
             guna2Button2.TextAlign = HorizontalAlignment.Left;
@@ -324,9 +244,10 @@
             // 
             pictureBox4.Image = Attendence_System.Properties.Resources.time;
             pictureBox4.ImeMode = ImeMode.NoControl;
-            pictureBox4.Location = new Point(21, 68);
+            pictureBox4.Location = new Point(26, 85);
+            pictureBox4.Margin = new Padding(4);
             pictureBox4.Name = "pictureBox4";
-            pictureBox4.Size = new Size(28, 25);
+            pictureBox4.Size = new Size(35, 31);
             pictureBox4.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox4.TabIndex = 25;
             pictureBox4.TabStop = false;
@@ -337,9 +258,10 @@
             label3.Font = new Font("Century Gothic", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label3.ForeColor = Color.FromArgb(67, 3, 125);
             label3.ImeMode = ImeMode.NoControl;
-            label3.Location = new Point(20, 119);
+            label3.Location = new Point(25, 149);
+            label3.Margin = new Padding(4, 0, 4, 0);
             label3.Name = "label3";
-            label3.Size = new Size(43, 18);
+            label3.Size = new Size(52, 22);
             label3.TabIndex = 24;
             label3.Text = "Date";
             // 
@@ -349,17 +271,82 @@
             label4.Font = new Font("Century Gothic", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label4.ForeColor = Color.FromArgb(67, 3, 125);
             label4.ImeMode = ImeMode.NoControl;
-            label4.Location = new Point(21, 101);
+            label4.Location = new Point(26, 126);
+            label4.Margin = new Padding(4, 0, 4, 0);
             label4.Name = "label4";
-            label4.Size = new Size(42, 18);
+            label4.Size = new Size(51, 22);
             label4.TabIndex = 23;
             label4.Text = "Time";
             // 
+            // menuStrip1
+            // 
+            menuStrip1.ImageScalingSize = new Size(24, 24);
+            menuStrip1.Items.AddRange(new ToolStripItem[] { fileToolStripMenuItem, eToolStripMenuItem });
+            menuStrip1.Location = new Point(0, 0);
+            menuStrip1.Name = "menuStrip1";
+            menuStrip1.Size = new Size(1071, 33);
+            menuStrip1.TabIndex = 26;
+            menuStrip1.Text = "menuStrip1";
+            // 
+            // fileToolStripMenuItem
+            // 
+            fileToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { newToolStripMenuItem, loadToolStripMenuItem, saveToolStripMenuItem });
+            fileToolStripMenuItem.Name = "fileToolStripMenuItem";
+            fileToolStripMenuItem.Size = new Size(54, 29);
+            fileToolStripMenuItem.Text = "&File";
+            // 
+            // newToolStripMenuItem
+            // 
+            newToolStripMenuItem.Name = "newToolStripMenuItem";
+            newToolStripMenuItem.ShortcutKeys = Keys.Control | Keys.N;
+            newToolStripMenuItem.Size = new Size(270, 34);
+            newToolStripMenuItem.Text = "New";
+            // 
+            // loadToolStripMenuItem
+            // 
+            loadToolStripMenuItem.Name = "loadToolStripMenuItem";
+            loadToolStripMenuItem.ShortcutKeys = Keys.Control | Keys.O;
+            loadToolStripMenuItem.Size = new Size(270, 34);
+            loadToolStripMenuItem.Text = "Load";
+            loadToolStripMenuItem.Click += loadToolStripMenuItem_Click;
+            // 
+            // saveToolStripMenuItem
+            // 
+            saveToolStripMenuItem.Name = "saveToolStripMenuItem";
+            saveToolStripMenuItem.ShortcutKeys = Keys.Control | Keys.S;
+            saveToolStripMenuItem.Size = new Size(270, 34);
+            saveToolStripMenuItem.Text = "Save";
+            saveToolStripMenuItem.Click += saveToolStripMenuItem_Click;
+            // 
+            // eToolStripMenuItem
+            // 
+            eToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { pDFToolStripMenuItem, eXCELToolStripMenuItem });
+            eToolStripMenuItem.Name = "eToolStripMenuItem";
+            eToolStripMenuItem.ShortcutKeys = Keys.Control | Keys.P;
+            eToolStripMenuItem.Size = new Size(79, 29);
+            eToolStripMenuItem.Text = "&Export";
+            // 
+            // pDFToolStripMenuItem
+            // 
+            pDFToolStripMenuItem.Name = "pDFToolStripMenuItem";
+            pDFToolStripMenuItem.ShortcutKeys = Keys.Control | Keys.P;
+            pDFToolStripMenuItem.Size = new Size(270, 34);
+            pDFToolStripMenuItem.Text = "PDF";
+            pDFToolStripMenuItem.Click += pDFToolStripMenuItem_Click;
+            // 
+            // eXCELToolStripMenuItem
+            // 
+            eXCELToolStripMenuItem.Name = "eXCELToolStripMenuItem";
+            eXCELToolStripMenuItem.ShortcutKeys = Keys.Control | Keys.E;
+            eXCELToolStripMenuItem.Size = new Size(270, 34);
+            eXCELToolStripMenuItem.Text = "EXCEL";
+            eXCELToolStripMenuItem.Click += eXCELToolStripMenuItem_Click;
+            // 
             // AdminAttendance
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(857, 595);
+            ClientSize = new Size(1071, 744);
             Controls.Add(pictureBox4);
             Controls.Add(label3);
             Controls.Add(label4);
@@ -367,19 +354,19 @@
             Controls.Add(dataGrid);
             Controls.Add(comboBox1);
             Controls.Add(dateTimePicker);
-            Controls.Add(guna2Separator1);
-            Controls.Add(teacherPanel);
             Controls.Add(guna2Button1);
+            Controls.Add(menuStrip1);
             FormBorderStyle = FormBorderStyle.None;
+            MainMenuStrip = menuStrip1;
+            Margin = new Padding(4);
             Name = "AdminAttendance";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Attendance Sheet";
             Load += Form1_Load;
-            teacherPanel.ResumeLayout(false);
-            teacherPanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)dataGrid).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
+            menuStrip1.ResumeLayout(false);
+            menuStrip1.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -387,13 +374,7 @@
         #endregion
 
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
-        private Guna.UI2.WinForms.Guna2Panel teacherPanel;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private Guna.UI2.WinForms.Guna2ControlBox guna2ControlBox2;
-        private Guna.UI2.WinForms.Guna2ControlBox guna2ControlBox1;
-        private System.Windows.Forms.Label label1;
         private Guna.UI2.WinForms.Guna2DateTimePicker dateTimePicker;
-        private Guna.UI2.WinForms.Guna2Separator guna2Separator1;
         private Guna.UI2.WinForms.Guna2DragControl guna2DragControl1;
         private System.Windows.Forms.ComboBox comboBox1;
         private Guna.UI2.WinForms.Guna2DataGridView dataGrid;
@@ -402,11 +383,18 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn StudentID;
         private System.Windows.Forms.DataGridViewTextBoxColumn StudentName;
         private System.Windows.Forms.DataGridViewCheckBoxColumn AbsentStatus;
-        private ComboBox comboBoxLanguage;
         private System.Windows.Forms.Timer timer1;
         private PictureBox pictureBox4;
         private Label label3;
         private Label label4;
+        private MenuStrip menuStrip1;
+        private ToolStripMenuItem fileToolStripMenuItem;
+        private ToolStripMenuItem newToolStripMenuItem;
+        private ToolStripMenuItem loadToolStripMenuItem;
+        private ToolStripMenuItem saveToolStripMenuItem;
+        private ToolStripMenuItem eToolStripMenuItem;
+        private ToolStripMenuItem pDFToolStripMenuItem;
+        private ToolStripMenuItem eXCELToolStripMenuItem;
     }
 }
 
