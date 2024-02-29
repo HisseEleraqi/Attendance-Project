@@ -252,6 +252,7 @@
             buttonCancel.Text = "Cancel";
             buttonCancel.UseVisualStyleBackColor = false;
             buttonCancel.UseWaitCursor = true;
+            buttonCancel.Click += buttonCancel_Click;
             // 
             // label12
             // 
@@ -386,12 +387,12 @@
             // 
             comboBox1.BackColor = SystemColors.InactiveCaption;
             comboBox1.FormattingEnabled = true;
-            comboBox1.Items.AddRange(new object[] { "Add Class " });
             comboBox1.Location = new Point(1036, 44);
             comboBox1.Name = "comboBox1";
             comboBox1.Size = new Size(191, 29);
             comboBox1.TabIndex = 17;
             comboBox1.UseWaitCursor = true;
+            comboBox1.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
             // 
             // dataGridViewClass
             // 

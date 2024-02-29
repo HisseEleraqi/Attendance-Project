@@ -389,7 +389,7 @@
             tabPageSearchClass.Location = new Point(4, 4);
             tabPageSearchClass.Name = "tabPageSearchClass";
             tabPageSearchClass.Padding = new Padding(3);
-            tabPageSearchClass.Size = new Size(1332, 692);
+            tabPageSearchClass.Size = new Size(1332, 691);
             tabPageSearchClass.TabIndex = 1;
             tabPageSearchClass.Text = "Search Update Student";
             tabPageSearchClass.UseWaitCursor = true;
@@ -409,6 +409,7 @@
             ButtonAddToClass.Text = "Add to Class";
             ButtonAddToClass.UseVisualStyleBackColor = false;
             ButtonAddToClass.UseWaitCursor = true;
+            ButtonAddToClass.Visible = false;
             ButtonAddToClass.Click += ButtonAddToClass_Click;
             // 
             // label5
@@ -427,12 +428,12 @@
             // 
             comboBox1.BackColor = SystemColors.InactiveCaption;
             comboBox1.FormattingEnabled = true;
-            comboBox1.Items.AddRange(new object[] { "Add Class " });
             comboBox1.Location = new Point(1068, 62);
             comboBox1.Name = "comboBox1";
             comboBox1.Size = new Size(191, 29);
             comboBox1.TabIndex = 8;
             comboBox1.UseWaitCursor = true;
+            comboBox1.SelectedIndexChanged += comboBox1_SelectedIndexChanged_1;
             // 
             // dataGridViewClass
             // 
@@ -504,116 +505,6 @@
             dataGridViewCellStyle1.BackColor = Color.Red;
             dataGridViewCellStyle1.Font = new Font("Tahoma", 7.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             dataGridViewCellStyle1.ForeColor = Color.Black;
-            Update.DefaultCellStyle = dataGridViewCellStyle1;
-            Update.HeaderText = "UpdateStudent";
-            Update.MinimumWidth = 6;
-            Update.Name = "Update";
-            Update.ReadOnly = true;
-            Update.Text = "UpdateStudent";
-            Update.ToolTipText = "UpdateStudent";
-            Update.UseColumnTextForButtonValue = true;
-            // 
-            // pictureBox1
-            // 
-            pictureBox1.Image = Properties.Resources.ixkfkncp;
-            pictureBox1.Location = new Point(877, 394);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(41, 28);
-            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox1.TabIndex = 4;
-            pictureBox1.TabStop = false;
-            pictureBox1.UseWaitCursor = true;
-            // 
-            // textBoxSearchStudent
-            // 
-            textBoxSearchStudent.BackColor = Color.FromArgb(189, 195, 199);
-            textBoxSearchStudent.BorderStyle = BorderStyle.FixedSingle;
-            textBoxSearchStudent.ForeColor = Color.Black;
-            textBoxSearchStudent.Location = new Point(549, 215);
-            textBoxSearchStudent.Name = "textBoxSearchStudent";
-            textBoxSearchStudent.Size = new Size(307, 28);
-            textBoxSearchStudent.TabIndex = 3;
-            textBoxSearchStudent.UseWaitCursor = true;
-            textBoxSearchStudent.KeyDown += textBoxSearchStudent_KeyDown;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.BackColor = Color.Transparent;
-            label1.Font = new Font("Century Gothic", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.ForeColor = Color.FromArgb(52, 73, 94);
-            label1.Location = new Point(0, 24);
-            label1.Name = "label1";
-            label1.Size = new Size(227, 34);
-            label1.TabIndex = 0;
-            label1.Text = "Search Student:";
-            label1.UseWaitCursor = true;
-            // 
-            // pictureBox2
-            // 
-            pictureBox2.Image = Properties.Resources.ixkfkncp;
-            pictureBox2.Location = new Point(491, 215);
-            pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(52, 28);
-            pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox2.TabIndex = 7;
-            pictureBox2.TabStop = false;
-            pictureBox2.UseWaitCursor = true;
-            pictureBox2.Click += pictureBox2_Click;
-            // 
-
-
-            // 
-            // Column1
-            // 
-            Column1.HeaderText = "ID";
-            Column1.MinimumWidth = 6;
-            Column1.Name = "Column1";
-            Column1.ReadOnly = true;
-            // 
-            // Column4
-            // 
-            Column4.HeaderText = "Student Name";
-            Column4.MinimumWidth = 6;
-            Column4.Name = "Column4";
-            Column4.ReadOnly = true;
-            // 
-            // Column3
-            // 
-            Column3.HeaderText = "Email";
-            Column3.MinimumWidth = 6;
-            Column3.Name = "Column3";
-            Column3.ReadOnly = true;
-            // 
-            // Column2
-            // 
-            Column2.HeaderText = "Class Name";
-            Column2.MinimumWidth = 6;
-            Column2.Name = "Column2";
-            Column2.ReadOnly = true;
-            // 
-            // Column5
-            // 
-            Column5.HeaderText = "Add To Class";
-            Column5.MinimumWidth = 6;
-            Column5.Name = "Column5";
-            Column5.ReadOnly = true;
-            Column5.Resizable = DataGridViewTriState.True;
-            Column5.SortMode = DataGridViewColumnSortMode.Automatic;
-            // 
-            // Update
-            // 
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = Color.Red;
-            dataGridViewCellStyle1.Font = new Font("Tahoma", 7.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle1.ForeColor = Color.Black;
-            Update.DefaultCellStyle = dataGridViewCellStyle1;
-            Update.HeaderText = "Update";
-            Update.MinimumWidth = 6;
-            Update.Name = "Update";
-            Update.Text = "Update";
-            Update.ToolTipText = "Update";
-            Update.UseColumnTextForButtonValue = true;
             Update.DefaultCellStyle = dataGridViewCellStyle1;
             Update.HeaderText = "UpdateStudent";
             Update.MinimumWidth = 6;

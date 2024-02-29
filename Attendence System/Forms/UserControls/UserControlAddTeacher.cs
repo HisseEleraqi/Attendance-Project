@@ -86,6 +86,11 @@ namespace Attendence_System.Forms.UserControls
                     AddUser newUser = new AddUser(fullName, "teacher", Password, Email);
                     newUser.AddUserToXML();
                     MessageBox.Show("Teacher Added");
+                    textBoxFristName.Text = "";
+                    textBoxLastName.Text = "";
+                    textBoxEmail.Text = "";
+                    textBoxPassWord.Text = "";
+
                 }
             }
 
@@ -94,25 +99,83 @@ namespace Attendence_System.Forms.UserControls
                 MessageBox.Show("Plz fill All fileds");
             }
         }
-
-        private void UserControlAddTeacher_loed(object sender, EventArgs e)
+        public void fillTeacherData()
         {
+            dataGridViewClass.Rows.Clear();
             XmlDocument doc = new XmlDocument();
             doc.Load("..\\..\\..\\Resources\\Data.xml");
             XmlNodeList nodes = doc.SelectNodes("/school/users/user");
             dataGridViewClass.Rows.Clear();
+            bool flag;
             foreach (XmlNode node in nodes)
             {
                 string id = node.SelectSingleNode("id").InnerText;
                 string name = node.SelectSingleNode("username").InnerText;
                 string role = node.SelectSingleNode("role").InnerText;
-                //change row font color to black
-
+                string email = node.SelectSingleNode("email").InnerText;
+                flag = false;
                 if (role == "teacher")
                 {
-                    dataGridViewClass.Rows.Add(id, name, role, "test");
+                    if (comboBox1.SelectedItem != null)
+                    {
+                        string selectedClass = comboBox1.SelectedItem.ToString();
+                        XmlDocument xmlDocument = new XmlDocument();
+                        xmlDocument.Load("..\\..\\..\\Resources\\Attendance.xml");
+
+                        XmlNodeList classNodes = xmlDocument.SelectNodes("/AttendanceData/Class");
+                      for (int i = 1; i < classNodes.Count; i++)
+                        {
+                            if (classNodes[i].SelectSingleNode("ClassName").InnerText == selectedClass)
+                            {
+                                Console.WriteLine($"//Class[{i}][TeacherID=\"{id}\"]");
+                                if (xmlDocument.SelectSingleNode($"//Class[{i}][TeacherID=\"{id}\"]") != null)
+                                {
+                                    dataGridViewClass.Rows.Add(id, name, email, selectedClass, true);
+                                    break;
+
+                                }
+                            }
+                        }
+                        {
+
+                          
+                           
+                              
+
+                            
+
+
+                        }
+                        if (flag == false)
+                        {
+                            dataGridViewClass.Rows.Add(id, name, email, "not Erolled", false);
+                        }
+                    }
+                    else
+                    {
+                        dataGridViewClass.Rows.Add(id, name, email, "No Class choosed", false);
+                    }
                 }
             }
+
+        }
+        public void fillCompoBox()
+        {
+            XmlDocument doc = new XmlDocument();
+            doc.Load("..\\..\\..\\Resources\\Attendance.xml");
+            XmlNodeList nodes = doc.SelectNodes("/AttendanceData/Class");
+            foreach (XmlNode node in nodes)
+            {
+                string name = node.SelectSingleNode("ClassName").InnerText;
+                comboBox1.Items.Add(name);
+            }
+            comboBox1.SelectedIndex = 0;
+        }
+        private void UserControlAddTeacher_loed(object sender, EventArgs e)
+        {
+            fillTeacherData();
+            fillCompoBox();
+
         }
 
         private void textBoxSearchTeacher_KeyDown(object sender, KeyEventArgs e)
@@ -233,20 +296,124 @@ namespace Attendence_System.Forms.UserControls
 
         private void dataGridViewClass_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            
-                if (e.ColumnIndex == 5 && e.RowIndex >= 0) 
-                {
+
+            if (e.ColumnIndex == 5 && e.RowIndex >= 0)
+            {
                 string ID = dataGridViewClass.Rows[e.RowIndex].Cells[0].Value.ToString();
-                    using (FormCrudTeacher popup = new FormCrudTeacher(ID))
-                    {
-                        popup.ShowDialog();
-
-
-                    }
-
+                using (FormCrudTeacher popup = new FormCrudTeacher(ID))
+                {
+                    popup.ShowDialog();
+                    fillTeacherData();
 
                 }
+
+
             }
+            if (e.ColumnIndex == 4 && e.RowIndex >= 0)
+            {
+                if (dataGridViewClass.Rows[e.RowIndex].Cells[4].Value != null)
+                {
+                    if ((bool)dataGridViewClass.Rows[e.RowIndex].Cells[4].Value == true)
+                    {
+                        string userId = dataGridViewClass.Rows[e.RowIndex].Cells[0].Value.ToString();
+                        string className = dataGridViewClass.Rows[e.RowIndex].Cells[3].Value.ToString();
+                        DialogResult dialogResult = MessageBox.Show("Are you sure you want to delete this student from the class?", "Delete", MessageBoxButtons.YesNo);
+                        if (dialogResult == DialogResult.Yes)
+                        {
+                            XmlDocument doc = new XmlDocument();
+                            doc.Load("..\\..\\..\\Resources\\Attendance.xml");
+                            XmlNodeList nodes = doc.SelectNodes($"/AttendanceData/Class[ClassName=\"{className}\"]/Students/Student");
+                            foreach (XmlNode node in nodes)
+                            {
+                                if (node.SelectSingleNode("StudentID").InnerText == userId)
+                                {
+                                    node.ParentNode.RemoveChild(node);
+                                    doc.Save("..\\..\\..\\Resources\\Attendance.xml");
+                                    dataGridViewClass.Rows[e.RowIndex].Cells[4].Value = false;
+                                    MessageBox.Show("Student Deleted");
+
+                                }
+                            }
+                        }
+                    }
+                    else
+                    {
+                        string userId = dataGridViewClass.Rows[e.RowIndex].Cells[0].Value.ToString();
+                        string className = comboBox1.SelectedItem.ToString();
+                        DialogResult dialogResult = MessageBox.Show("Are you sure you want to add this student to the class?", "Add", MessageBoxButtons.YesNo);
+                        if (dialogResult == DialogResult.Yes)
+                        {
+                            XmlDocument doc = new XmlDocument();
+                            doc.Load("..\\..\\..\\Resources\\Attendance.xml");
+                            XmlNode node = doc.SelectSingleNode($"/AttendanceData/Class[ClassName=\"{className}\"]/Students");
+
+                            XmlElement student = doc.CreateElement("Student");
+                            student.InnerXml = $"<StudentID>{userId}</StudentID>";
+                            XmlElement studentName = doc.CreateElement("StudentName");
+                            studentName.InnerText = dataGridViewClass.Rows[e.RowIndex].Cells[1].Value.ToString();
+                            student.AppendChild(studentName);
+                            XmlElement attendanceRecords = doc.CreateElement("AttendanceRecords");
+                            List<string> absentDates = new List<string> { "2024-02-15", "2024-02-14", "2024-02-16", "2024-02-17", "2024-02-28", "2024-02-23", "2024-02-20", "2024-02-08", "2024-02-13", "2024-02-22", "2024-03-01" };
+
+                            foreach (string date in absentDates)
+                            {
+                                XmlElement record = doc.CreateElement("Record");
+
+                                XmlElement dateElement = doc.CreateElement("Date");
+                                dateElement.InnerText = date;
+                                record.AppendChild(dateElement);
+
+                                XmlElement statusElement = doc.CreateElement("Status");
+                                statusElement.InnerText = "Absent";
+                                record.AppendChild(statusElement);
+
+                                attendanceRecords.AppendChild(record);
+                            }
+
+                            student.AppendChild(attendanceRecords);
+                            node.AppendChild(student);
+
+                            doc.Save("..\\..\\..\\Resources\\Attendance.xml");
+                            dataGridViewClass.Rows[e.RowIndex].Cells[4].Value = true;
+                            MessageBox.Show("Student Added");
+                            
+                        }
+
+                    }
+                }
+            }
+
+        }
+
+        private void buttonCancel_Click(object sender, EventArgs e)
+        {
+
+            if (string.IsNullOrEmpty(textBoxFristName.Text) && string.IsNullOrEmpty(textBoxLastName.Text) && string.IsNullOrEmpty(textBoxEmail.Text) && string.IsNullOrEmpty(textBoxPassWord.Text))
+            {
+                textBoxFristName.Text = "";
+                textBoxLastName.Text = "";
+                textBoxEmail.Text = "";
+                textBoxPassWord.Text = "";
+            }
+            else
+            {
+
+                DialogResult dialogResult = MessageBox.Show("Are you sure you want to clear all fields?", "Clear Fields", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    textBoxFristName.Text = "";
+                    textBoxLastName.Text = "";
+                    textBoxEmail.Text = "";
+                    textBoxPassWord.Text = "";
+                }
+            }
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            fillTeacherData();
+            Console.WriteLine("changed");
+        }
     }
 }
 

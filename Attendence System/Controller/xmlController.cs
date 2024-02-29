@@ -168,14 +168,12 @@ namespace Attendence_Management_System
             XmlNode NameNode = root.OwnerDocument.CreateElement("ClassName");
             NameNode.InnerText = name;
             XmlNode teacherIdNode = root.OwnerDocument.CreateElement("TeacherID");
-            teacherIdNode.InnerText = "0";
 
             XmlNode teacherNameNode = root.OwnerDocument.CreateElement("TeacherName");
-            teacherIdNode.InnerText = "0";
+            teacherIdNode.InnerText = "none";
 
             XmlNode Students = root.OwnerDocument.CreateElement("Students");
             XmlNode student = root.OwnerDocument.CreateElement("Student");
-            student.InnerText = "0";
             Students.AppendChild(student);
 
             user.AppendChild(IdNode);
@@ -294,6 +292,21 @@ namespace Attendence_Management_System
             Roler.ParentNode.RemoveChild(Roler);
             root.OwnerDocument.Save("../../../Resources/Data.xml");
         }
+        //public void fillDataGrid(string dataGrid, string className)
+        //{
+        //    dataGrid.Rows.Clear();
+
+        //    XmlDocument doc = new XmlDocument();
+        //    doc.Load("..\\..\\..\\Resources\\Attendance.xml");
+        //    XmlNodeList students = doc.SelectNodes($"/AttendanceData/Class[ClassName=\"{comboBoxClassName.SelectedItem}\"]/Students/Student");
+        //    Console.WriteLine($"/AttendanceData/Class[ClassName=\"{comboBoxClassName.SelectedItem}\"]/Students/Student");
+        //    foreach (XmlNode student in students)
+        //    {
+        //        string id = student.SelectSingleNode("StudentID").InnerText;
+        //        string name = student.SelectSingleNode("StudentName").InnerText;
+        //        dataGridViewClass.Rows.Add(id, name, comboBoxClassName.SelectedItem.ToString());
+        //    }
+        //}
     }
 
 }
