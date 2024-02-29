@@ -1,147 +1,172 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <school>
-  <students>
-    <student id="ST-1">
-      <name>Ebrahim</name>
-      <classes>
-        <class id="CLS-1" />
-        <class id="CLS-2" />
-      </classes>
-    </student>
-    <student id="ST-2">
-      <name>Hissen</name>
-      <classes>
-        <class id="CLS-1" />
-        <class id="CLS-2" />
-      </classes>
-    </student>
-    <student id="ST-3">
-      <name>3sawy</name>
-      <classes>
-        <class id="CLS-1" />
-        <class id="CLS-2" />
-      </classes>
-    </student>
-    
-  </students>
-  <teachers>
-    <teacher id="TE-1">
-      <name>Hema</name>
-      <classes>
-        <class id="CLS-1" />
-      </classes>
-    </teacher>
-    <teacher id="TE-2">
-      <name>hema sadf</name>
-    </teacher>
-  </teachers>
-  <admins>
-    <admin id="AD-1">
-      <name>Hissen</name>
-    </admin>
-  </admins>
-  <users>
-    <user>
-      <id>ST-1</id>
-      <username>Ebrahim Dawoud</username>
-      <email>hema</email>
-      <password>123</password>
-      <role>student</role>
-      <warning>false</warning>
-      <fired>false</fired>
-    </user>
-    <user>
-      <id>ST-2</id>
-      <username>Hissen</username>
-      <email>hissenn</email>
-      <password>123</password>
-      <role>student</role>
-    </user>
-    <user>
-      <id>ST-3</id>
-      <username>3sawy</username>
-      <email>3sawy</email>
-      <password>123</password>
-      <role>student</role>
-    </user>
-    <user>
-      <id>TE-2</id>
-      <username>Ahmed El3sawy</username>
-      <email>esawy</email>
-      <password>123</password>
-      <role>Teacher</role>
-    </user>
-    <user>
-      <id>T002</id>
-      <username>Ahmed El3sawy</username>
-      <email>esawy2</email>
-      <password>123</password>
-      <role>Teacher</role>
-    </user>
-    
-    
-    <user>
-      <id>TE-4</id>
-      <username>KHALED Gala</username>
-      <role>teacher</role>
-      <password>123</password>
-      <email>khaled@example.com</email>
-    </user>
-    <user>
-      <id>632b155e-48d8-41c6-a332-cc16382439ae</id>
-      <username>hema Ebrahim</username>
-      <role>teacher</role>
-      <password>AdFead202@@</password>
-      <email>Ebrahim@example.comd</email>
-    </user>
-    <user>
-      <id>a3290383-c616-4490-ba87-79de1848220e</id>
-      <username>jsdhafjk fjkasdhfjk</username>
-      <role>teacher</role>
-      <password>Ahema2023@@</password>
-      <email>sadfasdf@gmail.com</email>
-    </user>
-  
-    
-  </users>
-  <!--<classes>
-    <class>
-      <id>CL-1</id>
-      <name>Math</name>
-      <teacher id="TE-1" />
-      <student id="ST-1" />
-      <student id="ST-2" />
-      <student id="ST-3" />
-    </class>
-    <class>
-    </class>
-    <class>
-      <id>CL-0</id>
-      <name>Hema</name>
-    </class>
-    <class>
-      <id>CLS-1</id>
-      <name>JS</name>
-    </class>
-    <class>
-      <id>CLS-1</id>
-      <name>HAMED</name>
-    </class>
-    <class>
-      <id>CLS-1</id>
-      <name>HEHE</name>
-    </class>
-    <class>
-      <id>CLS-1</id>
-      <name>EMAD</name>
-    </class>
-    <class>
-      <id>CLS-4</id>
-      <name>A7A</name>
-    </class>
-    <class>
-      <id>97bf7c02-846c-4e41-bb7a-77884d57dc9f</id>
-      <name>22df</name>
-    </class>
-  </classes>-->
+	<students>
+		<student id="ST-1">
+			<name>Ebrahim Osama</name>
+			<classes>
+				<class id="CL-1" />
+				<class id="CL-2" />
+			</classes>
+		</student>
+		<student id="ST-2">
+			<name>Hissen</name>
+			<classes>
+				<class id="CL-1" />
+				<class id="CL-2" />
+			</classes>
+		</student>
+		<student id="ST-3">
+			<name>3sawy</name>
+			<classes>
+				<class id="CL-1" />
+				<class id="CL-2" />
+			</classes>
+		</student>
+		<student id="ST-4">
+			<name>sfds sf</name>
+		</student>
+		<student id="ST-6">
+			<name>HHHH A</name>
+		</student>
+	</students>
+	<teachers>
+		<teacher id="TE-1">
+			<name>Ebraheeem TE</name>
+			<classes>
+				<class id="CL-1" />
+				<class id="CL-2" />
+			</classes>
+		</teacher>
+		<teacher id="TE-2">
+			<name>hema sadf</name>
+		</teacher>
+		<teacher id="TE-3">
+			<name>Hiss</name>
+		</teacher>
+		<teacher id="TE-4">
+			<name>KHALED Gala</name>
+		</teacher>
+	</teachers>
+	<admins>
+		<admin id="AD-1">
+			<name>Hissen</name>
+		</admin>
+	</admins>
+	<users>
+		<user>
+			<id>ST-1</id>
+			<username>Ebrahim Dawoud</username>
+			<email>hema</email>
+			<password>123</password>
+			<role>student</role>
+			<warning>false</warning>
+			<fired>false</fired>
+		</user>
+		<user>
+			<id>ST-2</id>
+			<username>Hissen</username>
+			<email>hissenn</email>
+			<password>123</password>
+			<role>student</role>
+		</user>
+		<user>
+			<id>ST-3</id>
+			<username>3sawy</username>
+			<email>3sawy</email>
+			<password>123</password>
+			<role>student</role>
+		</user>
+		<user>
+			<id>T001</id>
+			<username>Ahmed El3sawy</username>
+			<email>esawy</email>
+			<password>123</password>
+			<role>Teacher</role>
+		</user>
+		<user>
+			<id>T002</id>
+			<username>Ahmed El3sawy</username>
+			<email>esawy2</email>
+			<password>123</password>
+			<role>Teacher</role>
+		</user>
+		<user>
+			<id>S101</id>
+			<username>Ahmed El3sawy</username>
+			<email>esawy3</email>
+			<password>123</password>
+			<role>Student</role>
+		</user>
+		<user>
+			<id>AD-1</id>
+			<username>Hissen Eleraqi</username>
+			<email>hissen</email>
+			<password>123</password>
+			<role>Admin</role>
+		</user>
+		<user>
+			<id>TE-4</id>
+			<username>KHALED Gala</username>
+			<role>teacher</role>
+			<password>123</password>
+			<email>khaled@example.com</email>
+		</user>
+		<user>
+			<id>TE-3</id>
+			<username>Hiss</username>
+			<role>teacher</role>
+			<password>Aahema12@</password>
+			<email>hiss@f.com</email>
+		</user>
+		<user>
+			<id>TE-2</id>
+			<username>Ebrahim</username>
+			<role>teacher</role>
+			<password>Aahema12@</password>
+			<email>hema@f.com</email>
+		</user>
+		<user>
+			<id>TE-1</id>
+			<username>Ashraf</username>
+			<role>teacher</role>
+			<password>Aahema12@</password>
+			<email>ashraf@f.com</email>
+		</user>
+		<user>
+			<id>ST-6</id>
+			<username>HHHH A</username>
+			<role>student</role>
+			<password>Aaaaaa@21</password>
+			<email>H@H.com</email>
+		</user>
+	</users>
+	<classes>
+		<class>
+			<id>CL-1</id>
+			<name>Math</name>
+			<teacher id="TE-1" />
+			<student id="ST-1" />
+			<student id="ST-2" />
+			<student id="ST-3" />
+		</class>
+		<class>
+		</class>
+		<class>
+			<id>CLS-1</id>
+			<name>HAMED</name>
+		</class>
+		<class>
+			<id>CLS-1</id>
+			<name>HEHE</name>
+		</class>
+		<class>
+			<id>CLS-1</id>
+			<name>EMAD</name>
+		</class>
+		<class>
+			<id>CLS-4</id>
+			<name>A7A</name>
+		</class>
+	
+	</classes>
 </school>

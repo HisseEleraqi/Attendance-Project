@@ -26,7 +26,7 @@ namespace Attendence_Management_System
         public static XmlDocument ReadSecondDocument()
         {
             XmlDocument XmlDoc = new XmlDocument();
-            XmlDoc.Load("../../../Resources/Data.xml");
+            XmlDoc.Load("../../../Resources/Attendance.xml");
             return XmlDoc;
         }
 
