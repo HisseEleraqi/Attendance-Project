@@ -26,7 +26,7 @@ namespace Attendence_Management_System
         public static XmlDocument ReadSecondDocument()
         {
             XmlDocument XmlDoc = new XmlDocument();
-            XmlDoc.Load("../../../Resources/Attendance.xml");
+            XmlDoc.Load("../../../Resources/Data.xml");
             return XmlDoc;
         }
 
@@ -258,6 +258,11 @@ namespace Attendence_Management_System
         {
             XmlDocument XmlDoc = ReadSecondDocument();
             XmlNode root = XmlDoc.SelectSingleNode("/AttendanceData");
+            // return if root is nukll
+            if (root == null)
+            {
+                return "0";
+            }
             return root.ChildNodes.Count.ToString();
         }
         public  void XMLAddTeacherToClass(string classID, string teacherID)
