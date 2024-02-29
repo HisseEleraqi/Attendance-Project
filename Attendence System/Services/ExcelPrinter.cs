@@ -26,11 +26,10 @@ namespace Attendence_Management_System
                 SaveAsExcel(dataGridView, saveFileDialog.FileName);
             }
 
-            // open the file after saving
-            System.Diagnostics.Process.Start(saveFileDialog.FileName);
+            
         }
 
-        private static void SaveAsExcel(DataGridView dataGridView, string filePath)
+        public static void SaveAsExcel(DataGridView dataGridView, string filePath)
         {
             ExcelPackage.LicenseContext = OfficeOpenXml.LicenseContext.NonCommercial;
 

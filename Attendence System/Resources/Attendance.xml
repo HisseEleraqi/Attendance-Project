@@ -54,6 +54,10 @@
             <Date>2024-03-01</Date>
             <Status>Absent</Status>
           </Record>
+          <Record>
+            <Date>2024-02-29</Date>
+            <Status>Present</Status>
+          </Record>
         </AttendanceRecords>
       </Student>
       <Student>
@@ -103,6 +107,10 @@
           <Record>
             <Date>2024-03-01</Date>
             <Status>Absent</Status>
+          </Record>
+          <Record>
+            <Date>2024-02-29</Date>
+            <Status>Present</Status>
           </Record>
         </AttendanceRecords>
       </Student>

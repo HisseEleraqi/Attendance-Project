@@ -4,29 +4,66 @@ using System.Drawing;
 using System.Reflection.Emit;
 using System.Windows.Forms;
 using Attendence_Management_System.Forms;
-
-namespace Attendence_Management_System
+namespace Attendence_Management_System2
 {
     public partial class AdminAttendance : Form
     {
-        public AttendanceXmlController xmlController;
+        public Attendence_Management_System.AttendanceXmlController xmlController;
 
         public string teacherID;
+        private string currentXmlFilePath;
+        private System.Timers.Timer backupTimer;
+
 
         public string className;
         public AdminAttendance(string xmlFilePath)
         {
             InitializeComponent();
-            xmlController = new AttendanceXmlController(xmlFilePath);
+            xmlController = new Attendence_Management_System.AttendanceXmlController(xmlFilePath);
+            currentXmlFilePath = xmlFilePath;
 
+            backupTimer = new System.Timers.Timer(60 * 60 * 1000); 
+            backupTimer.Elapsed += (sender, e) => Backup();
+            backupTimer.Start();
+        }
+        //Implementing Backup Functionality to backup Attendance.xml file every hour
+        private void Backup()
+        {
+            try
+            {
+                // Ensure the Backup directory exists
+                string backupDirectory = Path.Combine(Path.GetDirectoryName(currentXmlFilePath), "Backup");
+
+                if (!Directory.Exists(backupDirectory))
+                {
+                    Directory.CreateDirectory(backupDirectory);
+                }
+
+                // Create a timestamp for the backup file name
+                string timeStamp = DateTime.Now.ToString("yyyyMMddHHmmss");
+
+                // Construct the destination path with the timestamp
+                string destinationFileName = $"AttendanceBackup_{timeStamp}.xml";
+                string destinationPath = Path.Combine(backupDirectory, destinationFileName);
+
+                // Copy the file to the backup location
+                System.IO.File.Copy(currentXmlFilePath, destinationPath, true);
+
+                // Optionally, you can display a message or log the backup
+                MessageBox.Show($"Backup created: {destinationPath}", "Backup Successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                // Handle or log the exception
+                MessageBox.Show($"Backup failed: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            comboBoxLanguage.Items.Add("English");
-            comboBoxLanguage.Items.Add("Arabic");
+            
             // Query and add student data to the DataGridView
-            List<Course> courses = xmlController.GetCourses();
+            List<Attendence_Management_System.Course> courses = xmlController.GetCourses();
 
             comboBox1.DataSource = courses;
             comboBox1.DisplayMember = "CourseName";
@@ -73,7 +110,7 @@ namespace Attendence_Management_System
 
         private void AddStudentDataToGrid(string className, string selectedDate)
         {
-            List<StudentData> studentList = xmlController.GetStudentDataByClassName(className, selectedDate);
+            List<Attendence_Management_System.StudentData> studentList = xmlController.GetStudentDataByClassName(className, selectedDate);
 
             // Clear existing rows
             dataGrid.Rows.Clear();
@@ -88,7 +125,7 @@ namespace Attendence_Management_System
 
         private void Print()
         {
-            DataGridViewPrinter.Print(dataGrid);
+            Attendence_Management_System.DataGridViewPrinter.Print(dataGrid);
         }
 
         private void Print2()
@@ -105,11 +142,10 @@ namespace Attendence_Management_System
             if (result == DialogResult.OK)
             {
                 // Access the existing excelPrinter instance, don't create a new one
-                ExcelPrinter.Print(dataGrid, saveFileDialog.FileName);
+                Attendence_Management_System.ExcelPrinter.SaveAsExcel(dataGrid, saveFileDialog.FileName);
             }
 
-            // Open the file after saving
-            System.Diagnostics.Process.Start(saveFileDialog.FileName);
+            
         }
 
 
@@ -165,6 +201,104 @@ namespace Attendence_Management_System
         {
             label4.Text = DateTime.Now.ToLongTimeString();
             label3.Text = DateTime.Now.ToLongDateString();
+        }
+
+        private void pDFToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Print();
+
+        }
+
+        private void eXCELToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Print2();
+        }
+
+        
+
+        private void loadToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            // Implement functionality for loading a new XML
+            // You may want to prompt the user for the file path
+            string newXmlFilePath = GetXmlFilePathFromUser();  // Implement GetXmlFilePathFromUser method
+            xmlController = new Attendence_Management_System.AttendanceXmlController(newXmlFilePath);
+            currentXmlFilePath = newXmlFilePath;
+            Class_Data();  // Refresh the UI for the loaded XML
+        }
+
+        private void saveToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            // Implement functionality for saving the current XML to another location
+            string newSaveFilePath = GetSaveFilePath();  // Implement GetSaveFilePath method
+            xmlController.SaveXml(newSaveFilePath);
+            currentXmlFilePath = newSaveFilePath;
+        }
+
+        // ... (existing code)
+
+        private string GetNewXmlFilePath()
+        {
+            // Implement logic to get a new XML file path, e.g., prompt the user for a new location
+            // Example: Use SaveFileDialog or input box
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            saveFileDialog.Filter = "XML Files (*.xml)|*.xml";
+            saveFileDialog.Title = "Save New XML File";
+            saveFileDialog.FileName = "NewAttendance.xml";
+
+            // Show the dialog and get the result
+            DialogResult result = saveFileDialog.ShowDialog();
+
+            // If the user clicks OK, return the selected file path
+            if (result == DialogResult.OK)
+            {
+                return saveFileDialog.FileName;
+            }
+
+            // Return null or throw an exception if the operation is canceled
+            return null;
+        }
+
+        private string GetXmlFilePathFromUser()
+        {
+            // Implement logic to get an existing XML file path, e.g., prompt the user to choose a file
+            // Example: Use OpenFileDialog or input box
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Filter = "XML Files (*.xml)|*.xml";
+            openFileDialog.Title = "Open XML File";
+
+            // Show the dialog and get the result
+            DialogResult result = openFileDialog.ShowDialog();
+
+            // If the user clicks OK, return the selected file path
+            if (result == DialogResult.OK)
+            {
+                return openFileDialog.FileName;
+            }
+
+            // Return null or throw an exception if the operation is canceled
+            return null;
+        }
+
+        private string GetSaveFilePath()
+        {
+            // Implement logic to get a new save location, e.g., prompt the user for a new location
+            // Example: Use SaveFileDialog or input box
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            saveFileDialog.Filter = "XML Files (*.xml)|*.xml";
+            saveFileDialog.Title = "Save XML File As";
+            saveFileDialog.FileName = "AttendanceCopy.xml";  // Default file name
+
+            // Show the dialog and get the result
+            DialogResult result = saveFileDialog.ShowDialog();
+
+            // If the user clicks OK, return the selected file path
+            if (result == DialogResult.OK)
+            {
+                return saveFileDialog.FileName;
+            }
+
+            // Return null or throw an exception if the operation is canceled
+            return null;
         }
     }
 }
