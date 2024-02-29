@@ -8,7 +8,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using System.Xml;
+using Attendence_Management_System;
 namespace Attendence_System.Forms
 {
     public partial class FormCrudTeacher : Form
@@ -22,7 +23,15 @@ namespace Attendence_System.Forms
             xmlController xmlCont = new xmlController();
             List<string> teacher = xmlCont.GetTeacher(ID);
             FstName.Text = teacher[0].Split(' ')[0];
-            LstName.Text = teacher[0].Split(' ')[1];
+            if (teacher[0].Split(' ')[1] != null)
+            {
+                LstName.Text = teacher[0].Split(' ')[1];
+            }
+            else
+            {
+                LstName.Text = " ";
+            }
+           
         }
 
         private void buttonUpdate_Click(object sender, EventArgs e)
@@ -56,9 +65,19 @@ namespace Attendence_System.Forms
             if (MessageBox.Show("Are you sure you want to delete?", "Delete", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 xmlController xmlController = new xmlController();
-                xmlController.deleteUserInXML(ID);
-                MessageBox.Show("Teacher Deleted");
-                this.Close();
+                XmlDocument XmlDoc = xmlController.ReadSecondDocument();
+                XmlNode TeacherIDNode = XmlDoc.SelectSingleNode($"//*[TeacherID=\"{ID}\"]/TeacherID");
+                if(TeacherIDNode != null)
+                {
+                    MessageBox.Show("Teacher is assigned to a class, cannot delete");
+                }
+                else
+                {
+                    xmlController.deleteUserInXML(ID);
+                    MessageBox.Show("Teacher Deleted");
+                    this.Close();
+                }
+                
             }
 
         }

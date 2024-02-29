@@ -112,7 +112,7 @@ namespace Attendence_System.Forms.UserControls
             XmlDocument doc = new XmlDocument();
             doc.Load("..\\..\\..\\Resources\\Attendance.xml");
             XmlNodeList students = doc.SelectNodes($"/AttendanceData/Class[ClassName=\"{comboBoxClassName.SelectedItem}\"]/Students/Student");
-            Console.WriteLine($"/AttendanceData/Class[ClassName=\"{comboBoxClassName.SelectedItem}\"]/Students/Student");
+            //Console.WriteLine($"/AttendanceData/Class[ClassName=\"{comboBoxClassName.SelectedItem}\"]/Students/Student");
             foreach (XmlNode student in students)
             {
              if(student.SelectSingleNode("StudentID") != null && student.SelectSingleNode("StudentName") != null)

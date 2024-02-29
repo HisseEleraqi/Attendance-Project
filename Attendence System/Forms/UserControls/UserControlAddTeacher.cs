@@ -1,4 +1,5 @@
-﻿using Attendence_System.Controller;
+﻿using Attendence_Management_System;
+using Attendence_System.Controller;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -121,30 +122,14 @@ namespace Attendence_System.Forms.UserControls
                         string selectedClass = comboBox1.SelectedItem.ToString();
                         XmlDocument xmlDocument = new XmlDocument();
                         xmlDocument.Load("..\\..\\..\\Resources\\Attendance.xml");
-
-                        XmlNodeList classNodes = xmlDocument.SelectNodes("/AttendanceData/Class");
-                      for (int i = 1; i < classNodes.Count; i++)
+                        XmlNode superVisorNode = xmlDocument.SelectSingleNode($"//*[ClassName=\"{selectedClass}\"][TeacherID='{id}']");
+                        if(superVisorNode != null)
                         {
-                            if (classNodes[i].SelectSingleNode("ClassName").InnerText == selectedClass)
-                            {
-                                Console.WriteLine($"//Class[{i}][TeacherID=\"{id}\"]");
-                                if (xmlDocument.SelectSingleNode($"//Class[{i}][TeacherID=\"{id}\"]") != null)
-                                {
-                                    dataGridViewClass.Rows.Add(id, name, email, selectedClass, true);
-                                    break;
-
-                                }
-                            }
+                            dataGridViewClass.Rows.Add(id, name, email, selectedClass, true);
+                            flag = true;
                         }
+               
                         {
-
-                          
-                           
-                              
-
-                            
-
-
                         }
                         if (flag == false)
                         {
@@ -317,22 +302,32 @@ namespace Attendence_System.Forms.UserControls
                     {
                         string userId = dataGridViewClass.Rows[e.RowIndex].Cells[0].Value.ToString();
                         string className = dataGridViewClass.Rows[e.RowIndex].Cells[3].Value.ToString();
-                        DialogResult dialogResult = MessageBox.Show("Are you sure you want to delete this student from the class?", "Delete", MessageBoxButtons.YesNo);
+                        DialogResult dialogResult = MessageBox.Show("Are you sure you want to delete this Teacher from the class?", "Delete", MessageBoxButtons.YesNo);
                         if (dialogResult == DialogResult.Yes)
                         {
                             XmlDocument doc = new XmlDocument();
                             doc.Load("..\\..\\..\\Resources\\Attendance.xml");
-                            XmlNodeList nodes = doc.SelectNodes($"/AttendanceData/Class[ClassName=\"{className}\"]/Students/Student");
-                            foreach (XmlNode node in nodes)
-                            {
-                                if (node.SelectSingleNode("StudentID").InnerText == userId)
-                                {
-                                    node.ParentNode.RemoveChild(node);
-                                    doc.Save("..\\..\\..\\Resources\\Attendance.xml");
-                                    dataGridViewClass.Rows[e.RowIndex].Cells[4].Value = false;
-                                    MessageBox.Show("Student Deleted");
+                            XmlNode TeacherIDNode = doc.SelectSingleNode($"//*[ClassName=\"{className}\"][TeacherID=\"{userId}\"]/TeacherID");
 
+                           // Console.WriteLine($"//*[ClassName=\"{className}\"][TeacherID=\"{userId}\"]/TeacherID");
+                            if (TeacherIDNode != null)
+                            {
+                                Console.WriteLine(TeacherIDNode.InnerText);
+                                XmlNode parent = TeacherIDNode.ParentNode;
+                                if (TeacherIDNode.NextSibling != null)
+                                {
+                                    parent.RemoveChild(TeacherIDNode.NextSibling);
                                 }
+                                parent.RemoveChild(TeacherIDNode);
+
+
+                                doc.Save("..\\..\\..\\Resources\\Attendance.xml");
+                                dataGridViewClass.Rows[e.RowIndex].Cells[4].Value = false;
+                                MessageBox.Show("Teacher Deleted");
+                            }
+                            else
+                            {
+                                MessageBox.Show("Teacher not found");
                             }
                         }
                     }
@@ -340,42 +335,31 @@ namespace Attendence_System.Forms.UserControls
                     {
                         string userId = dataGridViewClass.Rows[e.RowIndex].Cells[0].Value.ToString();
                         string className = comboBox1.SelectedItem.ToString();
-                        DialogResult dialogResult = MessageBox.Show("Are you sure you want to add this student to the class?", "Add", MessageBoxButtons.YesNo);
+                        DialogResult dialogResult = MessageBox.Show("Are you sure you want to add assign This Teacher to the class?", "Add", MessageBoxButtons.YesNo);
                         if (dialogResult == DialogResult.Yes)
                         {
                             XmlDocument doc = new XmlDocument();
                             doc.Load("..\\..\\..\\Resources\\Attendance.xml");
-                            XmlNode node = doc.SelectSingleNode($"/AttendanceData/Class[ClassName=\"{className}\"]/Students");
+                            XmlNode nodeParent = doc.SelectSingleNode($"/AttendanceData/Class[ClassName=\"{className}\"]");
 
-                            XmlElement student = doc.CreateElement("Student");
-                            student.InnerXml = $"<StudentID>{userId}</StudentID>";
-                            XmlElement studentName = doc.CreateElement("StudentName");
-                            studentName.InnerText = dataGridViewClass.Rows[e.RowIndex].Cells[1].Value.ToString();
-                            student.AppendChild(studentName);
-                            XmlElement attendanceRecords = doc.CreateElement("AttendanceRecords");
-                            List<string> absentDates = new List<string> { "2024-02-15", "2024-02-14", "2024-02-16", "2024-02-17", "2024-02-28", "2024-02-23", "2024-02-20", "2024-02-08", "2024-02-13", "2024-02-22", "2024-03-01" };
+                            XmlElement TeacherID = doc.CreateElement("TeacherID");
+                            TeacherID.InnerText = userId; 
+                            XmlElement TeacherName = doc.CreateElement("TeacherName");
+                            TeacherName.InnerText = dataGridViewClass.Rows[e.RowIndex].Cells[1].Value.ToString();
+                            XmlNode ClassName = nodeParent.SelectSingleNode("ClassName");
 
-                            foreach (string date in absentDates)
-                            {
-                                XmlElement record = doc.CreateElement("Record");
+                            //insert after ClassName node
+                            nodeParent.InsertAfter(TeacherID, ClassName);
 
-                                XmlElement dateElement = doc.CreateElement("Date");
-                                dateElement.InnerText = date;
-                                record.AppendChild(dateElement);
+                            nodeParent.InsertAfter(TeacherName, TeacherID);
 
-                                XmlElement statusElement = doc.CreateElement("Status");
-                                statusElement.InnerText = "Absent";
-                                record.AppendChild(statusElement);
 
-                                attendanceRecords.AppendChild(record);
-                            }
 
-                            student.AppendChild(attendanceRecords);
-                            node.AppendChild(student);
 
                             doc.Save("..\\..\\..\\Resources\\Attendance.xml");
                             dataGridViewClass.Rows[e.RowIndex].Cells[4].Value = true;
-                            MessageBox.Show("Student Added");
+                            dataGridViewClass.Rows[e.RowIndex].Cells[3].Value = className;
+                            MessageBox.Show("Teacher Added");
                             
                         }
 

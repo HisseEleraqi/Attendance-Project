@@ -94,9 +94,9 @@
             label6.ForeColor = Color.DarkBlue;
             label6.Location = new Point(257, 44);
             label6.Name = "label6";
-            label6.Size = new Size(172, 34);
+            label6.Size = new Size(181, 34);
             label6.TabIndex = 5;
-            label6.Text = "Edit Student";
+            label6.Text = "Edit Teacher";
             // 
             // FstName
             // 
@@ -178,7 +178,6 @@
             comboBoxLanguage.TabIndex = 14;
             comboBoxLanguage.SelectedIndexChanged += comboBoxLanguage_SelectedIndexChanged;
             // 
-
             // FormCrudTeacher
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);

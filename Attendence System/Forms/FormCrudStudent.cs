@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml;
 
 namespace Attendence_System.Forms
 {
@@ -21,6 +22,7 @@ namespace Attendence_System.Forms
             this.ID = ID;
             xmlController xmlController = new xmlController();
             List<string> student = xmlController.GetStudent(ID);
+            Console.WriteLine(student[0]);
             FstName.Text = student[0].Split(' ')[0];
             LstName.Text = student[0].Split(' ')[1];
 
@@ -66,9 +68,25 @@ namespace Attendence_System.Forms
             if (MessageBox.Show("Are you sure you want to delete this student?", "Delete", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 xmlController xmlController = new xmlController();
-                xmlController.deleteUserInXML(ID);
-                MessageBox.Show("Student Deleted");
-                this.Close();
+                XmlDocument XmlDoc = xmlController.ReadSecondDocument();
+
+                XmlNodeList StudentNodes = XmlDoc.SelectNodes($"//*[StudentID=\"{ID}\"]");
+                if(StudentNodes.Count > 0)
+                {
+                    if(MessageBox.Show("this student is assigned to classes Are u sure?", "Delete", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                    {
+                        xmlController.deleteUserInXML(ID);
+                        MessageBox.Show("Student Deleted");
+                        this.Close();
+                    }
+                }
+               else
+                {
+                    xmlController.deleteUserInXML(ID);
+                    MessageBox.Show("Student Deleted");
+                    this.Close();
+                }
+              
             }
         }
 

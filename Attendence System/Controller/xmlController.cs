@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.VisualBasic.ApplicationServices;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlTypes;
@@ -296,6 +297,29 @@ namespace Attendence_Management_System
             root.RemoveChild(user);
             Roler.ParentNode.RemoveChild(Roler);
             root.OwnerDocument.Save("../../../Resources/Data.xml");
+        }
+        //function to delete studetn from class
+        public static void deleteStudentFromClass( string StudentID)
+        {
+            XmlDocument XmlDoc = ReadSecondDocument();
+            XmlNodeList StudentNodes = XmlDoc.SelectNodes($"//*[StudentID=\"{StudentID}\"]");
+            if(StudentNodes.Count != 0)
+            {
+                foreach (XmlNode student in StudentNodes)
+                {
+                    student.ParentNode.RemoveChild(student);
+                }
+                XmlDoc.Save("../../../Resources/Attendance.xml");
+            }
+           
+        }
+        public static void deleteTeacherFromClass(string ClassName, string TeacherID)
+        {
+
+            XmlDocument XmlDoc = ReadSecondDocument();
+            XmlNode TeacherIDNode = XmlDoc.SelectSingleNode($"//*[ClassName=\"{ClassName}\"][TeacherID=\"{TeacherID}\"]/TeacherID");
+
+           // root.OwnerDocument.Save("../../../Resources/Attendance.xml");
         }
         //public void fillDataGrid(string dataGrid, string className)
         //{
