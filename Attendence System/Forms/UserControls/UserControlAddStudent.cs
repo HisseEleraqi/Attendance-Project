@@ -355,15 +355,20 @@ namespace Attendence_System.Forms.UserControls
                             XmlNodeList nodes = doc.SelectNodes($"/AttendanceData/Class[ClassName=\"{className}\"]/Students/Student");
                             foreach (XmlNode node in nodes)
                             {
-                                if (node.SelectSingleNode("StudentID").InnerText == userId)
+                                if(node.SelectSingleNode("StudentID") != null)
                                 {
-                                    node.ParentNode.RemoveChild(node);
-                                    doc.Save("..\\..\\..\\Resources\\Attendance.xml");
-                                    dataGridViewClass.Rows[e.RowIndex].Cells[4].Value = false;
-                                    MessageBox.Show("Student Deleted");
-                                    FillDataGrid();
+                                    if (node.SelectSingleNode("StudentID").InnerText == userId)
+                                    {
+                                        node.ParentNode.RemoveChild(node);
+                                        doc.Save("..\\..\\..\\Resources\\Attendance.xml");
+                                        dataGridViewClass.Rows[e.RowIndex].Cells[4].Value = false;
+                                        MessageBox.Show("Student Deleted");
+                                        FillDataGrid();
+
+                                    }
 
                                 }
+                                
                             }
                         }
                     }

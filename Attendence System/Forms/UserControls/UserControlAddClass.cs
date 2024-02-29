@@ -114,9 +114,15 @@ namespace Attendence_System.Forms.UserControls
             Console.WriteLine($"/AttendanceData/Class[ClassName=\"{comboBoxClassName.SelectedItem}\"]/Students/Student");
             foreach (XmlNode student in students)
             {
-                string id = student.SelectSingleNode("StudentID").InnerText;
-                string name = student.SelectSingleNode("StudentName").InnerText;
-                dataGridViewClass.Rows.Add(id, name, comboBoxClassName.SelectedItem.ToString());
+             if(student.SelectSingleNode("StudentID") != null && student.SelectSingleNode("StudentName") != null)
+                {
+                    string id = student.SelectSingleNode("StudentID").InnerText;
+                    string name = student.SelectSingleNode("StudentName").InnerText;
+                    dataGridViewClass.Rows.Add(id, name, comboBoxClassName.SelectedItem.ToString());
+                }
+                    
+                
+                
             }
         }
         public void FillCompoBox()

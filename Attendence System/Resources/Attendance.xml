@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <AttendanceData>
   <Class>
     <ClassID>CL-1</ClassID>
@@ -6,56 +6,6 @@
     <TeacherID>TE-1</TeacherID>
     <TeacherName>Qamary</TeacherName>
     <Students>
-      <Student>
-        <StudentID>ST-1</StudentID>
-        <StudentName>Ebrahim</StudentName>
-        <AttendanceRecords>
-          <Record>
-            <Date>2024-02-15</Date>
-            <Status>Present</Status>
-          </Record>
-          <Record>
-            <Date>2024-02-14</Date>
-            <Status>Absent</Status>
-          </Record>
-          <Record>
-            <Date>2024-02-16</Date>
-            <Status>Present</Status>
-          </Record>
-          <Record>
-            <Date>2024-02-17</Date>
-            <Status>Absent</Status>
-          </Record>
-          <Record>
-            <Date>2024-02-28</Date>
-            <Status>Absent</Status>
-          </Record>
-          <Record>
-            <Date>2024-02-23</Date>
-            <Status>Present</Status>
-          </Record>
-          <Record>
-            <Date>2024-02-20</Date>
-            <Status>Absent</Status>
-          </Record>
-          <Record>
-            <Date>2024-02-08</Date>
-            <Status>Absent</Status>
-          </Record>
-          <Record>
-            <Date>2024-02-13</Date>
-            <Status>Absent</Status>
-          </Record>
-          <Record>
-            <Date>2024-02-22</Date>
-            <Status>Absent</Status>
-          </Record>
-          <Record>
-            <Date>2024-03-01</Date>
-            <Status>Absent</Status>
-          </Record>
-        </AttendanceRecords>
-      </Student>
       <Student>
         <StudentID>ST-2</StudentID>
         <StudentName>Hissen</StudentName>
@@ -614,9 +564,6 @@
           </Record>
         </AttendanceRecords>
       </Student>
-      <Student>
-        <StudentID>ST-6</StudentID>
-      </Student>
     </Students>
   </Class>
   <Class>
@@ -933,7 +880,56 @@
     <TeacherID>TE-1</TeacherID>
     <TeacherName />
     <Students>
-      <Student />
+      <Student>
+        <StudentID>ST-1</StudentID>
+        <StudentName>Ebrahim Dawoud</StudentName>
+        <AttendanceRecords>
+          <Record>
+            <Date>2024-02-15</Date>
+            <Status>Absent</Status>
+          </Record>
+          <Record>
+            <Date>2024-02-14</Date>
+            <Status>Absent</Status>
+          </Record>
+          <Record>
+            <Date>2024-02-16</Date>
+            <Status>Absent</Status>
+          </Record>
+          <Record>
+            <Date>2024-02-17</Date>
+            <Status>Absent</Status>
+          </Record>
+          <Record>
+            <Date>2024-02-28</Date>
+            <Status>Absent</Status>
+          </Record>
+          <Record>
+            <Date>2024-02-23</Date>
+            <Status>Absent</Status>
+          </Record>
+          <Record>
+            <Date>2024-02-20</Date>
+            <Status>Absent</Status>
+          </Record>
+          <Record>
+            <Date>2024-02-08</Date>
+            <Status>Absent</Status>
+          </Record>
+          <Record>
+            <Date>2024-02-13</Date>
+            <Status>Absent</Status>
+          </Record>
+          <Record>
+            <Date>2024-02-22</Date>
+            <Status>Absent</Status>
+          </Record>
+          <Record>
+            <Date>2024-03-01</Date>
+            <Status>Absent</Status>
+          </Record>
+        </AttendanceRecords>
+      </Student>
     </Students>
   </Class>
 </AttendanceData>
