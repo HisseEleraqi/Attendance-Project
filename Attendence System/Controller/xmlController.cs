@@ -168,13 +168,13 @@ namespace Attendence_Management_System
             XmlNode NameNode = root.OwnerDocument.CreateElement("ClassName");
             NameNode.InnerText = name;
             XmlNode teacherIdNode = root.OwnerDocument.CreateElement("TeacherID");
-
+            
             XmlNode teacherNameNode = root.OwnerDocument.CreateElement("TeacherName");
             teacherIdNode.InnerText = "none";
 
             XmlNode Students = root.OwnerDocument.CreateElement("Students");
             XmlNode student = root.OwnerDocument.CreateElement("Student");
-            Students.AppendChild(student);
+            //Students.AppendChild(student);
 
             user.AppendChild(IdNode);
             user.AppendChild(NameNode);

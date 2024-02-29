@@ -4,37 +4,31 @@
     <student id="ST-1">
       <name>Ebrahim Osama</name>
       <classes>
-        <class id="CL-1" />
-        <class id="CL-2" />
+        <class id="CLS-1" />
+        <class id="CLS-2" />
       </classes>
     </student>
     <student id="ST-2">
       <name>Hissen</name>
       <classes>
-        <class id="CL-1" />
-        <class id="CL-2" />
+        <class id="CLS-1" />
+        <class id="CLS-2" />
       </classes>
     </student>
     <student id="ST-3">
       <name>3sawy</name>
       <classes>
-        <class id="CL-1" />
-        <class id="CL-2" />
+        <class id="CLS-1" />
+        <class id="CLS-2" />
       </classes>
     </student>
-    <student id="ST-4">
-      <name>sfds sf</name>
-    </student>
-    <student id="ST-6">
-      <name>HHHH A</name>
-    </student>
+    
   </students>
   <teachers>
     <teacher id="TE-1">
       <name>Ebraheeem TE</name>
       <classes>
-        <class id="CL-1" />
-        <class id="CL-2" />
+        <class id="CLS-1" />
       </classes>
     </teacher>
     <teacher id="TE-2">
@@ -77,7 +71,7 @@
       <role>student</role>
     </user>
     <user>
-      <id>T001</id>
+      <id>TE-2</id>
       <username>Ahmed El3sawy</username>
       <email>esawy</email>
       <password>123</password>
@@ -90,20 +84,8 @@
       <password>123</password>
       <role>Teacher</role>
     </user>
-    <user>
-      <id>S101</id>
-      <username>Ahmed El3sawy</username>
-      <email>esawy3</email>
-      <password>123</password>
-      <role>Student</role>
-    </user>
-    <user>
-      <id>AD-1</id>
-      <username>Hissen Eleraqi</username>
-      <email>hissen</email>
-      <password>123</password>
-      <role>Admin</role>
-    </user>
+    
+    
     <user>
       <id>TE-4</id>
       <username>KHALED Gala</username>
@@ -125,22 +107,10 @@
       <password>Aahema12@</password>
       <email>hema@f.com</email>
     </user>
-    <user>
-      <id>TE-1</id>
-      <username>Ashraf</username>
-      <role>teacher</role>
-      <password>Aahema12@</password>
-      <email>ashraf@f.com</email>
-    </user>
-    <user>
-      <id>ST-6</id>
-      <username>HHHH A</username>
-      <role>student</role>
-      <password>Aaaaaa@21</password>
-      <email>H@H.com</email>
-    </user>
+  
+    
   </users>
-  <classes>
+  <!--<classes>
     <class>
       <id>CL-1</id>
       <name>Math</name>
@@ -171,5 +141,5 @@
       <id>97bf7c02-846c-4e41-bb7a-77884d57dc9f</id>
       <name>22df</name>
     </class>
-  </classes>
+  </classes>-->
 </school>
