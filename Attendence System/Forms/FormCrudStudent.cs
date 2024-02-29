@@ -40,6 +40,26 @@ namespace Attendence_System.Forms
             {
                 MessageBox.Show("name is required");
             }
+            if (firstName == "" || lastName == "" && Password == "" && RePassword == "")
+
+            {
+                Validator validator = new Validator();
+                if (!validator.validateName(firstName))
+                {
+                    MessageBox.Show("First Name is not valid");
+                    return;
+                }
+                if (!validator.validateName(lastName))
+                {
+                    MessageBox.Show("Last Name is not valid");
+                    return;
+                }
+                fullName = firstName + " " + lastName;
+                xmlController xmlController = new xmlController();
+                xmlController.editUserInXML(ID, fullName, Password, "teacher");
+                MessageBox.Show("Teacher Updated");
+                return;
+            }
             else if (Password != RePassword)
             {
                 MessageBox.Show("Password and Re-Password does not match");
@@ -57,7 +77,7 @@ namespace Attendence_System.Forms
                     MessageBox.Show("Last Name is not valid");
                     return;
                 }
-                if(Password != "")
+                if (Password != "")
                 {
                     if (!validator.validatePassword(Password))
                     {
@@ -68,12 +88,13 @@ namespace Attendence_System.Forms
                 }
                 fullName = firstName + " " + lastName;
                 xmlController xmlController = new xmlController();
-                xmlController.editUserInXML(ID, fullName, Password, "student");
-                MessageBox.Show("Student Updated");
+                xmlController.editUserInXML(ID, fullName, Password, "teacher");
+                MessageBox.Show("Teacher Updated");
 
                 this.Close();
             }
         }
+
 
         private void buttonCancel_Click(object sender, EventArgs e)
         {

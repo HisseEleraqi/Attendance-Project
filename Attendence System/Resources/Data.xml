@@ -22,7 +22,6 @@
         <class id="CL-2" />
       </classes>
     </student>
-    
   </students>
   <teachers>
     <teacher id="TE-1">
@@ -103,7 +102,8 @@
       <id>TE-4</id>
       <username>KHALED Gala</username>
       <role>teacher</role>
-      <password>123</password>
+      <password>
+      </password>
       <email>khaled@example.com</email>
     </user>
     <user>

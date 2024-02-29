@@ -39,12 +39,32 @@ namespace Attendence_System.Forms
         {
             string? firstName = FstName.Text.Trim();
             string? lastName = LstName.Text.Trim();
-            string? Password = password.Text.Trim();
-            string? RePassword = rePassword.Text.Trim();
+            string? Password = pass.Text.Trim();
+            string? RePassword = rePass.Text.Trim();
             string? fullName;
             if (firstName == "" || lastName == "")
             {
                 MessageBox.Show("name is required");
+            }
+            if (firstName == "" || lastName == "" && Password == "" && RePassword == "")
+
+            {
+                Validator validator = new Validator();
+                if (!validator.validateName(firstName))
+                {
+                    MessageBox.Show("First Name is not valid");
+                    return;
+                }
+                if (!validator.validateName(lastName))
+                {
+                    MessageBox.Show("Last Name is not valid");
+                    return;
+                }
+                fullName = firstName + " " + lastName;
+                xmlController xmlController = new xmlController();
+                xmlController.editUserInXML(ID, fullName, Password, "teacher");
+                MessageBox.Show("Teacher Updated");
+                return;
             }
             else if (Password != RePassword)
             {
